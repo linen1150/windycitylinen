@@ -1,69 +1,119 @@
-import Image from "next/image";
+import Link from "next/link";
+import { getFeaturedByCategory, countProducts } from "@/lib/catalog";
+import { ProductImage } from "@/components/catalog/product-image";
+import { ButtonLink } from "@/components/ui/button";
+import { SITE } from "@/lib/site";
 
-export default function Home() {
+export const revalidate = 300;
+
+export default async function HomePage() {
+  const [featured, total] = await Promise.all([getFeaturedByCategory(), countProducts()]);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
+    <>
+      {/* Hero */}
+      <section className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 sm:px-8 md:grid-cols-[1.1fr_0.9fr]">
+        <div>
+          <h1 className="font-display text-4xl leading-tight sm:text-5xl">
+            Linen that makes every table the centerpiece.
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="mt-4 max-w-md text-lg text-ink-soft">
+            Tablecloths, napkins, runners and chair covers for weddings, galas and
+            corporate events across {SITE.serviceArea}.
           </p>
+          <div className="mt-7 flex flex-wrap gap-3">
+            <ButtonLink href="/products" variant="primary">Browse the collection</ButtonLink>
+            <ButtonLink href="/contact" variant="secondary">Talk to a specialist</ButtonLink>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+        {featured[0] && (
+          <ProductImage
+            src={featured[0].imageUrl}
+            alt={`${featured[0].fabric} ${featured[0].colorName} linen`}
+            colorHex={featured[0].colorHex}
+            className="aspect-[4/3] w-full"
+            sizes="(max-width: 768px) 100vw, 460px"
+          />
+        )}
+      </section>
+
+      {/* Value proposition (punch-list 3.2) */}
+      <section className="border-y border-line bg-ivory">
+        <div className="mx-auto max-w-6xl px-4 py-12 sm:px-8">
+          <div className="grid gap-8 md:grid-cols-[1.3fr_1fr]">
+            <div>
+              <h2 className="font-display text-2xl">
+                A Chicago linen house since {SITE.since}
+              </h2>
+              <p className="mt-3 max-w-xl text-ink-soft">
+                We work with planners, caterers and hosts to dress tables at every
+                scale — from intimate dinners to two-thousand-guest galas. Choose
+                your fabric, color and size online, add pieces to a quote request,
+                and our team follows up with pricing and availability within one
+                business day.
+              </p>
+              <div className="mt-5 flex flex-wrap gap-3">
+                <ButtonLink href="/products" variant="primary">Browse linens</ButtonLink>
+                <ButtonLink href="/search" variant="ghost">Search the catalog</ButtonLink>
+              </div>
+            </div>
+            <dl className="grid grid-cols-3 gap-4 self-center text-center md:grid-cols-1 md:gap-6 md:text-left">
+              {[
+                [`${new Date().getFullYear() - SITE.since}+`, "years serving Chicagoland"],
+                [`${total}+`, "linens in the collection"],
+                ["2", `showrooms — ${SITE.showrooms.join(" & ")}`],
+              ].map(([n, label]) => (
+                <div key={label}>
+                  <dt className="font-display text-2xl text-brass-dark">{n}</dt>
+                  <dd className="mt-1 text-[13px] text-ink-soft">{label}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      {/* Shop by category */}
+      <section className="mx-auto max-w-6xl px-4 py-14 sm:px-8">
+        <div className="flex items-end justify-between">
+          <h2 className="font-display text-2xl">Shop by category</h2>
+          <Link href="/products" className="text-sm text-wine underline underline-offset-4">
+            View full catalog
+          </Link>
+        </div>
+        <div className="mt-6 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-6">
+          {featured.map((p) => (
+            <Link key={p.id} href={`/products/${p.categorySlug}`} className="group block">
+              <ProductImage
+                src={p.imageUrl}
+                alt={p.category}
+                colorHex={p.colorHex}
+                className="aspect-square w-full transition-transform duration-300 group-hover:scale-[1.03]"
+                sizes="(max-width: 640px) 50vw, 200px"
+              />
+              <div className="mt-2 text-sm font-medium">{p.category}</div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="bg-ink px-4 py-14 text-center text-[#EDE7D8] sm:px-8">
+        <h2 className="font-display text-2xl text-white">Planning an event?</h2>
+        <p className="mx-auto mt-2 max-w-md text-sm text-[#C9C1AE]">
+          Send us your date and vision. A real person replies within one business day —
+          no pricing games, no checkout.
+        </p>
+        <div className="mt-6 flex justify-center gap-3">
+          <ButtonLink href="/contact" variant="primary">Request a quote</ButtonLink>
           <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href={`tel:${SITE.phoneHref}`}
+            className="inline-flex items-center border border-white/40 px-6 py-3 text-sm font-medium hover:bg-white/10"
           >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
+            Call {SITE.phone}
           </a>
         </div>
-      </main>
-    </div>
+      </section>
+    </>
   );
 }

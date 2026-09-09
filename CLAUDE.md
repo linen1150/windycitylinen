@@ -1,1 +1,28 @@
 @AGENTS.md
+
+# Windy City Linen
+
+Rebuild of windycitylinen.com — a **quote-request** event-linen rental catalog.
+Read `README.md` and `HANDOFF.md` first.
+
+## Hard rules
+
+- **No pricing anywhere.** No prices, no cart totals, no checkout. Direct client requirement.
+- The only conversion action is **"Add to quote request"** (product + size + quantity)
+  → consolidated request → email to `info@windycitylinen.com` + a `QuoteRequest` DB row.
+- Every product image needs real `alt` text; every page needs exactly one `<h1>`, a
+  unique `<title>`, and a meta description (SEO was the #1 reason for the rebuild).
+
+## Stack notes
+
+- Next.js 16 App Router. `params`/`searchParams` are Promises. Route types come from
+  `next typegen` — run it after adding routes or `PageProps<>` won't know them.
+- Prisma 6 + Postgres. Local dev DB: `postgresql://postgres:postgres@127.0.0.1:5432/windycitylinen`.
+- Tailwind v4 (CSS `@theme`, no config file). Design tokens + fonts in `src/app/globals.css`.
+- After changing `data/catalog-raw.json` or the taxonomy: `npm run db:build-catalog && npm run db:seed`.
+
+## Where things live
+
+- Catalog queries + filtering: `src/lib/catalog.ts`
+- Quote flow: `src/components/quote/*`, `src/lib/inquiries.ts`, `src/app/actions.ts`
+- Design system: `src/app/globals.css` (ivory/ink/brass/wine; Fraunces/Work Sans/Great Vibes)

@@ -1,0 +1,199 @@
+// Windy City Linen — data model
+// Quote-request rental catalog. No pricing is stored or displayed anywhere.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// --- Taxonomy --------------------------------------------------------------
+
+model Category {
+  id        String    @id @default(cuid())
+  name      String    @unique
+  slug      String    @unique
+  order     Int       @default(0)
+  products  Product[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model Fabric {
+  id        String    @id @default(cuid())
+  name      String    @unique
+  slug      String    @unique
+  products  Product[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model Size {
+  id        String            @id @default(cuid())
+  name      String            @unique
+  slug      String            @unique
+  order     Int               @default(0)
+  products  ProductSize[]
+  createdAt DateTime          @default(now())
+  updatedAt DateTime          @updatedAt
+}
+
+model Collection {
+  id        String                @id @default(cuid())
+  name      String                @unique
+  slug      String                @unique
+  order     Int                   @default(0)
+  products  ProductCollection[]
+  createdAt DateTime              @default(now())
+  updatedAt DateTime              @updatedAt
+}
+
+// --- Products ------------------------------------------------------------
+
+model Product {
+  id            String              @id @default(cuid())
+  // Stable id carried over from the legacy export, for traceability.
+  externalId    Int?                @unique
+  name          String
+  slug          String              @unique
+  category      Category            @relation(fields: [categoryId], references: [id])
+  categoryId    String
+  fabric        Fabric              @relation(fields: [fabricId], references: [id])
+  fabricId      String
+  colorName     String
+  colorHex      String?
+  // Coarse color family for the catalog filter UI (e.g. "Blue", "Pink/Blush").
+  colorGroup    String?
+  limited       Boolean             @default(false)
+  reverseSide   Boolean             @default(false)
+  imageFilename String?
+  // Free-text, comma-separated search tags (e.g. "rustic, farmhouse, barn wedding").
+  keywords      String              @default("")
+  published     Boolean             @default(true)
+  sizes         ProductSize[]
+  collections   ProductCollection[]
+  quoteItems    QuoteRequestItem[]
+  createdAt     DateTime            @default(now())
+  updatedAt     DateTime            @updatedAt
+
+  @@index([categoryId])
+  @@index([fabricId])
+}
+
+model ProductSize {
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  productId String
+  size      Size    @relation(fields: [sizeId], references: [id], onDelete: Cascade)
+  sizeId    String
+
+  @@id([productId, sizeId])
+  @@index([sizeId])
+}
+
+model ProductCollection {
+  product      Product    @relation(fields: [productId], references: [id], onDelete: Cascade)
+  productId    String
+  collection   Collection @relation(fields: [collectionId], references: [id], onDelete: Cascade)
+  collectionId String
+
+  @@id([productId, collectionId])
+  @@index([collectionId])
+}
+
+// --- Design Center ------------------------------------------------------
+
+enum DesignCenterSection {
+  DESIGN_CENTER
+  DIGITAL_SWATCH_CARDS
+  LINEN_VIDEOS
+}
+
+enum DesignCenterType {
+  LINK
+  DOCUMENT
+  VIDEO
+}
+
+model DesignCenterItem {
+  id          String              @id @default(cuid())
+  section     DesignCenterSection
+  type        DesignCenterType
+  title       String
+  description String              @default("")
+  // Destination: a PDF/lookbook URL, a landing page, or a video embed URL.
+  url         String              @default("")
+  // Optional accent color for the card (hex).
+  accentHex   String?
+  order       Int                 @default(0)
+  published   Boolean             @default(true)
+  createdAt   DateTime            @default(now())
+  updatedAt   DateTime            @updatedAt
+
+  @@index([section, order])
+}
+
+// --- Quote requests & contact ------------------------------------------
+
+enum InquiryType {
+  QUICK
+  DETAILED
+  QUOTE_TRAY
+}
+
+enum InquiryStatus {
+  NEW
+  IN_PROGRESS
+  QUOTED
+  CLOSED
+}
+
+model QuoteRequest {
+  id          String             @id @default(cuid())
+  type        InquiryType
+  status      InquiryStatus      @default(NEW)
+  name        String
+  email       String
+  phone       String             @default("")
+  message     String             @default("")
+  // Detailed event-brief fields (blank for quick inquiries).
+  eventDate   String             @default("")
+  venue       String             @default("")
+  guestCount  String             @default("")
+  caterer     String             @default("")
+  planner     String             @default("")
+  items       QuoteRequestItem[]
+  // Whether the notification email was sent successfully.
+  emailedAt   DateTime?
+  createdAt   DateTime           @default(now())
+  updatedAt   DateTime           @updatedAt
+
+  @@index([status, createdAt])
+}
+
+model QuoteRequestItem {
+  id             String       @id @default(cuid())
+  quoteRequest   QuoteRequest @relation(fields: [quoteRequestId], references: [id], onDelete: Cascade)
+  quoteRequestId String
+  product        Product?     @relation(fields: [productId], references: [id])
+  productId      String?
+  // Denormalized snapshot so the request still reads correctly if a product changes.
+  productName    String
+  sizeName       String       @default("")
+  quantity       Int          @default(1)
+
+  @@index([quoteRequestId])
+}
+
+// --- Admin auth --------------------------------------------------------
+
+model AdminUser {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  name         String   @default("")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}

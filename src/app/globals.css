@@ -1,26 +1,67 @@
 @import "tailwindcss";
 
+/* ---------------------------------------------------------------------------
+   Windy City Linen design tokens
+   Ivory base, deep charcoal-navy ink, brass + wine accents.
+   Fraunces (display) / Work Sans (body) / Great Vibes (wordmark).
+--------------------------------------------------------------------------- */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --ivory: #efe9dd;
+  --paper: #ffffff;
+  --ink: #21262b;
+  --ink-soft: #4b5157;
+  --brass: #a6803a;
+  --brass-dark: #7c5e27;
+  --wine: #7a3245;
+  --sage: #5f6e58;
+  --line: #d9d0bc;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-ivory: var(--ivory);
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-brass: var(--brass);
+  --color-brass-dark: var(--brass-dark);
+  --color-wine: var(--wine);
+  --color-sage: var(--sage);
+  --color-line: var(--line);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-body: var(--font-work-sans), system-ui, -apple-system, sans-serif;
+  --font-script: var(--font-great-vibes), "Brush Script MT", cursive;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  color: var(--ink);
+  margin: 0;
+}
+
+/* Gradient placeholder shown when a product has no photo yet. */
+.swatch-fallback {
+  background: repeating-linear-gradient(
+    115deg,
+    var(--c1, #e7dfcb) 0 14px,
+    var(--c2, #dacbaa) 14px 28px
+  );
+}
+
+a {
+  color: inherit;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--brass-dark);
+  outline-offset: 2px;
 }

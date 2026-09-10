@@ -8,6 +8,10 @@ export const SITE = {
   serviceArea: "Chicagoland and Milwaukee",
   since: 2008,
   showrooms: ["Wheeling, IL", "Elm Grove, WI"],
+  social: [
+    { name: "Instagram", href: "https://www.instagram.com/windycitylinen" },
+    { name: "Facebook", href: "https://www.facebook.com/WindyCityLinen" },
+  ] as { name: "Instagram" | "Facebook" | "Pinterest" | "LinkedIn" | "YouTube"; href: string }[],
   locations: [
     {
       name: "Chicago Location",

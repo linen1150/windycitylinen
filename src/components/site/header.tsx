@@ -54,17 +54,34 @@ export function Header() {
         </a>
       </div>
 
-      <div className="flex items-center gap-4 border-b border-line px-4 py-4 sm:px-8">
-        <Link href="/" className="shrink-0 font-script text-3xl leading-none">
-          Windy City <span className="text-brass-dark">Linen</span>
+      <div className="flex items-center gap-4 border-b border-line px-4 py-4 sm:px-8 lg:gap-6">
+        <Link href="/" className="shrink-0 font-script text-3xl leading-none text-ink">
+          Windy City Linen
         </Link>
 
-        <HeaderSearch className="mx-auto hidden w-full max-w-md md:flex" />
+        <HeaderSearch className="hidden w-full max-w-xs md:flex lg:max-w-sm" />
+
+        <nav className="hidden items-center gap-6 text-sm lg:flex">
+          {NAV.map((item) => {
+            const active = pathname === item.href || pathname.startsWith(`${item.href}/`);
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`whitespace-nowrap hover:text-brass-dark ${
+                  active ? "text-brass-dark" : "text-ink"
+                }`}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
+        </nav>
 
         <div className="ml-auto flex items-center gap-3">
           <button
             onClick={open}
-            className="relative border border-line px-3.5 py-2 text-[13px] hover:border-ink"
+            className="relative whitespace-nowrap border border-line px-3.5 py-2 text-[13px] hover:border-ink"
           >
             Quote request
             {count > 0 && (
@@ -75,7 +92,7 @@ export function Header() {
           </button>
           <Link
             href="/contact"
-            className="hidden bg-ink px-4 py-2.5 text-[13px] text-[#EDE7D8] hover:bg-black sm:block"
+            className="hidden whitespace-nowrap bg-ink px-4 py-2.5 text-[13px] text-[#EDE7D8] hover:bg-black sm:block"
           >
             Request a quote
           </Link>
@@ -94,21 +111,6 @@ export function Header() {
       <div className="border-b border-line px-4 py-2.5 sm:px-8 md:hidden">
         <HeaderSearch />
       </div>
-
-      <nav className="hidden items-center justify-center gap-8 border-b border-line px-4 py-2.5 text-sm sm:px-8 lg:flex">
-        {NAV.map((item) => {
-          const active = pathname === item.href || pathname.startsWith(`${item.href}/`);
-          return (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={`hover:text-brass-dark ${active ? "text-brass-dark" : "text-ink"}`}
-            >
-              {item.label}
-            </Link>
-          );
-        })}
-      </nav>
 
       {menuOpen && (
         <nav className="border-b border-line bg-paper px-4 py-3 lg:hidden">

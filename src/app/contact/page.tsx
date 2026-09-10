@@ -61,8 +61,8 @@ export default function ContactPage() {
               Call us:{" "}
               <a href={`tel:${SITE.phoneHref}`} className="text-wine underline">
                 {SITE.phone}
-              </a>
-              , ext. {SITE.phoneExt} during normal business hours.
+              </a>{" "}
+              during normal business hours.
             </p>
           </div>
         </section>

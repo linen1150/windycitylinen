@@ -3,7 +3,6 @@ export const SITE = {
   tagline: "Event linen rentals for Chicago & Milwaukee",
   phone: "(224) 279-1500",
   phoneHref: "+12242791500",
-  phoneExt: "7",
   email: "info@windycitylinen.com",
   ordersEmail: "orders@windycitylinen.com",
   serviceArea: "Chicagoland and Milwaukee",

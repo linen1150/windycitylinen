@@ -1,12 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Minus, Plus } from "lucide-react";
-import { useQuote } from "./quote-store";
+import { useInspirations } from "./inspirations-store";
 import type { ProductDetailData } from "@/lib/catalog";
 
-export function AddToQuote({ product }: { product: ProductDetailData }) {
-  const { add } = useQuote();
+export function AddToInspirations({ product }: { product: ProductDetailData }) {
+  const { add } = useInspirations();
   const sizes = product.sizes;
   const [size, setSize] = useState(sizes[0] ?? "");
   const [qty, setQty] = useState(10);
@@ -18,13 +19,14 @@ export function AddToQuote({ product }: { product: ProductDetailData }) {
       slug: product.slug,
       name: product.name,
       category: product.category,
+      fabric: product.fabric,
       size,
       quantity: qty,
       imageUrl: product.imageUrl,
       colorHex: product.colorHex,
     });
     setAdded(true);
-    setTimeout(() => setAdded(false), 2500);
+    setTimeout(() => setAdded(false), 3000);
   };
 
   return (
@@ -79,19 +81,24 @@ export function AddToQuote({ product }: { product: ProductDetailData }) {
         </div>
       </div>
 
-      <div className="mt-6 flex flex-wrap gap-3">
+      <div className="mt-6 flex flex-wrap items-center gap-3">
         <button
           onClick={submit}
           className="bg-wine px-6 py-3 text-sm font-medium text-white hover:bg-[#652638]"
         >
-          {added ? "Added to quote request ✓" : "Add to quote request"}
+          {added ? "Added to My Inspirations ✓" : "Add to My Inspirations"}
         </button>
+        {added && (
+          <Link href="/my-inspirations" className="text-sm text-wine underline underline-offset-2">
+            View list &amp; request a quote
+          </Link>
+        )}
       </div>
 
       <p className="mt-5 border-l-2 border-brass bg-ivory px-4 py-3 text-[13px] text-ink-soft">
-        Pricing is quoted directly by our team based on quantity, dates and delivery
-        zone. Add items to your quote request, then submit — we&rsquo;ll follow up
-        within one business day.
+        Add the linens you&rsquo;re considering to My Inspirations, then send the list to
+        our team for a quote. No pricing is shown — we quote each request directly based
+        on quantity, dates and delivery zone, usually within one business day.
       </p>
     </div>
   );

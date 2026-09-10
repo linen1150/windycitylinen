@@ -8,8 +8,10 @@ Read `README.md` and `HANDOFF.md` first.
 ## Hard rules
 
 - **No pricing anywhere.** No prices, no cart totals, no checkout. Direct client requirement.
-- The only conversion action is **"Add to quote request"** (product + size + quantity)
-  → consolidated request → email to `info@windycitylinen.com` + a `QuoteRequest` DB row.
+- There is **one saved-items list: "My Inspirations"** (localStorage, no login). "Add to
+  My Inspirations" on a product carries size + quantity. The `/my-inspirations` page is
+  where the visitor reviews the list and submits it as **one quote request** → email to
+  `info@windycitylinen.com` + a `QuoteRequest` DB row. There is no separate quote tray.
 - Every product image needs real `alt` text; every page needs exactly one `<h1>`, a
   unique `<title>`, and a meta description (SEO was the #1 reason for the rebuild).
 
@@ -24,5 +26,6 @@ Read `README.md` and `HANDOFF.md` first.
 ## Where things live
 
 - Catalog queries + filtering: `src/lib/catalog.ts`
-- Quote flow: `src/components/quote/*`, `src/lib/inquiries.ts`, `src/app/actions.ts`
+- Saved list + quote submit: `src/components/inspirations/*`, `src/app/my-inspirations/*`,
+  `src/lib/inquiries.ts`, `src/app/actions.ts`
 - Design system: `src/app/globals.css` (ivory/ink/brass/wine; Fraunces/Work Sans/Great Vibes)

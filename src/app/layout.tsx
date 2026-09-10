@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { Fraunces, Work_Sans, Great_Vibes } from "next/font/google";
 import "./globals.css";
 import { SITE } from "@/lib/site";
-import { QuoteProvider } from "@/components/quote/quote-store";
-import { QuoteTray } from "@/components/quote/quote-tray";
+import { InspirationsProvider } from "@/components/inspirations/inspirations-store";
 import { Header } from "@/components/site/header";
 import { Footer } from "@/components/site/footer";
 
@@ -48,12 +47,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${fraunces.variable} ${workSans.variable} ${greatVibes.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
-        <QuoteProvider>
+        <InspirationsProvider>
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />
-          <QuoteTray />
-        </QuoteProvider>
+        </InspirationsProvider>
       </body>
     </html>
   );

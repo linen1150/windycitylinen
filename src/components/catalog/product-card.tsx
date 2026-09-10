@@ -19,15 +19,7 @@ export function ProductCard({ product }: { product: ProductCardData }) {
             Limited
           </span>
         )}
-        <SaveButton
-          item={{
-            slug: product.slug,
-            name: product.name,
-            fabric: product.fabric,
-            imageUrl: product.imageUrl,
-            colorHex: product.colorHex,
-          }}
-        />
+        <SaveButton product={product} />
       </div>
       <div className="mt-3">
         <div className="text-sm font-medium text-ink">{product.name}</div>

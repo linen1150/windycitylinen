@@ -3,8 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { ClipboardList, Menu, Phone, Search, X } from "lucide-react";
-import { useQuote } from "@/components/quote/quote-store";
+import { Heart, Menu, Phone, Search, X } from "lucide-react";
+import { useInspirations } from "@/components/inspirations/inspirations-store";
 import { SITE } from "@/lib/site";
 
 const NAV = [
@@ -43,7 +43,7 @@ function HeaderSearch({ className = "", onSubmit }: { className?: string; onSubm
 
 export function Header() {
   const pathname = usePathname();
-  const { count, open } = useQuote();
+  const { count } = useInspirations();
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -84,16 +84,16 @@ export function Header() {
 
         <div className="ml-auto flex items-center gap-3">
           {count > 0 && (
-            <button
-              onClick={open}
-              aria-label={`Review quote request (${count} ${count === 1 ? "item" : "items"})`}
+            <Link
+              href="/my-inspirations"
+              aria-label={`My Inspirations (${count} ${count === 1 ? "linen" : "linens"})`}
               className="relative hover:text-brass-dark"
             >
-              <ClipboardList size={20} />
+              <Heart size={20} />
               <span className="absolute -right-2 -top-2 flex size-4 items-center justify-center rounded-full bg-wine text-[10px] text-white">
                 {count}
               </span>
-            </button>
+            </Link>
           )}
           <button
             className="xl:hidden"

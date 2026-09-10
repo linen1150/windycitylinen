@@ -4,8 +4,7 @@ import { notFound } from "next/navigation";
 import { categoryNoun, getProductBySlug, getRelatedProducts } from "@/lib/catalog";
 import { ProductImage } from "@/components/catalog/product-image";
 import { ProductCard } from "@/components/catalog/product-card";
-import { AddToQuote } from "@/components/quote/add-to-quote";
-import { SaveButton } from "@/components/inspirations/save-button";
+import { AddToInspirations } from "@/components/inspirations/add-to-inspirations";
 
 export async function generateMetadata({
   params,
@@ -18,7 +17,7 @@ export async function generateMetadata({
     title: `${product.name} ${noun}`,
     description: `${product.fabric} ${product.colorName} ${noun} rental from Windy City Linen. Available in ${
       product.sizes.length ? product.sizes.join(", ") : "multiple sizes"
-    }. Add to your quote request — no pricing shown, quoted directly by our team.`,
+    }. Add to My Inspirations and request a quote — no pricing shown, quoted directly by our team.`,
   };
 }
 
@@ -73,20 +72,7 @@ export default async function ProductPage({ params }: PageProps<"/product/[slug]
             across weddings, galas and corporate events in Chicago and Milwaukee.
           </p>
 
-          <AddToQuote product={product} />
-
-          <div className="mt-4">
-            <SaveButton
-              variant="full"
-              item={{
-                slug: product.slug,
-                name: product.name,
-                fabric: product.fabric,
-                imageUrl: product.imageUrl,
-                colorHex: product.colorHex,
-              }}
-            />
-          </div>
+          <AddToInspirations product={product} />
         </div>
       </div>
 

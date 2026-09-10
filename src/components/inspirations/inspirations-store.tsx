@@ -1,68 +1,130 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 
-const KEY = "wcl.inspirations.v1";
-
-export type Inspiration = {
+export type InspirationLine = {
+  productId: string;
   slug: string;
   name: string;
+  category: string;
   fabric: string;
+  size: string;
+  quantity: number;
   imageUrl: string | null;
   colorHex: string | null;
 };
 
-function read(): Inspiration[] {
-  try {
-    return JSON.parse(localStorage.getItem(KEY) ?? "[]");
-  } catch {
-    return [];
-  }
-}
+type InspirationsContextValue = {
+  lines: InspirationLine[];
+  count: number;
+  totalQuantity: number;
+  add: (line: InspirationLine) => void;
+  remove: (index: number) => void;
+  removeBySlug: (slug: string) => void;
+  setQuantity: (index: number, quantity: number) => void;
+  setSize: (index: number, size: string) => void;
+  clear: () => void;
+  has: (slug: string) => boolean;
+  hydrated: boolean;
+};
 
-/** Lightweight per-browser favorites list. No account required. */
-export function useInspirations() {
-  const [items, setItems] = useState<Inspiration[]>([]);
+const InspirationsContext = createContext<InspirationsContextValue | null>(null);
+const STORAGE_KEY = "wcl.inspirations.v2";
+
+export function InspirationsProvider({ children }: { children: React.ReactNode }) {
+  const [lines, setLines] = useState<InspirationLine[]>([]);
   const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
-    setItems(read());
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (raw) setLines(JSON.parse(raw));
+    } catch {
+      /* storage unavailable */
+    }
     setHydrated(true);
-    const sync = () => setItems(read());
-    window.addEventListener("storage", sync);
-    window.addEventListener("wcl:inspirations", sync);
-    return () => {
-      window.removeEventListener("storage", sync);
-      window.removeEventListener("wcl:inspirations", sync);
-    };
   }, []);
 
-  const persist = (next: Inspiration[]) => {
-    setItems(next);
+  useEffect(() => {
+    if (!hydrated) return;
     try {
-      localStorage.setItem(KEY, JSON.stringify(next));
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(lines));
     } catch {
       /* ignore */
     }
-    window.dispatchEvent(new Event("wcl:inspirations"));
-  };
+  }, [lines, hydrated]);
 
-  const has = useCallback((slug: string) => items.some((i) => i.slug === slug), [items]);
+  const add = useCallback((line: InspirationLine) => {
+    setLines((prev) => {
+      const i = prev.findIndex(
+        (l) => l.productId === line.productId && l.size === line.size,
+      );
+      if (i >= 0) {
+        const next = [...prev];
+        next[i] = { ...next[i], quantity: next[i].quantity + line.quantity };
+        return next;
+      }
+      return [...prev, line];
+    });
+  }, []);
 
-  const toggle = useCallback(
-    (item: Inspiration) => {
-      const current = read();
-      const next = current.some((i) => i.slug === item.slug)
-        ? current.filter((i) => i.slug !== item.slug)
-        : [...current, item];
-      persist(next);
-    },
+  const remove = useCallback(
+    (index: number) => setLines((prev) => prev.filter((_, i) => i !== index)),
     [],
   );
 
-  const remove = useCallback((slug: string) => {
-    persist(read().filter((i) => i.slug !== slug));
-  }, []);
+  const removeBySlug = useCallback(
+    (slug: string) => setLines((prev) => prev.filter((l) => l.slug !== slug)),
+    [],
+  );
 
-  return { items, hydrated, has, toggle, remove };
+  const setQuantity = useCallback(
+    (index: number, quantity: number) =>
+      setLines((prev) =>
+        prev.map((l, i) => (i === index ? { ...l, quantity: Math.max(1, quantity) } : l)),
+      ),
+    [],
+  );
+
+  const setSize = useCallback(
+    (index: number, size: string) =>
+      setLines((prev) => prev.map((l, i) => (i === index ? { ...l, size } : l))),
+    [],
+  );
+
+  const clear = useCallback(() => setLines([]), []);
+
+  const value = useMemo<InspirationsContextValue>(
+    () => ({
+      lines,
+      count: lines.length,
+      totalQuantity: lines.reduce((n, l) => n + l.quantity, 0),
+      add,
+      remove,
+      removeBySlug,
+      setQuantity,
+      setSize,
+      clear,
+      has: (slug: string) => lines.some((l) => l.slug === slug),
+      hydrated,
+    }),
+    [lines, hydrated, add, remove, removeBySlug, setQuantity, setSize, clear],
+  );
+
+  return (
+    <InspirationsContext.Provider value={value}>{children}</InspirationsContext.Provider>
+  );
+}
+
+export function useInspirations() {
+  const ctx = useContext(InspirationsContext);
+  if (!ctx) throw new Error("useInspirations must be used within <InspirationsProvider>");
+  return ctx;
 }

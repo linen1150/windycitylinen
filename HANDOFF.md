@@ -15,8 +15,8 @@ what the rebuild covers so far.
 | 3.1 | Header phone + CTA | ✅ Done — `tel:` link in the top bar (all pages, incl. mobile menu) + "Request a quote" button |
 | 3.2 | Homepage value-prop block | ✅ Done — content section between hero and category grid, with CTAs |
 | 4.1 | Size selector on product pages | ✅ Done — button group from the product's sizes |
-| 4.2 | Quote-request flow (no pricing) | ✅ Done — add item+size+qty, running tray (localStorage), `/quote` submits one consolidated request → DB + email to `info@windycitylinen.com` |
-| 4.3 | Explain or remove My Inspirations | ✅ Done — kept, with explanatory copy; per-browser favorites, no email gate |
+| 4.2 | Quote-request flow (no pricing) | ✅ Done — merged with My Inspirations: add item+size+qty to the saved list, `/my-inspirations` reviews it and submits one consolidated request → DB + email to `info@windycitylinen.com` |
+| 4.3 | Explain or remove My Inspirations | ✅ Done — kept as the single saved list and the quote entry point; per-browser, no email gate |
 | 5.1 | Quick vs detailed contact form | ✅ Done — tabbed form, both routes to the same inbox with a `type` marker |
 | 6.1 | Mobile QA | ⛔ Not started — needs a real-device pass |
 | 6.2 | Platform note | N/A — new stack removes the underlying constraints |

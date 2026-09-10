@@ -1,20 +1,48 @@
 "use client";
 
+import { useActionState, useEffect } from "react";
 import Link from "next/link";
-import { X } from "lucide-react";
 import { useInspirations } from "@/components/inspirations/inspirations-store";
 import { ProductImage } from "@/components/catalog/product-image";
+import { submitInquiry, type InquiryFormState } from "@/app/actions";
+import { Field, Textarea } from "@/components/ui/field";
 import { ButtonLink } from "@/components/ui/button";
 
+const initial: InquiryFormState = { status: "idle" };
+
 export function InspirationsList() {
-  const { items, hydrated, remove } = useInspirations();
+  const { lines, count, totalQuantity, remove, setQuantity, clear, hydrated } =
+    useInspirations();
+  const [state, action, pending] = useActionState(submitInquiry, initial);
+
+  useEffect(() => {
+    if (state.status === "success") clear();
+  }, [state.status, clear]);
 
   if (!hydrated) return null;
 
-  if (items.length === 0) {
+  if (state.status === "success") {
     return (
       <div className="border border-line bg-ivory p-8 text-center">
-        <p className="text-ink-soft">You haven&rsquo;t saved anything yet.</p>
+        <h2 className="font-display text-2xl">Request received</h2>
+        <p className="mx-auto mt-3 max-w-md text-ink-soft">
+          Thanks — your quote request is in. A member of our team will follow up
+          within one business day.
+        </p>
+        <ButtonLink href="/products" variant="primary" className="mt-6">
+          Keep browsing
+        </ButtonLink>
+      </div>
+    );
+  }
+
+  if (count === 0) {
+    return (
+      <div className="border border-line bg-ivory p-8 text-center">
+        <p className="text-ink-soft">
+          You haven&rsquo;t saved anything yet. Tap the heart on any linen, or use
+          &ldquo;Add to My Inspirations&rdquo; on a product page.
+        </p>
         <ButtonLink href="/products" variant="primary" className="mt-4">
           Browse the collection
         </ButtonLink>
@@ -22,38 +50,100 @@ export function InspirationsList() {
     );
   }
 
+  const err = (k: string) => (state.status === "error" ? state.fieldErrors?.[k] : undefined);
+
   return (
-    <>
-      <div className="grid grid-cols-2 gap-x-5 gap-y-8 sm:grid-cols-3 lg:grid-cols-4">
-        {items.map((item) => (
-          <div key={item.slug} className="group relative">
-            <Link href={`/product/${item.slug}`} className="block">
-              <ProductImage
-                src={item.imageUrl}
-                alt={item.name}
-                colorHex={item.colorHex}
-                className="aspect-square w-full"
-              />
-              <div className="mt-3 text-sm font-medium">{item.name}</div>
-              <div className="text-xs text-ink-soft">{item.fabric}</div>
-            </Link>
-            <button
-              onClick={() => remove(item.slug)}
-              className="absolute right-2 top-2 flex size-8 items-center justify-center rounded-full bg-white/95 shadow-sm"
-              aria-label={`Remove ${item.name}`}
-            >
-              <X size={14} />
-            </button>
-          </div>
-        ))}
-      </div>
-      <p className="mt-8 text-sm text-ink-soft">
-        Ready for pricing?{" "}
-        <Link href="/products" className="text-wine underline">
-          Add these to a quote request
-        </Link>{" "}
-        from each product page.
-      </p>
-    </>
+    <div className="space-y-10">
+      <section>
+        <div className="mb-3 flex items-baseline justify-between">
+          <h2 className="font-display text-lg">
+            {count} {count === 1 ? "linen" : "linens"} saved
+          </h2>
+          <button onClick={clear} className="text-xs text-ink-soft underline">
+            Clear list
+          </button>
+        </div>
+        <ul className="divide-y divide-line border border-line">
+          {lines.map((line, i) => (
+            <li key={`${line.productId}-${line.size}`} className="flex items-center gap-4 p-3">
+              <Link href={`/product/${line.slug}`}>
+                <ProductImage
+                  src={line.imageUrl}
+                  alt={line.name}
+                  colorHex={line.colorHex}
+                  className="size-16 shrink-0"
+                />
+              </Link>
+              <div className="flex-1">
+                <Link href={`/product/${line.slug}`} className="text-sm font-medium hover:underline">
+                  {line.name}
+                </Link>
+                <div className="text-xs text-ink-soft">
+                  {line.fabric} · {line.size || "size to confirm"}
+                </div>
+              </div>
+              <label className="text-xs text-ink-soft">
+                Qty{" "}
+                <input
+                  type="number"
+                  min={1}
+                  value={line.quantity}
+                  onChange={(e) => setQuantity(i, Number.parseInt(e.target.value, 10) || 1)}
+                  className="w-16 border border-line px-2 py-1 text-sm"
+                />
+              </label>
+              <button
+                type="button"
+                onClick={() => remove(i)}
+                className="text-xs text-ink-soft underline"
+              >
+                Remove
+              </button>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <form action={action} className="space-y-5">
+        <input type="hidden" name="type" value="QUOTE_TRAY" />
+        <input type="hidden" name="items" value={JSON.stringify(lines)} />
+
+        <div>
+          <h2 className="font-display text-lg">Request a quote for these</h2>
+          <p className="mt-1 text-sm text-ink-soft">
+            Sends your list ({totalQuantity} {totalQuantity === 1 ? "piece" : "pieces"}) to
+            our team as one request. No pricing or checkout — we reply with pricing and
+            availability, usually within one business day.
+          </p>
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-2">
+          <Field label="Name" name="name" required error={err("name")} />
+          <Field label="Email" name="email" type="email" required error={err("email")} />
+          <Field label="Phone" name="phone" type="tel" />
+          <Field label="Event date" name="eventDate" type="date" />
+          <Field label="Venue" name="venue" />
+          <Field label="Guest count" name="guestCount" />
+        </div>
+        <Textarea label="Anything else we should know? (sizes, colors, timing…)" name="message" />
+
+        {/* Honeypot */}
+        <input type="text" name="company" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden />
+
+        {state.status === "error" && (
+          <p className="border-l-2 border-wine bg-ivory px-4 py-3 text-sm text-wine">
+            {state.message}
+          </p>
+        )}
+
+        <button
+          type="submit"
+          disabled={pending}
+          className="bg-wine px-8 py-3 text-sm font-medium text-white hover:bg-[#652638] disabled:opacity-50"
+        >
+          {pending ? "Sending…" : "Request a quote"}
+        </button>
+      </form>
+    </div>
   );
 }

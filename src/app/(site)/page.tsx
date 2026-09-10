@@ -35,10 +35,6 @@ export default async function HomePage() {
             Tablecloths, napkins, runners and chair covers for weddings, galas and
             corporate events across {SITE.serviceArea}.
           </p>
-          <div className="mt-7 flex flex-wrap gap-3">
-            <ButtonLink href="/products" variant="primary">Browse the collection</ButtonLink>
-            <ButtonLink href="/contact" variant="secondary">Talk to a specialist</ButtonLink>
-          </div>
         </div>
         {slides.length > 0 && <HeroCarousel slides={slides} />}
       </section>

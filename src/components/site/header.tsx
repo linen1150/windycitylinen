@@ -8,11 +8,12 @@ import { useQuote } from "@/components/quote/quote-store";
 import { SITE } from "@/lib/site";
 
 const NAV = [
+  { href: "/", label: "Home" },
   { href: "/products", label: "Products" },
-  { href: "/search", label: "Search" },
   { href: "/design-center", label: "Design Center" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
+  { href: "/my-inspirations", label: "My Inspirations" },
+  { href: "/about", label: "About Us" },
+  { href: "/contact", label: "Contact Us" },
 ];
 
 function HeaderSearch({ className = "", onSubmit }: { className?: string; onSubmit?: () => void }) {
@@ -61,9 +62,12 @@ export function Header() {
 
         <HeaderSearch className="hidden w-full max-w-xs md:flex lg:max-w-sm" />
 
-        <nav className="hidden items-center gap-6 text-sm lg:flex">
+        <nav className="hidden items-center gap-5 text-sm xl:flex">
           {NAV.map((item) => {
-            const active = pathname === item.href || pathname.startsWith(`${item.href}/`);
+            const active =
+              item.href === "/"
+                ? pathname === "/"
+                : pathname === item.href || pathname.startsWith(`${item.href}/`);
             return (
               <Link
                 key={item.href}
@@ -97,7 +101,7 @@ export function Header() {
             Request a quote
           </Link>
           <button
-            className="lg:hidden"
+            className="xl:hidden"
             onClick={() => setMenuOpen((v) => !v)}
             aria-label="Menu"
             aria-expanded={menuOpen}
@@ -113,7 +117,7 @@ export function Header() {
       </div>
 
       {menuOpen && (
-        <nav className="border-b border-line bg-paper px-4 py-3 lg:hidden">
+        <nav className="border-b border-line bg-paper px-4 py-3 xl:hidden">
           {NAV.map((item) => (
             <Link
               key={item.href}

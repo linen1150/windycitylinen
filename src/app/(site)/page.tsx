@@ -96,24 +96,6 @@ export default async function HomePage() {
           ))}
         </div>
       </section>
-
-      {/* CTA */}
-      <section className="bg-ink px-4 py-14 text-center text-[#EDE7D8] sm:px-8">
-        <h2 className="font-display text-2xl text-white">Planning an event?</h2>
-        <p className="mx-auto mt-2 max-w-md text-sm text-[#C9C1AE]">
-          Send us your date and vision. A real person replies within one business day —
-          no pricing games, no checkout.
-        </p>
-        <div className="mt-6 flex justify-center gap-3">
-          <ButtonLink href="/contact" variant="primary">Contact us</ButtonLink>
-          <a
-            href={`tel:${SITE.phoneHref}`}
-            className="inline-flex items-center border border-white/40 px-6 py-3 text-sm font-medium hover:bg-white/10"
-          >
-            Call {SITE.phone}
-          </a>
-        </div>
-      </section>
     </>
   );
 }

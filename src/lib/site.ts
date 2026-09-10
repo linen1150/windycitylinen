@@ -11,11 +11,13 @@ export const SITE = {
   locations: [
     {
       name: "Chicago Location",
+      note: "Showroom by appointment only",
       address: "1150 Willis Avenue, Wheeling, IL 60090",
       mapQuery: "Windy City Linen, 1150 Willis Avenue, Wheeling, IL 60090",
     },
     {
       name: "Wisconsin Location",
+      note: "Showroom by appointment only",
       address: "890 Elm Grove Rd, Building 1 Suite 105, Elm Grove, WI 53122",
       mapQuery: "890 Elm Grove Rd, Elm Grove, WI 53122",
     },

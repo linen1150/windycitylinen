@@ -40,7 +40,8 @@ export default function ContactPage() {
               <div className="mt-4">
                 <LocationMap query={loc.mapQuery} name={loc.name} />
               </div>
-              <div className="mt-4 text-sm text-ink-soft">
+              <div className="mt-4 space-y-1 text-sm text-ink-soft">
+                <p>{loc.note}</p>
                 <p>{loc.address}</p>
               </div>
             </div>

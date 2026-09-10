@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { getFeaturedByCategory, countProducts } from "@/lib/catalog";
 import { ProductImage } from "@/components/catalog/product-image";
-import { ButtonLink } from "@/components/ui/button";
 import { HeroCarousel } from "@/components/site/hero-carousel";
 import { db } from "@/lib/db";
 import { SITE } from "@/lib/site";
@@ -31,17 +30,15 @@ export default async function HomePage() {
           <h1 className="font-display text-4xl leading-tight sm:text-5xl">
             Linen that makes every table the centerpiece.
           </h1>
-          <p className="mt-5 max-w-xl text-ink-soft">
+          <h2 className="mt-5 font-display text-2xl">
+            A Chicago linen house since {SITE.since}
+          </h2>
+          <p className="mt-3 max-w-xl text-ink-soft">
             Tablecloths, napkins, runners and chair covers for weddings, galas and
             corporate events across {SITE.serviceArea}. Choose your fabric, color and
             size online, save what you like to My Inspirations, and our team follows up
             with pricing and availability within one business day.
           </p>
-
-          <div className="mt-6 flex flex-wrap gap-3">
-            <ButtonLink href="/products" variant="primary">Browse linens</ButtonLink>
-            <ButtonLink href="/search" variant="ghost">Search the catalog</ButtonLink>
-          </div>
 
           <dl className="mt-9 grid max-w-xl grid-cols-3 gap-5">
             {[

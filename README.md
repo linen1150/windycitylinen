@@ -57,9 +57,9 @@ src/app/                  routes (see below)
 | `/` | Home: hero, value-prop block, stats, shop-by-category, CTA |
 | `/products` | Full catalog with faceted filters (category, color family, fabric, size, collection) + pagination |
 | `/products/[category]` | Category-scoped catalog |
-| `/product/[slug]` | Detail: size selector, quantity, **Add to My Inspirations**, related items. No price. |
+| `/product/[slug]` | Detail: size selector, **Add to My Inspirations**, related items. No price, no quantity. |
 | `/search` | Free-text search + the same facets |
-| `/my-inspirations` | The single saved-items list (localStorage). Review size/quantity, then submit the whole list as one quote request. |
+| `/my-inspirations` | The single saved-items list (localStorage). Review the list, then send it to the team. |
 | `/contact` | Two-tier form: Quick message / Detailed quote request |
 | `/design-center` | Lookbooks, swatch cards, videos (from DB). Items without a URL link to contact — no dead buttons. |
 | `/about` | Static |
@@ -70,19 +70,21 @@ All pages set a unique `<title>`, meta description, and one `<h1>` (punch-list P
 
 ---
 
-## How quote requests work
+## How the quote flow works (the word "quote" stays out of visible copy)
 
-1. Visitor adds linens (product + size + quantity) to **My Inspirations** — stored in
-   `localStorage` (`wcl.inspirations.v2`), no login. The catalog card heart is a quick
-   add (size chosen later); the product page adds with a size + quantity.
-2. `/my-inspirations` shows the list (editable quantities) and collects
-   name/email/phone/date, then calls the `submitInquiry` server action.
+1. Visitor adds linens (product + size, **no quantity**) to **My Inspirations** — stored
+   in `localStorage` (`wcl.inspirations.v2`), no login. The catalog card heart is a quick
+   add (size chosen later); the product page adds with a size.
+2. `/my-inspirations` shows the list and collects name/email/phone/date, then calls the
+   `submitInquiry` server action.
 3. `createInquiry` writes a `QuoteRequest` (+ items) row **and** emails
-   `QUOTE_INBOX` (`info@windycitylinen.com`) via Resend.
+   `QUOTE_INBOX` (`info@windycitylinen.com`) via Resend. (`QuoteRequestItem.quantity`
+   still exists in the schema and defaults to 1; it is no longer collected or shown.)
 4. **No `RESEND_API_KEY` set → the email is logged to the server console** instead of
    sent, so the flow is testable in dev. Set the key in `.env` / Vercel to send for real.
 
-The contact form uses the same action with `type` `QUICK` or `DETAILED`.
+The contact form is a single Name/Email/Phone/Message form and uses the same action
+with `type` `QUICK`.
 
 ---
 

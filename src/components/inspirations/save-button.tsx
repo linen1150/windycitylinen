@@ -25,7 +25,6 @@ export function SaveButton({ product }: { product: ProductCardData }) {
             category: product.category,
             fabric: product.fabric,
             size: "",
-            quantity: 1,
             imageUrl: product.imageUrl,
             colorHex: product.colorHex,
           });

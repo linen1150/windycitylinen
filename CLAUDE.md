@@ -9,9 +9,11 @@ Read `README.md` and `HANDOFF.md` first.
 
 - **No pricing anywhere.** No prices, no cart totals, no checkout. Direct client requirement.
 - There is **one saved-items list: "My Inspirations"** (localStorage, no login). "Add to
-  My Inspirations" on a product carries size + quantity. The `/my-inspirations` page is
-  where the visitor reviews the list and submits it as **one quote request** → email to
-  `info@windycitylinen.com` + a `QuoteRequest` DB row. There is no separate quote tray.
+  My Inspirations" on a product carries a size only — **no quantities anywhere on the
+  site**. The `/my-inspirations` page is where the visitor reviews the list and sends it
+  to the team → email to `info@windycitylinen.com` + a `QuoteRequest` DB row. There is no
+  separate quote tray. (The word "quote" is avoided in visible copy — say "send us your
+  list" / "we follow up with pricing".)
 - Every product image needs real `alt` text; every page needs exactly one `<h1>`, a
   unique `<title>`, and a meta description (SEO was the #1 reason for the rebuild).
 

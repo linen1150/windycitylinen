@@ -11,8 +11,7 @@ import { ButtonLink } from "@/components/ui/button";
 const initial: InquiryFormState = { status: "idle" };
 
 export function InspirationsList() {
-  const { lines, count, totalQuantity, remove, setQuantity, clear, hydrated } =
-    useInspirations();
+  const { lines, count, remove, clear, hydrated } = useInspirations();
   const [state, action, pending] = useActionState(submitInquiry, initial);
 
   useEffect(() => {
@@ -82,16 +81,6 @@ export function InspirationsList() {
                   {line.fabric} · {line.size || "size to confirm"}
                 </div>
               </div>
-              <label className="text-xs text-ink-soft">
-                Qty{" "}
-                <input
-                  type="number"
-                  min={1}
-                  value={line.quantity}
-                  onChange={(e) => setQuantity(i, Number.parseInt(e.target.value, 10) || 1)}
-                  className="w-16 border border-line px-2 py-1 text-sm"
-                />
-              </label>
               <button
                 type="button"
                 onClick={() => remove(i)}
@@ -111,9 +100,8 @@ export function InspirationsList() {
         <div>
           <h2 className="font-display text-lg">Send this list to our team</h2>
           <p className="mt-1 text-sm text-ink-soft">
-            We&rsquo;ll take your list ({totalQuantity} {totalQuantity === 1 ? "piece" : "pieces"})
-            and follow up with pricing and availability, usually within one business
-            day. No pricing or checkout here.
+            We&rsquo;ll take your list and follow up with pricing and availability,
+            usually within one business day. No pricing or checkout here.
           </p>
         </div>
 

@@ -48,9 +48,9 @@ export default async function HomePage() {
               <p className="mt-3 max-w-xl text-ink-soft">
                 We work with planners, caterers and hosts to dress tables at every
                 scale — from intimate dinners to two-thousand-guest galas. Choose
-                your fabric, color and size online, save pieces to My Inspirations,
-                and our team follows up with pricing and availability within one
-                business day.
+                your fabric, color and size online, save the linens you like to My
+                Inspirations, and our team follows up with pricing and availability
+                within one business day.
               </p>
               <div className="mt-5 flex flex-wrap gap-3">
                 <ButtonLink href="/products" variant="primary">Browse linens</ButtonLink>

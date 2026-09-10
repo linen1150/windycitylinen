@@ -9,7 +9,6 @@ const lineSchema = z.object({
   productId: z.string().optional(),
   name: z.string().min(1),
   size: z.string().default(""),
-  quantity: z.coerce.number().int().min(1).max(100000),
 });
 
 export const inquirySchema = z.object({
@@ -45,7 +44,7 @@ export async function createInquiry(input: InquiryInput) {
         const p = await db.product.findUnique({ where: { id: l.productId }, select: { id: true } });
         productId = p?.id ?? null;
       }
-      return { productId, productName: l.name, sizeName: l.size, quantity: l.quantity };
+      return { productId, productName: l.name, sizeName: l.size };
     }),
   );
 
@@ -84,7 +83,7 @@ export async function createInquiry(input: InquiryInput) {
   if (record.items.length) {
     lines.push("", "Items requested:");
     for (const it of record.items) {
-      lines.push(`  • ${it.quantity} × ${it.productName}${it.sizeName ? ` — ${it.sizeName}` : ""}`);
+      lines.push(`  • ${it.productName}${it.sizeName ? ` — ${it.sizeName}` : ""}`);
     }
   }
 

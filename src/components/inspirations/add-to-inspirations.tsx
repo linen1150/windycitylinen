@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Minus, Plus } from "lucide-react";
 import { useInspirations } from "./inspirations-store";
 import type { ProductDetailData } from "@/lib/catalog";
 
@@ -10,7 +9,6 @@ export function AddToInspirations({ product }: { product: ProductDetailData }) {
   const { add } = useInspirations();
   const sizes = product.sizes;
   const [size, setSize] = useState(sizes[0] ?? "");
-  const [qty, setQty] = useState(10);
   const [added, setAdded] = useState(false);
 
   const submit = () => {
@@ -21,7 +19,6 @@ export function AddToInspirations({ product }: { product: ProductDetailData }) {
       category: product.category,
       fabric: product.fabric,
       size,
-      quantity: qty,
       imageUrl: product.imageUrl,
       colorHex: product.colorHex,
     });
@@ -52,35 +49,6 @@ export function AddToInspirations({ product }: { product: ProductDetailData }) {
         </div>
       )}
 
-      <div className="mt-5">
-        <div className="mb-2 text-xs font-semibold uppercase tracking-wide text-ink-soft">
-          Quantity
-        </div>
-        <div className="inline-flex items-center border border-line">
-          <button
-            onClick={() => setQty((q) => Math.max(1, q - 1))}
-            className="flex size-9 items-center justify-center"
-            aria-label="Decrease quantity"
-          >
-            <Minus size={13} />
-          </button>
-          <input
-            value={qty}
-            onChange={(e) => setQty(Math.max(1, Number.parseInt(e.target.value, 10) || 1))}
-            inputMode="numeric"
-            className="w-14 border-x border-line py-2 text-center text-sm"
-            aria-label="Quantity"
-          />
-          <button
-            onClick={() => setQty((q) => q + 1)}
-            className="flex size-9 items-center justify-center"
-            aria-label="Increase quantity"
-          >
-            <Plus size={13} />
-          </button>
-        </div>
-      </div>
-
       <div className="mt-6 flex flex-wrap items-center gap-3">
         <button
           onClick={submit}
@@ -97,8 +65,8 @@ export function AddToInspirations({ product }: { product: ProductDetailData }) {
 
       <p className="mt-5 border-l-2 border-brass bg-ivory px-4 py-3 text-[13px] text-ink-soft">
         Save the linens you&rsquo;re considering to My Inspirations, then send the list to
-        our team. No pricing is shown — we follow up directly with pricing based on
-        quantity, dates and delivery zone, usually within one business day.
+        our team. No pricing is shown — we follow up directly with pricing based on your
+        event, dates and delivery zone, usually within one business day.
       </p>
     </div>
   );

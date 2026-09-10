@@ -16,7 +16,6 @@ export type InspirationLine = {
   category: string;
   fabric: string;
   size: string;
-  quantity: number;
   imageUrl: string | null;
   colorHex: string | null;
 };
@@ -24,11 +23,9 @@ export type InspirationLine = {
 type InspirationsContextValue = {
   lines: InspirationLine[];
   count: number;
-  totalQuantity: number;
   add: (line: InspirationLine) => void;
   remove: (index: number) => void;
   removeBySlug: (slug: string) => void;
-  setQuantity: (index: number, quantity: number) => void;
   setSize: (index: number, size: string) => void;
   clear: () => void;
   has: (slug: string) => boolean;
@@ -63,15 +60,10 @@ export function InspirationsProvider({ children }: { children: React.ReactNode }
 
   const add = useCallback((line: InspirationLine) => {
     setLines((prev) => {
-      const i = prev.findIndex(
+      const exists = prev.some(
         (l) => l.productId === line.productId && l.size === line.size,
       );
-      if (i >= 0) {
-        const next = [...prev];
-        next[i] = { ...next[i], quantity: next[i].quantity + line.quantity };
-        return next;
-      }
-      return [...prev, line];
+      return exists ? prev : [...prev, line];
     });
   }, []);
 
@@ -82,14 +74,6 @@ export function InspirationsProvider({ children }: { children: React.ReactNode }
 
   const removeBySlug = useCallback(
     (slug: string) => setLines((prev) => prev.filter((l) => l.slug !== slug)),
-    [],
-  );
-
-  const setQuantity = useCallback(
-    (index: number, quantity: number) =>
-      setLines((prev) =>
-        prev.map((l, i) => (i === index ? { ...l, quantity: Math.max(1, quantity) } : l)),
-      ),
     [],
   );
 
@@ -105,17 +89,15 @@ export function InspirationsProvider({ children }: { children: React.ReactNode }
     () => ({
       lines,
       count: lines.length,
-      totalQuantity: lines.reduce((n, l) => n + l.quantity, 0),
       add,
       remove,
       removeBySlug,
-      setQuantity,
       setSize,
       clear,
       has: (slug: string) => lines.some((l) => l.slug === slug),
       hydrated,
     }),
-    [lines, hydrated, add, remove, removeBySlug, setQuantity, setSize, clear],
+    [lines, hydrated, add, remove, removeBySlug, setSize, clear],
   );
 
   return (

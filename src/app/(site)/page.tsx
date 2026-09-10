@@ -30,14 +30,21 @@ export default async function HomePage() {
           <h1 className="font-display text-4xl leading-tight sm:text-5xl">
             Linen that makes every table the centerpiece.
           </h1>
-          <h2 className="mt-5 font-display text-2xl">
-            A Chicago linen house since {SITE.since}
-          </h2>
-          <p className="mt-3 max-w-xl text-ink-soft">
+          <p className="mt-5 max-w-xl text-ink-soft">
             Tablecloths, napkins, runners and chair covers for weddings, galas and
             corporate events across {SITE.serviceArea}. Choose your fabric, color and
             size online, save what you like to My Inspirations, and our team follows up
             with pricing and availability within one business day.
+          </p>
+
+          <hr className="mt-8 max-w-xl border-line" />
+
+          <h2 className="mt-8 font-display text-2xl">
+            A Chicago linen house since {SITE.since}
+          </h2>
+          <p className="mt-3 max-w-xl text-ink-soft">
+            We work with planners, caterers and hosts to dress tables at every scale —
+            from intimate dinners to two-thousand-guest galas.
           </p>
 
           <dl className="mt-9 grid max-w-xl grid-cols-3 gap-5">

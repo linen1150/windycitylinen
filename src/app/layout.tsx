@@ -2,9 +2,6 @@ import type { Metadata } from "next";
 import { Fraunces, Work_Sans, Great_Vibes } from "next/font/google";
 import "./globals.css";
 import { SITE } from "@/lib/site";
-import { InspirationsProvider } from "@/components/inspirations/inspirations-store";
-import { Header } from "@/components/site/header";
-import { Footer } from "@/components/site/footer";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -46,13 +43,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${fraunces.variable} ${workSans.variable} ${greatVibes.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col">
-        <InspirationsProvider>
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </InspirationsProvider>
-      </body>
+      <body className="min-h-full">{children}</body>
     </html>
   );
 }

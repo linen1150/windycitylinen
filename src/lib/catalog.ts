@@ -59,6 +59,9 @@ export function categoryNoun(category: string): string {
 /** Public URL for a product photo, or null if none is on file yet. */
 export function imageUrl(category: string, filename: string | null): string | null {
   if (!filename) return null;
+  // Admins can enter a bare filename (resolved against the category folder),
+  // an absolute site path, or a full URL.
+  if (/^(https?:)?\/\//.test(filename) || filename.startsWith("/")) return filename;
   return `/images/${category}/${filename}`;
 }
 

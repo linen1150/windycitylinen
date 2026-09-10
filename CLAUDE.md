@@ -27,7 +27,12 @@ Read `README.md` and `HANDOFF.md` first.
 
 ## Where things live
 
+- Marketing site: `src/app/(site)/*` (route group, own layout with Header/Footer).
+  Admin: `src/app/admin/*` (own chrome-free layout; `(panel)` group holds the guarded pages).
 - Catalog queries + filtering: `src/lib/catalog.ts`
-- Saved list + quote submit: `src/components/inspirations/*`, `src/app/my-inspirations/*`,
+- Saved list + quote submit: `src/components/inspirations/*`, `src/app/(site)/my-inspirations/*`,
   `src/lib/inquiries.ts`, `src/app/actions.ts`
+- Admin auth: `src/lib/auth.ts` (`requireAdmin()` in every admin page + server action).
+  Admin mutations: `src/lib/admin/*.ts` (`"use server"`). Admin UI kit: `src/components/admin/*`.
 - Design system: `src/app/globals.css` (ivory/ink/brass/wine; Fraunces/Work Sans/Great Vibes)
+- Next 16 note: middleware is now `proxy.ts`; we don't use it — auth is the layout guard.

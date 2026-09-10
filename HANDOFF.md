@@ -31,17 +31,36 @@ what the rebuild covers so far.
 - Image filename reconciliation (the CSV's `image_filename` column was wrong; the
   embedded app-v2 export's filenames were correct and all 1,220 now resolve).
 
-## Still to build
+## Admin panel — ✅ built (`/admin`)
 
-1. **Admin panel** — `windycitylinen-admin.jsx` is the reference. Needs:
-   - Login screen (model `AdminUser` + bcrypt already seeded with `ADMIN_EMAIL`/`ADMIN_PASSWORD`; needs the session cookie + middleware + login route)
-   - Products CRUD (incl. the `keywords` field), image upload, taxonomy CRUD, Design Center CRUD
-   - A quote-requests inbox view (`/admin/quotes`) — rows already being written
-2. **Content population** (via the admin once built): product keywords, collection
-   assignments, Design Center destination URLs, final About copy.
-3. **Image storage migration** — off `public/images` to Supabase Storage/Cloudinary.
-4. **Deploy** — Supabase + Vercel + GitHub, env vars, migrate/seed on Supabase, domain cutover.
-5. **Mobile device QA** (punch 6.1).
+- **Auth**: `/admin/login` (email + password, bcrypt), signed httpOnly session cookie
+  (`jose`), `requireAdmin()` guard on the `(panel)` layout and every server action,
+  sign-out. First admin seeded from `ADMIN_EMAIL` / `ADMIN_PASSWORD`.
+- **Dashboard** — catalog counts + recent quote requests.
+- **Products** — searchable list, add / edit / delete, live/hidden toggle, size &
+  collection assignment, keywords, per-product image (filename, path, URL, or upload).
+- **Categories / fabrics / sizes / collections** — inline add / rename / delete
+  (a category or fabric can't be deleted while products use it).
+- **Design Center** — add / edit / delete / reorder items per section; set a real URL
+  to turn a card into a working link.
+- **Quote requests** — inbox with status filter, detail view (contact fields + linens),
+  status change, delete. The notification email links straight to `/admin/quotes/[id]`.
+- **Images** — library overview, recent uploads, list of products with no image.
+  Upload route (`/api/admin/upload`) writes to `public/images/uploads/` — **works in
+  dev only**; production needs object storage (see below).
+
+The marketing site now lives in the `(site)` route group (own layout with header/footer);
+`/admin` has its own chrome-free shell.
+
+## Still to build / do
+
+1. **Content population** (via the admin): product keywords, collection assignments,
+   Design Center destination URLs, final About copy.
+2. **Image storage migration** — off `public/images` to Supabase Storage / Cloudinary
+   so admin uploads work in production. `imageUrl()` already accepts full URLs.
+3. **Deploy** — Supabase + Vercel + GitHub, env vars (incl. a real `ADMIN_SESSION_SECRET`),
+   migrate/seed on Supabase, domain cutover.
+4. **Mobile device QA** (punch 6.1).
 
 ## Data-quality notes found during the build
 

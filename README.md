@@ -45,9 +45,12 @@ scripts/build-catalog.mjs  CSV/JSON/image reconciliation -> data/catalog.json
 prisma/schema.prisma      data model
 prisma/seed.ts            seeder
 public/images/<Category>/  1,219 product photos (jpg + webp), served statically
-src/lib/                  db client, catalog queries, email, inquiry handling, site constants
-src/components/           site chrome, catalog (cards/filters), quote tray, inspirations
-src/app/                  routes (see below)
+public/images/uploads/    admin-uploaded images (dev only; gitignored)
+src/lib/                  db client, catalog queries, email, inquiries, auth, admin actions
+src/lib/admin/            server actions for the admin panel (products, taxonomy, …)
+src/components/           site chrome, catalog, inspirations, admin UI kit
+src/app/(site)/           the marketing site (own layout: header + footer)
+src/app/admin/            the admin panel (own chrome-free layout)
 ```
 
 ### Routes (public site — built)
@@ -60,13 +63,21 @@ src/app/                  routes (see below)
 | `/product/[slug]` | Detail: size selector, **Add to My Inspirations**, related items. No price, no quantity. |
 | `/search` | Free-text search + the same facets |
 | `/my-inspirations` | The single saved-items list (localStorage). Review the list, then send it to the team. |
-| `/contact` | Two-tier form: Quick message / Detailed quote request |
+| `/contact` | One contact form beside the two showroom locations (Google Maps embeds) |
 | `/design-center` | Lookbooks, swatch cards, videos (from DB). Items without a URL link to contact — no dead buttons. |
 | `/about` | Static |
 | `not-found` | Branded 404 |
 | `/robots.txt`, `/sitemap.xml` | Generated |
 
 All pages set a unique `<title>`, meta description, and one `<h1>` (punch-list P1).
+
+### Admin (`/admin`)
+
+Sign in at `/admin/login` with `ADMIN_EMAIL` / `ADMIN_PASSWORD` (from `.env`; the first
+admin is created by `npm run db:seed`). Sections: Dashboard, Products (list + add/edit/
+delete + publish toggle), Categories/fabrics/sizes/collections, Design Center, Images,
+Quote requests (inbox + status). Auth is a signed httpOnly cookie (`jose` HS256, keyed
+by `ADMIN_SESSION_SECRET`); every admin page and server action calls `requireAdmin()`.
 
 ---
 

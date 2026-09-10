@@ -1,6 +1,4 @@
-import Link from "next/link";
-import { getFeaturedByCategory, countProducts } from "@/lib/catalog";
-import { ProductImage } from "@/components/catalog/product-image";
+import { countProducts } from "@/lib/catalog";
 import { HeroCarousel } from "@/components/site/hero-carousel";
 import { db } from "@/lib/db";
 import { SITE } from "@/lib/site";
@@ -8,8 +6,7 @@ import { SITE } from "@/lib/site";
 export const dynamic = "force-dynamic";
 
 export default async function HomePage() {
-  const [featured, total, heroSlides] = await Promise.all([
-    getFeaturedByCategory(),
+  const [total, heroSlides] = await Promise.all([
     countProducts(),
     db.heroSlide.findMany({
       where: { published: true, NOT: { imagePath: "" } },
@@ -61,30 +58,6 @@ export default async function HomePage() {
           </dl>
         </div>
         {slides.length > 0 && <HeroCarousel slides={slides} />}
-      </section>
-
-      {/* Shop by category */}
-      <section className="mx-auto max-w-6xl px-4 py-14 sm:px-8">
-        <div className="flex items-end justify-between">
-          <h2 className="font-display text-2xl">Shop by category</h2>
-          <Link href="/products" className="text-sm text-wine underline underline-offset-4">
-            View full catalog
-          </Link>
-        </div>
-        <div className="mt-6 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-6">
-          {featured.map((p) => (
-            <Link key={p.id} href={`/products/${p.categorySlug}`} className="group block">
-              <ProductImage
-                src={p.imageUrl}
-                alt={p.category}
-                colorHex={p.colorHex}
-                className="aspect-square w-full transition-transform duration-300 group-hover:scale-[1.03]"
-                sizes="(max-width: 640px) 50vw, 200px"
-              />
-              <div className="mt-2 text-sm font-medium">{p.category}</div>
-            </Link>
-          ))}
-        </div>
       </section>
     </>
   );

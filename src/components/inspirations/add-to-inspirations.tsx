@@ -8,22 +8,28 @@ import type { ProductDetailData } from "@/lib/catalog";
 export function AddToInspirations({ product }: { product: ProductDetailData }) {
   const { add } = useInspirations();
   const sizes = product.sizes;
-  const [size, setSize] = useState(sizes[0] ?? "");
-  const [added, setAdded] = useState(false);
+  const [selected, setSelected] = useState<string[]>(sizes[0] ? [sizes[0]] : []);
+  const [added, setAdded] = useState(0);
+
+  const toggle = (s: string) =>
+    setSelected((prev) => (prev.includes(s) ? prev.filter((x) => x !== s) : [...prev, s]));
 
   const submit = () => {
-    add({
-      productId: product.id,
-      slug: product.slug,
-      name: product.name,
-      category: product.category,
-      fabric: product.fabric,
-      size,
-      imageUrl: product.imageUrl,
-      colorHex: product.colorHex,
-    });
-    setAdded(true);
-    setTimeout(() => setAdded(false), 3000);
+    const chosen = selected.length ? selected : [""];
+    for (const size of chosen) {
+      add({
+        productId: product.id,
+        slug: product.slug,
+        name: product.name,
+        category: product.category,
+        fabric: product.fabric,
+        size,
+        imageUrl: product.imageUrl,
+        colorHex: product.colorHex,
+      });
+    }
+    setAdded(chosen.length);
+    setTimeout(() => setAdded(0), 3000);
   };
 
   return (
@@ -31,32 +37,42 @@ export function AddToInspirations({ product }: { product: ProductDetailData }) {
       {sizes.length > 0 && (
         <div className="mt-6">
           <div className="mb-2 text-xs font-semibold uppercase tracking-wide text-ink-soft">
-            Size
+            Size <span className="font-normal normal-case">— choose one or more</span>
           </div>
           <div className="flex flex-wrap gap-2">
-            {sizes.map((s) => (
-              <button
-                key={s}
-                onClick={() => setSize(s)}
-                className={`border px-3.5 py-2 text-[13px] ${
-                  size === s ? "border-ink bg-ink text-white" : "border-line hover:border-ink"
-                }`}
-              >
-                {s}
-              </button>
-            ))}
+            {sizes.map((s) => {
+              const on = selected.includes(s);
+              return (
+                <button
+                  key={s}
+                  type="button"
+                  aria-pressed={on}
+                  onClick={() => toggle(s)}
+                  className={`border px-3.5 py-2 text-[13px] ${
+                    on ? "border-ink bg-ink text-white" : "border-line hover:border-ink"
+                  }`}
+                >
+                  {s}
+                </button>
+              );
+            })}
           </div>
         </div>
       )}
 
       <div className="mt-6 flex flex-wrap items-center gap-3">
         <button
+          type="button"
           onClick={submit}
           className="bg-wine px-6 py-3 text-sm font-medium text-white hover:bg-[#652638]"
         >
-          {added ? "Added to My Inspirations ✓" : "Add to My Inspirations"}
+          {added
+            ? `Added ${added === 1 ? "" : `${added} sizes `}to My Inspirations ✓`
+            : selected.length > 1
+              ? `Add ${selected.length} sizes to My Inspirations`
+              : "Add to My Inspirations"}
         </button>
-        {added && (
+        {added > 0 && (
           <Link href="/my-inspirations" className="text-sm text-wine underline underline-offset-2">
             View My Inspirations
           </Link>

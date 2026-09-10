@@ -127,7 +127,7 @@ export function InspirationsList() {
         <button
           type="submit"
           disabled={pending}
-          className="bg-wine px-8 py-3 text-sm font-medium text-white hover:bg-[#652638] disabled:opacity-50"
+          className="bg-brass px-8 py-3 text-sm font-medium text-white hover:bg-brass-dark disabled:opacity-50"
         >
           {pending ? "Sending…" : "Send my list"}
         </button>

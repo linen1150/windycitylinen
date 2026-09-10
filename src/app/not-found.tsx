@@ -11,7 +11,10 @@ export default function NotFound() {
         It may have moved, or the link may be out of date.
       </p>
       <div className="mt-6 flex gap-3">
-        <Link href="/" className="bg-wine px-6 py-3 text-sm font-medium text-white">
+        <Link
+          href="/"
+          className="bg-brass px-6 py-3 text-sm font-medium text-white hover:bg-brass-dark"
+        >
           Back to home
         </Link>
         <Link href="/products" className="border border-ink px-6 py-3 text-sm font-medium">

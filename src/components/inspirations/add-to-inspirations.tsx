@@ -64,7 +64,7 @@ export function AddToInspirations({ product }: { product: ProductDetailData }) {
         <button
           type="button"
           onClick={submit}
-          className="bg-wine px-6 py-3 text-sm font-medium text-white hover:bg-[#652638]"
+          className="bg-brass px-6 py-3 text-sm font-medium text-white hover:bg-brass-dark"
         >
           {added
             ? `Added ${added === 1 ? "" : `${added} sizes `}to My Inspirations ✓`

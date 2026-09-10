@@ -52,6 +52,12 @@ what the rebuild covers so far.
 The marketing site now lives in the `(site)` route group (own layout with header/footer);
 `/admin` has its own chrome-free shell.
 
+## Content to supply
+
+- **Home hero photos** — the hero is a 4-image carousel reading `public/home/hero-1.jpg`
+  … `hero-4.jpg` (currently placeholder product shots). Drop in four real event photos
+  at ~4:3, same filenames, and update the `alt` text in `src/components/site/hero-carousel.tsx`.
+
 ## Still to build / do
 
 1. **Content population** (via the admin): product keywords, collection assignments,

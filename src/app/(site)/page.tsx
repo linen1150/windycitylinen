@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getFeaturedByCategory, countProducts } from "@/lib/catalog";
 import { ProductImage } from "@/components/catalog/product-image";
 import { ButtonLink } from "@/components/ui/button";
+import { HeroCarousel } from "@/components/site/hero-carousel";
 import { SITE } from "@/lib/site";
 
 export const revalidate = 300;
@@ -26,15 +27,7 @@ export default async function HomePage() {
             <ButtonLink href="/contact" variant="secondary">Talk to a specialist</ButtonLink>
           </div>
         </div>
-        {featured[0] && (
-          <ProductImage
-            src={featured[0].imageUrl}
-            alt={`${featured[0].fabric} ${featured[0].colorName} linen`}
-            colorHex={featured[0].colorHex}
-            className="aspect-[4/3] w-full"
-            sizes="(max-width: 768px) 100vw, 460px"
-          />
-        )}
+        <HeroCarousel />
       </section>
 
       {/* Value proposition (punch-list 3.2) */}

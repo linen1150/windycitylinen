@@ -90,15 +90,15 @@ export function AddToInspirations({ product }: { product: ProductDetailData }) {
         </button>
         {added && (
           <Link href="/my-inspirations" className="text-sm text-wine underline underline-offset-2">
-            View list &amp; request a quote
+            View My Inspirations
           </Link>
         )}
       </div>
 
       <p className="mt-5 border-l-2 border-brass bg-ivory px-4 py-3 text-[13px] text-ink-soft">
-        Add the linens you&rsquo;re considering to My Inspirations, then send the list to
-        our team for a quote. No pricing is shown — we quote each request directly based
-        on quantity, dates and delivery zone, usually within one business day.
+        Save the linens you&rsquo;re considering to My Inspirations, then send the list to
+        our team. No pricing is shown — we follow up directly with pricing based on
+        quantity, dates and delivery zone, usually within one business day.
       </p>
     </div>
   );

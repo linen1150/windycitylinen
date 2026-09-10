@@ -6,7 +6,7 @@ import { CatalogBrowser } from "@/components/catalog/catalog-browser";
 export const metadata: Metadata = {
   title: "All Linen Rentals",
   description:
-    "Browse the full Windy City Linen catalog — tablecloths, overlays, napkins, table runners, cuffs, spandex and chair covers. Filter by color, fabric, size and collection, then request a quote.",
+    "Browse the full Windy City Linen catalog — tablecloths, overlays, napkins, table runners, cuffs, spandex and chair covers. Filter by color, fabric, size and collection, then send us your shortlist.",
 };
 
 export default async function ProductsPage({ searchParams }: PageProps<"/products">) {
@@ -18,7 +18,7 @@ export default async function ProductsPage({ searchParams }: PageProps<"/product
       <h1 className="font-display text-3xl">All products</h1>
       <p className="mt-2 max-w-xl text-ink-soft">
         Every linen in the collection. Use the filters to narrow by color, fabric,
-        size or collection — pricing is quoted directly by our team.
+        size or collection — pricing comes directly from our team.
       </p>
       <div className="mt-8">
         <CatalogBrowser

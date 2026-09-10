@@ -17,7 +17,7 @@ export async function generateMetadata({
     title: `${product.name} ${noun}`,
     description: `${product.fabric} ${product.colorName} ${noun} rental from Windy City Linen. Available in ${
       product.sizes.length ? product.sizes.join(", ") : "multiple sizes"
-    }. Add to My Inspirations and request a quote — no pricing shown, quoted directly by our team.`,
+    }. Add to My Inspirations and send your list — no pricing shown; our team follows up directly.`,
   };
 }
 

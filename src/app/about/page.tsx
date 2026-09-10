@@ -25,8 +25,8 @@ export default function AboutPage() {
         </p>
         <p>
           We don&rsquo;t publish pricing or run a checkout. Tell us what you&rsquo;re
-          planning and we&rsquo;ll build a quote around your quantities, dates and
-          delivery zone.
+          planning and we&rsquo;ll put together pricing around your quantities, dates
+          and delivery zone.
         </p>
       </div>
       <div className="mt-8 flex flex-wrap gap-3">

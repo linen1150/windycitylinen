@@ -7,7 +7,7 @@ import { SearchBox } from "@/components/catalog/search-box";
 export const metadata: Metadata = {
   title: "Search the Catalog",
   description:
-    "Search all 1,200+ Windy City Linen rentals by color, fabric, size, collection or descriptive keyword, then request a quote.",
+    "Search all 1,200+ Windy City Linen rentals by color, fabric, size, collection or descriptive keyword, then send us your shortlist.",
 };
 
 export default async function SearchPage({ searchParams }: PageProps<"/search">) {

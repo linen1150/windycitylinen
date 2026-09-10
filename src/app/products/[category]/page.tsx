@@ -18,7 +18,7 @@ export async function generateMetadata({
   if (!cat) return {};
   return {
     title: `${cat.name} Rentals`,
-    description: `${cat.name} for weddings, galas and corporate events across Chicago and Milwaukee. Filter by color, fabric and size, then request a quote from Windy City Linen.`,
+    description: `${cat.name} for weddings, galas and corporate events across Chicago and Milwaukee. Filter by color, fabric and size, then send your shortlist to Windy City Linen.`,
   };
 }
 

@@ -24,10 +24,10 @@ export function InspirationsList() {
   if (state.status === "success") {
     return (
       <div className="border border-line bg-ivory p-8 text-center">
-        <h2 className="font-display text-2xl">Request received</h2>
+        <h2 className="font-display text-2xl">List received</h2>
         <p className="mx-auto mt-3 max-w-md text-ink-soft">
-          Thanks — your quote request is in. A member of our team will follow up
-          within one business day.
+          Thanks — your list is with our team. A member of our team will follow up
+          with pricing and availability within one business day.
         </p>
         <ButtonLink href="/products" variant="primary" className="mt-6">
           Keep browsing
@@ -109,11 +109,11 @@ export function InspirationsList() {
         <input type="hidden" name="items" value={JSON.stringify(lines)} />
 
         <div>
-          <h2 className="font-display text-lg">Request a quote for these</h2>
+          <h2 className="font-display text-lg">Send this list to our team</h2>
           <p className="mt-1 text-sm text-ink-soft">
-            Sends your list ({totalQuantity} {totalQuantity === 1 ? "piece" : "pieces"}) to
-            our team as one request. No pricing or checkout — we reply with pricing and
-            availability, usually within one business day.
+            We&rsquo;ll take your list ({totalQuantity} {totalQuantity === 1 ? "piece" : "pieces"})
+            and follow up with pricing and availability, usually within one business
+            day. No pricing or checkout here.
           </p>
         </div>
 
@@ -141,7 +141,7 @@ export function InspirationsList() {
           disabled={pending}
           className="bg-wine px-8 py-3 text-sm font-medium text-white hover:bg-[#652638] disabled:opacity-50"
         >
-          {pending ? "Sending…" : "Request a quote"}
+          {pending ? "Sending…" : "Send my list"}
         </button>
       </form>
     </div>

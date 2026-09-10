@@ -6,7 +6,7 @@ import type { DesignCenterSection } from "@prisma/client";
 export const metadata: Metadata = {
   title: "Design Center",
   description:
-    "Seasonal lookbooks, digital swatch cards and styling videos from Windy City Linen to help you plan your table before you request a quote.",
+    "Seasonal lookbooks, digital swatch cards and styling videos from Windy City Linen to help you plan your table before you get in touch.",
 };
 
 const SECTION_META: Record<
@@ -46,7 +46,7 @@ export default async function DesignCenterPage() {
       <h1 className="font-display text-3xl">Design Center</h1>
       <p className="mt-2 max-w-xl text-ink-soft">
         Seasonal lookbooks, digital swatch cards and styling videos to plan your
-        table before you request a quote.
+        table before you get in touch.
       </p>
 
       {SECTION_ORDER.map((section) => {

@@ -27,7 +27,7 @@ export function Footer() {
             <li><a href={`tel:${SITE.phoneHref}`} className="hover:text-white">{SITE.phone}</a></li>
             <li><a href={`mailto:${SITE.email}`} className="hover:text-white">{SITE.email}</a></li>
             <li>{SITE.showrooms.join(" · ")}</li>
-            <li><Link href="/contact" className="hover:text-white">Request a quote</Link></li>
+            <li><Link href="/contact" className="hover:text-white">Contact us</Link></li>
           </ul>
         </div>
       </div>

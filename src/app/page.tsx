@@ -48,7 +48,7 @@ export default async function HomePage() {
               <p className="mt-3 max-w-xl text-ink-soft">
                 We work with planners, caterers and hosts to dress tables at every
                 scale — from intimate dinners to two-thousand-guest galas. Choose
-                your fabric, color and size online, add pieces to a quote request,
+                your fabric, color and size online, save pieces to My Inspirations,
                 and our team follows up with pricing and availability within one
                 business day.
               </p>
@@ -105,7 +105,7 @@ export default async function HomePage() {
           no pricing games, no checkout.
         </p>
         <div className="mt-6 flex justify-center gap-3">
-          <ButtonLink href="/contact" variant="primary">Request a quote</ButtonLink>
+          <ButtonLink href="/contact" variant="primary">Contact us</ButtonLink>
           <a
             href={`tel:${SITE.phoneHref}`}
             className="inline-flex items-center border border-white/40 px-6 py-3 text-sm font-medium hover:bg-white/10"

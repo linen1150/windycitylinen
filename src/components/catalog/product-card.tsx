@@ -1,7 +1,6 @@
 import Link from "next/link";
 import type { ProductCardData } from "@/lib/catalog";
 import { ProductImage } from "./product-image";
-import { SaveButton } from "@/components/inspirations/save-button";
 
 export function ProductCard({ product }: { product: ProductCardData }) {
   return (
@@ -19,7 +18,6 @@ export function ProductCard({ product }: { product: ProductCardData }) {
             Limited
           </span>
         )}
-        <SaveButton product={product} />
       </div>
       <div className="mt-3">
         <div className="text-sm font-medium text-ink">{product.name}</div>

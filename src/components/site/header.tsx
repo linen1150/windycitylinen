@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { Bookmark, Menu, Phone, Search, X } from "lucide-react";
+import { Menu, Phone, Search, X } from "lucide-react";
 import { useInspirations } from "@/components/inspirations/inspirations-store";
 import { SITE } from "@/lib/site";
 
@@ -77,24 +77,15 @@ export function Header() {
                 }`}
               >
                 {item.label}
+                {item.href === "/my-inspirations" && count > 0 && (
+                  <span className="ml-1 text-ink-soft">({count})</span>
+                )}
               </Link>
             );
           })}
         </nav>
 
         <div className="ml-auto flex items-center gap-3">
-          {count > 0 && (
-            <Link
-              href="/my-inspirations"
-              aria-label={`My Inspirations (${count} ${count === 1 ? "linen" : "linens"})`}
-              className="relative hover:text-brass-dark"
-            >
-              <Bookmark size={20} />
-              <span className="absolute -right-2 -top-2 flex size-4 items-center justify-center rounded-full bg-brass-dark text-[10px] text-white">
-                {count}
-              </span>
-            </Link>
-          )}
           <button
             className="xl:hidden"
             onClick={() => setMenuOpen((v) => !v)}
@@ -121,6 +112,9 @@ export function Header() {
               className="block py-2.5 text-sm"
             >
               {item.label}
+              {item.href === "/my-inspirations" && count > 0 && (
+                <span className="ml-1 text-ink-soft">({count})</span>
+              )}
             </Link>
           ))}
           <a href={`tel:${SITE.phoneHref}`} className="block py-2.5 text-sm text-brass-dark">

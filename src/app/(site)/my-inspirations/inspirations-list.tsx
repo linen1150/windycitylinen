@@ -39,8 +39,8 @@ export function InspirationsList() {
     return (
       <div className="border border-line bg-ivory p-8 text-center">
         <p className="text-ink-soft">
-          You haven&rsquo;t saved anything yet. Use the bookmark on any linen while you
-          browse, or &ldquo;Add to My Inspirations&rdquo; on a product page.
+          You haven&rsquo;t saved anything yet. Open any linen and choose a size, then
+          &ldquo;Add to My Inspirations&rdquo;.
         </p>
         <ButtonLink href="/products" variant="primary" className="mt-4">
           Browse the collection

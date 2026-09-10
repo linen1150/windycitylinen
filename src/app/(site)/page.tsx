@@ -3,17 +3,30 @@ import { getFeaturedByCategory, countProducts } from "@/lib/catalog";
 import { ProductImage } from "@/components/catalog/product-image";
 import { ButtonLink } from "@/components/ui/button";
 import { HeroCarousel } from "@/components/site/hero-carousel";
+import { db } from "@/lib/db";
 import { SITE } from "@/lib/site";
 
-export const revalidate = 300;
+export const dynamic = "force-dynamic";
 
 export default async function HomePage() {
-  const [featured, total] = await Promise.all([getFeaturedByCategory(), countProducts()]);
+  const [featured, total, heroSlides] = await Promise.all([
+    getFeaturedByCategory(),
+    countProducts(),
+    db.heroSlide.findMany({
+      where: { published: true, NOT: { imagePath: "" } },
+      orderBy: { order: "asc" },
+    }),
+  ]);
+  const slides = heroSlides.map((s) => ({ src: s.imagePath, alt: s.alt }));
 
   return (
     <>
       {/* Hero */}
-      <section className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 sm:px-8 md:grid-cols-[1.1fr_0.9fr]">
+      <section
+        className={`mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 sm:px-8 ${
+          slides.length ? "md:grid-cols-[1.1fr_0.9fr]" : ""
+        }`}
+      >
         <div>
           <h1 className="font-display text-4xl leading-tight sm:text-5xl">
             Linen that makes every table the centerpiece.
@@ -27,7 +40,7 @@ export default async function HomePage() {
             <ButtonLink href="/contact" variant="secondary">Talk to a specialist</ButtonLink>
           </div>
         </div>
-        <HeroCarousel />
+        {slides.length > 0 && <HeroCarousel slides={slides} />}
       </section>
 
       {/* Value proposition (punch-list 3.2) */}

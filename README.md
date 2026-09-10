@@ -75,8 +75,8 @@ All pages set a unique `<title>`, meta description, and one `<h1>` (punch-list P
 
 Sign in at `/admin/login` with `ADMIN_EMAIL` / `ADMIN_PASSWORD` (from `.env`; the first
 admin is created by `npm run db:seed`). Sections: Dashboard, Products (list + add/edit/
-delete + publish toggle), Categories/fabrics/sizes/collections, Design Center, Images,
-Quote requests (inbox + status). Auth is a signed httpOnly cookie (`jose` HS256, keyed
+delete + publish toggle), Categories/fabrics/sizes/collections, Design Center,
+Home hero (carousel photos), Images, Quote requests (inbox + status). Auth is a signed httpOnly cookie (`jose` HS256, keyed
 by `ADMIN_SESSION_SECRET`); every admin page and server action calls `requireAdmin()`.
 
 ---

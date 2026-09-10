@@ -189,6 +189,20 @@ model QuoteRequestItem {
   @@index([quoteRequestId])
 }
 
+// --- Home page ---------------------------------------------------------
+
+model HeroSlide {
+  id        String   @id @default(cuid())
+  order     Int      @default(0)
+  imagePath String   @default("")
+  alt       String   @default("")
+  published Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([order])
+}
+
 // --- Admin auth --------------------------------------------------------
 
 model AdminUser {

@@ -8,6 +8,7 @@ const LINKS = [
   { href: "/admin/products", label: "Products" },
   { href: "/admin/taxonomy", label: "Categories & fabrics" },
   { href: "/admin/design-center", label: "Design Center" },
+  { href: "/admin/hero", label: "Home hero" },
   { href: "/admin/images", label: "Images" },
   { href: "/admin/quotes", label: "Quote requests" },
 ];

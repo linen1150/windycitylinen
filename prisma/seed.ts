@@ -196,6 +196,21 @@ async function main() {
     })),
   });
 
+  console.log("Ensuring home hero slides exist…");
+  if ((await prisma.heroSlide.count()) === 0) {
+    await prisma.heroSlide.createMany({
+      data: [
+        { order: 0, imagePath: "/home/hero-1.jpg", alt: "An outdoor wedding table set with Windy City Linen" },
+        { order: 1, imagePath: "/home/hero-2.jpg", alt: "An overhead view of a spring table with a pale runner" },
+        { order: 2, imagePath: "/home/hero-3.jpg", alt: "A gala table with a watercolor floral runner" },
+        { order: 3, imagePath: "/home/hero-4.jpg", alt: "A close-up of navy lace linen with a folded napkin" },
+      ],
+    });
+    console.log("  created 4 hero slides");
+  } else {
+    console.log("  hero slides already exist");
+  }
+
   console.log("Ensuring an admin user exists…");
   const email = process.env.ADMIN_EMAIL;
   const password = process.env.ADMIN_PASSWORD;

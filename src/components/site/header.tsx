@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { Menu, Phone, Search, X } from "lucide-react";
+import { ClipboardList, Menu, Phone, Search, X } from "lucide-react";
 import { useQuote } from "@/components/quote/quote-store";
 import { SITE } from "@/lib/site";
 
@@ -83,23 +83,18 @@ export function Header() {
         </nav>
 
         <div className="ml-auto flex items-center gap-3">
-          <button
-            onClick={open}
-            className="relative whitespace-nowrap border border-line px-3.5 py-2 text-[13px] hover:border-ink"
-          >
-            Quote request
-            {count > 0 && (
-              <span className="absolute -right-2 -top-2 flex size-5 items-center justify-center rounded-full bg-wine text-[11px] text-white">
+          {count > 0 && (
+            <button
+              onClick={open}
+              aria-label={`Review quote request (${count} ${count === 1 ? "item" : "items"})`}
+              className="relative hover:text-brass-dark"
+            >
+              <ClipboardList size={20} />
+              <span className="absolute -right-2 -top-2 flex size-4 items-center justify-center rounded-full bg-wine text-[10px] text-white">
                 {count}
               </span>
-            )}
-          </button>
-          <Link
-            href="/contact"
-            className="hidden whitespace-nowrap bg-ink px-4 py-2.5 text-[13px] text-[#EDE7D8] hover:bg-black sm:block"
-          >
-            Request a quote
-          </Link>
+            </button>
+          )}
           <button
             className="xl:hidden"
             onClick={() => setMenuOpen((v) => !v)}

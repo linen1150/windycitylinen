@@ -157,6 +157,7 @@ model QuoteRequest {
   name        String
   email       String
   phone       String             @default("")
+  subject     String             @default("")
   message     String             @default("")
   // Detailed event-brief fields (blank for quick inquiries).
   eventDate   String             @default("")
@@ -164,6 +165,7 @@ model QuoteRequest {
   guestCount  String             @default("")
   caterer     String             @default("")
   planner     String             @default("")
+  howHeard    String             @default("")
   items       QuoteRequestItem[]
   // Whether the notification email was sent successfully.
   emailedAt   DateTime?

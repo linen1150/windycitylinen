@@ -5,20 +5,67 @@ import { SITE } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Get in touch with Windy City Linen. Serving weddings, galas and corporate events across Chicago and Milwaukee. A real person replies within one business day.",
+    "Get in touch with Windy City Linen. Showrooms in Wheeling, IL and Elm Grove, WI, serving weddings, galas and corporate events across Chicago and Milwaukee. A real person replies within one business day.",
 };
+
+function LocationMap({ query, name }: { query: string; name: string }) {
+  return (
+    <iframe
+      title={`Map — ${name}`}
+      src={`https://www.google.com/maps?q=${encodeURIComponent(query)}&output=embed`}
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+      className="h-52 w-full border border-line"
+    />
+  );
+}
 
 export default function ContactPage() {
   return (
-    <div className="mx-auto max-w-3xl px-4 py-12 sm:px-8">
-      <h1 className="text-center font-display text-3xl">Let&rsquo;s talk about your event</h1>
-      <p className="mx-auto mt-3 max-w-lg text-center text-ink-soft">
-        Send us a note and a real person replies within one business day. Prefer to
-        talk? Call{" "}
-        <a href={`tel:${SITE.phoneHref}`} className="text-wine underline">{SITE.phone}</a>.
-      </p>
-      <div className="mt-10">
-        <ContactForm />
+    <div className="mx-auto max-w-6xl px-4 py-12 sm:px-8">
+      <h1 className="text-center font-script text-4xl sm:text-5xl">Contact Us</h1>
+
+      <div className="mt-10 grid gap-12 lg:grid-cols-2">
+        {/* Form */}
+        <section>
+          <h2 className="font-display text-2xl">We would love to hear from you&hellip;</h2>
+          <ContactForm />
+        </section>
+
+        {/* Locations */}
+        <section className="space-y-10">
+          {SITE.locations.map((loc) => (
+            <div key={loc.name}>
+              <h2 className="font-display text-2xl">{loc.name}</h2>
+              <div className="mt-4">
+                <LocationMap query={loc.mapQuery} name={loc.name} />
+              </div>
+              <div className="mt-4 space-y-1 text-sm text-ink-soft">
+                {loc.hours.map((h) => (
+                  <p key={h}>{h}</p>
+                ))}
+                <p>{loc.address}</p>
+              </div>
+            </div>
+          ))}
+
+          <div className="space-y-1 text-sm text-ink-soft">
+            <p>A linen request may be made by any of the following methods:</p>
+            <p>
+              E-mail:{" "}
+              <a href={`mailto:${SITE.ordersEmail}`} className="text-wine underline">
+                {SITE.ordersEmail}
+              </a>
+            </p>
+            <p>
+              Call us:{" "}
+              <a href={`tel:${SITE.phoneHref}`} className="text-wine underline">
+                {SITE.phone}
+              </a>
+              , ext. {SITE.phoneExt} during normal business hours.
+            </p>
+          </div>
+        </section>
       </div>
     </div>
   );

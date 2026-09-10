@@ -17,7 +17,7 @@ what the rebuild covers so far.
 | 4.1 | Size selector on product pages | ✅ Done — button group from the product's sizes |
 | 4.2 | Quote-request flow (no pricing) | ✅ Done — merged with My Inspirations: add item + size to the saved list (no quantities), `/my-inspirations` reviews it and sends the list to the team → DB + email to `info@windycitylinen.com` |
 | 4.3 | Explain or remove My Inspirations | ✅ Done — kept as the single saved list and the quote entry point; per-browser, no email gate |
-| 5.1 | Quick vs detailed contact form | ✅ Done — tabbed form, both routes to the same inbox with a `type` marker |
+| 5.1 | Contact form | ✅ Done — single detailed form (Name/Email/Phone/Subject/Event Date/Venue/Caterer/Event Planner/How-heard/Message) beside two showroom locations with Google Maps embeds; routes to `info@windycitylinen.com` |
 | 6.1 | Mobile QA | ⛔ Not started — needs a real-device pass |
 | 6.2 | Platform note | N/A — new stack removes the underlying constraints |
 

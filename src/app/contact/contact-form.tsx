@@ -1,18 +1,43 @@
 "use client";
 
 import { useActionState } from "react";
+import type { ComponentProps } from "react";
 import { submitInquiry, type InquiryFormState } from "@/app/actions";
-import { Field, Textarea } from "@/components/ui/field";
 
 const initial: InquiryFormState = { status: "idle" };
+
+const fieldCls =
+  "w-full rounded-[2px] border border-transparent bg-[#D9D1C0] px-4 py-3 text-sm text-ink placeholder:text-ink-soft outline-none focus:border-ink";
+
+function TextField({
+  name,
+  placeholder,
+  error,
+  type = "text",
+  ...props
+}: ComponentProps<"input"> & { name: string; placeholder: string; error?: string }) {
+  return (
+    <div>
+      <input
+        name={name}
+        type={type}
+        placeholder={placeholder}
+        aria-label={placeholder}
+        className={`${fieldCls} ${error ? "border-wine" : ""}`}
+        {...props}
+      />
+      {error && <p className="mt-1 text-xs text-wine">{error}</p>}
+    </div>
+  );
+}
 
 export function ContactForm() {
   const [state, action, pending] = useActionState(submitInquiry, initial);
 
   if (state.status === "success") {
     return (
-      <div className="border border-line bg-ivory p-8 text-center">
-        <h2 className="font-display text-2xl">Message sent</h2>
+      <div className="mt-6 border border-line bg-ivory p-8 text-center">
+        <h3 className="font-display text-2xl">Message sent</h3>
         <p className="mx-auto mt-3 max-w-md text-ink-soft">
           Thank you — we&rsquo;ve got your message and will reply within one business day.
         </p>
@@ -23,18 +48,27 @@ export function ContactForm() {
   const err = (k: string) => (state.status === "error" ? state.fieldErrors?.[k] : undefined);
 
   return (
-    <form action={action} className="space-y-6">
-      <input type="hidden" name="type" value="QUICK" />
+    <form action={action} className="mt-6 space-y-3">
+      <input type="hidden" name="type" value="DETAILED" />
 
-      <div className="grid gap-4 sm:grid-cols-2">
-        <div className="sm:col-span-2">
-          <Field label="Name" name="name" required error={err("name")} />
-        </div>
-        <Field label="Email" name="email" type="email" required error={err("email")} />
-        <Field label="Phone" name="phone" type="tel" />
-        <div className="sm:col-span-2">
-          <Textarea label="Message" name="message" required error={err("message")} />
-        </div>
+      <TextField name="name" placeholder="Name" required error={err("name")} />
+      <TextField name="email" type="email" placeholder="Email" required error={err("email")} />
+      <TextField name="phone" type="tel" placeholder="Phone" />
+      <TextField name="subject" placeholder="Subject" />
+      <TextField name="eventDate" placeholder="Event Date" />
+      <TextField name="venue" placeholder="Venue" />
+      <TextField name="caterer" placeholder="Caterer" />
+      <TextField name="planner" placeholder="Event Planner" />
+      <TextField name="howHeard" placeholder="How did you hear about us?" />
+
+      <div>
+        <textarea
+          name="message"
+          placeholder="Message"
+          aria-label="Message"
+          rows={5}
+          className={`${fieldCls} resize-y`}
+        />
       </div>
 
       {/* Honeypot */}
@@ -47,9 +81,9 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={pending}
-        className="bg-wine px-8 py-3 text-sm font-medium text-white hover:bg-[#652638] disabled:opacity-50"
+        className="mt-1 bg-ink px-10 py-3 text-sm font-medium text-white hover:bg-black disabled:opacity-50"
       >
-        {pending ? "Sending…" : "Send message"}
+        {pending ? "Sending…" : "Submit"}
       </button>
     </form>
   );

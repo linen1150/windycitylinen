@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { Heart, Menu, Phone, Search, X } from "lucide-react";
+import { Bookmark, Menu, Phone, Search, X } from "lucide-react";
 import { useInspirations } from "@/components/inspirations/inspirations-store";
 import { SITE } from "@/lib/site";
 
@@ -89,8 +89,8 @@ export function Header() {
               aria-label={`My Inspirations (${count} ${count === 1 ? "linen" : "linens"})`}
               className="relative hover:text-brass-dark"
             >
-              <Heart size={20} />
-              <span className="absolute -right-2 -top-2 flex size-4 items-center justify-center rounded-full bg-wine text-[10px] text-white">
+              <Bookmark size={20} />
+              <span className="absolute -right-2 -top-2 flex size-4 items-center justify-center rounded-full bg-brass-dark text-[10px] text-white">
                 {count}
               </span>
             </Link>

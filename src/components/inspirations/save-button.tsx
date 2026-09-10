@@ -1,6 +1,6 @@
 "use client";
 
-import { Heart } from "lucide-react";
+import { Bookmark, BookmarkCheck } from "lucide-react";
 import { useInspirations } from "./inspirations-store";
 import type { ProductCardData } from "@/lib/catalog";
 
@@ -31,10 +31,14 @@ export function SaveButton({ product }: { product: ProductCardData }) {
         }
       }}
       className="absolute right-2 top-2 flex size-8 items-center justify-center rounded-full bg-white/95 shadow-sm"
-      aria-label={saved ? "Remove from My Inspirations" : "Add to My Inspirations"}
+      aria-label={saved ? "Remove from My Inspirations" : "Save to My Inspirations"}
       aria-pressed={saved}
     >
-      <Heart size={14} className={saved ? "fill-wine text-wine" : "text-ink"} />
+      {saved ? (
+        <BookmarkCheck size={15} className="text-brass-dark" />
+      ) : (
+        <Bookmark size={15} className="text-ink" />
+      )}
     </button>
   );
 }

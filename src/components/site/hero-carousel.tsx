@@ -25,7 +25,7 @@ export function HeroCarousel({ slides }: { slides: HeroSlideData[] }) {
 
   return (
     <div
-      className="relative aspect-[4/3] w-full overflow-hidden bg-ivory"
+      className="relative aspect-[3/2] w-full overflow-hidden bg-ivory"
       aria-roledescription="carousel"
       aria-label="Event photos"
       onMouseEnter={() => setPaused(true)}

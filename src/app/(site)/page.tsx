@@ -23,8 +23,8 @@ export default async function HomePage() {
     <>
       {/* Hero */}
       <section
-        className={`mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 sm:px-8 ${
-          slides.length ? "md:grid-cols-[1.1fr_0.9fr]" : ""
+        className={`mx-auto grid max-w-[100rem] items-center gap-10 px-4 py-14 sm:px-6 ${
+          slides.length ? "md:grid-cols-[0.85fr_1.15fr] lg:grid-cols-[minmax(0,34rem)_1fr]" : ""
         }`}
       >
         <div>

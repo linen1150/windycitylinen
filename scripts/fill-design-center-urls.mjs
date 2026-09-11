@@ -35,6 +35,8 @@ const UPDATES = [
     section: "LINEN_VIDEOS",
     url: "https://www.youtube.com/embed/YtgsKERS9u4",
   },
+  { title: "Velvet", section: "DIGITAL_SWATCH_CARDS", url: "/documents/2025-velvet-digital-swatchcard.pdf" },
+  { title: "Specialty", section: "DIGITAL_SWATCH_CARDS", url: "/documents/2025-specialty-digital-swatchcard.pdf" },
 ];
 
 for (const { title, section, url } of UPDATES) {

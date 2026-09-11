@@ -14,19 +14,32 @@ injection, "just a rough ballpark" social engineering, and an indirect "cheapest
 napkin" ask) all correctly refused and redirected to the team — no price ever
 mentioned. Chatbot is launch-ready on the no-pricing front.
 
-**Specialty fabric reconciliation — done for the high-confidence part:**
+**Specialty fabric reconciliation — naming cleanup is done:**
 - Mirage was pulled out of "Specialty" into its own Fabric (`scripts/split-mirage-fabric.mjs`)
   — Rob confirmed it belongs at the Essentials tier, like Serenity.
-- Fixed 5 confirmed typo-duplicate colorNames (`scripts/fix-specialty-typos.mjs`):
-  Amalfi Saphire/Sapphire, Bahaus/Bauhaus, Brushstroke/Brushstrokes, Echo
-  Lumier/Lumiere, Pamela Palms/Palm. Each pair turned out to be the same real
-  color split across two spellings in different categories — merged into one
-  complete item per color.
-- **Still open, lower confidence**: comparing the price guide's "Specialty Price"
-  tab against the remaining 613 Specialty products found ~38 patterns in the guide
-  with no clear catalog match and ~67 catalog colorNames with no clear guide
-  match. Much of this is likely guide-parsing noise (footnote rows, inconsistent
-  "(Limited)"/word-order formatting) rather than real problems — did not bulk-edit
+- Sent Rob a 4-tab reconciliation workbook (catalog colors / in-guide-not-catalog /
+  in-catalog-not-guide / same-item-different-spelling) so he could eyeball it
+  against the price guide himself.
+- Fixed all 14 confirmed same-item naming mismatches (`scripts/fix-specialty-typos.mjs`):
+  5 typo-duplicates (Amalfi Saphire/Sapphire, Bahaus/Bauhaus, Brushstroke/Brushstrokes,
+  Echo Lumier/Lumiere, Pamela Palms/Palm) plus 9 word-order differences vs the guide
+  (Houndstooth, Chiffon Ice Blue, Geometric Foil x2, Matrix x2, Ornamental Lace x2,
+  Verve Navy) that Rob asked to consolidate too. Kept the catalog's spelling over the
+  guide's where the guide itself has a typo or is inconsistent across its own tabs
+  (Bauhuas, Pallete, Tye Dye, singular "Sequin"). One duplicate the first round of
+  fixes accidentally introduced (Bauhaus ended up with two Cuffs products) was found
+  and cleaned up; the script now guards against same-category collisions. Full audit
+  (accounting for the `reverseSide` front/back flag) confirms zero true duplicates
+  remain in Specialty/Mirage.
+- "Harmony Runner ___" entries in the guide are the Harmony pattern in runner form,
+  not a separate pattern — already covered by the existing "Harmony ___" catalog
+  colors (per Rob), just with a slightly different color word in a few cases
+  (guide says "Desert Rose", catalog says "Dusty Rose" — not touched, unconfirmed
+  which is right).
+- **Still open, lower confidence**: ~38 patterns in the guide with no clear catalog
+  match, ~67 catalog colorNames with no clear guide match (full lists are in the
+  workbook sent to Rob). Much of this is likely guide-parsing noise (footnote rows,
+  inconsistent "(Limited)" formatting) rather than real problems — did not bulk-edit
   this list since false positives here would do more harm than the gap itself.
   Revisit only if Rob flags a specific pattern as wrong/missing.
 

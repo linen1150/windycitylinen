@@ -1,24 +1,24 @@
 ## 📍 Where we left off (2026-09-11)
 
+Rob provided his real price guide (`2026 Windy City Linen Price Guide
+7.28.2026.xlsx`, Downloads folder — **not** committed anywhere, it has pricing in
+it). Used the "Essentials" tab to import real per-fabric tablecloth sizes (see
+`scripts/import-essentials-sizes.mjs` and "Data-quality notes" below). Only size
+*availability* was extracted — no price value is stored or displayed anywhere.
+
 **Waiting on Rob:**
-- A file with the **real per-product sizes, colors, and attributes** — will replace
-  the seeded/default data once it arrives (see "Data-quality notes" below for what's
-  currently estimated/defaulted).
+- Confirmation/cleanup on the **"Specialty" fabric reconciliation** (636 products,
+  ~145 named patterns) — comparing the price guide's "Specialty Price" tab against
+  the DB surfaced real discrepancies (typo duplicates like "Amalfi Saphire" vs
+  "Amalfi Sapphire", inconsistent "(Limited)" formatting, some patterns spelled
+  differently across the guide's own tabs). Needs a cleaner targeted pass — see the
+  plan in this session's transcript before just bulk-applying it.
 - An **Anthropic API key** (`ANTHROPIC_API_KEY` in `.env`) — the chatbot works today
   but only against a mocked reply; needs a real key to test actual sizing answers and
   to re-run the adversarial no-pricing test for real before launch.
 
-**This session:** finished Design Center content (all lookbooks/swatch
-cards/videos/sizing chart populated), added PDF upload support in the admin, fixed a
-site-wide CSS bug (`a { color: inherit }` was unlayered and silently killing
-`text-white` on every Link-based button — see git log "Fix invisible text on every
-anchor-tag button"), fixed a mobile layout bug (chat widget covering footer text),
-and did a full admin-panel walkthrough with Rob (no other issues found — the main
-gap is unpopulated product sizes/collections, which the incoming file should fix).
-
 **Next up, whenever Rob returns:**
-1. If the sizes/colors/attributes file has arrived — import it (replaces
-   `SIZES_BY_CATEGORY` defaults and estimated color hex per `scripts/build-catalog.mjs`).
+1. Specialty fabric reconciliation (see above) — the big remaining data-quality item.
 2. If the Anthropic key has arrived — set it in `.env`, then re-test the chatbot for
    real (sizing accuracy + adversarial no-pricing).
 3. Otherwise: Step 3 (My Inspirations Phase 2) is the next unstarted piece of the
@@ -145,6 +145,10 @@ All three sections (lookbooks, swatch cards, videos) are fully populated —
 - Spandex (4 items) uses form-factor labels ("Banquets", "High Boys", "Rounds") in the
   fabric column. Kept as data; hidden from the fabric filter (`HIDDEN_FABRIC_SLUGS` in
   `src/lib/catalog.ts`) pending a taxonomy cleanup.
-- Per-product **size availability** isn't in any export — seeded by category default
-  (`SIZES_BY_CATEGORY` in `scripts/build-catalog.mjs`). Refine per product in the admin.
+- Per-product **size availability**: 11 fabrics (206 tablecloth products — everything
+  except "Specialty") now have real per-fabric sizes from Rob's price guide, via
+  `scripts/import-essentials-sizes.mjs`. The other ~430 Tablecloths products (all
+  "Specialty" fabric, minus Mirage) still have the old category-default full-size set
+  (`SIZES_BY_CATEGORY` in `scripts/build-catalog.mjs`) — pending the Specialty
+  reconciliation below.
 - Color hex values are estimates from the export, not sampled from photos (per the brief).

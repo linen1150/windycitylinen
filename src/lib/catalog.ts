@@ -216,4 +216,19 @@ export async function getRelatedProducts(product: ProductDetailData, take = 4) {
   return [...sameFabric, ...rest].slice(0, take).map(toCard);
 }
 
+/** The matching Napkin for a tablecloth/overlay — same fabric + color, if one exists. */
+export async function getMatchingNapkin(product: ProductDetailData): Promise<ProductCardData | null> {
+  const p = await db.product.findFirst({
+    where: {
+      published: true,
+      slug: { not: product.slug },
+      colorName: product.colorName,
+      fabric: { name: product.fabric },
+      category: { name: "Napkins" },
+    },
+    include: { category: true, fabric: true },
+  });
+  return p ? toCard(p) : null;
+}
+
 export const countProducts = cache(async () => db.product.count({ where: { published: true } }));

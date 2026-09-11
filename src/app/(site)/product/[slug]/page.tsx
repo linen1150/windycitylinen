@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { categoryNoun, getProductBySlug, getRelatedProducts } from "@/lib/catalog";
+import { categoryNoun, getMatchingNapkin, getProductBySlug, getRelatedProducts } from "@/lib/catalog";
 import { ProductImage } from "@/components/catalog/product-image";
 import { ProductCard } from "@/components/catalog/product-card";
 import { AddToInspirations } from "@/components/inspirations/add-to-inspirations";
@@ -26,7 +26,10 @@ export default async function ProductPage({ params }: PageProps<"/product/[slug]
   const product = await getProductBySlug(slug);
   if (!product) notFound();
 
-  const related = await getRelatedProducts(product);
+  const [related, matchingNapkin] = await Promise.all([
+    getRelatedProducts(product),
+    product.category === "Tablecloths and Overlays" ? getMatchingNapkin(product) : Promise.resolve(null),
+  ]);
   const noun = categoryNoun(product.category);
 
   return (
@@ -73,6 +76,26 @@ export default async function ProductPage({ params }: PageProps<"/product/[slug]
           </p>
 
           <AddToInspirations product={product} />
+
+          {matchingNapkin && (
+            <Link
+              href={`/product/${matchingNapkin.slug}`}
+              className="group mt-6 flex max-w-md items-center gap-3 border border-line p-3 hover:border-ink"
+            >
+              <ProductImage
+                src={matchingNapkin.imageUrl}
+                alt={`${matchingNapkin.fabric} ${matchingNapkin.colorName} napkin`}
+                colorHex={matchingNapkin.colorHex}
+                className="size-16 shrink-0"
+              />
+              <div>
+                <div className="text-[11px] font-medium uppercase tracking-wide text-brass-dark">
+                  Matching napkin available
+                </div>
+                <div className="text-sm text-ink group-hover:underline">{matchingNapkin.name}</div>
+              </div>
+            </Link>
+          )}
         </div>
       </div>
 

@@ -1,3 +1,35 @@
+## 📍 Where we left off (2026-09-11)
+
+**Waiting on Rob:**
+- A file with the **real per-product sizes, colors, and attributes** — will replace
+  the seeded/default data once it arrives (see "Data-quality notes" below for what's
+  currently estimated/defaulted).
+- An **Anthropic API key** (`ANTHROPIC_API_KEY` in `.env`) — the chatbot works today
+  but only against a mocked reply; needs a real key to test actual sizing answers and
+  to re-run the adversarial no-pricing test for real before launch.
+
+**This session:** finished Design Center content (all lookbooks/swatch
+cards/videos/sizing chart populated), added PDF upload support in the admin, fixed a
+site-wide CSS bug (`a { color: inherit }` was unlayered and silently killing
+`text-white` on every Link-based button — see git log "Fix invisible text on every
+anchor-tag button"), fixed a mobile layout bug (chat widget covering footer text),
+and did a full admin-panel walkthrough with Rob (no other issues found — the main
+gap is unpopulated product sizes/collections, which the incoming file should fix).
+
+**Next up, whenever Rob returns:**
+1. If the sizes/colors/attributes file has arrived — import it (replaces
+   `SIZES_BY_CATEGORY` defaults and estimated color hex per `scripts/build-catalog.mjs`).
+2. If the Anthropic key has arrived — set it in `.env`, then re-test the chatbot for
+   real (sizing accuracy + adversarial no-pricing).
+3. Otherwise: Step 3 (My Inspirations Phase 2) is the next unstarted piece of the
+   original kickoff plan — needs a fresh spec from Rob on what "different" approach
+   he wants (the first Phase 1 attempt was explicitly rejected earlier).
+
+**To resume locally:** `npm run dev` (or the `web` launch config), admin login at
+`/admin` is `info@windycitylinen.com` / `changeme-admin` (local dev only, see `.env`).
+
+---
+
 # Punch-list status
 
 Source: `windycitylinen-dev-punchlist.md` (in the original handoff zip). This tracks

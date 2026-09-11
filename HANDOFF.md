@@ -60,6 +60,27 @@ reorder, edit each caption (= alt text), upload a replacement image, show/hide, 
 `scripts/optimize-hero.mjs` — re-run only when adding new source files). `hero-4.jpg` is
 low-res (256px) — replace or hide it from the admin.
 
+## Site-wide chatbot
+
+Floating widget (bottom-right, every `(site)` page) for sizing/fabric questions —
+`src/components/site/chat-widget.tsx`, posts to `POST /api/chat`
+(`src/app/api/chat/route.ts`). Shares the Anthropic utility from Step 1
+(`src/lib/ai/claude.ts`); system prompt is built in `src/lib/ai/chat-prompt.ts`
+from the live catalog taxonomy (categories/fabrics/sizes), so it won't invent
+products. Rate-limited per IP (`src/lib/rate-limit.ts`, in-memory — fine for one
+instance; swap for Redis if the site ever scales to multiple instances). The
+contact phone/email is always shown in the panel, not just on error.
+
+No-pricing is enforced in the system prompt (hard rule from `CLAUDE.md`) and was
+smoke-tested with an adversarial "what's the price of X" — but only against the
+**mocked** response, since no `ANTHROPIC_API_KEY` is set yet. Re-run that test for
+real once a key is added, before launch.
+
+Sizing math in the prompt is the standard industry drop formula (finished linen =
+table size + 2x drop), **not** the client-verified math from the original
+`linen-chatbot-spec.md` — that file wasn't available when this was built. Rob
+should review the sizing guidance in `chat-prompt.ts` before launch.
+
 ## Still to build / do
 
 1. **Content population** (via the admin): product keywords, collection assignments,
@@ -69,6 +90,8 @@ low-res (256px) — replace or hide it from the admin.
 3. **Deploy** — Supabase + Vercel + GitHub, env vars (incl. a real `ADMIN_SESSION_SECRET`),
    migrate/seed on Supabase, domain cutover.
 4. **Mobile device QA** (punch 6.1).
+5. **Update admin page and items** — review the admin panel and catalog items with Rob;
+   scope/specifics TBD.
 
 ## Data-quality notes found during the build
 

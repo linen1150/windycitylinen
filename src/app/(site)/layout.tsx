@@ -1,6 +1,7 @@
 import { InspirationsProvider } from "@/components/inspirations/inspirations-store";
 import { Header } from "@/components/site/header";
 import { Footer } from "@/components/site/footer";
+import { ChatWidget } from "@/components/site/chat-widget";
 
 export default function SiteLayout({ children }: LayoutProps<"/">) {
   return (
@@ -10,6 +11,7 @@ export default function SiteLayout({ children }: LayoutProps<"/">) {
         <main className="flex-1">{children}</main>
         <Footer />
       </div>
+      <ChatWidget />
     </InspirationsProvider>
   );
 }

@@ -32,6 +32,7 @@ export type ProductCardData = {
   fabric: string;
   colorName: string;
   colorHex: string | null;
+  colorGroup: string | null;
   limited: boolean;
   reverseSide: boolean;
   imageUrl: string | null;
@@ -106,6 +107,7 @@ function toCard(p: Prisma.ProductGetPayload<{ include: { category: true; fabric:
     fabric: p.fabric.name,
     colorName: p.colorName,
     colorHex: p.colorHex,
+    colorGroup: p.colorGroup,
     limited: p.limited,
     reverseSide: p.reverseSide,
     imageUrl: imageUrl(p.category.name, p.imageFilename),
@@ -200,20 +202,34 @@ export const getFeaturedByCategory = cache(async (): Promise<ProductCardData[]> 
   return picks.filter(Boolean).map((p) => toCard(p!));
 });
 
-/** Same fabric first, then same category, excluding the product itself. */
+/**
+ * Same category, same color family first (e.g. other burnt-orange tablecloths),
+ * topped up with other items in the category if there aren't enough color
+ * matches. Excludes the product itself.
+ */
 export async function getRelatedProducts(product: ProductDetailData, take = 4) {
-  const rows = await db.product.findMany({
-    where: {
-      published: true,
-      slug: { not: product.slug },
-      OR: [{ fabric: { name: product.fabric } }, { category: { name: product.category } }],
-    },
-    include: { category: true, fabric: true },
-    take: take * 3,
-  });
-  const sameFabric = rows.filter((r) => r.fabric.name === product.fabric);
-  const rest = rows.filter((r) => r.fabric.name !== product.fabric);
-  return [...sameFabric, ...rest].slice(0, take).map(toCard);
+  const base = { published: true, slug: { not: product.slug }, category: { name: product.category } };
+
+  const sameColor = product.colorGroup
+    ? await db.product.findMany({
+        where: { ...base, colorGroup: product.colorGroup },
+        include: { category: true, fabric: true },
+        take,
+      })
+    : [];
+
+  let rows = sameColor;
+  if (rows.length < take) {
+    const fillIds = rows.map((r) => r.id);
+    const rest = await db.product.findMany({
+      where: { ...base, id: { notIn: fillIds } },
+      include: { category: true, fabric: true },
+      take: take - rows.length,
+    });
+    rows = [...rows, ...rest];
+  }
+
+  return rows.map(toCard);
 }
 
 /** The matching Napkin for a tablecloth/overlay — same fabric + color, if one exists. */

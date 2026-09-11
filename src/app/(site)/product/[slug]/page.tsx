@@ -32,6 +32,44 @@ export default async function ProductPage({ params }: PageProps<"/product/[slug]
   ]);
   const noun = categoryNoun(product.category);
 
+  const details = (
+    <div>
+      <div className="text-xs font-medium uppercase tracking-wide text-brass-dark">
+        {product.fabric}
+        {product.collections.length ? ` · ${product.collections.join(", ")}` : ""}
+      </div>
+      <h1 className="mt-2 font-display text-3xl">{product.name}</h1>
+      <div className="mt-2 flex gap-2 text-xs">
+        {product.limited && (
+          <span className="bg-ink px-2 py-0.5 uppercase tracking-wide text-[#EDE7D8]">
+            Limited availability
+          </span>
+        )}
+        {product.reverseSide && (
+          <span className="border border-line px-2 py-0.5 uppercase tracking-wide text-ink-soft">
+            Reversible
+          </span>
+        )}
+      </div>
+      <p className="mt-4 max-w-md text-ink-soft">
+        {product.colorName} in our {product.fabric} fabric — a {noun} that works
+        across weddings, galas and corporate events in Chicago and Milwaukee.
+      </p>
+
+      <AddToInspirations product={product} />
+    </div>
+  );
+
+  const mainImage = (
+    <ProductImage
+      src={product.imageUrl}
+      alt={`${product.fabric} ${product.colorName} ${noun}`}
+      colorHex={product.colorHex}
+      className="aspect-square w-full"
+      sizes="(max-width: 768px) 100vw, 420px"
+    />
+  );
+
   return (
     <div className="mx-auto max-w-6xl px-4 py-8 sm:px-8">
       <nav className="mb-6 text-xs text-ink-soft">
@@ -44,59 +82,34 @@ export default async function ProductPage({ params }: PageProps<"/product/[slug]
         {product.name}
       </nav>
 
-      <div className="grid gap-10 md:grid-cols-2">
-        <ProductImage
-          src={product.imageUrl}
-          alt={`${product.fabric} ${product.colorName} ${noun}`}
-          colorHex={product.colorHex}
-          className="aspect-square w-full"
-          sizes="(max-width: 768px) 100vw, 520px"
-        />
-        <div>
-          <div className="text-xs font-medium uppercase tracking-wide text-brass-dark">
-            {product.fabric}
-            {product.collections.length ? ` · ${product.collections.join(", ")}` : ""}
-          </div>
-          <h1 className="mt-2 font-display text-3xl">{product.name}</h1>
-          <div className="mt-2 flex gap-2 text-xs">
-            {product.limited && (
-              <span className="bg-ink px-2 py-0.5 uppercase tracking-wide text-[#EDE7D8]">
-                Limited availability
-              </span>
-            )}
-            {product.reverseSide && (
-              <span className="border border-line px-2 py-0.5 uppercase tracking-wide text-ink-soft">
-                Reversible
-              </span>
-            )}
-          </div>
-          <p className="mt-4 max-w-md text-ink-soft">
-            {product.colorName} in our {product.fabric} fabric — a {noun} that works
-            across weddings, galas and corporate events in Chicago and Milwaukee.
-          </p>
-
-          <AddToInspirations product={product} />
-
-          {matchingNapkin && (
-            <Link
-              href={`/product/${matchingNapkin.slug}`}
-              className="group mt-6 flex max-w-md items-center gap-3 border border-line p-3 hover:border-ink"
-            >
+      <div
+        className={
+          matchingNapkin
+            ? "grid gap-6 md:grid-cols-[1.4fr_1fr_1fr]"
+            : "grid gap-10 md:grid-cols-2"
+        }
+      >
+        {matchingNapkin ? (
+          <>
+            {details}
+            {mainImage}
+            <div>
               <ProductImage
                 src={matchingNapkin.imageUrl}
                 alt={`${matchingNapkin.fabric} ${matchingNapkin.colorName} napkin`}
                 colorHex={matchingNapkin.colorHex}
-                className="size-16 shrink-0"
+                className="aspect-square w-full"
+                sizes="(max-width: 768px) 100vw, 420px"
               />
-              <div>
-                <div className="text-[11px] font-medium uppercase tracking-wide text-brass-dark">
-                  Matching napkin available
-                </div>
-                <div className="text-sm text-ink group-hover:underline">{matchingNapkin.name}</div>
-              </div>
-            </Link>
-          )}
-        </div>
+              <p className="mt-2 text-xs text-ink-soft">Matching napkin</p>
+            </div>
+          </>
+        ) : (
+          <>
+            {mainImage}
+            {details}
+          </>
+        )}
       </div>
 
       {related.length > 0 && (

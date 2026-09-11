@@ -2,10 +2,11 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { Check, MessageCircle, Plus, Send, X } from "lucide-react";
+import { Check, Plus, Send, X } from "lucide-react";
 import { SITE } from "@/lib/site";
 import { ProductImage } from "@/components/catalog/product-image";
 import { useInspirations } from "@/components/inspirations/inspirations-store";
+import { BridgetteAvatar } from "./bridgette-avatar";
 
 type ProductResult = {
   id: string;
@@ -23,7 +24,7 @@ type Message = { role: "user" | "assistant"; content: string; products?: Product
 const GREETING: Message = {
   role: "assistant",
   content:
-    "Hi, I'm Deb! I can help you figure out sizing, fabrics and what we carry. What are you dressing tables for?",
+    "Hi, I'm Bridgette! I can help you figure out sizing, fabrics and what we carry. What are you dressing tables for?",
 };
 
 export function ChatWidget() {
@@ -85,7 +86,10 @@ export function ChatWidget() {
       {open && (
         <div className="mb-3 flex h-[520px] w-[340px] flex-col overflow-hidden rounded-lg border border-line bg-ivory shadow-xl sm:w-[380px]">
           <div className="flex items-center justify-between bg-ink px-4 py-3 text-white">
-            <span className="font-display text-lg">Chat with Deb</span>
+            <span className="flex items-center gap-2 font-display text-lg">
+              <BridgetteAvatar size={28} className="rounded-full" />
+              Chat with Bridgette
+            </span>
             <button type="button" onClick={() => setOpen(false)} aria-label="Close chat" className="text-white/80 hover:text-white">
               <X size={18} />
             </button>
@@ -188,10 +192,10 @@ export function ChatWidget() {
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        aria-label={open ? "Close chat" : "Open chat"}
-        className="ml-auto flex size-14 items-center justify-center rounded-full bg-brass text-white shadow-lg transition-colors hover:bg-brass-dark"
+        aria-label={open ? "Close chat" : "Open chat with Bridgette"}
+        className="ml-auto flex size-14 items-center justify-center overflow-hidden rounded-full border-2 border-brass bg-brass text-white shadow-lg transition-colors hover:border-brass-dark"
       >
-        {open ? <X size={22} /> : <MessageCircle size={22} />}
+        {open ? <X size={22} /> : <BridgetteAvatar size={56} />}
       </button>
     </div>
   );

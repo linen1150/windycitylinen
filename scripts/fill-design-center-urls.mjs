@@ -29,11 +29,11 @@ const UPDATES = [
   { title: "Serenity", section: "DIGITAL_SWATCH_CARDS", url: "/documents/2025-serenity-digital-swatchcard.pdf" },
   { title: "Shantung", section: "DIGITAL_SWATCH_CARDS", url: "/documents/2025-shantung-digital-swatchcard.pdf" },
   { title: "Soiree", section: "DIGITAL_SWATCH_CARDS", url: "/documents/2025-soiree-digital-swatchcard.pdf" },
-  { title: "WCL Specialty Ties", section: "LINEN_VIDEOS", url: "https://www.youtube.com/embed/cfCjzyO9oFE" },
+  { title: "WCL Specialty Ties", section: "LINEN_VIDEOS", url: "https://www.youtube.com/watch?v=cfCjzyO9oFE" },
   {
     title: "Windy City Linen | Design Center | Customization",
     section: "LINEN_VIDEOS",
-    url: "https://www.youtube.com/embed/YtgsKERS9u4",
+    url: "https://www.youtube.com/watch?v=YtgsKERS9u4",
   },
   { title: "Velvet", section: "DIGITAL_SWATCH_CARDS", url: "/documents/2025-velvet-digital-swatchcard.pdf" },
   { title: "Specialty", section: "DIGITAL_SWATCH_CARDS", url: "/documents/2025-specialty-digital-swatchcard.pdf" },

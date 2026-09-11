@@ -33,19 +33,32 @@
   --font-script: var(--font-great-vibes), "Brush Script MT", cursive;
 }
 
-body {
-  background: var(--paper);
-  color: var(--ink);
-  font-family: var(--font-body);
-  font-size: 15px;
-  line-height: 1.6;
-}
+/* Base-layer so utility classes (text-white, etc.) can override these —
+   unlayered CSS always beats @layer utilities regardless of specificity. */
+@layer base {
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.6;
+  }
 
-h1, h2, h3, h4 {
-  font-family: var(--font-display);
-  font-weight: 500;
-  color: var(--ink);
-  margin: 0;
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  *:focus-visible {
+    outline: 2px solid var(--brass-dark);
+    outline-offset: 2px;
+  }
 }
 
 /* Gradient placeholder shown when a product has no photo yet. */
@@ -55,13 +68,4 @@ h1, h2, h3, h4 {
     var(--c1, #e7dfcb) 0 14px,
     var(--c2, #dacbaa) 14px 28px
   );
-}
-
-a {
-  color: inherit;
-}
-
-*:focus-visible {
-  outline: 2px solid var(--brass-dark);
-  outline-offset: 2px;
 }

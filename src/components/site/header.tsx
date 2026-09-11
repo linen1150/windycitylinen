@@ -47,7 +47,7 @@ export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-20 bg-paper">
+    <header className="sticky top-0 z-20 bg-paper print:hidden">
       <div className="flex items-center justify-between bg-ink px-4 py-2 text-[13px] text-[#EDE7D8] sm:px-8">
         <span className="hidden sm:block">Serving Chicagoland &amp; Milwaukee since 2008</span>
         <a href={`tel:${SITE.phoneHref}`} className="flex items-center gap-1.5 hover:underline">

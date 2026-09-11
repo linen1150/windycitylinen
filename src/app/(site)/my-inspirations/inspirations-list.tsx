@@ -7,6 +7,7 @@ import { ProductImage } from "@/components/catalog/product-image";
 import { submitInquiry, type InquiryFormState } from "@/app/actions";
 import { Field, Textarea } from "@/components/ui/field";
 import { ButtonLink } from "@/components/ui/button";
+import { DesignCenterPanel } from "@/components/site/design-center-panel";
 
 const initial: InquiryFormState = { status: "idle" };
 
@@ -92,6 +93,14 @@ export function InspirationsList() {
           ))}
         </ul>
       </section>
+
+      <DesignCenterPanel />
+
+      <div className="text-center">
+        <Link href="/my-inspirations/presentation" className="text-sm text-brass-dark underline">
+          Build a printable presentation of your list →
+        </Link>
+      </div>
 
       <form action={action} className="space-y-5">
         <input type="hidden" name="type" value="QUOTE_TRAY" />

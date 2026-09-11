@@ -10,7 +10,7 @@ const ICONS: Partial<Record<string, ComponentType<{ size?: number }>>> = {
 
 export function Footer() {
   return (
-    <footer className="mt-auto bg-ink px-4 pt-8 pb-24 text-center text-[13px] text-[#C9C1AE] sm:px-8 sm:pb-10">
+    <footer className="mt-auto bg-ink px-4 pt-8 pb-24 text-center text-[13px] text-[#C9C1AE] sm:px-8 sm:pb-10 print:hidden">
       <p className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
         <span>
           Phone:{" "}

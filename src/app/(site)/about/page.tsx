@@ -18,7 +18,7 @@ export default async function AboutPage() {
   });
 
   return (
-    <div className="mx-auto max-w-4xl px-4 py-12 sm:px-8">
+    <div className="mx-auto max-w-5xl px-4 py-12 sm:px-8">
       <h1 className="font-display text-3xl">About Windy City Linen</h1>
 
       <section className="mt-6 max-w-2xl">
@@ -39,28 +39,24 @@ export default async function AboutPage() {
       {team.length > 0 && (
         <section className="mt-12">
           <h2 className="font-display text-xl">Our Team</h2>
-          <div className="mt-5 grid gap-8 sm:grid-cols-2">
+          <div className="mt-5 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3">
             {team.map((person) => (
-              <div key={person.id} className="flex gap-4">
+              <div key={person.id}>
                 {person.imagePath && (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
                     src={person.imagePath}
                     alt={person.name}
-                    className="size-20 shrink-0 rounded-full border border-line object-cover"
+                    className="aspect-square w-full border border-line object-cover"
                   />
                 )}
-                <div>
-                  <h3 className="font-display text-base">
-                    {person.name}
-                    {person.title && (
-                      <span className="ml-2 text-xs font-normal uppercase tracking-wide text-brass-dark">
-                        {person.title}
-                      </span>
-                    )}
-                  </h3>
-                  <p className="mt-2 text-[13px] leading-relaxed text-ink-soft">{person.bio}</p>
-                </div>
+                <h3 className="mt-3 font-display text-base">{person.name}</h3>
+                {person.title && (
+                  <div className="text-[11px] font-medium uppercase tracking-wide text-brass-dark">
+                    {person.title}
+                  </div>
+                )}
+                <p className="mt-2 text-[13px] leading-relaxed text-ink-soft">{person.bio}</p>
               </div>
             ))}
           </div>

@@ -77,9 +77,13 @@ export const getFacets = cache(async () => {
     db.size.findMany({ orderBy: { order: "asc" } }),
     db.collection.findMany({ orderBy: { order: "asc" } }),
   ]);
+  const visibleFabrics = fabrics.filter((f) => !HIDDEN_FABRIC_SLUGS.has(f.slug));
+  const classicSolid = visibleFabrics.filter((f) => f.name === "Classic Solid");
+  const restFabrics = visibleFabrics.filter((f) => f.name !== "Classic Solid");
+
   return {
     categories,
-    fabrics: fabrics.filter((f) => !HIDDEN_FABRIC_SLUGS.has(f.slug)),
+    fabrics: [...classicSolid, ...restFabrics],
     sizes,
     collections,
     colorGroups: COLOR_GROUPS,

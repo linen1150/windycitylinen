@@ -47,7 +47,7 @@ export default async function AboutPage() {
                   <img
                     src={person.imagePath}
                     alt={person.name}
-                    className="aspect-square w-full border border-line object-cover"
+                    className="aspect-square w-full border border-line object-cover object-top"
                   />
                 )}
                 <h3 className="mt-3 font-display text-base">{person.name}</h3>
@@ -56,7 +56,11 @@ export default async function AboutPage() {
                     {person.title}
                   </div>
                 )}
-                <p className="mt-2 text-[13px] leading-relaxed text-ink-soft">{person.bio}</p>
+                <div className="mt-2 space-y-2 text-[13px] leading-relaxed text-ink-soft">
+                  {person.bio.split(/\n+/).filter(Boolean).map((para, i) => (
+                    <p key={i}>{para}</p>
+                  ))}
+                </div>
               </div>
             ))}
           </div>

@@ -76,17 +76,30 @@ smoke-tested with an adversarial "what's the price of X" — but only against th
 **mocked** response, since no `ANTHROPIC_API_KEY` is set yet. Re-run that test for
 real once a key is added, before launch.
 
-Sizing math in the prompt is the standard industry drop formula (finished linen =
-table size + 2x drop), **not** the client-verified math from the original
-`linen-chatbot-spec.md` — that file wasn't available when this was built. Rob
-should review the sizing guidance in `chat-prompt.ts` before launch.
+Sizing math in the prompt now comes straight from Rob's real chart
+(`public/documents/wcl-sizing-chart-2025.pdf`, transcribed into `chat-prompt.ts`)
+instead of a generic drop formula — this is the client-confirmed sizing data.
+
+## Design Center content
+
+Populated with real lookbooks/documents via `scripts/fill-design-center-urls.mjs`
+(one-off, safe to re-run — matches by title and updates the `url`). Files live in
+`public/documents/` (PDFs, committed like the hero photos — same
+production-storage caveat as images, see below). Admin can now also upload a PDF
+directly on a Document-type item (`src/components/admin/image-upload.tsx` grew an
+`accept` prop; `/api/admin/upload` accepts `application/pdf` up to 15MB).
+
+Still empty (no file provided yet): **Digital swatch cards** — Mirage, Specialty,
+Velvet. Everything else across all three sections (lookbooks, swatch cards,
+videos) is filled in.
 
 ## Still to build / do
 
 1. **Content population** (via the admin): product keywords, collection assignments,
-   Design Center destination URLs, final About copy.
-2. **Image storage migration** — off `public/images` to Supabase Storage / Cloudinary
-   so admin uploads work in production. `imageUrl()` already accepts full URLs.
+   final About copy. Design Center is done (see above), except the 3 swatch cards noted.
+2. **Image/document storage migration** — off `public/images` and `public/documents`
+   to Supabase Storage / Cloudinary so admin uploads work in production and the
+   repo doesn't carry large PDFs. `imageUrl()` already accepts full URLs.
 3. **Deploy** — Supabase + Vercel + GitHub, env vars (incl. a real `ADMIN_SESSION_SECRET`),
    migrate/seed on Supabase, domain cutover.
 4. **Mobile device QA** (punch 6.1).

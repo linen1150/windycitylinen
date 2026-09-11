@@ -73,28 +73,17 @@ export default async function DesignCenterPage() {
                         ? "Open document →"
                         : "View lookbook →";
                 const inner = (
-                  <>
-                    <div
-                      className="flex aspect-[4/3] items-center justify-center"
-                      style={{ background: item.accentHex ?? "#DACBAA" }}
-                    >
-                      {item.type === "VIDEO" && (
-                        <span className="flex size-12 items-center justify-center rounded-full bg-white/90 text-lg">
-                          ▶
-                        </span>
-                      )}
+                  <div className="p-4">
+                    <div className="flex items-center gap-1.5 text-[11px] font-medium uppercase tracking-wide text-brass-dark">
+                      {item.type === "VIDEO" && <span aria-hidden>▶</span>}
+                      {item.type.toLowerCase()}
                     </div>
-                    <div className="p-4">
-                      <div className="text-[11px] font-medium uppercase tracking-wide text-brass-dark">
-                        {item.type.toLowerCase()}
-                      </div>
-                      <h3 className="mt-1.5 font-display text-base">{item.title}</h3>
-                      {item.description && (
-                        <p className="mt-1.5 text-xs text-ink-soft">{item.description}</p>
-                      )}
-                      <div className="mt-3 text-[13px] text-wine">{label}</div>
-                    </div>
-                  </>
+                    <h3 className="mt-1.5 font-display text-base">{item.title}</h3>
+                    {item.description && (
+                      <p className="mt-1.5 text-xs text-ink-soft">{item.description}</p>
+                    )}
+                    <div className="mt-3 text-[13px] text-wine">{label}</div>
+                  </div>
                 );
                 const cls = "group block border border-line hover:border-ink";
                 return external ? (

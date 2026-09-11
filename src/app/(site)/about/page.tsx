@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { ButtonLink } from "@/components/ui/button";
 import { SITE } from "@/lib/site";
 import { db } from "@/lib/db";
 
@@ -66,11 +65,6 @@ export default async function AboutPage() {
           </div>
         </section>
       )}
-
-      <div className="mt-12 flex flex-wrap gap-3 border-t border-line pt-8">
-        <ButtonLink href="/products" variant="primary">Browse the collection</ButtonLink>
-        <ButtonLink href="/contact" variant="secondary">Contact the team</ButtonLink>
-      </div>
     </div>
   );
 }

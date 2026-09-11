@@ -2,6 +2,7 @@
 
 import { useActionState, useEffect, useState, useTransition } from "react";
 import { Card, adminInput, adminLabel, SubmitButton } from "@/components/admin/ui";
+import { ImageUpload } from "@/components/admin/image-upload";
 import {
   saveDCItem,
   deleteDCItem,
@@ -170,6 +171,8 @@ function ItemForm({
 }) {
   const action = saveDCItem.bind(null, item?.id ?? null);
   const [state, formAction, pending] = useActionState(action, initial);
+  const [type, setType] = useState(item?.type ?? "LINK");
+  const [url, setUrl] = useState(item?.url ?? "");
 
   useEffect(() => {
     if (state.ok) onDone();
@@ -189,7 +192,12 @@ function ItemForm({
       </label>
       <label className="block">
         <span className={adminLabel}>Type</span>
-        <select name="type" defaultValue={item?.type ?? "LINK"} className={adminInput}>
+        <select
+          name="type"
+          value={type}
+          onChange={(e) => setType(e.target.value)}
+          className={adminInput}
+        >
           {TYPES.map((t) => (
             <option key={t} value={t}>
               {t[0] + t.slice(1).toLowerCase()}
@@ -205,12 +213,23 @@ function ItemForm({
         <span className={adminLabel}>Description</span>
         <input name="description" defaultValue={item?.description} className={adminInput} />
       </label>
-      <label className="block sm:col-span-2">
+      <div className="block sm:col-span-2">
         <span className={adminLabel}>
           URL <span className="font-normal">(PDF, landing page or video embed — optional)</span>
         </span>
-        <input name="url" defaultValue={item?.url} className={adminInput} placeholder="https://…" />
-      </label>
+        <div className="flex flex-wrap items-center gap-2">
+          <input
+            name="url"
+            value={url}
+            onChange={(e) => setUrl(e.target.value)}
+            className={`${adminInput} flex-1`}
+            placeholder="https://…"
+          />
+          {type === "DOCUMENT" && (
+            <ImageUpload onUploaded={setUrl} label="Upload PDF" accept="application/pdf" />
+          )}
+        </div>
+      </div>
       <label className="block">
         <span className={adminLabel}>Accent color</span>
         <input

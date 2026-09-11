@@ -5,9 +5,11 @@ import { useRef, useState } from "react";
 export function ImageUpload({
   onUploaded,
   label = "Upload image",
+  accept = "image/jpeg,image/png,image/webp",
 }: {
   onUploaded: (path: string) => void;
   label?: string;
+  accept?: string;
 }) {
   const inputRef = useRef<HTMLInputElement>(null);
   const [busy, setBusy] = useState(false);
@@ -44,7 +46,7 @@ export function ImageUpload({
       <input
         ref={inputRef}
         type="file"
-        accept="image/jpeg,image/png,image/webp"
+        accept={accept}
         className="hidden"
         onChange={(e) => {
           const f = e.target.files?.[0];

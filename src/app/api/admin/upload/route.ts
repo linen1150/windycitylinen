@@ -4,8 +4,8 @@ import { join } from "node:path";
 import { getAdmin } from "@/lib/auth";
 import { slugify } from "@/lib/slug";
 
-const ALLOWED = new Set(["image/jpeg", "image/png", "image/webp", "image/avif"]);
-const MAX_BYTES = 8 * 1024 * 1024;
+const ALLOWED = new Set(["image/jpeg", "image/png", "image/webp", "image/avif", "application/pdf"]);
+const MAX_BYTES = 15 * 1024 * 1024;
 
 export async function POST(request: Request) {
   if (!(await getAdmin())) {
@@ -18,15 +18,19 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "No file provided" }, { status: 400 });
   }
   if (!ALLOWED.has(file.type)) {
-    return NextResponse.json({ error: "Use a JPG, PNG or WebP image" }, { status: 400 });
+    return NextResponse.json({ error: "Use a JPG, PNG, WebP image or a PDF" }, { status: 400 });
   }
   if (file.size > MAX_BYTES) {
-    return NextResponse.json({ error: "Image must be under 8 MB" }, { status: 400 });
+    return NextResponse.json({ error: "File must be under 15 MB" }, { status: 400 });
   }
 
-  const ext = { "image/jpeg": "jpg", "image/png": "png", "image/webp": "webp", "image/avif": "avif" }[
-    file.type
-  ]!;
+  const ext = {
+    "image/jpeg": "jpg",
+    "image/png": "png",
+    "image/webp": "webp",
+    "image/avif": "avif",
+    "application/pdf": "pdf",
+  }[file.type]!;
   const base = slugify(file.name.replace(/\.[^.]+$/, "")) || "upload";
   const filename = `${Date.now()}-${base}.${ext}`;
 

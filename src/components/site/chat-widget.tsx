@@ -23,11 +23,11 @@ type Message = { role: "user" | "assistant"; content: string; products?: Product
 const GREETING: Message = {
   role: "assistant",
   content:
-    "Hi! I can help you figure out sizing, fabrics and what we carry. What are you dressing tables for?",
+    "Hi, I'm Deb! I can help you figure out sizing, fabrics and what we carry. What are you dressing tables for?",
 };
 
 export function ChatWidget() {
-  const { add, has } = useInspirations();
+  const { add, removeBySlug, has } = useInspirations();
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([GREETING]);
   const [input, setInput] = useState("");
@@ -39,7 +39,11 @@ export function ChatWidget() {
     listRef.current?.scrollTo({ top: listRef.current.scrollHeight });
   }, [messages, loading]);
 
-  function saveToInspirations(p: ProductResult) {
+  function toggleInspirations(p: ProductResult) {
+    if (has(p.slug)) {
+      removeBySlug(p.slug);
+      return;
+    }
     add({
       productId: p.id,
       slug: p.slug,
@@ -81,7 +85,7 @@ export function ChatWidget() {
       {open && (
         <div className="mb-3 flex h-[520px] w-[340px] flex-col overflow-hidden rounded-lg border border-line bg-ivory shadow-xl sm:w-[380px]">
           <div className="flex items-center justify-between bg-ink px-4 py-3 text-white">
-            <span className="font-display text-lg">Ask about linens</span>
+            <span className="font-display text-lg">Chat with Deb</span>
             <button type="button" onClick={() => setOpen(false)} aria-label="Close chat" className="text-white/80 hover:text-white">
               <X size={18} />
             </button>
@@ -126,11 +130,10 @@ export function ChatWidget() {
                             </Link>
                             <button
                               type="button"
-                              onClick={() => saveToInspirations(p)}
-                              disabled={saved}
-                              aria-label={saved ? "Saved to My Inspirations" : "Save to My Inspirations"}
+                              onClick={() => toggleInspirations(p)}
+                              aria-label={saved ? "Remove from My Inspirations" : "Save to My Inspirations"}
                               className={`absolute right-1 top-1 flex size-6 items-center justify-center rounded-full shadow ${
-                                saved ? "bg-sage text-white" : "bg-white/90 text-ink hover:bg-white"
+                                saved ? "bg-sage text-white hover:bg-sage/80" : "bg-white/90 text-ink hover:bg-white"
                               }`}
                             >
                               {saved ? <Check size={14} /> : <Plus size={14} />}

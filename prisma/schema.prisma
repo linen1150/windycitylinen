@@ -206,6 +206,22 @@ model HeroSlide {
   @@index([order])
 }
 
+// --- About page ----------------------------------------------------------
+
+model TeamMember {
+  id        String   @id @default(cuid())
+  order     Int      @default(0)
+  name      String
+  title     String   @default("")
+  bio       String
+  imagePath String   @default("")
+  published Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([order])
+}
+
 // --- Admin auth --------------------------------------------------------
 
 model AdminUser {

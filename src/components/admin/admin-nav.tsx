@@ -9,6 +9,7 @@ const LINKS = [
   { href: "/admin/taxonomy", label: "Categories & fabrics" },
   { href: "/admin/design-center", label: "Design Center" },
   { href: "/admin/hero", label: "Home hero" },
+  { href: "/admin/team", label: "About Us — Team" },
   { href: "/admin/images", label: "Images" },
   { href: "/admin/quotes", label: "Quote requests" },
 ];

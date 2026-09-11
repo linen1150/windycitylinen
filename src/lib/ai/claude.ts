@@ -79,4 +79,83 @@ export async function askClaudeJSON<T>({ system, prompt, maxTokens = 1024, mock 
   }
 }
 
+export type ToolDef = {
+  name: string;
+  description: string;
+  input_schema: {
+    type: "object";
+    properties: Record<string, unknown>;
+    required?: string[];
+  };
+};
+
+type ToolRunResult = { resultText: string; sideData?: unknown };
+type ToolRunner = (name: string, input: Record<string, unknown>) => Promise<ToolRunResult>;
+
+/**
+ * Multi-turn text completion with tool use (e.g. searching the live catalog).
+ * Runs the model -> tool -> model loop server-side within a single request;
+ * the tool-call plumbing isn't persisted back into the client's message
+ * history, only the final text reply and any `sideData` the tools produced
+ * (e.g. product results to render as cards).
+ */
+export async function askClaudeWithTools({
+  system,
+  messages,
+  tools,
+  runTool,
+  maxTokens = 1024,
+}: AskArgs & { tools: ToolDef[]; runTool: ToolRunner }): Promise<{ reply: string; toolData: unknown[] }> {
+  if (!anthropic) {
+    const last = messages[messages.length - 1]?.content ?? "";
+    console.info(`\n──────── Claude tool call (dev, mocked) ────────\nsystem: ${system.slice(0, 80)}...\nuser: ${last}\n────────────────────────────────────────────\n`);
+    return {
+      reply: `Thanks for the question — I'm not fully wired up yet in dev (no API key set). In the meantime, call us at ${SITE.phone} or send us your list and we'll follow up directly.`,
+      toolData: [],
+    };
+  }
+
+  try {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    let convo: any[] = messages.map((m) => ({ role: m.role, content: m.content }));
+    const toolData: unknown[] = [];
+
+    for (let round = 0; round < 3; round++) {
+      const response = await anthropic.messages.create({
+        model: MODEL,
+        max_tokens: maxTokens,
+        system,
+        messages: convo,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        tools: tools as any,
+      });
+
+      const toolUses = response.content.filter((b) => b.type === "tool_use");
+      if (toolUses.length === 0) {
+        const block = response.content.find((b) => b.type === "text");
+        return { reply: block && block.type === "text" ? block.text : "", toolData };
+      }
+
+      convo.push({ role: "assistant", content: response.content });
+      const resultBlocks = [];
+      for (const use of toolUses) {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const u = use as any;
+        const { resultText, sideData } = await runTool(u.name, u.input ?? {});
+        if (sideData !== undefined) toolData.push(sideData);
+        resultBlocks.push({ type: "tool_result" as const, tool_use_id: u.id, content: resultText });
+      }
+      convo.push({ role: "user", content: resultBlocks });
+    }
+
+    return {
+      reply: "I'm having trouble searching right now — try rephrasing, or reach out to the team directly.",
+      toolData,
+    };
+  } catch (err) {
+    console.error("Claude tool call failed:", err);
+    throw err;
+  }
+}
+
 export const isClaudeConfigured = Boolean(apiKey);

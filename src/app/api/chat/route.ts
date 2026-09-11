@@ -1,8 +1,9 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { askClaude } from "@/lib/ai/claude";
+import { askClaudeWithTools } from "@/lib/ai/claude";
 import { buildChatSystemPrompt } from "@/lib/ai/chat-prompt";
 import { rateLimit } from "@/lib/rate-limit";
+import { searchProductsTool, runProductSearch } from "@/lib/ai/product-search-tool";
 
 const MAX_MESSAGES = 20;
 const MAX_MESSAGE_LEN = 2000;
@@ -35,8 +36,20 @@ export async function POST(request: Request) {
 
   try {
     const system = await buildChatSystemPrompt();
-    const reply = await askClaude({ system, messages: parsed.data.messages });
-    return NextResponse.json({ reply });
+    const { reply, toolData } = await askClaudeWithTools({
+      system,
+      messages: parsed.data.messages,
+      tools: [searchProductsTool],
+      runTool: async (name, input) => {
+        if (name === "search_products") {
+          return runProductSearch(input as { color?: string; query?: string });
+        }
+        return { resultText: "Unknown tool." };
+      },
+    });
+    // Only the most recent search's results are shown as cards.
+    const products = toolData.length ? toolData[toolData.length - 1] : undefined;
+    return NextResponse.json({ reply, products });
   } catch (err) {
     console.error("Chat route failed:", err);
     return NextResponse.json(

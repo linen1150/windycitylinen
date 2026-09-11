@@ -1,10 +1,21 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { MessageCircle, Send, X } from "lucide-react";
 import { SITE } from "@/lib/site";
+import { ProductImage } from "@/components/catalog/product-image";
 
-type Message = { role: "user" | "assistant"; content: string };
+type ProductResult = {
+  slug: string;
+  name: string;
+  category: string;
+  fabric: string;
+  colorName: string;
+  imageUrl: string | null;
+};
+
+type Message = { role: "user" | "assistant"; content: string; products?: ProductResult[] };
 
 const GREETING: Message = {
   role: "assistant",
@@ -40,7 +51,7 @@ export function ChatWidget() {
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Something went wrong.");
-      setMessages([...next, { role: "assistant", content: data.reply }]);
+      setMessages([...next, { role: "assistant", content: data.reply, products: data.products }]);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong — please try again.");
     } finally {
@@ -73,13 +84,33 @@ export function ChatWidget() {
 
           <div ref={listRef} className="flex-1 space-y-3 overflow-y-auto px-4 py-3">
             {messages.map((m, i) => (
-              <div
-                key={i}
-                className={`max-w-[85%] whitespace-pre-line rounded-lg px-3 py-2 text-[13px] leading-relaxed ${
-                  m.role === "user" ? "ml-auto bg-brass text-white" : "bg-white text-ink"
-                }`}
-              >
-                {m.content}
+              <div key={i}>
+                <div
+                  className={`max-w-[85%] whitespace-pre-line rounded-lg px-3 py-2 text-[13px] leading-relaxed ${
+                    m.role === "user" ? "ml-auto bg-brass text-white" : "bg-white text-ink"
+                  }`}
+                >
+                  {m.content}
+                </div>
+                {m.products && m.products.length > 0 && (
+                  <div className="mt-2 flex gap-2 overflow-x-auto pb-1">
+                    {m.products.map((p) => (
+                      <Link
+                        key={p.slug}
+                        href={`/product/${p.slug}`}
+                        className="w-20 shrink-0 text-center"
+                      >
+                        <ProductImage
+                          src={p.imageUrl}
+                          alt={`${p.fabric} ${p.colorName} ${p.category.replace(/s$/, "").toLowerCase()}`}
+                          colorHex={null}
+                          className="aspect-square w-full border border-line"
+                        />
+                        <span className="mt-1 block truncate text-[11px] text-ink-soft">{p.name}</span>
+                      </Link>
+                    ))}
+                  </div>
+                )}
               </div>
             ))}
             {loading && <div className="max-w-[85%] rounded-lg bg-white px-3 py-2 text-[13px] text-ink-soft">Thinking…</div>}

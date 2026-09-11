@@ -36,11 +36,19 @@ mentioned. Chatbot is launch-ready on the no-pricing front.
   colors (per Rob), just with a slightly different color word in a few cases
   (guide says "Desert Rose", catalog says "Dusty Rose" — not touched, unconfirmed
   which is right).
-- **Still open, lower confidence**: ~38 patterns in the guide with no clear catalog
-  match, ~67 catalog colorNames with no clear guide match (full lists are in the
-  workbook sent to Rob). Much of this is likely guide-parsing noise (footnote rows,
-  inconsistent "(Limited)" formatting) rather than real problems — did not bulk-edit
-  this list since false positives here would do more harm than the gap itself.
+- Rob asked to add the guide items missing from the site. Checked all ~38
+  candidates individually rather than bulk-creating — most (e.g. "Mini Check Red",
+  "Luxe Velvet Loden") already existed under a different spelling, which the naming
+  cleanup above already accounts for. Only **7 colors were genuinely new**:
+  Chiffon Gold/Ivory/Light Pink/White, Sparkle Sheer Turquoise, and two brand-new
+  patterns, Sandstone and Wave — added via `scripts/add-missing-specialty-items.mjs`
+  (14 products across their real category/size availability). **No photos exist for
+  these yet** — they show the site's gradient placeholder until real photos are
+  uploaded via the admin.
+- **Still open, lower confidence**: ~67 catalog colorNames with no clear guide
+  match (full list is in the workbook sent to Rob). Likely mostly legitimate
+  patterns the guide's "Specialty Price" tab just doesn't cover the same way — did
+  not touch this list, revisit only if Rob flags a specific one.
   Revisit only if Rob flags a specific pattern as wrong/missing.
 
 **Next up, whenever Rob returns:**

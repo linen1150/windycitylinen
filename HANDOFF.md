@@ -6,22 +6,26 @@ it). Used the "Essentials" tab to import real per-fabric tablecloth sizes (see
 `scripts/import-essentials-sizes.mjs` and "Data-quality notes" below). Only size
 *availability* was extracted — no price value is stored or displayed anywhere.
 
+`ANTHROPIC_API_KEY` is now set in `.env` (real key, local only — gitignored, never
+committed). Re-tested the chatbot for real: sizing math checked out exactly against
+the real chart (e.g. 60" round table -> 120" round linen, floor length), and 4
+adversarial pricing attempts (direct ask, "ignore all previous instructions" prompt
+injection, "just a rough ballpark" social engineering, and an indirect "cheapest
+napkin" ask) all correctly refused and redirected to the team — no price ever
+mentioned. Chatbot is launch-ready on the no-pricing front.
+
 **Waiting on Rob:**
 - Confirmation/cleanup on the **"Specialty" fabric reconciliation** (636 products,
   ~145 named patterns) — comparing the price guide's "Specialty Price" tab against
   the DB surfaced real discrepancies (typo duplicates like "Amalfi Saphire" vs
   "Amalfi Sapphire", inconsistent "(Limited)" formatting, some patterns spelled
   differently across the guide's own tabs). Needs a cleaner targeted pass — see the
-  plan in this session's transcript before just bulk-applying it.
-- An **Anthropic API key** (`ANTHROPIC_API_KEY` in `.env`) — the chatbot works today
-  but only against a mocked reply; needs a real key to test actual sizing answers and
-  to re-run the adversarial no-pricing test for real before launch.
+  plan in this session's transcript before just bulk-applying it. This is the only
+  remaining item before the catalog data is fully real.
 
 **Next up, whenever Rob returns:**
-1. Specialty fabric reconciliation (see above) — the big remaining data-quality item.
-2. If the Anthropic key has arrived — set it in `.env`, then re-test the chatbot for
-   real (sizing accuracy + adversarial no-pricing).
-3. Otherwise: Step 3 (My Inspirations Phase 2) is the next unstarted piece of the
+1. Specialty fabric reconciliation (see above) — the last remaining data-quality item.
+2. Otherwise: Step 3 (My Inspirations Phase 2) is the next unstarted piece of the
    original kickoff plan — needs a fresh spec from Rob on what "different" approach
    he wants (the first Phase 1 attempt was explicitly rejected earlier).
 
@@ -103,10 +107,10 @@ products. Rate-limited per IP (`src/lib/rate-limit.ts`, in-memory — fine for o
 instance; swap for Redis if the site ever scales to multiple instances). The
 contact phone/email is always shown in the panel, not just on error.
 
-No-pricing is enforced in the system prompt (hard rule from `CLAUDE.md`) and was
-smoke-tested with an adversarial "what's the price of X" — but only against the
-**mocked** response, since no `ANTHROPIC_API_KEY` is set yet. Re-run that test for
-real once a key is added, before launch.
+No-pricing is enforced in the system prompt (hard rule from `CLAUDE.md`) and has been
+adversarially tested for real against the live model (direct ask, prompt injection,
+social engineering, indirect ask — all refused, all redirected to the team). See
+"Where we left off" at the top.
 
 Sizing math in the prompt now comes straight from Rob's real chart
 (`public/documents/wcl-sizing-chart-2025.pdf`, transcribed into `chat-prompt.ts`)

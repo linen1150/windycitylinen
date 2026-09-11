@@ -14,14 +14,21 @@ injection, "just a rough ballpark" social engineering, and an indirect "cheapest
 napkin" ask) all correctly refused and redirected to the team — no price ever
 mentioned. Chatbot is launch-ready on the no-pricing front.
 
-**Waiting on Rob:**
-- Confirmation/cleanup on the **"Specialty" fabric reconciliation** (636 products,
-  ~145 named patterns) — comparing the price guide's "Specialty Price" tab against
-  the DB surfaced real discrepancies (typo duplicates like "Amalfi Saphire" vs
-  "Amalfi Sapphire", inconsistent "(Limited)" formatting, some patterns spelled
-  differently across the guide's own tabs). Needs a cleaner targeted pass — see the
-  plan in this session's transcript before just bulk-applying it. This is the only
-  remaining item before the catalog data is fully real.
+**Specialty fabric reconciliation — done for the high-confidence part:**
+- Mirage was pulled out of "Specialty" into its own Fabric (`scripts/split-mirage-fabric.mjs`)
+  — Rob confirmed it belongs at the Essentials tier, like Serenity.
+- Fixed 5 confirmed typo-duplicate colorNames (`scripts/fix-specialty-typos.mjs`):
+  Amalfi Saphire/Sapphire, Bahaus/Bauhaus, Brushstroke/Brushstrokes, Echo
+  Lumier/Lumiere, Pamela Palms/Palm. Each pair turned out to be the same real
+  color split across two spellings in different categories — merged into one
+  complete item per color.
+- **Still open, lower confidence**: comparing the price guide's "Specialty Price"
+  tab against the remaining 613 Specialty products found ~38 patterns in the guide
+  with no clear catalog match and ~67 catalog colorNames with no clear guide
+  match. Much of this is likely guide-parsing noise (footnote rows, inconsistent
+  "(Limited)"/word-order formatting) rather than real problems — did not bulk-edit
+  this list since false positives here would do more harm than the gap itself.
+  Revisit only if Rob flags a specific pattern as wrong/missing.
 
 **Next up, whenever Rob returns:**
 1. Specialty fabric reconciliation (see above) — the last remaining data-quality item.

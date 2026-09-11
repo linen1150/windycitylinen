@@ -37,6 +37,7 @@ const UPDATES = [
   },
   { title: "Velvet", section: "DIGITAL_SWATCH_CARDS", url: "/documents/2025-velvet-digital-swatchcard.pdf" },
   { title: "Specialty", section: "DIGITAL_SWATCH_CARDS", url: "/documents/2025-specialty-digital-swatchcard.pdf" },
+  { title: "Mirage", section: "DIGITAL_SWATCH_CARDS", url: "/documents/2025-mirage-digital-swatchcard.pdf" },
 ];
 
 for (const { title, section, url } of UPDATES) {

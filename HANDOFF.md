@@ -89,14 +89,13 @@ production-storage caveat as images, see below). Admin can now also upload a PDF
 directly on a Document-type item (`src/components/admin/image-upload.tsx` grew an
 `accept` prop; `/api/admin/upload` accepts `application/pdf` up to 15MB).
 
-Still empty (no file provided yet): **Digital swatch cards** — Mirage, Specialty,
-Velvet. Everything else across all three sections (lookbooks, swatch cards,
-videos) is filled in.
+All three sections (lookbooks, swatch cards, videos) are fully populated —
+9/9 digital swatch cards, no gaps left.
 
 ## Still to build / do
 
 1. **Content population** (via the admin): product keywords, collection assignments,
-   final About copy. Design Center is done (see above), except the 3 swatch cards noted.
+   final About copy. Design Center is fully done (see above).
 2. **Image/document storage migration** — off `public/images` and `public/documents`
    to Supabase Storage / Cloudinary so admin uploads work in production and the
    repo doesn't carry large PDFs. `imageUrl()` already accepts full URLs.

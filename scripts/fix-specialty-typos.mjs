@@ -22,30 +22,53 @@ function slugify(input) {
     .replace(/(^-|-$)/g, "");
 }
 
-// [typo spelling in DB, correct spelling confirmed against the price guide]
+// [spelling in DB, correct/canonical spelling]
+// Round 1 (applied): typo duplicates, each split across categories under two spellings.
+// Round 2 (applied): word-order-only differences vs the price guide — Rob asked to
+// consolidate these too. Kept the catalog's existing spelling over the guide's for
+// Bauhuas/Pallete/Tye Dye/Sequin(singular), since those are typos or inconsistent
+// even within the guide's own other tabs — see this session's transcript.
 const FIXES = [
   ["Amalfi Saphire", "Amalfi Sapphire"],
   ["Bahaus", "Bauhaus"],
   ["Brushstroke", "Brushstrokes"],
   ["Echo Lumier", "Echo Lumiere"],
   ["Pamela Palms", "Pamela Palm"],
+  ["Houndstooth Black", "Black Houndstooth"],
+  ["Ice Blue Chiffon", "Chiffon Ice Blue"],
+  ["Geometric Gold Foil", "Geometric Foil Gold"],
+  ["Geometric Silver Foil", "Geometric Foil Silver"],
+  ["Amber Matrix", "Matrix Amber"],
+  ["Burnt Orange Matrix", "Matrix Burnt Orange"],
+  ["Ornamental Silver Lace", "Ornamental Lace Silver"],
+  ["Ornamental White Lace", "Ornamental Lace White"],
+  ["Navy Verve", "Verve Navy"],
 ];
 
 const DRY_RUN = !process.argv.includes("--apply");
 
 async function run() {
-  for (const [typo, correct] of FIXES) {
-    const products = await prisma.product.findMany({ where: { colorName: typo } });
-    console.log(`\n${typo} -> ${correct} (${products.length} products)`);
+  for (const [from, to] of FIXES) {
+    const products = await prisma.product.findMany({ where: { colorName: from } });
+    console.log(`\n${from} -> ${to} (${products.length} products)`);
     for (const p of products) {
-      let newSlug = slugify(correct);
-      const collision = await prisma.product.findFirst({ where: { slug: newSlug, NOT: { id: p.id } } });
-      if (collision) newSlug = `${newSlug}-${p.externalId ?? p.id.slice(-4)}`;
-      console.log(`  ${p.slug} -> ${newSlug} (${p.name} -> ${correct})`);
+      // Guard against creating a true same-category duplicate (missed once before —
+      // see the Bauhaus/Cuffs cleanup in this session).
+      const sameCategoryCollision = await prisma.product.findFirst({
+        where: { colorName: to, categoryId: p.categoryId, NOT: { id: p.id } },
+      });
+      if (sameCategoryCollision) {
+        console.log(`  SKIP ${p.slug}: "${to}" already has a product in this category (${sameCategoryCollision.slug}) — needs manual review, not a clean merge`);
+        continue;
+      }
+      let newSlug = slugify(to);
+      const slugCollision = await prisma.product.findFirst({ where: { slug: newSlug, NOT: { id: p.id } } });
+      if (slugCollision) newSlug = `${newSlug}-${p.externalId ?? p.id.slice(-4)}`;
+      console.log(`  ${p.slug} -> ${newSlug} (${p.name} -> ${to})`);
       if (!DRY_RUN) {
         await prisma.product.update({
           where: { id: p.id },
-          data: { name: correct, colorName: correct, slug: newSlug },
+          data: { name: to, colorName: to, slug: newSlug },
         });
       }
     }

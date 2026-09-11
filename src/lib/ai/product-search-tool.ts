@@ -23,21 +23,25 @@ export const searchProductsTool: ToolDef = {
 };
 
 export type ProductSearchResult = {
+  id: string;
   slug: string;
   name: string;
   category: string;
   fabric: string;
   colorName: string;
+  colorHex: string | null;
   imageUrl: string | null;
 };
 
 function toResult(p: ProductCardData): ProductSearchResult {
   return {
+    id: p.id,
     slug: p.slug,
     name: p.name,
     category: p.category,
     fabric: p.fabric,
     colorName: p.colorName,
+    colorHex: p.colorHex,
     imageUrl: p.imageUrl,
   };
 }

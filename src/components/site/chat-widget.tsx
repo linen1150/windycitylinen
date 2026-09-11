@@ -2,16 +2,19 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { MessageCircle, Send, X } from "lucide-react";
+import { Check, MessageCircle, Plus, Send, X } from "lucide-react";
 import { SITE } from "@/lib/site";
 import { ProductImage } from "@/components/catalog/product-image";
+import { useInspirations } from "@/components/inspirations/inspirations-store";
 
 type ProductResult = {
+  id: string;
   slug: string;
   name: string;
   category: string;
   fabric: string;
   colorName: string;
+  colorHex: string | null;
   imageUrl: string | null;
 };
 
@@ -24,6 +27,7 @@ const GREETING: Message = {
 };
 
 export function ChatWidget() {
+  const { add, has } = useInspirations();
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([GREETING]);
   const [input, setInput] = useState("");
@@ -34,6 +38,19 @@ export function ChatWidget() {
   useEffect(() => {
     listRef.current?.scrollTo({ top: listRef.current.scrollHeight });
   }, [messages, loading]);
+
+  function saveToInspirations(p: ProductResult) {
+    add({
+      productId: p.id,
+      slug: p.slug,
+      name: p.name,
+      category: p.category,
+      fabric: p.fabric,
+      size: "",
+      imageUrl: p.imageUrl,
+      colorHex: p.colorHex,
+    });
+  }
 
   async function send() {
     const content = input.trim();
@@ -94,21 +111,40 @@ export function ChatWidget() {
                 </div>
                 {m.products && m.products.length > 0 && (
                   <div className="mt-2 flex gap-2 overflow-x-auto pb-1">
-                    {m.products.map((p) => (
-                      <Link
-                        key={p.slug}
-                        href={`/product/${p.slug}`}
-                        className="w-20 shrink-0 text-center"
-                      >
-                        <ProductImage
-                          src={p.imageUrl}
-                          alt={`${p.fabric} ${p.colorName} ${p.category.replace(/s$/, "").toLowerCase()}`}
-                          colorHex={null}
-                          className="aspect-square w-full border border-line"
-                        />
-                        <span className="mt-1 block truncate text-[11px] text-ink-soft">{p.name}</span>
-                      </Link>
-                    ))}
+                    {m.products.map((p) => {
+                      const saved = has(p.slug);
+                      return (
+                        <div key={p.slug} className="w-20 shrink-0">
+                          <div className="relative">
+                            <Link href={`/product/${p.slug}`}>
+                              <ProductImage
+                                src={p.imageUrl}
+                                alt={`${p.fabric} ${p.colorName} ${p.category.replace(/s$/, "").toLowerCase()}`}
+                                colorHex={p.colorHex}
+                                className="aspect-square w-full border border-line"
+                              />
+                            </Link>
+                            <button
+                              type="button"
+                              onClick={() => saveToInspirations(p)}
+                              disabled={saved}
+                              aria-label={saved ? "Saved to My Inspirations" : "Save to My Inspirations"}
+                              className={`absolute right-1 top-1 flex size-6 items-center justify-center rounded-full shadow ${
+                                saved ? "bg-sage text-white" : "bg-white/90 text-ink hover:bg-white"
+                              }`}
+                            >
+                              {saved ? <Check size={14} /> : <Plus size={14} />}
+                            </button>
+                          </div>
+                          <Link
+                            href={`/product/${p.slug}`}
+                            className="mt-1 block truncate text-center text-[11px] text-ink-soft"
+                          >
+                            {p.name}
+                          </Link>
+                        </div>
+                      );
+                    })}
                   </div>
                 )}
               </div>

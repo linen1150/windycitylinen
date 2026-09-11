@@ -91,9 +91,8 @@ export default async function ProductPage({ params }: PageProps<"/product/[slug]
       >
         {matchingNapkin ? (
           <>
-            {details}
-            {mainImage}
-            <div>
+            <div className="md:order-2">{mainImage}</div>
+            <div className="md:order-3">
               <ProductImage
                 src={matchingNapkin.imageUrl}
                 alt={`${matchingNapkin.fabric} ${matchingNapkin.colorName} napkin`}
@@ -103,6 +102,7 @@ export default async function ProductPage({ params }: PageProps<"/product/[slug]
               />
               <p className="mt-2 text-xs text-ink-soft">Matching napkin</p>
             </div>
+            <div className="md:order-1">{details}</div>
           </>
         ) : (
           <>

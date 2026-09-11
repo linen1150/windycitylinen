@@ -73,17 +73,13 @@ const HIDDEN_FABRIC_SLUGS = new Set(["banquets", "high-boys", "rounds"]);
 export const getFacets = cache(async () => {
   const [categories, fabrics, sizes, collections] = await Promise.all([
     db.category.findMany({ orderBy: { order: "asc" } }),
-    db.fabric.findMany({ orderBy: { name: "asc" } }),
+    db.fabric.findMany({ orderBy: { order: "asc" } }),
     db.size.findMany({ orderBy: { order: "asc" } }),
     db.collection.findMany({ orderBy: { order: "asc" } }),
   ]);
-  const visibleFabrics = fabrics.filter((f) => !HIDDEN_FABRIC_SLUGS.has(f.slug));
-  const classicSolid = visibleFabrics.filter((f) => f.name === "Classic Solid");
-  const restFabrics = visibleFabrics.filter((f) => f.name !== "Classic Solid");
-
   return {
     categories,
-    fabrics: [...classicSolid, ...restFabrics],
+    fabrics: fabrics.filter((f) => !HIDDEN_FABRIC_SLUGS.has(f.slug)),
     sizes,
     collections,
     colorGroups: COLOR_GROUPS,
@@ -152,7 +148,7 @@ export async function searchCatalog(query: CatalogQuery) {
     db.product.findMany({
       where,
       include: { category: true, fabric: true },
-      orderBy: [{ category: { order: "asc" } }, { fabric: { name: "asc" } }, { name: "asc" }],
+      orderBy: [{ category: { order: "asc" } }, { fabric: { order: "asc" } }, { name: "asc" }],
       skip: (page - 1) * PAGE_SIZE,
       take: PAGE_SIZE,
     }),

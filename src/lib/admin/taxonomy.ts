@@ -23,7 +23,7 @@ function model(kind: TaxonKind): TaxonDelegate {
   return m as unknown as TaxonDelegate;
 }
 
-const ordered = new Set<TaxonKind>(["category", "size", "collection"]);
+const ordered = new Set<TaxonKind>(["category", "fabric", "size", "collection"]);
 
 async function revalidate() {
   revalidatePath("/admin/taxonomy");

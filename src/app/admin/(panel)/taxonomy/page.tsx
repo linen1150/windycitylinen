@@ -7,7 +7,7 @@ export const dynamic = "force-dynamic";
 export default async function TaxonomyPage() {
   const [categories, fabrics, sizes, collections] = await Promise.all([
     db.category.findMany({ orderBy: { order: "asc" }, include: { _count: { select: { products: true } } } }),
-    db.fabric.findMany({ orderBy: { name: "asc" }, include: { _count: { select: { products: true } } } }),
+    db.fabric.findMany({ orderBy: { order: "asc" }, include: { _count: { select: { products: true } } } }),
     db.size.findMany({ orderBy: { order: "asc" }, include: { _count: { select: { products: true } } } }),
     db.collection.findMany({ orderBy: { order: "asc" }, include: { _count: { select: { products: true } } } }),
   ]);

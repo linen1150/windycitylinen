@@ -54,13 +54,12 @@ const ESSENTIALS_SIZES = {
     '108" Round', '120" Square', '120" Round', '132" Round',
     '90"x132" Banquet', '90"x156" Banquet', '108"x156" Banquet',
   ],
+  // Mirage used to live under fabric=Specialty (colorName prefix) but is now its
+  // own Fabric row, same as every other fabric here.
+  "Mirage": [
+    '96" Round', '108" Round', '120" Round', '132" Round', '90"x156" Banquet', '108"x156" Banquet',
+  ],
 };
-
-// Mirage lives under fabric=Specialty (colorName starts with "Mirage"), not its
-// own Fabric row.
-const MIRAGE_SIZES = [
-  '96" Round', '108" Round', '120" Round', '132" Round', '90"x156" Banquet', '108"x156" Banquet',
-];
 
 const DRY_RUN = !process.argv.includes("--apply");
 
@@ -95,14 +94,6 @@ async function run() {
     });
     await applySizes(fabricName, products, sizeIds);
   }
-
-  const specialty = fabricByName.get("Specialty");
-  const mirageSizeIds = MIRAGE_SIZES.map((n) => sizeIdByName.get(n)).filter(Boolean);
-  const mirageProducts = await prisma.product.findMany({
-    where: { fabricId: specialty.id, categoryId: tablecloth.id, colorName: { startsWith: "Mirage" } },
-    include: { sizes: true },
-  });
-  await applySizes("Mirage", mirageProducts, mirageSizeIds);
 
   if (DRY_RUN) console.log("\n(dry run — re-run with --apply to write these changes)");
   await prisma.$disconnect();

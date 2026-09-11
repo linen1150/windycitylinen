@@ -44,7 +44,10 @@ mentioned. Chatbot is launch-ready on the no-pricing front.
   patterns, Sandstone and Wave — added via `scripts/add-missing-specialty-items.mjs`
   (14 products across their real category/size availability). **No photos exist for
   these yet** — they show the site's gradient placeholder until real photos are
-  uploaded via the admin.
+  uploaded via the admin. Rob tried sending photos by pasting them into chat, which
+  doesn't give a real file to work with (same limitation as always) — he opted to
+  leave the placeholders for now rather than troubleshoot further. Not urgent;
+  revisit whenever he sends real files.
 - **Still open, lower confidence**: ~67 catalog colorNames with no clear guide
   match (full list is in the workbook sent to Rob). Likely mostly legitimate
   patterns the guide's "Specialty Price" tab just doesn't cover the same way — did

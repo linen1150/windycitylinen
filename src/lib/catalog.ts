@@ -247,4 +247,14 @@ export async function getMatchingNapkin(product: ProductDetailData): Promise<Pro
   return p ? toCard(p) : null;
 }
 
+/** Event photos from the Gallery whose caption names this exact product. */
+export async function getGalleryPhotosForProduct(product: ProductDetailData, take = 4) {
+  const items = await db.galleryItem.findMany({
+    where: { published: true, caption: product.name },
+    orderBy: { order: "asc" },
+    take,
+  });
+  return items;
+}
+
 export const countProducts = cache(async () => db.product.count({ where: { published: true } }));

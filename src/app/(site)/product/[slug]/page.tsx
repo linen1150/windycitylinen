@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { categoryNoun, getMatchingNapkin, getProductBySlug, getRelatedProducts } from "@/lib/catalog";
+import {
+  categoryNoun,
+  getGalleryPhotosForProduct,
+  getMatchingNapkin,
+  getProductBySlug,
+  getRelatedProducts,
+} from "@/lib/catalog";
 import { ProductImage } from "@/components/catalog/product-image";
 import { ProductCard } from "@/components/catalog/product-card";
 import { AddToInspirations } from "@/components/inspirations/add-to-inspirations";
@@ -26,9 +32,10 @@ export default async function ProductPage({ params }: PageProps<"/product/[slug]
   const product = await getProductBySlug(slug);
   if (!product) notFound();
 
-  const [related, matchingNapkin] = await Promise.all([
+  const [related, matchingNapkin, galleryPhotos] = await Promise.all([
     getRelatedProducts(product),
     product.category === "Tablecloths and Overlays" ? getMatchingNapkin(product) : Promise.resolve(null),
+    getGalleryPhotosForProduct(product),
   ]);
   const noun = categoryNoun(product.category);
 
@@ -100,7 +107,6 @@ export default async function ProductPage({ params }: PageProps<"/product/[slug]
                 className="aspect-square w-full"
                 sizes="(max-width: 768px) 100vw, 420px"
               />
-              <p className="mt-2 text-xs text-ink-soft">Matching napkin</p>
             </div>
             <div className="md:order-1">{details}</div>
           </>
@@ -111,6 +117,25 @@ export default async function ProductPage({ params }: PageProps<"/product/[slug]
           </>
         )}
       </div>
+
+      {galleryPhotos.length > 0 && (
+        <section className="mt-16">
+          <h2 className="font-display text-xl">Seen at real events</h2>
+          <div className="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-4">
+            {galleryPhotos.map((photo) => (
+              <Link key={photo.id} href="/gallery" className="block">
+                <ProductImage
+                  src={photo.imagePath || null}
+                  alt={`${product.name} ${noun} at a Windy City Linen event`}
+                  colorHex={product.colorHex}
+                  className="aspect-square w-full"
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                />
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
 
       {related.length > 0 && (
         <section className="mt-16">

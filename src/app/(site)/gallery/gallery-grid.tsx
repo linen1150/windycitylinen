@@ -49,7 +49,7 @@ export function GalleryGrid({ items }: { items: Item[] }) {
           >
             <ProductImage
               src={item.imagePath || null}
-              alt={item.caption || "Windy City Linen event photo"}
+              alt={item.caption ? `${item.caption} at a Windy City Linen event` : "Windy City Linen event photo"}
               colorHex={null}
               className="h-full w-full"
             />
@@ -115,7 +115,7 @@ export function GalleryGrid({ items }: { items: Item[] }) {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={open.imagePath}
-              alt={open.caption || "Windy City Linen event photo"}
+              alt={open.caption ? `${open.caption} at a Windy City Linen event` : "Windy City Linen event photo"}
               className="max-h-[85vh] max-w-[90vw] object-contain"
             />
             {open.caption && <p className="mt-3 text-sm text-white/80">{open.caption}</p>}

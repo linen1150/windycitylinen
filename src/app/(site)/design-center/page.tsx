@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Design Center",
   description:
     "Seasonal lookbooks, digital swatch cards and styling videos from Windy City Linen to help you plan your table before you get in touch.",
+  alternates: { canonical: "/design-center" },
 };
 
 const SECTION_META: Record<

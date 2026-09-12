@@ -11,6 +11,7 @@ import {
 import { ProductImage } from "@/components/catalog/product-image";
 import { ProductCard } from "@/components/catalog/product-card";
 import { AddToInspirations } from "@/components/inspirations/add-to-inspirations";
+import { breadcrumbSchema, productSchema } from "@/lib/structured-data";
 
 export async function generateMetadata({
   params,
@@ -21,9 +22,11 @@ export async function generateMetadata({
   const noun = categoryNoun(product.category);
   return {
     title: `${product.name} ${noun}`,
-    description: `${product.fabric} ${product.colorName} ${noun} rental from Windy City Linen. Available in ${
-      product.sizes.length ? product.sizes.join(", ") : "multiple sizes"
-    }. Add to My Inspirations and send your list — no pricing shown; our team follows up directly.`,
+    description: `${product.colorName} in our ${product.fabric} fabric — a ${noun} rental from Windy City Linen for weddings and events in Chicago & Milwaukee.`,
+    alternates: { canonical: `/product/${product.slug}` },
+    openGraph: product.imageUrl
+      ? { images: [{ url: product.imageUrl, alt: `${product.fabric} ${product.colorName} ${noun}` }] }
+      : undefined,
   };
 }
 
@@ -77,8 +80,23 @@ export default async function ProductPage({ params }: PageProps<"/product/[slug]
     />
   );
 
+  const breadcrumbs = breadcrumbSchema([
+    { name: "Products", path: "/products" },
+    { name: product.category, path: `/products/${product.categorySlug}` },
+    { name: product.name, path: `/product/${product.slug}` },
+  ]);
+
   return (
     <div className="mx-auto max-w-6xl px-4 py-8 sm:px-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema(product)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
+      />
+
       <nav className="mb-6 text-xs text-ink-soft">
         <Link href="/products" className="hover:underline">Products</Link>
         {" / "}

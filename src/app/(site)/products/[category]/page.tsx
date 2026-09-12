@@ -4,6 +4,7 @@ import { db } from "@/lib/db";
 import { getCategoryBySlug, getFacets, searchCatalog } from "@/lib/catalog";
 import { parseCatalogQuery } from "@/lib/catalog-query";
 import { CatalogBrowser } from "@/components/catalog/catalog-browser";
+import { breadcrumbSchema } from "@/lib/structured-data";
 
 export async function generateStaticParams() {
   const categories = await db.category.findMany({ select: { slug: true } });
@@ -19,6 +20,7 @@ export async function generateMetadata({
   return {
     title: `${cat.name} Rentals`,
     description: `${cat.name} for weddings, galas and corporate events across Chicago and Milwaukee. Filter by color, fabric and size, then send your shortlist to Windy City Linen.`,
+    alternates: { canonical: `/products/${cat.slug}` },
   };
 }
 
@@ -34,8 +36,18 @@ export default async function CategoryPage({
   const query = { ...base, category: [cat.slug] };
   const [facets, result] = await Promise.all([getFacets(), searchCatalog(query)]);
 
+  const breadcrumbs = breadcrumbSchema([
+    { name: "Products", path: "/products" },
+    { name: cat.name, path: `/products/${cat.slug}` },
+  ]);
+
   return (
     <div className="mx-auto max-w-6xl px-4 py-10 sm:px-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
+      />
+
       <nav className="mb-4 text-xs text-ink-soft">
         <a href="/products" className="hover:underline">Products</a> / {cat.name}
       </nav>

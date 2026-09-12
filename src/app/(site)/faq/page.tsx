@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "FAQ",
   description:
     "Answers to common questions about ordering, sizing, delivery, and what to expect from Windy City Linen.",
+  alternates: { canonical: "/faq" },
 };
 
 export default async function FaqPage() {

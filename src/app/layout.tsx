@@ -34,6 +34,17 @@ export const metadata: Metadata = {
     type: "website",
     siteName: SITE.name,
     locale: "en_US",
+    images: [
+      {
+        url: "/home/hero-1.jpg",
+        width: 900,
+        height: 600,
+        alt: "An outdoor wedding table set with Windy City Linen",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
   },
 };
 

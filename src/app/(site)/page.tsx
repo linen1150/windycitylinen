@@ -1,9 +1,15 @@
+import type { Metadata } from "next";
 import { countProducts } from "@/lib/catalog";
 import { HeroCarousel } from "@/components/site/hero-carousel";
 import { db } from "@/lib/db";
 import { SITE } from "@/lib/site";
+import { localBusinessSchema } from "@/lib/structured-data";
 
 export const dynamic = "force-dynamic";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export default async function HomePage() {
   const [total, heroSlides] = await Promise.all([
@@ -17,6 +23,14 @@ export default async function HomePage() {
 
   return (
     <>
+      {localBusinessSchema().map((schema, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
+
       {/* Hero */}
       <section
         className={`mx-auto grid max-w-[100rem] items-start gap-10 px-4 py-14 sm:px-6 ${

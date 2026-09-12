@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Gallery",
   description:
     "Real events dressed by Windy City Linen — tablecloths, runners, napkins and chair covers from weddings, galas and corporate events across Chicagoland and Milwaukee.",
+  alternates: { canonical: "/gallery" },
 };
 
 export default async function GalleryPage() {

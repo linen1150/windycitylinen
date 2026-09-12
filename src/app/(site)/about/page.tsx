@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "About Us",
   description:
     "Serving the event industry since 2008, Windy City Linen provides high-quality event linens with showrooms in Wheeling, IL and Elm Grove, WI.",
+  alternates: { canonical: "/about" },
 };
 
 export default async function AboutPage() {

@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "All Linen Rentals",
   description:
     "Browse the full Windy City Linen catalog — tablecloths, overlays, napkins, table runners, cuffs, spandex and chair covers. Filter by color, fabric, size and collection, then send us your shortlist.",
+  alternates: { canonical: "/products" },
 };
 
 export default async function ProductsPage({ searchParams }: PageProps<"/products">) {

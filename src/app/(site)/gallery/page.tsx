@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { db } from "@/lib/db";
-import { ProductImage } from "@/components/catalog/product-image";
+import { GalleryGrid } from "./gallery-grid";
 
 export const dynamic = "force-dynamic";
 
@@ -29,21 +29,7 @@ export default async function GalleryPage() {
           Photos coming soon.
         </div>
       ) : (
-        <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-          {items.map((item) => (
-            <figure key={item.id}>
-              <ProductImage
-                src={item.imagePath || null}
-                alt={item.caption || "Windy City Linen event photo"}
-                colorHex={null}
-                className="aspect-square w-full border border-line"
-              />
-              {item.caption && (
-                <figcaption className="mt-1.5 text-xs text-ink-soft">{item.caption}</figcaption>
-              )}
-            </figure>
-          ))}
-        </div>
+        <GalleryGrid items={items} />
       )}
     </div>
   );

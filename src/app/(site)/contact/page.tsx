@@ -20,7 +20,10 @@ function LocationMap({ query, name }: { query: string; name: string }) {
   );
 }
 
-export default function ContactPage() {
+export default async function ContactPage({ searchParams }: PageProps<"/contact">) {
+  const sp = await searchParams;
+  const about = (Array.isArray(sp.about) ? sp.about[0] : sp.about) ?? "";
+
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-8">
       <h1 className="text-center font-script text-4xl sm:text-5xl">Contact Us</h1>
@@ -29,7 +32,7 @@ export default function ContactPage() {
         {/* Form */}
         <section>
           <h2 className="font-display text-2xl">We would love to hear from you&hellip;</h2>
-          <ContactForm />
+          <ContactForm subject={about} />
         </section>
 
         {/* Locations */}

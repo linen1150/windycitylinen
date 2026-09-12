@@ -31,7 +31,7 @@ function TextField({
   );
 }
 
-export function ContactForm() {
+export function ContactForm({ subject = "" }: { subject?: string }) {
   const [state, action, pending] = useActionState(submitInquiry, initial);
 
   if (state.status === "success") {
@@ -54,7 +54,7 @@ export function ContactForm() {
       <TextField name="name" placeholder="Name" required error={err("name")} />
       <TextField name="email" type="email" placeholder="Email" required error={err("email")} />
       <TextField name="phone" type="tel" placeholder="Phone" />
-      <TextField name="subject" placeholder="Subject" />
+      <TextField name="subject" placeholder="Subject" defaultValue={subject} />
       <TextField name="eventDate" placeholder="Event Date" />
       <TextField name="venue" placeholder="Venue" />
       <TextField name="caterer" placeholder="Caterer" />

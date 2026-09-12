@@ -13,15 +13,12 @@ const UPDATES = [
   { title: "New Additions 2026", url: "/documents/fall-2026-new-releases.pdf" },
   { title: "Universal Sizing Guide", url: "/documents/wcl-sizing-chart-2025.pdf" },
   { title: "Socials & Soirees", url: "https://www.flipsnack.com/79B77D88B7A/2026-socials-and-soirees-wcl" },
-  {
-    title: "Serenity Look Book",
-    url: "https://www.flipsnack.com/79B77D88B7A/look-book-serenity-flip-7-27-dkao80ihp8/full-view.html",
-  },
-  {
-    title: "Jute Look Book",
-    url: "https://www.flipsnack.com/79B77D88B7A/new-jute-look-book-7-27/full-view.html",
-  },
-  { title: "Echo Look Book", url: "https://www.flipsnack.com/79B77D88B7A/look-book-echo-edit.html" },
+  // The original Flipsnack lookbooks for these three 404 now (deleted/moved on
+  // Flipsnack's end, confirmed 2026-09-12) — point at the real matching
+  // products instead of a dead external link.
+  { title: "Serenity Look Book", url: "/products?fabric=serenity" },
+  { title: "Jute Look Book", url: "/products?fabric=jute" },
+  { title: "Echo Look Book", url: "/search?q=echo" },
   { title: "Classic Solid", section: "DIGITAL_SWATCH_CARDS", url: "/documents/2025-classic-standard-digital-swatches.pdf" },
   { title: "Picnic Check", section: "DIGITAL_SWATCH_CARDS", url: "/documents/2025-picnic-check-digital-swatchcard.pdf" },
   { title: "Matte Lamour", section: "DIGITAL_SWATCH_CARDS", url: "/documents/2025-lamour-digital-swatchcard.pdf" },

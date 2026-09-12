@@ -57,9 +57,15 @@ function ItemRow({ item, first, last }: { item: Item; first: boolean; last: bool
       <form action={formAction} className="grid gap-4 sm:grid-cols-[160px_1fr]">
         <div>
           <div
-            className="aspect-square w-full rounded-sm border border-line bg-ivory bg-cover bg-center"
+            className="relative aspect-square w-full overflow-hidden rounded-sm border border-line bg-ivory bg-cover bg-center"
             style={imagePath ? { backgroundImage: `url(${imagePath})` } : undefined}
-          />
+          >
+            {item.caption && (
+              <span className="absolute inset-x-0 bottom-0 bg-black/60 px-1.5 py-1 text-center text-[11px] leading-tight text-white">
+                {item.caption}
+              </span>
+            )}
+          </div>
           <div className="mt-2">
             <ImageUpload onUploaded={setImagePath} label="Upload photo" />
           </div>

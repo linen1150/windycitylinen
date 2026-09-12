@@ -44,20 +44,22 @@ export function GalleryGrid({ items }: { items: Item[] }) {
             key={item.id}
             type="button"
             onClick={() => setOpenIndex(i)}
-            className="block text-left"
+            className="group relative block aspect-square overflow-hidden border border-line text-left"
             aria-label={item.caption || "View photo full size"}
           >
-            <figure>
-              <ProductImage
-                src={item.imagePath || null}
-                alt={item.caption || "Windy City Linen event photo"}
-                colorHex={null}
-                className="aspect-square w-full border border-line transition-opacity hover:opacity-90"
-              />
-              {item.caption && (
-                <figcaption className="mt-1.5 text-xs text-ink-soft">{item.caption}</figcaption>
-              )}
-            </figure>
+            <ProductImage
+              src={item.imagePath || null}
+              alt={item.caption || "Windy City Linen event photo"}
+              colorHex={null}
+              className="h-full w-full"
+            />
+            {item.caption && (
+              <span className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/0 p-3 text-center opacity-0 transition-all duration-150 group-hover:bg-black/50 group-hover:opacity-100">
+                <span className="font-display text-base text-white drop-shadow sm:text-lg">
+                  {item.caption}
+                </span>
+              </span>
+            )}
           </button>
         ))}
       </div>

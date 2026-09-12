@@ -222,6 +222,34 @@ model TeamMember {
   @@index([order])
 }
 
+// --- FAQ page --------------------------------------------------------------
+
+model FaqItem {
+  id        String   @id @default(cuid())
+  order     Int      @default(0)
+  question  String
+  answer    String
+  published Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([order])
+}
+
+// --- Gallery page ------------------------------------------------------------
+
+model GalleryItem {
+  id        String   @id @default(cuid())
+  order     Int      @default(0)
+  imagePath String   @default("")
+  caption   String   @default("")
+  published Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([order])
+}
+
 // --- Admin auth --------------------------------------------------------
 
 model AdminUser {

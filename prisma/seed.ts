@@ -287,6 +287,65 @@ async function main() {
     console.log("  team members already exist");
   }
 
+  console.log("Ensuring FAQ items exist…");
+  if ((await prisma.faqItem.count()) === 0) {
+    await prisma.faqItem.createMany({
+      data: [
+        {
+          order: 0,
+          question: "How do I place an order?",
+          answer:
+            "Browse the catalog, pick a fabric, color and size, and add it to My Inspirations — no account or checkout needed. Once your list is ready, send it to our team from the My Inspirations page and we'll follow up with pricing and availability, usually within one business day.",
+        },
+        {
+          order: 1,
+          question: "How do I know what size linen I need?",
+          answer:
+            "Chat with Bridgette (the assistant on every page) with your table shape and size and she'll recommend a linen size using our real sizing chart. You're also welcome to call or email our team directly.",
+        },
+        {
+          order: 2,
+          question: "Do you deliver and set up?",
+          answer:
+            "We serve the Chicagoland and Milwaukee areas, with showrooms in Wheeling, IL and Elm Grove, WI. Delivery, setup and pickup details are confirmed with our team once we know your event date and venue.",
+        },
+        {
+          order: 3,
+          question: "Are your linens cleaned and pressed before each event?",
+          answer:
+            "Yes — every linen is professionally cleaned and pressed before it goes out to an event.",
+        },
+        {
+          order: 4,
+          question: "Can I see a fabric sample before booking?",
+          answer:
+            "Yes. Check the digital swatch cards in our Design Center for true-to-color previews, or contact our team to request a physical sample.",
+        },
+        {
+          order: 5,
+          question: "Do you have a minimum order?",
+          answer:
+            "It depends on your event — reach out to our team with your date and details and they'll walk you through it.",
+        },
+        {
+          order: 6,
+          question: "What if something isn't right with my order?",
+          answer:
+            "Let our team know right away — call or email us and we'll work with you to make it right.",
+        },
+        {
+          order: 7,
+          question: "What areas do you serve?",
+          answer:
+            "We serve events throughout Chicagoland and Milwaukee, from intimate dinners to galas of two thousand guests, with showrooms in Wheeling, IL and Elm Grove, WI.",
+        },
+      ],
+    });
+    console.log("  created 8 FAQ items");
+  } else {
+    console.log("  FAQ items already exist");
+  }
+
   console.log("Ensuring an admin user exists…");
   const email = process.env.ADMIN_EMAIL;
   const password = process.env.ADMIN_PASSWORD;

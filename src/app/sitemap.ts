@@ -8,7 +8,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     db.product.findMany({ where: { published: true }, select: { slug: true, updatedAt: true } }),
   ]);
 
-  const staticRoutes = ["", "/products", "/search", "/design-center", "/about", "/contact", "/my-inspirations"];
+  const staticRoutes = [
+    "",
+    "/products",
+    "/search",
+    "/gallery",
+    "/design-center",
+    "/about",
+    "/contact",
+    "/my-inspirations",
+    "/faq",
+  ];
 
   return [
     ...staticRoutes.map((path) => ({

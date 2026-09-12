@@ -10,6 +10,8 @@ const LINKS = [
   { href: "/admin/design-center", label: "Design Center" },
   { href: "/admin/hero", label: "Home hero" },
   { href: "/admin/team", label: "About Us — Team" },
+  { href: "/admin/faq", label: "FAQ" },
+  { href: "/admin/gallery", label: "Gallery" },
   { href: "/admin/images", label: "Images" },
   { href: "/admin/quotes", label: "Quote requests" },
 ];

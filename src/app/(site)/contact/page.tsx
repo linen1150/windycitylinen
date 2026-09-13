@@ -17,7 +17,7 @@ function LocationMap({ query, name }: { query: string; name: string }) {
       src={`https://www.google.com/maps?q=${encodeURIComponent(query)}&output=embed`}
       loading="lazy"
       referrerPolicy="no-referrer-when-downgrade"
-      className="h-52 w-full border border-line"
+      className="h-36 w-full border border-line"
     />
   );
 }

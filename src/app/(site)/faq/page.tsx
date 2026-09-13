@@ -16,8 +16,25 @@ export default async function FaqPage() {
     orderBy: { order: "asc" },
   });
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    })),
+  };
+
   return (
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-8">
+      {items.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
+
       <h1 className="font-display text-3xl">Frequently Asked Questions</h1>
       <p className="mt-3 text-ink-soft">
         Answers to the questions we hear most. Don&rsquo;t see yours? Reach out and

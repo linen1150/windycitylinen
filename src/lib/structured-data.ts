@@ -42,6 +42,29 @@ export function localBusinessSchema() {
   });
 }
 
+/** Sitewide brand identity — belongs on the homepage only, one per site. */
+export function organizationSchema() {
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": `${SITE.url}#organization`,
+      name: SITE.name,
+      url: SITE.url,
+      logo: `${SITE.url}/apple-icon.png`,
+      sameAs: SITE.social.map((s) => s.href),
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": `${SITE.url}#website`,
+      name: SITE.name,
+      url: SITE.url,
+      publisher: { "@id": `${SITE.url}#organization` },
+    },
+  ];
+}
+
 export function productSchema(product: {
   name: string;
   slug: string;

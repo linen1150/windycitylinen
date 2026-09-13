@@ -3,7 +3,7 @@ import { countProducts } from "@/lib/catalog";
 import { HeroCarousel } from "@/components/site/hero-carousel";
 import { db } from "@/lib/db";
 import { SITE } from "@/lib/site";
-import { localBusinessSchema } from "@/lib/structured-data";
+import { localBusinessSchema, organizationSchema } from "@/lib/structured-data";
 
 export const dynamic = "force-dynamic";
 
@@ -23,7 +23,7 @@ export default async function HomePage() {
 
   return (
     <>
-      {localBusinessSchema().map((schema, i) => (
+      {[...organizationSchema(), ...localBusinessSchema()].map((schema, i) => (
         <script
           key={i}
           type="application/ld+json"

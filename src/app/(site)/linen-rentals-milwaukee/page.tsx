@@ -33,6 +33,7 @@ const SHIP_CITIES = ["Green Bay", "Appleton", "Oshkosh", "Wausau", "Eau Claire",
 const VENUES = [
   "Ivy House", "Prairie Springs", "Boxed & Burlap", "The Valerie", "The Pfister",
   "The Landing 1840", "Fête", "The Bowery", "Farm at Dover", "Marcus Center",
+  "Discovery World", "Milwaukee Art Museum", "The Pritzlaff",
 ];
 
 const FAQS = [

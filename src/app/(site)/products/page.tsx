@@ -1,14 +1,24 @@
 import type { Metadata } from "next";
 import { getFacets, searchCatalog } from "@/lib/catalog";
-import { parseCatalogQuery } from "@/lib/catalog-query";
+import { hasActiveFilters, parseCatalogQuery } from "@/lib/catalog-query";
 import { CatalogBrowser } from "@/components/catalog/catalog-browser";
 
-export const metadata: Metadata = {
-  title: "All Linen Rentals",
-  description:
-    "Browse tablecloths, napkins, runners, cuffs, spandex and chair covers. Filter by color, fabric or size, then send Windy City Linen your shortlist.",
-  alternates: { canonical: "/products" },
-};
+export async function generateMetadata({
+  searchParams,
+}: PageProps<"/products">): Promise<Metadata> {
+  const query = parseCatalogQuery(await searchParams);
+  // Filtered views collapse to the base catalog page (avoids a canonical per
+  // filter combo); an unfiltered page 2+ is self-canonical so crawlers don't
+  // get told to ignore every product beyond page 1.
+  const canonical =
+    !hasActiveFilters(query) && (query.page ?? 1) > 1 ? `/products?page=${query.page}` : "/products";
+  return {
+    title: "All Linen Rentals",
+    description:
+      "Browse tablecloths, napkins, runners, cuffs, spandex and chair covers. Filter by color, fabric or size, then send Windy City Linen your shortlist.",
+    alternates: { canonical },
+  };
+}
 
 export default async function ProductsPage({ searchParams }: PageProps<"/products">) {
   const query = parseCatalogQuery(await searchParams);

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { db } from "@/lib/db";
 import { getCategoryBySlug, getFacets, searchCatalog } from "@/lib/catalog";
@@ -13,14 +14,25 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({
   params,
+  searchParams,
 }: PageProps<"/products/[category]">): Promise<Metadata> {
   const { category } = await params;
   const cat = await getCategoryBySlug(category);
   if (!cat) return {};
+
+  const query = parseCatalogQuery(await searchParams);
+  const otherFiltersActive = Boolean(
+    query.fabric?.length || query.color?.length || query.size?.length || query.collection?.length,
+  );
+  const canonical =
+    !otherFiltersActive && (query.page ?? 1) > 1
+      ? `/products/${cat.slug}?page=${query.page}`
+      : `/products/${cat.slug}`;
+
   return {
     title: `${cat.name} Rentals`,
     description: `${cat.name} for weddings, galas and corporate events across Chicago and Milwaukee. Filter by color, fabric and size, then send your shortlist to Windy City Linen.`,
-    alternates: { canonical: `/products/${cat.slug}` },
+    alternates: { canonical },
   };
 }
 
@@ -49,7 +61,7 @@ export default async function CategoryPage({
       />
 
       <nav className="mb-4 text-xs text-ink-soft">
-        <a href="/products" className="hover:underline">Products</a> / {cat.name}
+        <Link href="/products" className="hover:underline">Products</Link> / {cat.name}
       </nav>
       <h1 className="font-display text-3xl">{cat.name}</h1>
       <div className="mt-8">

@@ -36,7 +36,7 @@ if (!src) {
 // color-threshold segmentation is allowed to search within. Tuned against
 // one photo — re-check against a red-background mask preview if the source
 // photo changes framing.
-const BOUND = { cx: 600, cy: 500, rx: 520, ry: 420 };
+const BOUND = { cx: 600, cy: 500, rx: 555, ry: 425 };
 const BRIGHT_MIN = 55;
 const NEUTRAL_MAX = 30;
 const SHADING_BLUR = 14;

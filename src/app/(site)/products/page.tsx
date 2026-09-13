@@ -6,7 +6,7 @@ import { CatalogBrowser } from "@/components/catalog/catalog-browser";
 export const metadata: Metadata = {
   title: "All Linen Rentals",
   description:
-    "Browse the full Windy City Linen catalog — tablecloths, overlays, napkins, table runners, cuffs, spandex and chair covers. Filter by color, fabric, size and collection, then send us your shortlist.",
+    "Browse tablecloths, napkins, runners, cuffs, spandex and chair covers. Filter by color, fabric or size, then send Windy City Linen your shortlist.",
   alternates: { canonical: "/products" },
 };
 

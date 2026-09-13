@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { ContactForm } from "./contact-form";
 import { SITE } from "@/lib/site";
-import { localBusinessSchema } from "@/lib/structured-data";
+import { localBusinessSchema, locationAnchor } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Get in touch with Windy City Linen. Showrooms in Wheeling, IL and Elm Grove, WI, serving weddings, galas and corporate events across Chicago and Milwaukee. A real person replies within one business day.",
+    "Get in touch with Windy City Linen — showrooms in Wheeling, IL and Elm Grove, WI. A real person replies within one business day.",
   alternates: { canonical: "/contact" },
 };
 
@@ -48,7 +48,7 @@ export default async function ContactPage({ searchParams }: PageProps<"/contact"
         {/* Locations */}
         <section className="space-y-10">
           {SITE.locations.map((loc) => (
-            <div key={loc.name}>
+            <div key={loc.name} id={locationAnchor(loc.name)}>
               <h2 className="font-display text-2xl">{loc.name}</h2>
               <div className="mt-4">
                 <LocationMap query={loc.mapQuery} name={loc.name} />

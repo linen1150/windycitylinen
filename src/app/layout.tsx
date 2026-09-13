@@ -25,11 +25,11 @@ const greatVibes = Great_Vibes({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: "Event Linen Rentals in Chicago & Milwaukee | Windy City Linen",
+    default: "Linen Rentals in Chicago & Milwaukee | Windy City Linen",
     template: "%s | Windy City Linen",
   },
   description:
-    "Tablecloths, napkins, table runners and chair covers for weddings, galas and corporate events across Chicago and Milwaukee. Browse the collection and send us your shortlist.",
+    "Tablecloths, napkins, runners and chair covers for weddings, galas and corporate events across Chicago and Milwaukee. Browse and send your shortlist.",
   openGraph: {
     type: "website",
     siteName: SITE.name,

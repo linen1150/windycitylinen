@@ -16,20 +16,30 @@ function postalAddress(address: string) {
   };
 }
 
-/** One LocalBusiness entry per showroom — schema.org has no clean way to give
- * a single business multiple addresses. */
+export function locationAnchor(name: string) {
+  return name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+}
+
+/** One LocalBusiness entry per showroom, each with its own @id/url anchored
+ * to its section on /contact — schema.org has no clean way to give a single
+ * business multiple addresses, and a shared @id/url would keep the two
+ * showrooms from ranking independently in Google's local pack. */
 export function localBusinessSchema() {
-  return SITE.locations.map((loc) => ({
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    name: `${SITE.name} — ${loc.name}`,
-    url: SITE.url,
-    telephone: SITE.phoneHref,
-    email: SITE.email,
-    areaServed: SITE.serviceArea,
-    sameAs: SITE.social.map((s) => s.href),
-    address: postalAddress(loc.address),
-  }));
+  return SITE.locations.map((loc) => {
+    const anchor = `${SITE.url}/contact#${locationAnchor(loc.name)}`;
+    return {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": anchor,
+      name: `${SITE.name} — ${loc.name}`,
+      url: anchor,
+      telephone: SITE.phoneHref,
+      email: SITE.email,
+      areaServed: SITE.serviceArea,
+      sameAs: SITE.social.map((s) => s.href),
+      address: postalAddress(loc.address),
+    };
+  });
 }
 
 export function productSchema(product: {

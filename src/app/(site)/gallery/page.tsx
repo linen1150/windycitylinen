@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { db } from "@/lib/db";
 import { GalleryGrid } from "./gallery-grid";
+import { CatalogPagination } from "@/components/catalog/catalog-pagination";
 
 export const dynamic = "force-dynamic";
 
@@ -11,11 +12,22 @@ export const metadata: Metadata = {
   alternates: { canonical: "/gallery" },
 };
 
-export default async function GalleryPage() {
-  const items = await db.galleryItem.findMany({
-    where: { published: true },
-    orderBy: { order: "asc" },
-  });
+const PAGE_SIZE = 48;
+
+export default async function GalleryPage({ searchParams }: PageProps<"/gallery">) {
+  const sp = await searchParams;
+  const page = Math.max(1, Number.parseInt((Array.isArray(sp.page) ? sp.page[0] : sp.page) ?? "1", 10) || 1);
+
+  const [total, items] = await Promise.all([
+    db.galleryItem.count({ where: { published: true } }),
+    db.galleryItem.findMany({
+      where: { published: true },
+      orderBy: { order: "asc" },
+      skip: (page - 1) * PAGE_SIZE,
+      take: PAGE_SIZE,
+    }),
+  ]);
+  const pageCount = Math.max(1, Math.ceil(total / PAGE_SIZE));
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-8">
@@ -25,12 +37,15 @@ export default async function GalleryPage() {
         corporate events across Chicagoland and Milwaukee.
       </p>
 
-      {items.length === 0 ? (
+      {total === 0 ? (
         <div className="mt-10 border border-line bg-ivory p-10 text-center text-ink-soft">
           Photos coming soon.
         </div>
       ) : (
-        <GalleryGrid items={items} />
+        <>
+          <GalleryGrid items={items} />
+          <CatalogPagination page={page} pageCount={pageCount} />
+        </>
       )}
     </div>
   );

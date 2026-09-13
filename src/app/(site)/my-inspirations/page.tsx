@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "My Inspirations",
   description:
     "The linens you've saved from the Windy City Linen catalog. Send the whole list to our team and we follow up with pricing. Saved to this browser, no account needed.",
+  robots: { index: false, follow: false },
 };
 
 export default function MyInspirationsPage() {

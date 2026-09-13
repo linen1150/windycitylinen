@@ -8,17 +8,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     db.product.findMany({ where: { published: true }, select: { slug: true, updatedAt: true } }),
   ]);
 
-  const staticRoutes = [
-    "",
-    "/products",
-    "/search",
-    "/gallery",
-    "/design-center",
-    "/about",
-    "/contact",
-    "/my-inspirations",
-    "/faq",
-  ];
+  // /search and /my-inspirations are intentionally excluded: /search is
+  // noindex (query results are duplicate content) and /my-inspirations is
+  // a client-only, localStorage-based page with no content worth indexing
+  // (also Disallow'd in robots.txt — listing it here would contradict that).
+  const staticRoutes = ["", "/products", "/gallery", "/design-center", "/about", "/contact", "/faq"];
 
   return [
     ...staticRoutes.map((path) => ({

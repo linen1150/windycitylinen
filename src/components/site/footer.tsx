@@ -28,7 +28,17 @@ export function Footer() {
         {SITE.locations.map((loc) => (
           <span key={loc.name} className="contents">
             <span aria-hidden>|</span>
-            <span>Address: {loc.address}</span>
+            <span>
+              Address:{" "}
+              <a
+                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(loc.mapQuery)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white"
+              >
+                {loc.address}
+              </a>
+            </span>
           </span>
         ))}
       </p>

@@ -20,6 +20,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly" as const,
       priority: path === "" ? 1 : 0.7,
     })),
+    {
+      url: `${SITE.url}/linen-rentals-milwaukee`,
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    },
     ...categories.map((c) => ({
       url: `${SITE.url}/products/${c.slug}`,
       changeFrequency: "weekly" as const,

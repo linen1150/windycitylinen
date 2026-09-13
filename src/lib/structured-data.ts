@@ -34,7 +34,7 @@ export function localBusinessSchema() {
       name: `${SITE.name} — ${loc.name}`,
       url: anchor,
       telephone: SITE.phoneHref,
-      email: SITE.email,
+      email: SITE.ordersEmail,
       areaServed: SITE.serviceArea,
       sameAs: SITE.social.map((s) => s.href),
       address: postalAddress(loc.address),

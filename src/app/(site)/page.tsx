@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { countProducts } from "@/lib/catalog";
 import { HeroCarousel } from "@/components/site/hero-carousel";
 import { db } from "@/lib/db";
@@ -59,16 +60,29 @@ export default async function HomePage() {
           </p>
 
           <dl className="mt-9 grid max-w-xl grid-cols-3 gap-5">
-            {[
-              [`${new Date().getFullYear() - SITE.since}+`, "years serving Chicagoland"],
-              [`${total}+`, "linens in the collection"],
-              ["2", `showrooms — ${SITE.showrooms.join(" & ")}`],
-            ].map(([n, label]) => (
-              <div key={label}>
-                <dt className="font-display text-2xl text-brass-dark">{n}</dt>
-                <dd className="mt-0.5 text-[13px] text-ink-soft">{label}</dd>
-              </div>
-            ))}
+            <div>
+              <dt className="font-display text-2xl text-brass-dark">
+                {new Date().getFullYear() - SITE.since}+
+              </dt>
+              <dd className="mt-0.5 text-[13px] text-ink-soft">years serving Chicagoland</dd>
+            </div>
+            <div>
+              <dt className="font-display text-2xl text-brass-dark">{total}+</dt>
+              <dd className="mt-0.5 text-[13px] text-ink-soft">linens in the collection</dd>
+            </div>
+            <div>
+              <dt className="font-display text-2xl text-brass-dark">2</dt>
+              <dd className="mt-0.5 text-[13px] text-ink-soft">
+                showrooms —{" "}
+                <Link href="/contact#chicago-location" className="underline hover:text-ink">
+                  Wheeling, IL
+                </Link>{" "}
+                &{" "}
+                <Link href="/linen-rentals-milwaukee" className="underline hover:text-ink">
+                  Elm Grove, WI
+                </Link>
+              </dd>
+            </div>
           </dl>
         </div>
         {slides.length > 0 && <HeroCarousel slides={slides} />}

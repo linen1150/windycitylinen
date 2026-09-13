@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ContactForm } from "./contact-form";
 import { SITE } from "@/lib/site";
 import { localBusinessSchema, locationAnchor } from "@/lib/structured-data";
@@ -57,6 +58,11 @@ export default async function ContactPage({ searchParams }: PageProps<"/contact"
                 <p>{loc.note}</p>
                 <p>{loc.address}</p>
               </div>
+              {loc.name === "Wisconsin Location" && (
+                <Link href="/linen-rentals-milwaukee" className="mt-2 inline-block text-sm text-wine underline">
+                  Full details for Milwaukee-area events →
+                </Link>
+              )}
             </div>
           ))}
 

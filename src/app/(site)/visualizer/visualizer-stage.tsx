@@ -3,38 +3,56 @@
 import { useEffect, useRef, useState } from "react";
 import { COLOR_GROUPS } from "@/lib/catalog";
 
-type Shape = { id: string; label: string; bg: string; shading: string };
+type Shape = { id: string; label: string; bg: string; mask: string; shading: string };
 
 const SHAPES: Shape[] = [
   {
     id: "round-60",
     label: "60\" Round",
-    bg: "/visualizer/test-round-bg.jpg",
-    shading: "/visualizer/test-round-shading.png",
+    bg: "/visualizer/round-60-bg.jpg",
+    mask: "/visualizer/round-60-mask.png",
+    shading: "/visualizer/round-60-shading.png",
   },
 ];
-
-// Circle position/radius as a fraction of the square stage — must match the
-// clip circle baked into the shading PNG (see scripts/gen-visualizer-placeholders.mjs).
-const CLOTH = { cx: 0.5, cy: 0.5, r: 0.3667 };
 
 export function VisualizerStage() {
   const [shapeId, setShapeId] = useState(SHAPES[0].id);
   const [color, setColor] = useState(COLOR_GROUPS[0].hex);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const maskImgRef = useRef<HTMLImageElement | null>(null);
   const shape = SHAPES.find((s) => s.id === shapeId) ?? SHAPES[0];
 
-  useEffect(() => {
+  const paint = () => {
     const canvas = canvasRef.current;
     const ctx = canvas?.getContext("2d");
-    if (!canvas || !ctx) return;
+    const mask = maskImgRef.current;
+    if (!canvas || !ctx || !mask) return;
     const { width, height } = canvas;
     ctx.clearRect(0, 0, width, height);
+    // Draw the real cloth-cutout mask, then keep only the color fill where
+    // the mask was opaque — colorizes the exact photographed silhouette
+    // instead of an approximated geometric shape.
+    ctx.drawImage(mask, 0, 0, width, height);
+    ctx.globalCompositeOperation = "source-in";
     ctx.fillStyle = color;
-    ctx.beginPath();
-    ctx.arc(width * CLOTH.cx, height * CLOTH.cy, width * CLOTH.r, 0, Math.PI * 2);
-    ctx.fill();
-  }, [color, shapeId]);
+    ctx.fillRect(0, 0, width, height);
+    ctx.globalCompositeOperation = "source-over";
+  };
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = shape.mask;
+    img.onload = () => {
+      maskImgRef.current = img;
+      paint();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [shape.mask]);
+
+  useEffect(() => {
+    paint();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [color]);
 
   return (
     <div>

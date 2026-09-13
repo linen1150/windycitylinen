@@ -11,9 +11,9 @@ export default function VisualizerPage() {
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-8">
       <h1 className="font-display text-3xl">Color Visualizer (prototype)</h1>
       <p className="mt-2 max-w-xl text-ink-soft">
-        Pick a color to see it draped on a table. This proves out the
-        compositing technique with a placeholder photo — swap in a real base +
-        shading photo pair for each table shape to make this real.
+        Pick a color to see it draped on a real photographed table. Add a
+        base + shading + mask trio for each additional table shape (see
+        scripts/gen-visualizer-real-pair.mjs) to expand past the 60&quot; round.
       </p>
       <div className="mt-8">
         <VisualizerStage />

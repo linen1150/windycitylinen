@@ -57,10 +57,10 @@ export function TableclothColorStage({
   }, [colorHex]);
 
   return (
-    <div className={`relative aspect-square overflow-hidden border border-line bg-ivory ${className}`}>
+    <div className={`relative aspect-[4/3] overflow-hidden border border-line bg-ivory ${className}`}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={bg} alt="" className="absolute inset-0 h-full w-full object-cover" />
-      <canvas ref={canvasRef} width={900} height={900} className="absolute inset-0 h-full w-full" />
+      <canvas ref={canvasRef} width={1200} height={900} className="absolute inset-0 h-full w-full" />
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={shading}

@@ -1,9 +1,9 @@
 // Builds the real 60" round background/shading/mask trio for the tablecloth
 // color visualizer from a source photo of a table dressed in a plain white
-// jacquard cloth (see tablecloth-visualizer-spec.md). Replaces the synthetic
-// placeholder from gen-visualizer-placeholders.mjs.
+// jacquard cloth (see tablecloth-visualizer-spec.md).
 //
-// The cloth cutout is a real pixel segmentation, not a geometric shape:
+// Uses the full, uncropped photo (4:3) rather than a square crop, so the
+// whole table is visible. The cloth cutout is a real pixel segmentation:
 // 1. Flag pixels as "cloth candidate" if they're bright/neutral (not the
 //    saturated fabric bolts or dark wood floor/chairs) AND inside a generous
 //    bounding ellipse (keeps segmentation from leaking into far-away floor
@@ -11,14 +11,18 @@
 // 2. Flood-fill "background" inward from the image border, through
 //    candidate=false pixels only. Whatever that flood-fill can't reach —
 //    including dark shadow folds fully enclosed by cloth — becomes cloth.
-//    This fills the shadow-fold holes a plain brightness threshold leaves
-//    behind, without needing them to individually pass the threshold.
+//
+// The shading layer is heavily blurred before masking: this is meant to
+// carry the drape's fold/shadow shape, not the source fabric's own weave —
+// a different (e.g. solid) fabric shouldn't visually inherit this photo's
+// jacquard texture.
 //
 // Usage: node scripts/gen-visualizer-real-pair.mjs <source-photo.jpg>
 import sharp from "sharp";
 import { mkdirSync } from "node:fs";
 
-const SIZE = 900;
+const WIDTH = 1200;
+const HEIGHT = 900;
 const OUT = "public/visualizer";
 mkdirSync(OUT, { recursive: true });
 
@@ -28,21 +32,19 @@ if (!src) {
   process.exit(1);
 }
 
-// Generous bounding ellipse, pixels in the square-cropped/resized SIZE x SIZE frame.
-const BOUND = { cx: 450, cy: 490, rx: 430, ry: 420 };
+// Generous bounding ellipse (pixels, in the WIDTHxHEIGHT frame) that the
+// color-threshold segmentation is allowed to search within. Tuned against
+// one photo — re-check against a red-background mask preview if the source
+// photo changes framing.
+const BOUND = { cx: 600, cy: 500, rx: 520, ry: 420 };
 const BRIGHT_MIN = 55;
 const NEUTRAL_MAX = 30;
+const SHADING_BLUR = 14;
 
-const meta = await sharp(src).metadata();
-const side = Math.min(meta.width, meta.height);
-const left = Math.round((meta.width - side) / 2);
-const top = Math.round((meta.height - side) / 2);
-const squareCrop = sharp(src).extract({ left, top, width: side, height: side }).resize(SIZE, SIZE);
+const bgBuf = await sharp(src).resize(WIDTH, HEIGHT).jpeg({ quality: 92 }).toBuffer();
+await sharp(bgBuf).toFile(`${OUT}/round-60-bg.jpg`);
 
-const cropBuf = await squareCrop.clone().jpeg({ quality: 95 }).toBuffer();
-await sharp(cropBuf).toFile(`${OUT}/round-60-bg.jpg`);
-
-const { data, info } = await sharp(cropBuf).raw().toBuffer({ resolveWithObject: true });
+const { data, info } = await sharp(bgBuf).raw().toBuffer({ resolveWithObject: true });
 const { width, height, channels } = info;
 const N = width * height;
 
@@ -64,7 +66,6 @@ for (let y = 0; y < height; y++) {
   }
 }
 
-// Flood-fill background inward from the border, through bg-connected pixels only.
 const outside = new Uint8Array(N);
 const qx = new Int32Array(N), qy = new Int32Array(N);
 let qh = 0, qt = 0;
@@ -93,8 +94,8 @@ for (let i = 0; i < N; i++) {
 const maskBuf = await sharp(maskRgba, { raw: { width, height, channels: 4 } }).blur(2).png().toBuffer();
 await sharp(maskBuf).toFile(`${OUT}/round-60-mask.png`);
 
-const grayscaleBuf = await sharp(cropBuf).grayscale().linear(1.35, -30).toBuffer();
-await sharp(grayscaleBuf)
+const blurredGrayscale = await sharp(bgBuf).grayscale().blur(SHADING_BLUR).linear(1.3, -25).toBuffer();
+await sharp(blurredGrayscale)
   .ensureAlpha()
   .composite([{ input: maskBuf, blend: "dest-in" }])
   .png()

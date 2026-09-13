@@ -40,7 +40,7 @@ export async function POST(request: Request) {
   const { items } = parsed.data;
   const summary = items.map((i) => `${i.name} (${i.fabric} fabric, ${i.category})`).join("; ");
 
-  const system = `Your name is Bridgette, the linen assistant for Windy City Linen. A visitor has saved these linens to "My Inspirations": ${summary}.
+  const system = `Your name is Virtual Marcela, the linen assistant for Windy City Linen. A visitor has saved these linens to "My Inspirations": ${summary}.
 
 Use the search_products tool at least once to find 2-4 real products from the live catalog that would round out this look — favor categories different from what's already saved (e.g. if they saved tablecloths, look for napkins, runners, or chair accessories) in a coordinating color or fabric family. Never invent products or describe anything you haven't found via the tool.
 

@@ -45,7 +45,7 @@ export async function POST(request: Request) {
     .join("; ");
   const slugs = items.map((i) => i.slug);
 
-  const system = `Your name is Bridgette, the linen assistant for Windy City Linen. A visitor wants to present these saved linens exactly as-is: ${summary}.
+  const system = `Your name is Virtual Marcela, the linen assistant for Windy City Linen. A visitor wants to present these saved linens exactly as-is: ${summary}.
 
 Their request for how to present them: "${theme?.trim() || "no particular theme — just present them nicely"}".
 

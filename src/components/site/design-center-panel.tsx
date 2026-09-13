@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Check, Plus } from "lucide-react";
 import { ProductImage } from "@/components/catalog/product-image";
 import { useInspirations } from "@/components/inspirations/inspirations-store";
-import { BridgetteAvatar } from "./bridgette-avatar";
+import { VirtualMarcelaAvatar } from "./virtual-marcela-avatar";
 import type { ProductSearchResult } from "@/lib/ai/product-search-tool";
 
 type Mode = "prompt" | "simple" | "loading" | "lookbook" | "error";
@@ -54,7 +54,7 @@ export function DesignCenterPanel() {
   return (
     <section className="border border-line bg-ivory p-5">
       <div className="flex items-start gap-3">
-        <BridgetteAvatar size={36} className="mt-0.5 shrink-0 rounded-full" />
+        <VirtualMarcelaAvatar size={36} className="mt-0.5 shrink-0 rounded-full" />
         <div className="flex-1">
           {mode === "prompt" && (
             <>

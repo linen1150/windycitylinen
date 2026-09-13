@@ -6,7 +6,7 @@ import { Printer } from "lucide-react";
 import { useInspirations } from "@/components/inspirations/inspirations-store";
 import { ProductImage } from "@/components/catalog/product-image";
 import { ButtonLink } from "@/components/ui/button";
-import { BridgetteAvatar } from "@/components/site/bridgette-avatar";
+import { VirtualMarcelaAvatar } from "@/components/site/virtual-marcela-avatar";
 import { SITE } from "@/lib/site";
 
 type Result = { title: string; intro: string; captions: Record<string, string> };
@@ -63,7 +63,7 @@ export default function PresentationPage() {
         {!result && (
           <div className="mt-4 border border-line bg-ivory p-5">
             <div className="flex items-start gap-3">
-              <BridgetteAvatar size={36} className="mt-0.5 shrink-0 rounded-full" />
+              <VirtualMarcelaAvatar size={36} className="mt-0.5 shrink-0 rounded-full" />
               <div className="flex-1">
                 <p className="text-sm text-ink">
                   Tell me how you&rsquo;d like these presented — a theme, an occasion,

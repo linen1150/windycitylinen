@@ -207,9 +207,9 @@ export default function MilwaukeeLocationPage() {
         <h2 className="font-display text-2xl">Milwaukee linen rental questions</h2>
         <div className="mt-4 divide-y divide-line border-y border-line">
           {FAQS.map((item) => (
-            <details key={item.q} className="group py-4">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-lg">
-                {item.q}
+            <details key={item.q} id={locationAnchor(item.q)} className="group py-4 scroll-mt-24">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4">
+                <h3 className="font-display text-lg">{item.q}</h3>
                 <span className="shrink-0 text-brass-dark transition-transform group-open:rotate-45">+</span>
               </summary>
               <p className="mt-3 text-ink-soft">{item.a}</p>

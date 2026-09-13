@@ -3,6 +3,10 @@ import { db } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
 
+function slugify(text: string) {
+  return text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+}
+
 export const metadata: Metadata = {
   title: "FAQ",
   description:
@@ -43,17 +47,20 @@ export default async function FaqPage() {
 
       {items.length > 0 && (
         <div className="mt-8 divide-y divide-line border-y border-line">
-          {items.map((item) => (
-            <details key={item.id} className="group py-4">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-lg">
-                {item.question}
-                <span className="shrink-0 text-brass-dark transition-transform group-open:rotate-45">
-                  +
-                </span>
-              </summary>
-              <p className="mt-3 whitespace-pre-line text-ink-soft">{item.answer}</p>
-            </details>
-          ))}
+          {items.map((item) => {
+            const id = slugify(item.question);
+            return (
+              <details key={item.id} id={id} className="group py-4 scroll-mt-24">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4">
+                  <h2 className="font-display text-lg">{item.question}</h2>
+                  <span className="shrink-0 text-brass-dark transition-transform group-open:rotate-45">
+                    +
+                  </span>
+                </summary>
+                <p className="mt-3 whitespace-pre-line text-ink-soft">{item.answer}</p>
+              </details>
+            );
+          })}
         </div>
       )}
     </div>

@@ -12,10 +12,14 @@ export async function generateMetadata({
   // get told to ignore every product beyond page 1.
   const canonical =
     !hasActiveFilters(query) && (query.page ?? 1) > 1 ? `/products?page=${query.page}` : "/products";
+  const page = query.page ?? 1;
+  const pageSuffix = page > 1 ? ` — Page ${page}` : "";
   return {
-    title: "All Linen Rentals",
+    title: `All Linen Rentals${pageSuffix}`,
     description:
-      "Browse tablecloths, napkins, runners, cuffs, spandex and chair covers. Filter by color, fabric or size, then send Windy City Linen your shortlist.",
+      page > 1
+        ? `More of the full Windy City Linen catalog — tablecloths, napkins, runners, cuffs, spandex and chair covers (page ${page}).`
+        : "Browse tablecloths, napkins, runners, cuffs, spandex and chair covers. Filter by color, fabric or size, then send Windy City Linen your shortlist.",
     alternates: { canonical },
   };
 }
@@ -26,7 +30,7 @@ export default async function ProductsPage({ searchParams }: PageProps<"/product
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-10 sm:px-8">
-      <h1 className="font-display text-3xl">All products</h1>
+      <h1 className="font-display text-3xl">All Linen Rentals</h1>
       <p className="mt-2 max-w-xl text-ink-soft">
         Every linen in the collection. Use the filters to narrow by color, fabric,
         size or collection — pricing comes directly from our team.

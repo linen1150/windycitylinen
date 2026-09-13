@@ -2,7 +2,7 @@ import { cache } from "react";
 import type { Prisma } from "@prisma/client";
 import { db } from "@/lib/db";
 
-export const PAGE_SIZE = 24;
+export const PAGE_SIZE = 48;
 
 // The 15 filter color families, with an anchor hex for the swatch dot.
 export const COLOR_GROUPS: { name: string; hex: string }[] = [

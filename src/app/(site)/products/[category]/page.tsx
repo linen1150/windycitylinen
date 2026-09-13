@@ -8,6 +8,10 @@ import { CatalogBrowser } from "@/components/catalog/catalog-browser";
 import { breadcrumbSchema } from "@/lib/structured-data";
 import { CATEGORY_CONTENT } from "@/lib/category-content";
 
+function slugify(text: string) {
+  return text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+}
+
 export async function generateStaticParams() {
   const categories = await db.category.findMany({ select: { slug: true } });
   return categories.map((c) => ({ category: c.slug }));
@@ -31,12 +35,16 @@ export async function generateMetadata({
       : `/products/${cat.slug}`;
 
   const content = CATEGORY_CONTENT[cat.slug];
+  const page = query.page ?? 1;
+  const pageSuffix = page > 1 ? ` — Page ${page}` : "";
+  const baseTitle = content?.title ?? `${cat.name} Rentals`;
+  const baseDescription =
+    content?.description ??
+    `${cat.name} for weddings, galas and corporate events across Chicago and Milwaukee. Filter by color, fabric and size, then send your shortlist to Windy City Linen.`;
 
   return {
-    title: content?.title ?? `${cat.name} Rentals`,
-    description:
-      content?.description ??
-      `${cat.name} for weddings, galas and corporate events across Chicago and Milwaukee. Filter by color, fabric and size, then send your shortlist to Windy City Linen.`,
+    title: `${baseTitle}${pageSuffix}`,
+    description: page > 1 ? `More ${cat.name.toLowerCase()} (page ${page}). ${baseDescription}` : baseDescription,
     alternates: { canonical },
   };
 }
@@ -87,7 +95,7 @@ export default async function CategoryPage({
       <nav className="mb-4 text-xs text-ink-soft">
         <Link href="/products" className="hover:underline">Products</Link> / {cat.name}
       </nav>
-      <h1 className="font-display text-3xl">{cat.name}</h1>
+      <h1 className="font-display text-3xl">{content?.title ?? cat.name}</h1>
 
       {content?.intro.map((p, i) => (
         <p key={i} className="mt-3 max-w-2xl text-ink-soft">
@@ -111,9 +119,9 @@ export default async function CategoryPage({
           <h2 className="font-display text-2xl">{cat.name} questions</h2>
           <div className="mt-4 divide-y divide-line border-y border-line">
             {content.faqs.map((item) => (
-              <details key={item.q} className="group py-4">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-lg">
-                  {item.q}
+              <details key={item.q} id={slugify(item.q)} className="group py-4 scroll-mt-24">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4">
+                  <h3 className="font-display text-lg">{item.q}</h3>
                   <span className="shrink-0 text-brass-dark transition-transform group-open:rotate-45">+</span>
                 </summary>
                 <p className="mt-3 text-ink-soft">{item.a}</p>

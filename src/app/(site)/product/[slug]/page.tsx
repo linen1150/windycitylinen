@@ -27,7 +27,13 @@ export async function generateMetadata({
     description: `${product.colorName} in our ${product.fabric} fabric — a ${noun} rental from Windy City Linen for weddings and events in Chicago & Milwaukee.`,
     alternates: { canonical: `/product/${product.slug}` },
     openGraph: product.imageUrl
-      ? { images: [{ url: product.imageUrl, alt: `${product.fabric} ${product.colorName} ${noun}` }] }
+      ? {
+          // "product" is valid per the Open Graph protocol but isn't in
+          // Next's typed OpenGraph.type union (which only covers og:type
+          // values Next itself has special handling for).
+          type: "product" as never,
+          images: [{ url: product.imageUrl, alt: `${product.fabric} ${product.colorName} ${noun}` }],
+        }
       : undefined,
   };
 }

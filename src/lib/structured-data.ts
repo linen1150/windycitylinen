@@ -79,17 +79,25 @@ export function productSchema(product: {
     name: product.name,
     description: `${product.colorName} in our ${product.fabric} fabric, available to rent from Windy City Linen.`,
     category: product.category,
+    color: product.colorName,
+    material: product.fabric,
+    sku: product.slug,
     ...(product.imageUrl ? { image: new URL(product.imageUrl, SITE.url).toString() } : {}),
     url: `${SITE.url}/product/${product.slug}`,
     brand: { "@type": "Brand", name: SITE.name },
+    // No `offers` — this is a quote-request business with no published
+    // pricing (a hard client requirement), so the product rich-result
+    // eligibility that `offers` unlocks is knowingly skipped rather than
+    // publishing a fake price to qualify for it.
   };
 }
 
 export function breadcrumbSchema(items: { name: string; path: string }[]) {
+  const withHome = [{ name: "Home", path: "/" }, ...items];
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    itemListElement: items.map((item, i) => ({
+    itemListElement: withHome.map((item, i) => ({
       "@type": "ListItem",
       position: i + 1,
       name: item.name,

@@ -1,4 +1,5 @@
 import type { ComponentType } from "react";
+import Link from "next/link";
 import { SITE } from "@/lib/site";
 import { FacebookIcon, InstagramIcon, PinterestIcon } from "./social-icons";
 
@@ -42,7 +43,10 @@ export function Footer() {
           </span>
         ))}
       </p>
-      <p className="mt-2">{new Date().getFullYear()} &copy; Copyright Windy City Linen</p>
+      <p className="mt-2">
+        {new Date().getFullYear()} &copy; Copyright Windy City Linen &middot;{" "}
+        <Link href="/terms" className="hover:text-white">Terms &amp; Conditions</Link>
+      </p>
 
       {SITE.social.length > 0 && (
         <div className="mt-4 flex justify-center gap-4">

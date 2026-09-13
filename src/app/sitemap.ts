@@ -12,7 +12,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // noindex (query results are duplicate content) and /my-inspirations is
   // a client-only, localStorage-based page with no content worth indexing
   // (also Disallow'd in robots.txt — listing it here would contradict that).
-  const staticRoutes = ["", "/products", "/gallery", "/design-center", "/about", "/contact", "/faq"];
+  const staticRoutes = ["", "/products", "/gallery", "/design-center", "/about", "/contact", "/faq", "/terms"];
 
   return [
     ...staticRoutes.map((path) => ({

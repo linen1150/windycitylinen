@@ -21,10 +21,6 @@ export function ProductCard({ product }: { product: ProductCardData }) {
       </div>
       <div className="mt-3">
         <div className="text-sm font-medium text-ink">{product.name}</div>
-        <div className="text-xs text-ink-soft">
-          {product.fabric}
-          {product.reverseSide ? " · reversible" : ""}
-        </div>
       </div>
     </Link>
   );

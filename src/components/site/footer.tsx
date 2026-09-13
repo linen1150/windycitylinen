@@ -25,8 +25,12 @@ export function Footer() {
             {SITE.ordersEmail}
           </a>
         </span>
-        <span aria-hidden>|</span>
-        <span>Address: 1150 Willis Avenue Wheeling, IL 60090</span>
+        {SITE.locations.map((loc) => (
+          <span key={loc.name} className="contents">
+            <span aria-hidden>|</span>
+            <span>Address: {loc.address}</span>
+          </span>
+        ))}
       </p>
       <p className="mt-2">{new Date().getFullYear()} &copy; Copyright Windy City Linen</p>
 

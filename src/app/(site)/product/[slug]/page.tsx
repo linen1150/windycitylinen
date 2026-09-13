@@ -10,8 +10,10 @@ import {
 } from "@/lib/catalog";
 import { ProductImage } from "@/components/catalog/product-image";
 import { ProductCard } from "@/components/catalog/product-card";
+import { TableclothColorStage } from "@/components/catalog/tablecloth-color-stage";
 import { AddToInspirations } from "@/components/inspirations/add-to-inspirations";
 import { breadcrumbSchema, productSchema } from "@/lib/structured-data";
+import { getSwatchAverageColor } from "@/lib/swatch-color";
 
 export async function generateMetadata({
   params,
@@ -35,10 +37,12 @@ export default async function ProductPage({ params }: PageProps<"/product/[slug]
   const product = await getProductBySlug(slug);
   if (!product) notFound();
 
-  const [related, matchingNapkin, galleryPhotos] = await Promise.all([
+  const isTablecloth = product.category === "Tablecloths and Overlays";
+  const [related, matchingNapkin, galleryPhotos, swatchColor] = await Promise.all([
     getRelatedProducts(product),
-    product.category === "Tablecloths and Overlays" ? getMatchingNapkin(product) : Promise.resolve(null),
+    isTablecloth ? getMatchingNapkin(product) : Promise.resolve(null),
     getGalleryPhotosForProduct(product),
+    isTablecloth ? getSwatchAverageColor(product.imageUrl) : Promise.resolve(null),
   ]);
   const noun = categoryNoun(product.category);
 
@@ -135,6 +139,17 @@ export default async function ProductPage({ params }: PageProps<"/product/[slug]
           </>
         )}
       </div>
+
+      {isTablecloth && (swatchColor ?? product.colorHex) && (
+        <section className="mt-16 max-w-sm sm:max-w-md">
+          <h2 className="font-display text-xl">See it on the table</h2>
+          <p className="mt-2 text-sm text-ink-soft">
+            {product.colorName} draped on a 60&Prime; round table, folds and shadows
+            included.
+          </p>
+          <TableclothColorStage colorHex={(swatchColor ?? product.colorHex)!} className="mt-4 w-full" />
+        </section>
+      )}
 
       {galleryPhotos.length > 0 && (
         <section className="mt-16">

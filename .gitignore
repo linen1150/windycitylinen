@@ -46,3 +46,6 @@ next-env.d.ts
 
 # admin dev uploads
 /public/images/uploads/
+
+.vercel
+.env*

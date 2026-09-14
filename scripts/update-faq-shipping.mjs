@@ -15,7 +15,7 @@ const updates = [
   {
     question: "Do you deliver and set up?",
     answer:
-      "Yes — delivery is included with every order. Setup, breakdown and post-event linen pickup are available on request for an additional charge. Delivery is priced by zone across northern Illinois and southeastern Wisconsin; let us know your event date and venue and we'll confirm the details.",
+      "Yes — delivery is priced by zone across northern Illinois and southeastern Wisconsin. Setup, breakdown and post-event linen pickup are available on request for an additional charge. Let us know your event date and venue and we'll confirm the details.",
   },
   {
     question: "Can I see a fabric sample before booking?",

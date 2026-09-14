@@ -2,25 +2,35 @@
 // photographed color (not the stored colorHex, which is often a much more
 // saturated "ideal" swatch than what the actual photo shows).
 //
-// Technique (confirmed against the Apple color): normalize the tablecloth's
-// own brightness map (divide out its average luminance so it's centered on
-// 1.0, preserving every fold/highlight/shadow), then multiply that texture
-// map by the napkin's true fabric color — sampled from the brightest quarter
-// of pixels in a safe center crop, since a plain whole-image average gets
-// pulled toward the dark wood table background and gets muted by folded
-// shadow areas.
+// Technique: normalize the tablecloth's own brightness map (divide out its
+// average luminance so it's centered on 1.0, preserving every fold/
+// highlight/shadow), then multiply that texture map by the napkin's true
+// fabric color — sampled as the per-channel MEDIAN of a tight (30%) center
+// crop of the napkin photo.
 //
-// Two other approaches were tried and rejected: a straight HSL hue/
-// saturation swap (kept original Lightness) was too subtle a shift; Lab-
-// space statistical (Reinhard) transfer came out blotchy because these
+// V1 of this script sampled the "brightest quarter" of a looser (60%) crop
+// instead, on the theory that brighter = less likely to be shadow. That
+// broke every dark/muted color (Black, Brown, Burgundy, Eggplant, Purple):
+// on near-black fabric, the *brightest* pixels in frame are disproportion-
+// ately warm wood-table bleed at the crop's edges, not fabric, so "brightest
+// quarter" was averaging in contamination and pulling every dark color
+// toward the same warm brown. Median of a tighter, more clearly-fabric-only
+// crop is robust to outliers in *either* direction (stray bright bleed or
+// stray dark shadow), which is why it replaced brightest-quartile-mean here.
+//
+// Two other approaches were tried and rejected before that: a straight HSL
+// hue/saturation swap (kept original Lightness) was too subtle a shift;
+// Lab-space statistical (Reinhard) transfer came out blotchy because these
 // tablecloth photos have almost no natural shading variation, so matching
 // the napkin's contrast/spread just amplified JPEG noise.
 //
-// Usage: node scripts/recolor-classic-solid-tablecloth.mjs <color-name>
-// e.g.:  node scripts/recolor-classic-solid-tablecloth.mjs Apple
+// Usage: node scripts/recolor-classic-solid-tablecloth.mjs <color-name> [--apply]
+// e.g.:  node scripts/recolor-classic-solid-tablecloth.mjs Apple --apply
 // Looks up the Tablecloths/Napkins imageFilename for that Classic Solid
-// color from the DB, recolors, and overwrites the tablecloth file in place
-// (+ regenerates its .webp). No DB changes — imageFilename doesn't change.
+// color from the DB. Without --apply, writes a preview to the scratchpad
+// (safe — never touches public/images/). With --apply, overwrites the
+// tablecloth file in place (+ regenerates its .webp). No DB changes either
+// way — imageFilename doesn't change.
 import sharp from "sharp";
 import { PrismaClient } from "@prisma/client";
 
@@ -30,7 +40,13 @@ function clamp(v) {
   return Math.max(0, Math.min(255, v));
 }
 
-async function brightestQuarterColor(path, cropFrac = 0.6) {
+function median(arr) {
+  const sorted = [...arr].sort((a, b) => a - b);
+  const mid = Math.floor(sorted.length / 2);
+  return sorted.length % 2 ? sorted[mid] : (sorted[mid - 1] + sorted[mid]) / 2;
+}
+
+async function medianFabricColor(path, cropFrac = 0.3) {
   const meta = await sharp(path).metadata();
   const w = Math.round(meta.width * cropFrac);
   const h = Math.round(meta.height * cropFrac);
@@ -41,18 +57,12 @@ async function brightestQuarterColor(path, cropFrac = 0.6) {
     .raw()
     .toBuffer({ resolveWithObject: true });
   const n = info.width * info.height;
-  const pixels = [];
+  const rs = new Array(n), gs = new Array(n), bs = new Array(n);
   for (let i = 0; i < n; i++) {
     const idx = i * info.channels;
-    const r = data[idx], g = data[idx + 1], b = data[idx + 2];
-    const l = 0.2126 * r + 0.7152 * g + 0.0722 * b;
-    pixels.push([r, g, b, l]);
+    rs[i] = data[idx]; gs[i] = data[idx + 1]; bs[i] = data[idx + 2];
   }
-  pixels.sort((a, b) => b[3] - a[3]);
-  const top25 = pixels.slice(0, Math.floor(pixels.length * 0.25));
-  let rSum = 0, gSum = 0, bSum = 0;
-  for (const [r, g, b] of top25) { rSum += r; gSum += g; bSum += b; }
-  return [rSum / top25.length, gSum / top25.length, bSum / top25.length];
+  return [median(rs), median(gs), median(bs)];
 }
 
 async function recolor(clothPath, [targetR, targetG, targetB], outPath) {
@@ -86,7 +96,8 @@ async function recolor(clothPath, [targetR, targetG, targetB], outPath) {
 
 async function main() {
   const colorName = process.argv[2];
-  if (!colorName) throw new Error("Usage: node recolor-classic-solid-tablecloth.mjs <color-name>");
+  const apply = process.argv.includes("--apply");
+  if (!colorName) throw new Error("Usage: node recolor-classic-solid-tablecloth.mjs <color-name> [--apply]");
 
   const cloth = await db.product.findFirst({
     where: { colorName, fabric: { name: "Classic Solid" }, category: { name: "Tablecloths and Overlays" } },
@@ -105,10 +116,17 @@ async function main() {
   const clothPath = `public/images/Tablecloths and Overlays/${cloth.imageFilename}`;
   const napkinPath = `public/images/Napkins/${napkin.imageFilename}`;
 
-  const target = await brightestQuarterColor(napkinPath);
+  const target = await medianFabricColor(napkinPath);
   console.log(`${colorName}: napkin target RGB(${target.map((v) => Math.round(v)).join(", ")})`);
-  await recolor(clothPath, target, clothPath);
-  console.log(`Recolored ${clothPath}`);
+
+  if (apply) {
+    await recolor(clothPath, target, clothPath);
+    console.log(`Applied: overwrote ${clothPath}`);
+  } else {
+    const outPath = String.raw`C:\Users\rob\AppData\Local\Temp\claude\C--Users-rob-code-windycitylinen\035e1607-ffd8-4d34-a840-b3d91e818ffd\scratchpad\recolor-preview-${colorName.replace(/\s+/g, "")}.jpg`;
+    await recolor(clothPath, target, outPath);
+    console.log(`Preview only: ${outPath}`);
+  }
 }
 
 main()

@@ -118,13 +118,45 @@ export function TableclothColorStage({
     img.crossOrigin = "anonymous";
     img.src = swatchUrl;
     img.onload = () => {
-      const tile = document.createElement("canvas");
-      tile.width = SWATCH_TILE_PX;
-      tile.height = SWATCH_TILE_PX;
-      const tileCtx = tile.getContext("2d");
       const ctx = canvasRef.current?.getContext("2d");
-      if (!tileCtx || !ctx) return;
-      tileCtx.drawImage(img, 0, 0, SWATCH_TILE_PX, SWATCH_TILE_PX);
+      if (!ctx) return;
+
+      // A plain repeat of one crop shows a hard seam at every tile edge —
+      // whatever grain/weave the swatch photo has reads as an obvious
+      // stamped grid. Building the tile from 4 mirrored copies makes each
+      // edge a mirror-image of its neighbor, so "repeat" has nothing to
+      // seam against. Works for any fabric without knowing its pattern;
+      // fabrics with a real printed repeat (checks, florals) still deserve
+      // proper period-detected tiling instead of this.
+      const base = document.createElement("canvas");
+      base.width = SWATCH_TILE_PX;
+      base.height = SWATCH_TILE_PX;
+      const baseCtx = base.getContext("2d");
+      if (!baseCtx) return;
+      baseCtx.drawImage(img, 0, 0, SWATCH_TILE_PX, SWATCH_TILE_PX);
+
+      const tile = document.createElement("canvas");
+      tile.width = SWATCH_TILE_PX * 2;
+      tile.height = SWATCH_TILE_PX * 2;
+      const tileCtx = tile.getContext("2d");
+      if (!tileCtx) return;
+      tileCtx.drawImage(base, 0, 0);
+      tileCtx.save();
+      tileCtx.translate(tile.width, 0);
+      tileCtx.scale(-1, 1);
+      tileCtx.drawImage(base, 0, 0);
+      tileCtx.restore();
+      tileCtx.save();
+      tileCtx.translate(0, tile.height);
+      tileCtx.scale(1, -1);
+      tileCtx.drawImage(base, 0, 0);
+      tileCtx.restore();
+      tileCtx.save();
+      tileCtx.translate(tile.width, tile.height);
+      tileCtx.scale(-1, -1);
+      tileCtx.drawImage(base, 0, 0);
+      tileCtx.restore();
+
       swatchPatternRef.current = ctx.createPattern(tile, "repeat");
       paint();
     };

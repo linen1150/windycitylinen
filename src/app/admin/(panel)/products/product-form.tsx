@@ -21,7 +21,7 @@ export type ProductFormData = {
   fabricId: string;
   colorName: string;
   colorHex: string;
-  colorGroup: string;
+  colorGroups: string[];
   keywords: string;
   imageFilename: string;
   limited: boolean;
@@ -131,16 +131,6 @@ export function ProductForm({
           </div>
         </Field>
 
-        <Field label="Color family" hint="Used by the catalog color filter.">
-          <select name="colorGroup" defaultValue={v?.colorGroup ?? ""} className={adminInput}>
-            <option value="">— none —</option>
-            {colorGroups.map((g) => (
-              <option key={g} value={g}>
-                {g}
-              </option>
-            ))}
-          </select>
-        </Field>
         <Field
           label="Image"
           hint="Filename in public/images/<category>/, a /images/... path, or a full URL."
@@ -163,6 +153,31 @@ export function ProductForm({
       >
         <input name="keywords" defaultValue={v?.keywords} className={adminInput} />
       </Field>
+
+      <div>
+        <span className={adminLabel}>Color family</span>
+        <p className="mb-1.5 text-xs text-ink-soft">
+          Used by the catalog color filter. Pick more than one for a multi-color fabric (a
+          two-tone print, say) so it's findable under any of its colors.
+        </p>
+        <div className="flex flex-wrap gap-2">
+          {colorGroups.map((g) => (
+            <label
+              key={g}
+              className="flex cursor-pointer items-center gap-1.5 border border-line px-2.5 py-1 text-[13px] has-[:checked]:border-ink has-[:checked]:bg-ink has-[:checked]:text-white"
+            >
+              <input
+                type="checkbox"
+                name="colorGroups"
+                value={g}
+                defaultChecked={v?.colorGroups.includes(g)}
+                className="sr-only"
+              />
+              {g}
+            </label>
+          ))}
+        </div>
+      </div>
 
       <div>
         <span className={adminLabel}>Sizes</span>

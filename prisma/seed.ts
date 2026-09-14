@@ -24,7 +24,7 @@ type CatalogFile = {
     fabric: string;
     colorName: string;
     colorHex: string | null;
-    colorGroup: string | null;
+    colorGroups: string[];
     limited: boolean;
     reverseSide: boolean;
     imageFilename: string | null;
@@ -258,7 +258,7 @@ async function main() {
         fabricId,
         colorName: p.colorName,
         colorHex: p.colorHex,
-        colorGroup: p.colorGroup,
+        colorGroups: p.colorGroups,
         limited: p.limited,
         reverseSide: p.reverseSide,
         imageFilename: p.imageFilename,
@@ -271,7 +271,7 @@ async function main() {
         fabricId,
         colorName: p.colorName,
         colorHex: p.colorHex,
-        colorGroup: p.colorGroup,
+        colorGroups: p.colorGroups,
         limited: p.limited,
         reverseSide: p.reverseSide,
         imageFilename: p.imageFilename,

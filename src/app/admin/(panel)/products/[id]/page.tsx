@@ -34,7 +34,7 @@ export default async function EditProductPage({
           fabricId: product.fabricId,
           colorName: product.colorName,
           colorHex: product.colorHex ?? "",
-          colorGroup: product.colorGroup ?? "",
+          colorGroups: product.colorGroups,
           keywords: product.keywords,
           imageFilename: product.imageFilename ?? "",
           limited: product.limited,

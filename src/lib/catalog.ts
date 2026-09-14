@@ -32,7 +32,7 @@ export type ProductCardData = {
   fabric: string;
   colorName: string;
   colorHex: string | null;
-  colorGroup: string | null;
+  colorGroups: string[];
   limited: boolean;
   reverseSide: boolean;
   imageUrl: string | null;
@@ -107,7 +107,7 @@ function toCard(p: Prisma.ProductGetPayload<{ include: { category: true; fabric:
     fabric: p.fabric.name,
     colorName: p.colorName,
     colorHex: p.colorHex,
-    colorGroup: p.colorGroup,
+    colorGroups: p.colorGroups,
     limited: p.limited,
     reverseSide: p.reverseSide,
     imageUrl: imageUrl(p.category.name, p.imageFilename),
@@ -137,7 +137,7 @@ export async function searchCatalog(query: CatalogQuery) {
   }
   if (query.category?.length) and.push({ category: { slug: { in: query.category } } });
   if (query.fabric?.length) and.push({ fabric: { slug: { in: query.fabric } } });
-  if (query.color?.length) and.push({ colorGroup: { in: query.color } });
+  if (query.color?.length) and.push({ colorGroups: { hasSome: query.color } });
   if (query.size?.length)
     and.push({ sizes: { some: { size: { slug: { in: query.size } } } } });
   if (query.collection?.length)
@@ -236,9 +236,9 @@ export const getFeaturedByCategory = cache(async (): Promise<ProductCardData[]> 
 export async function getRelatedProducts(product: ProductDetailData, take = 4) {
   const base = { published: true, slug: { not: product.slug }, category: { name: product.category } };
 
-  const sameColor = product.colorGroup
+  const sameColor = product.colorGroups.length
     ? await db.product.findMany({
-        where: { ...base, colorGroup: product.colorGroup },
+        where: { ...base, colorGroups: { hasSome: product.colorGroups } },
         include: { category: true, fabric: true },
         take,
       })

@@ -80,53 +80,144 @@ export const COLOR_GROUPS = [
   { name: "Yellow", hex: "#EFCB3B" },
 ];
 
-// Keyword rules mapping a specific color name to a group. First match wins.
+// Keyword rules mapping a specific color name to a group. A product can match
+// more than one rule (see colorGroupsFor) so a two-tone name like "Polka Dots
+// Black with White" is filed under every color it names, not just the first.
+// Every alternative is \b-bounded so a short token like "tan" can't match
+// inside an unrelated word (e.g. "Tangerine", "Embroidered").
 const COLOR_RULES = [
-  [/black|onyx|ebony|jet|noir/i, "Black"],
-  [/white|snow/i, "White"],
-  [/ivory|cream|bone|champagne|vanilla|eggshell/i, "Ivory"],
-  [/copper|rust|terracotta|penny|bronze/i, "Copper"],
-  [/gold|golden|antique gold/i, "Gold"],
-  [/yellow|lemon|citron|mustard|canary|butter|maize/i, "Yellow"],
-  [/orange|tangerine|apricot|coral|persimmon|pumpkin|marigold|burnt orange|papaya/i, "Orange"],
-  [/red|scarlet|cherry|crimson|ruby|tomato|poppy|cardinal|americana/i, "Red"],
-  [/blush|pink|rose|dusty rose|mauve|petal|flamingo|watermelon|fuchsia|magenta|hot pink|salmon/i, "Pink/Blush"],
-  [/purple|plum|eggplant|aubergine|lavender|lilac|violet|orchid|amethyst|wisteria|grape/i, "Purple/Burgundy"],
-  [/burgundy|wine|merlot|maroon|bordeaux|claret|garnet|cranberry|sangria/i, "Purple/Burgundy"],
-  [/blue|navy|teal|aqua|turquoise|cerulean|cobalt|periwinkle|denim|indigo|sky|sapphire|marine|ocean|slate blue|caribbean/i, "Blue"],
-  [/green|sage|olive|emerald|kelly|hunter|forest|mint|moss|fern|celadon|clover|lime|pistachio|basil|seafoam|jade/i, "Green"],
-  [/gray|grey|silver|pewter|charcoal|graphite|smoke|stone|ash|platinum|steel/i, "Gray"],
-  [/brown|beige|cafe|tan|taupe|camel|mocha|chocolate|espresso|khaki|sand|wheat|latte|coffee|hazelnut|walnut|burlap|jute|natural|nutmeg|cinnamon|toffee|caramel|chestnut|sable|driftwood|oatmeal/i, "Brown/Beige/Cafe/Tan"],
-  [/multi|rainbow|print|floral|stripe|check|plaid|pattern|ombre|tie.?dye|paisley|geo|confetti|mosaic/i, "Multicolor"],
+  [/\b(black|onyx|ebony|jet|noir)\b/i, "Black"],
+  [/\b(white|snow)\b/i, "White"],
+  [/\b(ivory|cream|bone|champagne|vanilla|eggshell)\b/i, "Ivory"],
+  [/\b(copper|rust|terracotta|penny|bronze)\b/i, "Copper"],
+  [/\b(gold|golden|antique gold)\b/i, "Gold"],
+  [/\b(yellow|lemon|citron|mustard|canary|butter|maize|cornsilk|amber)\b/i, "Yellow"],
+  [/\b(orange|tangerine|apricot|coral|persimmon|pumpkin|marigold|burnt orange|papaya|peach)\b/i, "Orange"],
+  [/\b(red|scarlet|cherry|crimson|ruby|tomato|poppy|cardinal|americana)\b/i, "Red"],
+  [/\b(blush|pink|rose|dusty rose|mauve|petal|flamingo|watermelon|fuchsia|magenta|hot pink|salmon)\b/i, "Pink/Blush"],
+  [/\b(purple|plum|eggplant|aubergine|lavender|lilac|violet|orchid|amethyst|wisteria|grape)\b/i, "Purple/Burgundy"],
+  [/\b(burgundy|wine|merlot|maroon|bordeaux|claret|garnet|cranberry|sangria)\b/i, "Purple/Burgundy"],
+  [/\b(blue|navy|teal|aqua|turquoise|cerulean|cobalt|periwinkle|denim|indigo|sky|sapphire|marine|ocean|slate|caribbean)\b/i, "Blue"],
+  [/\b(green|sage|olive|emerald|kelly|hunter|forest|mint|moss|fern|celadon|clover|lime|pistachio|basil|seafoam|jade|avocado)\b/i, "Green"],
+  [/\b(gray|grey|silver|pewter|charcoal|graphite|smoke|ash|platinum|steel)\b/i, "Gray"],
+  // "jute" deliberately excluded: in this catalog it only ever names the Jute
+  // fabric line (baked into the product/color name, e.g. "Jute Black"), never
+  // an actual color — keeping it as a keyword mistagged every Jute product brown.
+  [/\b(brown|beige|cafe|tan|taupe|camel|mocha|chocolate|espresso|khaki|sand|wheat|latte|coffee|hazelnut|walnut|burlap|natural|nutmeg|cinnamon|toffee|caramel|chestnut|sable|driftwood|oatmeal|spice|spiced|cider)\b/i, "Brown/Beige/Cafe/Tan"],
+  [/\b(multi|rainbow|print|floral|stripe|check|plaid|pattern|ombre|tie.?dye|paisley|geo|confetti|mosaic)\b/i, "Multicolor"],
 ];
 
 function hexToRgb(hex) {
   const n = parseInt((hex || "").replace("#", ""), 16);
   return Number.isNaN(n) ? null : [(n >> 16) & 255, (n >> 8) & 255, n & 255];
 }
-// Nearest of the 15 group anchor colors, in a rough perceptual space.
+
+function rgbToHsl([r, g, b]) {
+  r /= 255; g /= 255; b /= 255;
+  const max = Math.max(r, g, b), min = Math.min(r, g, b);
+  const l = (max + min) / 2;
+  const delta = max - min;
+  if (delta === 0) return { h: 0, s: 0, l };
+  const s = delta / (1 - Math.abs(2 * l - 1));
+  let h;
+  if (max === r) h = 60 * (((g - b) / delta) % 6);
+  else if (max === g) h = 60 * ((b - r) / delta + 2);
+  else h = 60 * ((r - g) / delta + 4);
+  if (h < 0) h += 360;
+  return { h, s, l };
+}
+
+// Fallback for a colorName/productName with no keyword hit: bucket the photo's
+// own hex by hue family rather than a flat weighted-RGB distance to the 15
+// anchor colors — the old distance metric put muted/pastel hues of almost any
+// hue (e.g. teal #8ED1C4 "Tiffany") nearer the Pink/Blush anchor than their
+// actual hue family, which was silently wrong for a large share of the
+// keyword-less items.
 function nearestColorGroup(hex) {
   const rgb = hexToRgb(hex);
   if (!rgb) return null;
-  let best = null;
-  let bestD = Infinity;
-  for (const g of COLOR_GROUPS) {
-    const a = hexToRgb(g.hex);
-    const d =
-      2 * (rgb[0] - a[0]) ** 2 + 4 * (rgb[1] - a[1]) ** 2 + 3 * (rgb[2] - a[2]) ** 2;
-    if (d < bestD) {
-      bestD = d;
-      best = g.name;
-    }
+  const { h, s, l } = rgbToHsl(rgb);
+
+  if (s < 0.04) {
+    if (l > 0.93) return "White";
+    if (l < 0.15) return "Black";
+    return "Gray";
   }
-  return best;
+  if (s < 0.08) {
+    if (l > 0.9) return "White";
+    if (l > 0.72) return "Ivory";
+    if (l < 0.15) return "Black";
+    if (l < 0.45) return "Brown/Beige/Cafe/Tan";
+    return "Gray";
+  }
+
+  if (h >= 330 || h < 15) return l > 0.68 ? "Pink/Blush" : "Red";
+  if (h < 45) {
+    if (s < 0.35 || l < 0.35) return "Brown/Beige/Cafe/Tan";
+    if (l > 0.75) return "Ivory";
+    return "Orange";
+  }
+  if (h < 70) {
+    if (l > 0.85 && s < 0.4) return "Ivory";
+    if (s < 0.35 && l < 0.55) return "Brown/Beige/Cafe/Tan";
+    return "Yellow";
+  }
+  if (h < 167) return "Green";
+  if (h < 255) return "Blue";
+  // purple/magenta family
+  return l > 0.7 || s < 0.25 ? "Pink/Blush" : "Purple/Burgundy";
 }
 
-function colorGroupFor(colorName, fabric, productName, hex) {
-  const hay = `${colorName} ${fabric} ${productName}`;
-  for (const [re, group] of COLOR_RULES) if (re.test(hay)) return group;
+// Manual corrections for specific items where the name/hex heuristics get it
+// wrong (confirmed by eye against the real photo) — keyed by the legacy
+// catalog export id, so a reseed/rebuild doesn't silently drop the fix.
+const COLOR_GROUP_OVERRIDES = {
+  // "Violet Green" is the supplier's fabric-line name, not a real color mix —
+  // the crushed-velvet photo (and its hex #5A7A4A) is plain green.
+  184: ["Green"],
+  // "Splash" is a specialty print with no real sampled hex on file (falls
+  // back to the neutral placeholder) — it's a multicolor pattern in the photo.
+  705: ["Multicolor"],
+};
+
+// Same idea, but for a whole colorway (every category/size variant shares the
+// exact color name) — these have no real sampled hex on file, so every
+// variant would otherwise fall back to the same wrong guess.
+const COLOR_GROUP_NAME_OVERRIDES = {
+  "Mirage Hazel": ["Blue"],
+  "Mirage Tide": ["Blue"],
+  Bandana: ["Red"],
+  "Bark Midnight": ["Black"],
+  "Bark Midnight Reverse": ["Black"],
+  Brushstrokes: ["Purple/Burgundy"],
+  Calypso: ["Multicolor"],
+  Cirque: ["Multicolor"],
+  Dogwood: ["Orange"],
+  "Echo Rouge": ["Red"],
+  "Echo Rouge Reverse": ["Red"],
+  // "Champagne Gold" is one blended color name, not champagne + gold — the
+  // keyword matcher was splitting it into two groups.
+  "Bichon Crush Champagne Gold (Limited)": ["Gold"],
+  "Velvet Champagne Gold": ["Gold"],
+  "Verve Champagne Gold": ["Gold"],
+};
+
+function colorGroupsFor(externalId, colorName, fabric, productName, hex) {
+  if (COLOR_GROUP_OVERRIDES[externalId]) return COLOR_GROUP_OVERRIDES[externalId];
+  if (COLOR_GROUP_NAME_OVERRIDES[productName]) return COLOR_GROUP_NAME_OVERRIDES[productName];
+  // Fabric is deliberately excluded: it's a material/pattern-line name, not a
+  // color, and some fabric names (e.g. "Jute") collide with color keywords —
+  // any real color signal from the fabric line is already repeated in the
+  // product name (e.g. "Jute Black", "Imperial Stripe Black").
+  const hay = `${colorName} ${productName}`;
+  const groups = [];
+  for (const [re, group] of COLOR_RULES) {
+    if (re.test(hay) && !groups.includes(group)) groups.push(group);
+  }
+  if (groups.length) return groups;
   // Fall back to the closest anchor color by hex.
-  return nearestColorGroup(hex);
+  const nearest = nearestColorGroup(hex);
+  return nearest ? [nearest] : [];
 }
 
 function slugify(s) {
@@ -195,7 +286,7 @@ const products = raw.map((r) => {
     fabric: r.fabric,
     colorName: r.color,
     colorHex: (r.hex || "").toUpperCase() || null,
-    colorGroup: colorGroupFor(r.color, r.fabric, r.name, r.hex),
+    colorGroups: colorGroupsFor(r.id, r.color, r.fabric, r.name, r.hex),
     limited: Boolean(r.limited),
     reverseSide: Boolean(r.reverseSide),
     imageFilename,
@@ -319,7 +410,7 @@ writeFileSync(join(root, "data/catalog.json"), JSON.stringify(out, null, 2));
 
 const missingImg = products.filter((p) => !p.imageFilename).length;
 const nameMismatch = raw.filter((r) => !csvByName.has(r.name.trim())).length;
-const ungrouped = products.filter((p) => !p.colorGroup).length;
+const ungrouped = products.filter((p) => !p.colorGroups.length).length;
 console.log(`catalog.json written: ${products.length} products`);
 console.log(`  fabrics: ${out.fabrics.length}  |  not found in CSV: ${nameMismatch}  |  colors without a group: ${ungrouped}`);
 console.log(`  images: ${imageReport.kept} exact + ${imageReport.matched} token-matched = ${imageReport.kept + imageReport.matched} / ${products.length}  |  without a photo: ${missingImg}`);

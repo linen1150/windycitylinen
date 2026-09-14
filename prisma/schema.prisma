@@ -68,8 +68,10 @@ model Product {
   fabricId      String
   colorName     String
   colorHex      String?
-  // Coarse color family for the catalog filter UI (e.g. "Blue", "Pink/Blush").
-  colorGroup    String?
+  // Coarse color family/families for the catalog filter UI (e.g. ["Blue"],
+  // or ["Black", "White"] for a two-tone print) — a product can belong to
+  // more than one so a multi-color fabric is findable under any of its colors.
+  colorGroups   String[]            @default([])
   limited       Boolean             @default(false)
   reverseSide   Boolean             @default(false)
   imageFilename String?

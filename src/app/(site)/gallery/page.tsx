@@ -48,7 +48,7 @@ export default async function GalleryPage({ searchParams }: PageProps<"/gallery"
         </div>
       ) : (
         <>
-          <GalleryGrid items={items} />
+          <GalleryGrid items={items} startNumber={(page - 1) * PAGE_SIZE + 1} />
           <CatalogPagination page={page} pageCount={pageCount} />
         </>
       )}

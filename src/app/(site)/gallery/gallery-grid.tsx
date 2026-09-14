@@ -6,7 +6,7 @@ import { ProductImage } from "@/components/catalog/product-image";
 
 type Item = { id: string; imagePath: string; caption: string };
 
-export function GalleryGrid({ items }: { items: Item[] }) {
+export function GalleryGrid({ items, startNumber = 1 }: { items: Item[]; startNumber?: number }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const close = useCallback(() => setOpenIndex(null), []);
@@ -53,6 +53,9 @@ export function GalleryGrid({ items }: { items: Item[] }) {
               colorHex={null}
               className="h-full w-full"
             />
+            <span className="pointer-events-none absolute left-1.5 top-1.5 min-w-[1.6em] rounded bg-black/70 px-1.5 py-0.5 text-center text-xs font-medium text-white">
+              {startNumber + i}
+            </span>
             {item.caption && (
               <span className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/0 p-3 text-center opacity-0 transition-all duration-150 group-hover:bg-black/50 group-hover:opacity-100">
                 <span className="font-display text-base text-white drop-shadow sm:text-lg">
@@ -118,7 +121,10 @@ export function GalleryGrid({ items }: { items: Item[] }) {
               alt={open.caption ? `${open.caption} at a Windy City Linen event` : "Windy City Linen event photo"}
               className="max-h-[85vh] max-w-[90vw] object-contain"
             />
-            {open.caption && <p className="mt-3 text-sm text-white/80">{open.caption}</p>}
+            <p className="mt-3 text-sm text-white/80">
+              #{startNumber + (openIndex ?? 0)}
+              {open.caption ? ` — ${open.caption}` : ""}
+            </p>
           </div>
         </div>
       )}

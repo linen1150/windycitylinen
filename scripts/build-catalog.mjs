@@ -103,7 +103,7 @@ const COLOR_RULES = [
   // "jute" deliberately excluded: in this catalog it only ever names the Jute
   // fabric line (baked into the product/color name, e.g. "Jute Black"), never
   // an actual color — keeping it as a keyword mistagged every Jute product brown.
-  [/\b(brown|beige|cafe|tan|taupe|camel|mocha|chocolate|espresso|khaki|sand|wheat|latte|coffee|hazelnut|walnut|burlap|natural|nutmeg|cinnamon|toffee|caramel|chestnut|sable|driftwood|oatmeal|spice|spiced|cider)\b/i, "Brown/Beige/Cafe/Tan"],
+  [/\b(brown|beige|cafe|tan|taupe|camel|mocha|chocolate|espresso|khaki|sand|wheat|latte|coffee|hazelnut|walnut|burlap|natural|nutmeg|cinnamon|toffee|caramel|chestnut|sable|driftwood|oatmeal)\b/i, "Brown/Beige/Cafe/Tan"],
   [/\b(multi|rainbow|print|floral|stripe|check|plaid|pattern|ombre|tie.?dye|paisley|geo|confetti|mosaic)\b/i, "Multicolor"],
 ];
 
@@ -172,9 +172,6 @@ function nearestColorGroup(hex) {
 // wrong (confirmed by eye against the real photo) — keyed by the legacy
 // catalog export id, so a reseed/rebuild doesn't silently drop the fix.
 const COLOR_GROUP_OVERRIDES = {
-  // "Violet Green" is the supplier's fabric-line name, not a real color mix —
-  // the crushed-velvet photo (and its hex #5A7A4A) is plain green.
-  184: ["Green"],
   // "Splash" is a specialty print with no real sampled hex on file (falls
   // back to the neutral placeholder) — it's a multicolor pattern in the photo.
   705: ["Multicolor"],
@@ -184,6 +181,9 @@ const COLOR_GROUP_OVERRIDES = {
 // exact color name) — these have no real sampled hex on file, so every
 // variant would otherwise fall back to the same wrong guess.
 const COLOR_GROUP_NAME_OVERRIDES = {
+  // "Violet Green" is the supplier's fabric-line name, not a real color mix —
+  // the crushed-velvet photo (and its hex #5A7A4A) is plain green.
+  "Bichon Crush Violet Green (Limited)": ["Green"],
   "Mirage Hazel": ["Blue"],
   "Mirage Tide": ["Blue"],
   Bandana: ["Red"],
@@ -195,6 +195,8 @@ const COLOR_GROUP_NAME_OVERRIDES = {
   Dogwood: ["Orange"],
   "Echo Rouge": ["Red"],
   "Echo Rouge Reverse": ["Red"],
+  "Bichon Crush Paprika (Limited)": ["Orange"],
+  "Bengaline Spiced Cider (Limited)": ["Orange"],
   // "Champagne Gold" is one blended color name, not champagne + gold — the
   // keyword matcher was splitting it into two groups.
   "Bichon Crush Champagne Gold (Limited)": ["Gold"],

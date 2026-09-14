@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-14T22:10:47.454Z",
+  "generatedAt": "2026-09-14T22:29:45.850Z",
   "categories": [
     "Tablecloths and Overlays",
     "Napkins",
@@ -5352,7 +5352,7 @@
       "colorName": "Spiced Cider",
       "colorHex": "#8A4A2E",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Orange"
       ],
       "limited": true,
       "reverseSide": false,
@@ -6012,7 +6012,7 @@
       "colorName": "Paprika",
       "colorHex": "#A8462E",
       "colorGroups": [
-        "Red"
+        "Orange"
       ],
       "limited": true,
       "reverseSide": false,
@@ -16068,7 +16068,7 @@
       "colorName": "Spiced Cider",
       "colorHex": "#8A4A2E",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Orange"
       ],
       "limited": true,
       "reverseSide": false,
@@ -16468,7 +16468,7 @@
       "colorName": "Paprika",
       "colorHex": "#A8462E",
       "colorGroups": [
-        "Red"
+        "Orange"
       ],
       "limited": true,
       "reverseSide": false,
@@ -16568,7 +16568,6 @@
       "colorName": "Violet Green",
       "colorHex": "#5A7A4A",
       "colorGroups": [
-        "Purple/Burgundy",
         "Green"
       ],
       "limited": true,

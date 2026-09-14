@@ -97,6 +97,10 @@ async function main() {
   if (!cloth?.imageFilename || !napkin?.imageFilename) {
     throw new Error(`Missing tablecloth or napkin (with a photo) for Classic Solid ${colorName}`);
   }
+  if (napkin.imageFilename.startsWith("/")) {
+    console.log(`Skipping ${colorName} — napkin has no real photo of its own yet (it's a stand-in pointing at the tablecloth itself).`);
+    return;
+  }
 
   const clothPath = `public/images/Tablecloths and Overlays/${cloth.imageFilename}`;
   const napkinPath = `public/images/Napkins/${napkin.imageFilename}`;

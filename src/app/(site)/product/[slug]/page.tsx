@@ -145,7 +145,11 @@ export default async function ProductPage({ params }: PageProps<"/product/[slug]
             {product.colorName} draped on a 60&Prime; round table, folds and shadows
             included.
           </p>
-          <TableclothColorStage colorHex={product.colorHex} className="mt-4 w-full" />
+          <TableclothColorStage
+            colorHex={product.colorHex}
+            swatchUrl={product.imageUrl}
+            className="mt-4 w-full"
+          />
         </section>
       )}
 

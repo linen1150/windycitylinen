@@ -25,7 +25,7 @@ const WISCONSIN = SITE.locations.find((l) => l.name === "Wisconsin Location")!;
 const DELIVERY_CITIES = [
   "Milwaukee", "Wauwatosa", "Brookfield", "Elm Grove", "Waukesha", "Pewaukee",
   "Delafield", "Oconomowoc", "New Berlin", "Greenfield", "Franklin", "Oak Creek",
-  "Mequon", "Cedarburg", "Racine", "Kenosha", "Lake Geneva",
+  "Mequon", "Cedarburg", "Racine", "Kenosha", "Lake Geneva", "Janesville",
 ];
 
 const SHIP_CITIES = ["Green Bay", "Appleton", "Oshkosh", "Wausau", "Eau Claire", "La Crosse", "Door County"];
@@ -111,9 +111,9 @@ export default function MilwaukeeLocationPage() {
         </p>
         <p className="mt-3 max-w-2xl text-ink-soft">
           Our Wisconsin showroom is at <strong>{WISCONSIN.address}</strong>, about fifteen
-          minutes west of downtown Milwaukee. Visits are by appointment — ask for Tera, who
-          runs the Elm Grove showroom — so someone is free to pull fabrics, lay out
-          combinations on a real table and talk through sizing for your venue.
+          minutes west of downtown Milwaukee. Visits are by appointment, so someone is free
+          to pull fabrics, lay out combinations on a real table and talk through sizing for
+          your venue.
         </p>
         <div className="mt-4">
           <iframe

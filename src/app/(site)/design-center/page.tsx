@@ -62,6 +62,10 @@ export default async function DesignCenterPage() {
               {group.map((item) => {
                 const hasUrl = Boolean(item.url);
                 const external = /^https?:\/\//.test(item.url);
+                // A local PDF isn't a Next.js route — Link's prefetch fetches it as
+                // one anyway (with an RSC query param appended) and 404s in the
+                // console every load. Plain <a> skips that; the download still works.
+                const isFile = /\.\w{2,4}$/.test(item.url);
                 const href = hasUrl
                   ? item.url
                   : `/contact?about=${encodeURIComponent(item.title)}`;
@@ -87,8 +91,14 @@ export default async function DesignCenterPage() {
                   </div>
                 );
                 const cls = "group block border border-line hover:border-ink";
-                return external ? (
-                  <a key={item.id} href={href} target="_blank" rel="noopener noreferrer" className={cls}>
+                return external || isFile ? (
+                  <a
+                    key={item.id}
+                    href={href}
+                    target={external ? "_blank" : undefined}
+                    rel={external ? "noopener noreferrer" : undefined}
+                    className={cls}
+                  >
                     {inner}
                   </a>
                 ) : (

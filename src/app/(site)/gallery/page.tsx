@@ -16,18 +16,23 @@ const PAGE_SIZE = 48;
 
 export default async function GalleryPage({ searchParams }: PageProps<"/gallery">) {
   const sp = await searchParams;
-  const page = Math.max(1, Number.parseInt((Array.isArray(sp.page) ? sp.page[0] : sp.page) ?? "1", 10) || 1);
+  const requestedPage = Math.max(
+    1,
+    Number.parseInt((Array.isArray(sp.page) ? sp.page[0] : sp.page) ?? "1", 10) || 1,
+  );
 
-  const [total, items] = await Promise.all([
-    db.galleryItem.count({ where: { published: true } }),
-    db.galleryItem.findMany({
-      where: { published: true },
-      orderBy: { order: "asc" },
-      skip: (page - 1) * PAGE_SIZE,
-      take: PAGE_SIZE,
-    }),
-  ]);
+  const total = await db.galleryItem.count({ where: { published: true } });
   const pageCount = Math.max(1, Math.ceil(total / PAGE_SIZE));
+  // A page beyond the last one (stale bookmark, hand-edited URL) used to render
+  // an empty grid instead of clamping — dead end with no path back.
+  const page = Math.min(requestedPage, pageCount);
+
+  const items = await db.galleryItem.findMany({
+    where: { published: true },
+    orderBy: { order: "asc" },
+    skip: (page - 1) * PAGE_SIZE,
+    take: PAGE_SIZE,
+  });
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-8">

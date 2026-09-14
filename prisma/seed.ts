@@ -38,42 +38,160 @@ const slugify = (s: string) =>
   s.toLowerCase().replace(/["']/g, "").replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
 // Real Design Center content, mirrored from the current site (see build brief).
+// `url` lives here (not just in scripts/fill-design-center-urls.mjs) because
+// this array is deleted-and-recreated wholesale on every seed — a `url` that
+// only existed as a later one-off patch got silently wiped by the next
+// reseed, the same class of bug that hit the Mirage fabric split.
 const DESIGN_CENTER: Array<{
   section: DesignCenterSection;
   type: DesignCenterType;
   title: string;
   description?: string;
   accentHex?: string;
+  url?: string;
 }> = [
-  { section: "DESIGN_CENTER", type: "LINK", title: "Autumn 2026", description: "Seasonal lookbook." },
-  { section: "DESIGN_CENTER", type: "LINK", title: "Holiday Look Book", description: "Seasonal lookbook." },
-  { section: "DESIGN_CENTER", type: "DOCUMENT", title: "New Additions 2026", description: "What's new this year." },
-  { section: "DESIGN_CENTER", type: "DOCUMENT", title: "Universal Sizing Guide", description: "Linen sizes for every table." },
-  { section: "DESIGN_CENTER", type: "LINK", title: "Socials & Soirees", description: "Lookbook." },
-  { section: "DESIGN_CENTER", type: "LINK", title: "Serenity Look Book", description: "The Serenity fabric, styled." },
-  { section: "DESIGN_CENTER", type: "LINK", title: "Jute Look Book", description: "The Jute collection, styled." },
-  { section: "DESIGN_CENTER", type: "LINK", title: "Echo Look Book", description: "The Echo collection, styled." },
-  { section: "DIGITAL_SWATCH_CARDS", type: "DOCUMENT", title: "Classic Solid", accentHex: "#DACBAA" },
-  { section: "DIGITAL_SWATCH_CARDS", type: "DOCUMENT", title: "Jute", accentHex: "#B39A63" },
-  { section: "DIGITAL_SWATCH_CARDS", type: "DOCUMENT", title: "Matte Lamour", accentHex: "#DCD6C4" },
-  { section: "DIGITAL_SWATCH_CARDS", type: "DOCUMENT", title: "Mirage", accentHex: "#B9C6CC" },
-  { section: "DIGITAL_SWATCH_CARDS", type: "DOCUMENT", title: "Picnic Check", accentHex: "#C8D0B9" },
-  { section: "DIGITAL_SWATCH_CARDS", type: "DOCUMENT", title: "Serenity", accentHex: "#D3BFC7" },
-  { section: "DIGITAL_SWATCH_CARDS", type: "DOCUMENT", title: "Shantung", accentHex: "#E5DFCC" },
-  { section: "DIGITAL_SWATCH_CARDS", type: "DOCUMENT", title: "Soiree", accentHex: "#D6B7B0" },
-  { section: "DIGITAL_SWATCH_CARDS", type: "DOCUMENT", title: "Specialty", accentHex: "#CFC7B3" },
-  { section: "DIGITAL_SWATCH_CARDS", type: "DOCUMENT", title: "Velvet", accentHex: "#3E323A" },
+  {
+    section: "DESIGN_CENTER",
+    type: "LINK",
+    title: "Autumn 2026",
+    description: "Seasonal lookbook.",
+    url: "https://www.flipsnack.com/79B77D88B7A/autumn-2026-color-palettes-wcl",
+  },
+  {
+    section: "DESIGN_CENTER",
+    type: "LINK",
+    title: "Holiday Look Book",
+    description: "Seasonal lookbook.",
+    url: "https://www.flipsnack.com/79B77D88B7A/2025-windy-city-linen-holiday-lookbook-zcmg988cjl",
+  },
+  {
+    section: "DESIGN_CENTER",
+    type: "DOCUMENT",
+    title: "New Additions 2026",
+    description: "What's new this year.",
+    url: "/documents/fall-2026-new-releases.pdf",
+  },
+  {
+    section: "DESIGN_CENTER",
+    type: "DOCUMENT",
+    title: "Universal Sizing Guide",
+    description: "Linen sizes for every table.",
+    url: "/documents/wcl-sizing-chart-2025.pdf",
+  },
+  {
+    section: "DESIGN_CENTER",
+    type: "LINK",
+    title: "Socials & Soirees",
+    description: "Lookbook.",
+    url: "https://www.flipsnack.com/79B77D88B7A/2026-socials-and-soirees-wcl",
+  },
+  // The original Flipsnack lookbooks for these three 404 now (deleted/moved on
+  // Flipsnack's end, confirmed 2026-09-12) — point at the real matching
+  // products instead of a dead external link.
+  {
+    section: "DESIGN_CENTER",
+    type: "LINK",
+    title: "Serenity Look Book",
+    description: "The Serenity fabric, styled.",
+    url: "/products?fabric=serenity",
+  },
+  {
+    section: "DESIGN_CENTER",
+    type: "LINK",
+    title: "Jute Look Book",
+    description: "The Jute collection, styled.",
+    url: "/products?fabric=jute",
+  },
+  {
+    section: "DESIGN_CENTER",
+    type: "LINK",
+    title: "Echo Look Book",
+    description: "The Echo collection, styled.",
+    url: "/search?q=echo",
+  },
+  {
+    section: "DIGITAL_SWATCH_CARDS",
+    type: "DOCUMENT",
+    title: "Classic Solid",
+    accentHex: "#DACBAA",
+    url: "/documents/2025-classic-standard-digital-swatches.pdf",
+  },
+  {
+    section: "DIGITAL_SWATCH_CARDS",
+    type: "DOCUMENT",
+    title: "Jute",
+    accentHex: "#B39A63",
+    url: "/documents/2025-jute-digital-swatchcard.pdf",
+  },
+  {
+    section: "DIGITAL_SWATCH_CARDS",
+    type: "DOCUMENT",
+    title: "Matte Lamour",
+    accentHex: "#DCD6C4",
+    url: "/documents/2025-lamour-digital-swatchcard.pdf",
+  },
+  {
+    section: "DIGITAL_SWATCH_CARDS",
+    type: "DOCUMENT",
+    title: "Mirage",
+    accentHex: "#B9C6CC",
+    url: "/documents/2025-mirage-digital-swatchcard.pdf",
+  },
+  {
+    section: "DIGITAL_SWATCH_CARDS",
+    type: "DOCUMENT",
+    title: "Picnic Check",
+    accentHex: "#C8D0B9",
+    url: "/documents/2025-picnic-check-digital-swatchcard.pdf",
+  },
+  {
+    section: "DIGITAL_SWATCH_CARDS",
+    type: "DOCUMENT",
+    title: "Serenity",
+    accentHex: "#D3BFC7",
+    url: "/documents/2025-serenity-digital-swatchcard.pdf",
+  },
+  {
+    section: "DIGITAL_SWATCH_CARDS",
+    type: "DOCUMENT",
+    title: "Shantung",
+    accentHex: "#E5DFCC",
+    url: "/documents/2025-shantung-digital-swatchcard.pdf",
+  },
+  {
+    section: "DIGITAL_SWATCH_CARDS",
+    type: "DOCUMENT",
+    title: "Soiree",
+    accentHex: "#D6B7B0",
+    url: "/documents/2025-soiree-digital-swatchcard.pdf",
+  },
+  {
+    section: "DIGITAL_SWATCH_CARDS",
+    type: "DOCUMENT",
+    title: "Specialty",
+    accentHex: "#CFC7B3",
+    url: "/documents/2025-specialty-digital-swatchcard.pdf",
+  },
+  {
+    section: "DIGITAL_SWATCH_CARDS",
+    type: "DOCUMENT",
+    title: "Velvet",
+    accentHex: "#3E323A",
+    url: "/documents/2025-velvet-digital-swatchcard.pdf",
+  },
   {
     section: "LINEN_VIDEOS",
     type: "VIDEO",
     title: "WCL Specialty Ties",
     description: "Ashley showcases different linen tying styles.",
+    url: "https://www.youtube.com/watch?v=cfCjzyO9oFE",
   },
   {
     section: "LINEN_VIDEOS",
     type: "VIDEO",
     title: "Windy City Linen | Design Center | Customization",
     description: "Marcela walks through how to customize a linen.",
+    url: "https://www.youtube.com/watch?v=YtgsKERS9u4",
   },
 ];
 
@@ -192,6 +310,7 @@ async function main() {
       title: d.title,
       description: d.description ?? "",
       accentHex: d.accentHex ?? null,
+      url: d.url ?? "",
       order: i,
     })),
   });

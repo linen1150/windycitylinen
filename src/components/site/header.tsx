@@ -1,10 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { Menu, Phone, Search, X } from "lucide-react";
 import { useInspirations } from "@/components/inspirations/inspirations-store";
+import { ProductImage } from "@/components/catalog/product-image";
+import type { ProductCardData } from "@/lib/catalog";
 import { SITE } from "@/lib/site";
 
 const NAV = [
@@ -21,25 +23,147 @@ const NAV = [
 function HeaderSearch({ className = "", onSubmit }: { className?: string; onSubmit?: () => void }) {
   const router = useRouter();
   const [value, setValue] = useState("");
+  const [suggestions, setSuggestions] = useState<ProductCardData[]>([]);
+  const [open, setOpen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(-1);
+  const rootRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const term = value.trim();
+    if (term.length < 2) {
+      setSuggestions([]);
+      return;
+    }
+    const controller = new AbortController();
+    const timer = setTimeout(() => {
+      fetch(`/api/search/suggest?q=${encodeURIComponent(term)}`, { signal: controller.signal })
+        .then((res) => res.json())
+        .then((data: { products: ProductCardData[] }) => {
+          setSuggestions(data.products);
+          setActiveIndex(-1);
+        })
+        .catch(() => {});
+    }, 200);
+    return () => {
+      clearTimeout(timer);
+      controller.abort();
+    };
+  }, [value]);
+
+  useEffect(() => {
+    function onClickOutside(e: MouseEvent) {
+      if (rootRef.current && !rootRef.current.contains(e.target as Node)) setOpen(false);
+    }
+    document.addEventListener("mousedown", onClickOutside);
+    return () => document.removeEventListener("mousedown", onClickOutside);
+  }, []);
+
+  const goToSearch = () => {
+    router.push(value.trim() ? `/search?q=${encodeURIComponent(value.trim())}` : "/search");
+    setOpen(false);
+    onSubmit?.();
+  };
+
+  const goToProduct = (p: ProductCardData) => {
+    router.push(`/product/${p.slug}`);
+    setOpen(false);
+    onSubmit?.();
+  };
+
   return (
-    <form
-      role="search"
-      onSubmit={(e) => {
-        e.preventDefault();
-        router.push(value.trim() ? `/search?q=${encodeURIComponent(value.trim())}` : "/search");
-        onSubmit?.();
-      }}
-      className={`flex items-center gap-2 border border-line bg-paper px-3 py-2 focus-within:border-ink ${className}`}
-    >
-      <Search size={15} className="shrink-0 text-ink-soft" />
-      <input
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-        placeholder="Search linens — color, fabric, style…"
-        aria-label="Search the catalog"
-        className="min-w-0 flex-1 bg-transparent text-sm outline-none"
-      />
-    </form>
+    <div ref={rootRef} className={`relative ${className}`}>
+      <form
+        role="search"
+        onSubmit={(e) => {
+          e.preventDefault();
+          if (activeIndex >= 0 && suggestions[activeIndex]) {
+            goToProduct(suggestions[activeIndex]);
+          } else {
+            goToSearch();
+          }
+        }}
+        className="flex items-center gap-2 border border-line bg-paper px-3 py-2 focus-within:border-ink"
+      >
+        <Search size={15} className="shrink-0 text-ink-soft" />
+        <input
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+          onFocus={() => setOpen(true)}
+          onKeyDown={(e) => {
+            if (e.key === "ArrowDown") {
+              e.preventDefault();
+              setActiveIndex((i) => Math.min(i + 1, suggestions.length - 1));
+            } else if (e.key === "ArrowUp") {
+              e.preventDefault();
+              setActiveIndex((i) => Math.max(i - 1, -1));
+            } else if (e.key === "Escape") {
+              setOpen(false);
+            } else if (e.key === "Enter") {
+              // Handled explicitly rather than left to native form-submit-on-Enter,
+              // which isn't reliable across every input method.
+              e.preventDefault();
+              if (activeIndex >= 0 && suggestions[activeIndex]) {
+                goToProduct(suggestions[activeIndex]);
+              } else {
+                goToSearch();
+              }
+            }
+          }}
+          placeholder="Search linens — color, fabric, style…"
+          aria-label="Search the catalog"
+          autoComplete="off"
+          role="combobox"
+          aria-expanded={open && suggestions.length > 0}
+          aria-controls="header-search-suggestions"
+          className="min-w-0 flex-1 bg-transparent text-sm outline-none"
+        />
+      </form>
+
+      {open && suggestions.length > 0 && (
+        <ul
+          id="header-search-suggestions"
+          role="listbox"
+          className="absolute left-0 right-0 top-full z-30 mt-1 max-h-96 overflow-y-auto border border-line bg-paper shadow-lg"
+        >
+          {suggestions.map((p, i) => (
+            <li key={p.id} role="option" aria-selected={i === activeIndex}>
+              <button
+                type="button"
+                onMouseDown={(e) => e.preventDefault()}
+                onClick={() => goToProduct(p)}
+                onMouseEnter={() => setActiveIndex(i)}
+                className={`flex w-full items-center gap-3 px-3 py-2 text-left ${
+                  i === activeIndex ? "bg-ivory" : ""
+                }`}
+              >
+                <ProductImage
+                  src={p.imageUrl}
+                  alt=""
+                  colorHex={p.colorHex}
+                  className="h-9 w-9 shrink-0 border border-line"
+                />
+                <span className="min-w-0 flex-1">
+                  <span className="block truncate text-sm text-ink">{p.name}</span>
+                  <span className="block truncate text-xs text-ink-soft">
+                    {p.fabric} · {p.category}
+                  </span>
+                </span>
+              </button>
+            </li>
+          ))}
+          <li>
+            <button
+              type="button"
+              onMouseDown={(e) => e.preventDefault()}
+              onClick={goToSearch}
+              className="block w-full border-t border-line px-3 py-2 text-left text-xs text-brass-dark hover:underline"
+            >
+              See all results for &ldquo;{value.trim()}&rdquo;
+            </button>
+          </li>
+        </ul>
+      )}
+    </div>
   );
 }
 

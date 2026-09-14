@@ -164,6 +164,32 @@ export async function searchCatalog(query: CatalogQuery) {
   };
 }
 
+/** Lightweight product matches for the header search's predictive dropdown. */
+export async function suggestProducts(q: string, limit = 6): Promise<ProductCardData[]> {
+  const term = q.trim();
+  if (!term) return [];
+  const terms = term.split(/\s+/).slice(0, 6);
+  const and: Prisma.ProductWhereInput[] = [{ published: true }];
+  for (const t of terms) {
+    and.push({
+      OR: [
+        { name: { contains: t, mode: "insensitive" } },
+        { colorName: { contains: t, mode: "insensitive" } },
+        { keywords: { contains: t, mode: "insensitive" } },
+        { category: { name: { contains: t, mode: "insensitive" } } },
+        { fabric: { name: { contains: t, mode: "insensitive" } } },
+      ],
+    });
+  }
+  const rows = await db.product.findMany({
+    where: { AND: and },
+    include: { category: true, fabric: true },
+    orderBy: { name: "asc" },
+    take: limit,
+  });
+  return rows.map(toCard);
+}
+
 export const getProductBySlug = cache(async (slug: string): Promise<ProductDetailData | null> => {
   const p = await db.product.findUnique({
     where: { slug },

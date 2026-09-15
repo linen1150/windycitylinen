@@ -36,16 +36,34 @@ export function ProductImage({
   if (!src || failed) {
     return (
       <div
-        className={`swatch-fallback ${className}`}
+        className={`swatch-fallback flex flex-col items-center justify-center gap-1.5 ${className}`}
         style={
           {
             "--c1": base,
             "--c2": shade(base, 18),
           } as React.CSSProperties
         }
-        role="img"
-        aria-label={alt}
-      />
+        aria-label={`${alt} — photo coming soon`}
+      >
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 24 24"
+          width="28"
+          height="28"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.6"
+          className="text-ink/70"
+        >
+          <circle cx="12" cy="12" r="9" />
+          <circle cx="9" cy="10" r="1.1" fill="currentColor" stroke="none" />
+          <circle cx="15" cy="10" r="1.1" fill="currentColor" stroke="none" />
+          <path d="M8 14.3c1 1.3 2.5 2 4 2s3-.7 4-2" strokeLinecap="round" />
+        </svg>
+        <span aria-hidden="true" className="text-[10px] font-semibold uppercase tracking-wider text-ink/70">
+          Coming soon
+        </span>
+      </div>
     );
   }
 

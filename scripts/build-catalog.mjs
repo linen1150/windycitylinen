@@ -61,6 +61,24 @@ const SIZES_BY_CATEGORY = {
   "Chair Covers": [],
 };
 
+// Real per-product/per-fabric size availability for Tablecloths and Overlays,
+// sourced from the 2026 price guide (see data/tablecloth-sizes.json for
+// provenance and how it was derived — a blank cell in the guide means that
+// size isn't offered). Only ever narrows the SIZES_BY_CATEGORY default, never
+// expands past it: anything not covered by the guide keeps the full range.
+const tableclothSizes = JSON.parse(readText("data/tablecloth-sizes.json"));
+
+function sizesFor(category, fabric, productName) {
+  if (category !== "Tablecloths and Overlays") return SIZES_BY_CATEGORY[category] ?? [];
+  const baseName = productName.replace(/\s*\(Limited\)\s*$/, "").replace(/\s+Revers(e|ed)$/i, "");
+  return (
+    tableclothSizes.byProduct[baseName] ??
+    tableclothSizes.byFabric[fabric] ??
+    SIZES_BY_CATEGORY[category] ??
+    []
+  );
+}
+
 // Coarse color families for the filter UI, mirrored from the legacy /Search facet.
 export const COLOR_GROUPS = [
   { name: "Black", hex: "#20232A" },
@@ -293,7 +311,7 @@ const products = raw.map((r) => {
     reverseSide: Boolean(r.reverseSide),
     imageFilename,
     keywords: "", // authored later via the admin panel
-    sizes: SIZES_BY_CATEGORY[r.category] ?? [],
+    sizes: sizesFor(r.category, r.fabric, r.name),
     collections: [], // assigned later via the admin panel
   };
 });

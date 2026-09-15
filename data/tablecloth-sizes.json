@@ -1,0 +1,1059 @@
+{
+  "source": "2026 Windy City Linen Price Guide 7.28.2026.xlsx (Essentials + Specialty Price sheets)",
+  "byFabric": {
+    "Classic Solid": [
+      "54\" Square",
+      "90\" Square",
+      "90\" Round",
+      "96\" Round",
+      "108\" Round",
+      "120\" Square",
+      "120\" Round",
+      "132\" Square",
+      "132\" Round",
+      "72\"x120\" Banquet",
+      "90\"x132\" Banquet",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet",
+      "114\"x180\" Banquet"
+    ],
+    "Imperial Stripe": [
+      "90\" Square",
+      "90\" Round",
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "72\"x120\" Banquet",
+      "90\"x132\" Banquet",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Picnic Check": [
+      "54\" Square",
+      "90\" Square",
+      "90\" Round",
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "72\"x120\" Banquet",
+      "90\"x132\" Banquet",
+      "90\"x156\" Banquet"
+    ],
+    "Shantung": [
+      "96\" Round",
+      "108\" Round",
+      "120\" Square",
+      "120\" Round",
+      "132\" Square",
+      "132\" Round",
+      "90\"x132\" Banquet",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Matte Lamour": [
+      "90\" Square",
+      "96\" Round",
+      "108\" Round",
+      "120\" Round",
+      "132\" Square",
+      "132\" Round",
+      "90\"x132\" Banquet",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Serenity": [
+      "96\" Round",
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Bengaline": [
+      "90\" Square",
+      "96\" Round",
+      "108\" Round",
+      "120\" Square",
+      "120\" Round",
+      "132\" Square",
+      "132\" Round",
+      "90\"x132\" Banquet",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Soiree": [
+      "90\" Square",
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x132\" Banquet",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Bichon Crush": [
+      "90\" Square",
+      "90\" Round",
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x132\" Banquet",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Mirage": [
+      "96\" Round",
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Jute": [
+      "108\" Round",
+      "120\" Square",
+      "120\" Round",
+      "132\" Round",
+      "90\"x132\" Banquet",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ]
+  },
+  "byProduct": {
+    "Abstract Geometric": [
+      "90\" Square",
+      "120\" Round"
+    ],
+    "Amalfi Hunter": [
+      "96\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Amalfi Sapphire": [
+      "96\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Americana": [
+      "90\" Square",
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x132\" Banquet",
+      "90\"x156\" Banquet"
+    ],
+    "Amondine Black on Silver": [
+      "90\" Square"
+    ],
+    "Amondine Black on White": [
+      "90\" Square"
+    ],
+    "Apple Cabana Stripe": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet"
+    ],
+    "Aurora Ivory": [
+      "96\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Aurora White": [
+      "96\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Bandana": [
+      "108\" Round",
+      "132\" Round"
+    ],
+    "Bark Citron": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Bark Midnight": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Bark Slate Blue": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Beige Sanibel": [
+      "120\" Round",
+      "132\" Round"
+    ],
+    "Black Circle Taffeta": [
+      "120\" Round",
+      "132\" Round"
+    ],
+    "Black Net with Gold Stars": [
+      "90\" Square"
+    ],
+    "Black Racing Check": [
+      "90\" Square"
+    ],
+    "Blossom Plaid": [
+      "90\" Square",
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet"
+    ],
+    "Brushstrokes": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Buffalo Check Red": [
+      "90\" Square",
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Buffalo Check Taupe": [
+      "90\" Square",
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Cafe Embroidered Sheer": [
+      "90\" Square"
+    ],
+    "Cairns": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Calypso": [
+      "96\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Cambric": [
+      "96\" Round",
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Chevron Navy": [
+      "90\" Square",
+      "132\" Round",
+      "90\"x156\" Banquet"
+    ],
+    "Chevron Lime": [
+      "90\" Square",
+      "132\" Round",
+      "90\"x156\" Banquet"
+    ],
+    "Chevron Silver": [
+      "90\" Square",
+      "132\" Round",
+      "90\"x156\" Banquet"
+    ],
+    "Cinderella": [
+      "90\" Square"
+    ],
+    "Cirque": [
+      "90\" Square"
+    ],
+    "Concentric Gold": [
+      "90\" Square"
+    ],
+    "Concentric Silver": [
+      "90\" Square"
+    ],
+    "Concentric White": [
+      "90\" Square"
+    ],
+    "Cosmopolitan": [
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Dogwood": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Echo Rouge": [
+      "96\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Echo Jade": [
+      "96\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Echo Lumiere": [
+      "96\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Echo Noir": [
+      "96\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Eleanor - Bone": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Fairy Dust Black": [
+      "90\" Square"
+    ],
+    "Fairy Dust Pink": [
+      "90\" Square"
+    ],
+    "Federal Blue Granite": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Florence": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Garden Floral": [
+      "90\" Square",
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Gatsby": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Halas Navy": [
+      "96\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Halas Tangerine": [
+      "96\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Hampton Botanical Apple": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Hampton Botanical Dune": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Hampton Botanical Rosé": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Hampton Stripe Apple": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Hampton Stripe Coastal": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Hampton Stripe Dune": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Hampton Stripe Rosé": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Helena Blue": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x132\" Banquet",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Helena Orange": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x132\" Banquet",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Helena Apple": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x132\" Banquet",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Hex": [
+      "120\" Round",
+      "132\" Round"
+    ],
+    "Holiday Plaid": [
+      "90\" Square",
+      "132\" Round"
+    ],
+    "Holly": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet"
+    ],
+    "Josephine Lace": [
+      "90\" Square",
+      "108\" Round"
+    ],
+    "Indigo Bloom": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Key West": [
+      "132\" Round"
+    ],
+    "Kiwi Palazzo": [
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet"
+    ],
+    "Kringle": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet"
+    ],
+    "Lace Ivory": [
+      "90\" Square",
+      "120\" Round",
+      "132\" Round",
+      "108\"x156\" Banquet"
+    ],
+    "Lace White": [
+      "90\" Square",
+      "120\" Round",
+      "132\" Round",
+      "108\"x156\" Banquet"
+    ],
+    "Laguna": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet"
+    ],
+    "Lorelei": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Lucia": [
+      "96\" Round",
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Velvet Loden": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Velvet Taupe": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Amber Matrix": [
+      "96\" Round",
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Metropolitan Concrete": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Metropolitan Natural": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Midas Travertine": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Middleton Lace": [
+      "90\" Square",
+      "108\" Round",
+      "90\"x156\" Banquet"
+    ],
+    "Red Gingham Mini Check": [
+      "96\" Round",
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x132\" Banquet",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Apple Gingham Mini Check": [
+      "96\" Round",
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x132\" Banquet",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Gold Gingham Mini Check": [
+      "96\" Round",
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x132\" Banquet",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Lilac Gingham Mini Check": [
+      "96\" Round",
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x132\" Banquet",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Pink Gingham Mini Check": [
+      "96\" Round",
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x132\" Banquet",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Turquoise Gingham Mini Check": [
+      "96\" Round",
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x132\" Banquet",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Nadia": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet"
+    ],
+    "Nantucket": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Napa Blue": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x132\" Banquet",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Napa Orange": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x132\" Banquet",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Ornamental Silver Lace": [
+      "90\" Square",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Ornamental White Lace": [
+      "90\" Square",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Pamela Palm": [
+      "90\" Square"
+    ],
+    "Patchwork": [
+      "90\" Square"
+    ],
+    "Phoebe": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Polka Dots Black with White": [
+      "90\" Square",
+      "96\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet"
+    ],
+    "Polka Dots Lime with White": [
+      "90\" Square",
+      "96\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet"
+    ],
+    "Polka Dots Red with White": [
+      "90\" Square",
+      "96\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet"
+    ],
+    "Polka Dots White with Black": [
+      "90\" Square",
+      "96\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet"
+    ],
+    "Purple Gingham": [
+      "108\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet"
+    ],
+    "Red Shantung Swirl": [
+      "120\" Round",
+      "132\" Round"
+    ],
+    "Regency": [
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Retro Vintage": [
+      "90\" Square",
+      "132\" Round",
+      "90\"x156\" Banquet"
+    ],
+    "Romeo": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet"
+    ],
+    "Santorini": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Savannah Vintage Blossom": [
+      "90\" Square",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet"
+    ],
+    "Savannah Vintage Lilac - LIMITED": [
+      "90\" Square",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet"
+    ],
+    "Sequins Lace Navy": [
+      "90\" Square",
+      "90\"x156\" Banquet"
+    ],
+    "Sequins Black": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Sequins Blush": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Sequins Gold": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Sequins Rose Gold": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Sequins Silver": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Sequins White": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Shag Gold": [
+      "90\" Square"
+    ],
+    "Shag Red": [
+      "90\" Square"
+    ],
+    "Shag Silver": [
+      "90\" Square"
+    ],
+    "Silhouette": [
+      "90\" Square"
+    ],
+    "Somerset Damask Gold": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x132\" Banquet",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Somerset Damask Ivory": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x132\" Banquet",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Somerset Damask Purple": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x132\" Banquet",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Somerset Damask White": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x132\" Banquet",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Sonoma Stripe Blue": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x132\" Banquet",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Sonoma Stripe Orange": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x132\" Banquet",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Sparkle Sheer Black": [
+      "90\" Square"
+    ],
+    "Sparkle Sheer Gold": [
+      "90\" Square"
+    ],
+    "Sparkle Sheer Ivory": [
+      "90\" Square"
+    ],
+    "Sparkle Sheer Lilac": [
+      "90\" Square"
+    ],
+    "Sparkle Sheer Royal": [
+      "90\" Square"
+    ],
+    "Sparkle Sheer White": [
+      "90\" Square"
+    ],
+    "Spiro": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet"
+    ],
+    "Stripe Black and White": [
+      "90\" Square",
+      "96\" Round",
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x132\" Banquet",
+      "90\"x156\" Banquet"
+    ],
+    "Stripe Navy and White": [
+      "90\" Square",
+      "96\" Round",
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x132\" Banquet",
+      "90\"x156\" Banquet"
+    ],
+    "Stripe Red and White": [
+      "90\" Square",
+      "96\" Round",
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x132\" Banquet",
+      "90\"x156\" Banquet"
+    ],
+    "Velvet Black": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Velvet Champagne Gold": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Velvet Charcoal": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Velvet Glacier Gray": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Velvet Hunter": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Velvet Ice Pink": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Velvet Merlot": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Velvet Midnight Blue": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Velvet Ivory": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Verve Black": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Verve Champagne Gold": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Verve Ivory": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Verve Pearl": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Verve Chocolate Truffle": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Verve Navy": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Water Lily": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Wren Coastal": [
+      "96\" Round",
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Woodland": [
+      "108\" Round",
+      "120\" Round",
+      "132\" Round",
+      "90\"x156\" Banquet",
+      "108\"x156\" Banquet"
+    ],
+    "Zebra": [
+      "90\" Square"
+    ]
+  }
+}

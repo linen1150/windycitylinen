@@ -2,17 +2,19 @@ import "server-only";
 import { z } from "zod";
 import type { InquiryType } from "@prisma/client";
 import { db } from "@/lib/db";
-import { sendInquiryEmail } from "@/lib/email";
+import { sendInquiryEmail, ORDERS_INBOX } from "@/lib/email";
 import { SITE } from "@/lib/site";
 
 const lineSchema = z.object({
   productId: z.string().optional(),
   name: z.string().min(1),
   size: z.string().default(""),
+  quantity: z.coerce.number().int().min(1).max(9999).default(1),
+  backendItemNumber: z.string().max(40).default(""),
 });
 
 export const inquirySchema = z.object({
-  type: z.enum(["QUICK", "DETAILED", "QUOTE_TRAY"]),
+  type: z.enum(["QUICK", "DETAILED", "QUOTE_TRAY", "DOCUMENT"]),
   name: z.string().min(1, "Please enter your name").max(200),
   email: z.string().email("Please enter a valid email"),
   phone: z.string().max(50).default(""),
@@ -24,6 +26,8 @@ export const inquirySchema = z.object({
   caterer: z.string().max(200).default(""),
   planner: z.string().max(200).default(""),
   howHeard: z.string().max(300).default(""),
+  // DOCUMENT requests only: Claude's recap of the uploaded file.
+  sourceSummary: z.string().max(1000).default(""),
   items: z.array(lineSchema).max(200).default([]),
   // Honeypot — must stay empty.
   company: z.string().max(0).optional(),
@@ -35,6 +39,7 @@ const TYPE_LABEL: Record<InquiryType, string> = {
   QUICK: "Message",
   DETAILED: "Contact form",
   QUOTE_TRAY: "My Inspirations list",
+  DOCUMENT: "Document quote request",
 };
 
 export async function createInquiry(input: InquiryInput) {
@@ -46,7 +51,13 @@ export async function createInquiry(input: InquiryInput) {
         const p = await db.product.findUnique({ where: { id: l.productId }, select: { id: true } });
         productId = p?.id ?? null;
       }
-      return { productId, productName: l.name, sizeName: l.size };
+      return {
+        productId,
+        productName: l.name,
+        sizeName: l.size,
+        quantity: l.quantity,
+        backendItemNumber: l.backendItemNumber,
+      };
     }),
   );
 
@@ -64,6 +75,7 @@ export async function createInquiry(input: InquiryInput) {
       caterer: input.caterer,
       planner: input.planner,
       howHeard: input.howHeard,
+      sourceSummary: input.sourceSummary,
       items: { create: items },
     },
     include: { items: true },
@@ -84,12 +96,15 @@ export async function createInquiry(input: InquiryInput) {
     record.howHeard && `Heard about us: ${record.howHeard}`,
   ].filter(Boolean) as string[];
 
+  if (record.sourceSummary) lines.push("", "From the uploaded document:", record.sourceSummary);
   if (record.message) lines.push("", "Message:", record.message);
 
   if (record.items.length) {
     lines.push("", "Items requested:");
     for (const it of record.items) {
-      lines.push(`  • ${it.productName}${it.sizeName ? ` — ${it.sizeName}` : ""}`);
+      const qty = it.quantity > 1 ? `${it.quantity}x ` : "";
+      const code = it.backendItemNumber ? ` [${it.backendItemNumber}]` : "";
+      lines.push(`  • ${qty}${it.productName}${it.sizeName ? ` — ${it.sizeName}` : ""}${code}`);
     }
   }
 
@@ -101,6 +116,7 @@ export async function createInquiry(input: InquiryInput) {
     }`,
     text: lines.join("\n"),
     replyTo: record.email,
+    to: record.type === "DOCUMENT" ? ORDERS_INBOX : undefined,
   });
 
   if (sent) {

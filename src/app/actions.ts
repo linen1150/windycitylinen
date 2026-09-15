@@ -34,6 +34,7 @@ export async function submitInquiry(
     caterer: formData.get("caterer") ?? "",
     planner: formData.get("planner") ?? "",
     howHeard: formData.get("howHeard") ?? "",
+    sourceSummary: formData.get("sourceSummary") ?? "",
     company: formData.get("company") ?? "",
     items: parseItems(formData.get("items")),
   });

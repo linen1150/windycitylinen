@@ -158,4 +158,94 @@ export async function askClaudeWithTools({
   }
 }
 
+type DocumentInput = {
+  /** "application/pdf" or an image type like "image/jpeg". */
+  mediaType: string;
+  /** Base64-encoded file bytes, no data: URL prefix. */
+  data: string;
+};
+
+type ExtractDocumentArgs = {
+  system: string;
+  document: DocumentInput;
+  note?: string;
+  tools: ToolDef[];
+  runTool: ToolRunner;
+  maxTokens?: number;
+};
+
+/**
+ * Single-document extraction with tool use (the document-quote upload):
+ * sends the uploaded file as a native document/image content block, lets the
+ * model call tools (e.g. matching catalog/backend items) across a few
+ * rounds, then parses its final text reply as JSON. Distinct from
+ * askClaudeWithTools because that one is multi-turn chat text, not a
+ * one-shot structured result from a file.
+ */
+export async function extractFromDocument<T>({
+  system,
+  document,
+  note,
+  tools,
+  runTool,
+  maxTokens = 4096,
+}: ExtractDocumentArgs): Promise<T> {
+  if (!anthropic) {
+    throw new Error("ANTHROPIC_API_KEY is not configured — document extraction is unavailable.");
+  }
+
+  const fileBlock =
+    document.mediaType === "application/pdf"
+      ? { type: "document" as const, source: { type: "base64" as const, media_type: "application/pdf" as const, data: document.data } }
+      : {
+          type: "image" as const,
+          source: { type: "base64" as const, media_type: document.mediaType as "image/jpeg", data: document.data },
+        };
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const convo: any[] = [
+    {
+      role: "user",
+      content: [fileBlock, { type: "text", text: note?.trim() || "Read this document and extract the order." }],
+    },
+  ];
+
+  for (let round = 0; round < 8; round++) {
+    const response = await anthropic.messages.create({
+      model: MODEL,
+      max_tokens: maxTokens,
+      system,
+      messages: convo,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      tools: tools as any,
+    });
+
+    const toolUses = response.content.filter((b) => b.type === "tool_use");
+    if (toolUses.length === 0) {
+      const block = response.content.find((b) => b.type === "text");
+      const text = block && block.type === "text" ? block.text : "";
+      const jsonText = text.trim().replace(/^```(?:json)?\s*/i, "").replace(/```\s*$/, "");
+      try {
+        return JSON.parse(jsonText) as T;
+      } catch (err) {
+        console.error(`extractFromDocument: JSON parse failed (stop_reason=${response.stop_reason}). Raw text:`, text.slice(0, 2000));
+        throw err;
+      }
+    }
+
+    convo.push({ role: "assistant", content: response.content });
+    const resultBlocks = [];
+    for (const use of toolUses) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const u = use as any;
+      const { resultText } = await runTool(u.name, u.input ?? {});
+      resultBlocks.push({ type: "tool_result" as const, tool_use_id: u.id, content: resultText });
+    }
+    convo.push({ role: "user", content: resultBlocks });
+  }
+
+  console.error(`extractFromDocument: exhausted rounds. Last convo length: ${convo.length}`);
+  throw new Error("Document extraction did not settle on a final result after several tool rounds.");
+}
+
 export const isClaudeConfigured = Boolean(apiKey);

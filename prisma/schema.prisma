@@ -146,6 +146,7 @@ enum InquiryType {
   QUICK
   DETAILED
   QUOTE_TRAY
+  DOCUMENT
 }
 
 enum InquiryStatus {
@@ -171,6 +172,8 @@ model QuoteRequest {
   caterer     String             @default("")
   planner     String             @default("")
   howHeard    String             @default("")
+  // Set for DOCUMENT requests: Claude's one-line recap of what it read.
+  sourceSummary String           @default("")
   items       QuoteRequestItem[]
   // Whether the notification email was sent successfully.
   emailedAt   DateTime?
@@ -190,6 +193,9 @@ model QuoteRequestItem {
   productName    String
   sizeName       String       @default("")
   quantity       Int          @default(1)
+  // Real backend item code (from a DOCUMENT request's match against the
+  // backend inventory export), so staff can key the order straight in.
+  backendItemNumber String    @default("")
 
   @@index([quoteRequestId])
 }

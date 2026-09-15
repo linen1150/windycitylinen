@@ -67,7 +67,11 @@ export default async function AdminQuotesPage({ searchParams }: PageProps<"/admi
                   <div className="text-xs text-ink-soft">{q.email}</div>
                 </td>
                 <td className="px-4 py-2.5 text-ink-soft">
-                  {q.type === "QUOTE_TRAY" ? "Inspirations list" : "Contact form"}
+                  {q.type === "QUOTE_TRAY"
+                    ? "Inspirations list"
+                    : q.type === "DOCUMENT"
+                      ? "Document quote"
+                      : "Contact form"}
                 </td>
                 <td className="px-4 py-2.5 text-ink-soft">{q._count.items || "—"}</td>
                 <td className="px-4 py-2.5">{STATUS_LABEL[q.status] ?? q.status}</td>

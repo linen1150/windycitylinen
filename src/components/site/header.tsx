@@ -20,6 +20,8 @@ const NAV = [
   { href: "/contact", label: "Contact Us" },
 ];
 
+const QUOTE_LINK = { href: "/quote", label: "Quote" };
+
 function HeaderSearch({ className = "", onSubmit }: { className?: string; onSubmit?: () => void }) {
   const router = useRouter();
   const [value, setValue] = useState("");
@@ -212,6 +214,12 @@ export function Header() {
         </nav>
 
         <div className="ml-auto flex items-center gap-3">
+          <Link
+            href={QUOTE_LINK.href}
+            className="hidden whitespace-nowrap bg-brass px-4 py-2 text-sm font-medium text-white hover:bg-brass-dark sm:block"
+          >
+            {QUOTE_LINK.label}
+          </Link>
           <button
             className="xl:hidden"
             onClick={() => setMenuOpen((v) => !v)}
@@ -230,6 +238,13 @@ export function Header() {
 
       {menuOpen && (
         <nav className="border-b border-line bg-paper px-4 py-3 xl:hidden">
+          <Link
+            href={QUOTE_LINK.href}
+            onClick={() => setMenuOpen(false)}
+            className="mb-2 block bg-brass px-4 py-2.5 text-center text-sm font-medium text-white hover:bg-brass-dark"
+          >
+            {QUOTE_LINK.label}
+          </Link>
           {NAV.map((item) => (
             <Link
               key={item.href}

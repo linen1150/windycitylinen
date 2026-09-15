@@ -10,6 +10,7 @@ const TYPE_LABEL: Record<string, string> = {
   QUICK: "Contact form",
   DETAILED: "Contact form",
   QUOTE_TRAY: "My Inspirations list",
+  DOCUMENT: "Document quote request",
 };
 
 export default async function QuoteDetailPage({ params }: PageProps<"/admin/quotes/[id]">) {
@@ -66,6 +67,12 @@ export default async function QuoteDetailPage({ params }: PageProps<"/admin/quot
                   </div>
                 ))}
             </dl>
+            {q.sourceSummary && (
+              <div className="mt-4">
+                <div className="text-xs uppercase tracking-wide text-ink-soft">From the uploaded document</div>
+                <p className="mt-1 whitespace-pre-wrap text-sm">{q.sourceSummary}</p>
+              </div>
+            )}
             {q.message && (
               <div className="mt-4">
                 <div className="text-xs uppercase tracking-wide text-ink-soft">Message</div>
@@ -79,8 +86,9 @@ export default async function QuoteDetailPage({ params }: PageProps<"/admin/quot
               <h2 className="mb-3 font-display text-lg">Linens ({q.items.length})</h2>
               <ul className="divide-y divide-line border-y border-line text-sm">
                 {q.items.map((it) => (
-                  <li key={it.id} className="flex items-center justify-between py-2">
+                  <li key={it.id} className="flex items-center justify-between gap-3 py-2">
                     <span>
+                      {it.quantity > 1 && <span className="text-ink-soft">{it.quantity}x </span>}
                       {it.product ? (
                         <Link href={`/product/${it.product.slug}`} className="hover:underline">
                           {it.productName}
@@ -89,7 +97,12 @@ export default async function QuoteDetailPage({ params }: PageProps<"/admin/quot
                         it.productName
                       )}
                     </span>
-                    <span className="text-ink-soft">{it.sizeName || "size to confirm"}</span>
+                    <span className="shrink-0 text-right text-ink-soft">
+                      {it.sizeName || "size to confirm"}
+                      {it.backendItemNumber && (
+                        <span className="ml-2 font-mono text-xs">[{it.backendItemNumber}]</span>
+                      )}
+                    </span>
                   </li>
                 ))}
               </ul>

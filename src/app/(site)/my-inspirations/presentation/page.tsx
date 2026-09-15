@@ -60,6 +60,26 @@ export default function PresentationPage() {
           ← Back to My Inspirations
         </Link>
 
+        <div className="mt-4 flex flex-wrap items-center gap-3">
+          <button
+            type="button"
+            onClick={() => window.print()}
+            className="inline-flex items-center gap-2 bg-brass px-4 py-2 text-xs font-medium text-white hover:bg-brass-dark"
+          >
+            <Printer size={14} />
+            Print / save as PDF
+          </button>
+          {result && (
+            <button
+              type="button"
+              onClick={() => setResult(null)}
+              className="text-xs text-ink-soft underline"
+            >
+              Start over
+            </button>
+          )}
+        </div>
+
         {!result && (
           <div className="mt-4 border border-line bg-ivory p-5">
             <div className="flex items-start gap-3">
@@ -67,7 +87,8 @@ export default function PresentationPage() {
               <div className="flex-1">
                 <p className="text-sm text-ink">
                   Tell me how you&rsquo;d like these presented — a theme, an occasion,
-                  a mood — or leave it blank and I&rsquo;ll keep it simple.
+                  a mood — or leave it blank and I&rsquo;ll keep it simple. You can also
+                  skip this and print/save the plain list above as-is.
                 </p>
                 <input
                   type="text"
@@ -91,17 +112,6 @@ export default function PresentationPage() {
               </div>
             </div>
           </div>
-        )}
-
-        {result && (
-          <button
-            type="button"
-            onClick={() => window.print()}
-            className="mt-4 inline-flex items-center gap-2 bg-brass px-4 py-2 text-xs font-medium text-white hover:bg-brass-dark"
-          >
-            <Printer size={14} />
-            Print / save as PDF
-          </button>
         )}
       </div>
 

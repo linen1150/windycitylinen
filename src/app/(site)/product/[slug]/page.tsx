@@ -68,7 +68,7 @@ export default async function ProductPage({ params }: PageProps<"/product/[slug]
         across weddings, galas and corporate events in Chicago and Milwaukee.
       </p>
 
-      <AddToInspirations product={product} />
+      <AddToInspirations product={product} matchingNapkinSlug={matchingNapkin?.slug} />
     </div>
   );
 
@@ -120,7 +120,7 @@ export default async function ProductPage({ params }: PageProps<"/product/[slug]
           <>
             <div className="md:order-2">{mainImage}</div>
             <div className="md:order-3">
-              <Link href={`/product/${matchingNapkin.slug}`} className="group block">
+              <Link href={`/product/${matchingNapkin.slug}`} className="group block" aria-label="View matching napkin">
                 <ProductImage
                   src={matchingNapkin.imageUrl}
                   alt={`${matchingNapkin.fabric} ${matchingNapkin.colorName} napkin`}
@@ -128,9 +128,6 @@ export default async function ProductPage({ params }: PageProps<"/product/[slug]
                   className="aspect-square w-full transition-transform duration-300 group-hover:scale-[1.03]"
                   sizes="(max-width: 768px) 100vw, 420px"
                 />
-                <div className="mt-2 text-xs font-medium uppercase tracking-wide text-wine underline underline-offset-2">
-                  Matching napkin available &rarr;
-                </div>
               </Link>
             </div>
             <div className="md:order-1">{details}</div>

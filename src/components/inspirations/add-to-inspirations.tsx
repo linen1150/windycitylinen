@@ -5,7 +5,13 @@ import Link from "next/link";
 import { useInspirations } from "./inspirations-store";
 import type { ProductDetailData } from "@/lib/catalog";
 
-export function AddToInspirations({ product }: { product: ProductDetailData }) {
+export function AddToInspirations({
+  product,
+  matchingNapkinSlug,
+}: {
+  product: ProductDetailData;
+  matchingNapkinSlug?: string | null;
+}) {
   const { add } = useInspirations();
   const sizes = product.sizes;
   const [selected, setSelected] = useState<string[]>(sizes[0] ? [sizes[0]] : []);
@@ -36,8 +42,18 @@ export function AddToInspirations({ product }: { product: ProductDetailData }) {
     <div>
       {sizes.length > 0 && (
         <div className="mt-6">
-          <div className="mb-2 text-xs font-semibold uppercase tracking-wide text-ink-soft">
-            Size <span className="font-normal normal-case">— choose one or more</span>
+          <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
+            <div className="text-xs font-semibold uppercase tracking-wide text-ink-soft">
+              Size <span className="font-normal normal-case">— choose one or more</span>
+            </div>
+            {matchingNapkinSlug && (
+              <Link
+                href={`/product/${matchingNapkinSlug}`}
+                className="inline-flex items-center gap-1 border border-wine px-2.5 py-1 text-[11px] font-medium uppercase tracking-wide text-wine hover:bg-wine hover:text-white"
+              >
+                Matching napkin available &rarr;
+              </Link>
+            )}
           </div>
           <div className="flex flex-wrap gap-2">
             {sizes.map((s) => {

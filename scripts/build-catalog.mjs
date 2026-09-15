@@ -13,7 +13,31 @@ import { dirname, join } from "node:path";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const readText = (p) => readFileSync(join(root, p), "utf8").replace(/^﻿/, "");
-const raw = JSON.parse(readText("data/catalog-raw.json"));
+const rawAll = JSON.parse(readText("data/catalog-raw.json"));
+
+// Legacy-export rows confirmed (by eye, against the real photos) to be
+// duplicates of another row — dropped here rather than edited out of the
+// raw export so the export stays a pristine historical import. Each is
+// paired with the id of the row that was kept, for context.
+const EXCLUDE_IDS = new Set([
+  1067, // "Jute Peach" cuff — duplicate of "Peach Jute" (1072)
+  979, // "Navy Sequins" runner — duplicate of "Sequins Lace Navy" (885/1019/etc.)
+  606, // "Brushstroke" napkin (singular) — duplicate of "Brushstrokes" napkin
+  329, 330, 692, 693, 997, 998, 1167, 1168, // Savannah Vintage Blossom/Lilac, all 4 categories — "should come off, be out of the books" per Tera
+]);
+
+// Legacy-export rows whose name needs correcting (typo, word order, or a
+// supplier naming quirk) — confirmed against Tera's punch list.
+const RENAME_BY_ID = {
+  362: "Velvet Gold", 713: "Velvet Gold", 1019: "Velvet Gold", 1186: "Velvet Gold", // was "Velvet Champagne Gold"
+  885: "Amalfi Sapphire", 1075: "Amalfi Sapphire", // was "Amalfi Saphire" (typo)
+  663: "Burnt Orange Matrix", // was "Matrix Burnt Orange" (word order)
+  253: "Eleanor", // was "Eleanor - Bone"
+};
+
+const raw = rawAll
+  .filter((r) => !EXCLUDE_IDS.has(r.id))
+  .map((r) => (RENAME_BY_ID[r.id] ? { ...r, name: RENAME_BY_ID[r.id], color: RENAME_BY_ID[r.id] } : r));
 
 // --- taxonomy confirmed with the client (see CLAUDE_CODE_BUILD_BRIEF.md) ------
 export const CATEGORIES = [
@@ -115,6 +139,8 @@ const COLOR_RULES = [
   [/\b(blush|pink|rose|dusty rose|mauve|petal|flamingo|watermelon|fuchsia|magenta|hot pink|salmon)\b/i, "Pink/Blush"],
   [/\b(purple|plum|eggplant|aubergine|lavender|lilac|violet|orchid|amethyst|wisteria|grape)\b/i, "Purple/Burgundy"],
   [/\b(burgundy|wine|merlot|maroon|bordeaux|claret|garnet|cranberry|sangria)\b/i, "Purple/Burgundy"],
+  // Burgundy sits between red and purple — findable under both, per Tera.
+  [/\bburgundy\b/i, "Red"],
   [/\b(blue|navy|teal|aqua|turquoise|cerulean|cobalt|periwinkle|denim|indigo|sky|sapphire|marine|ocean|slate|caribbean)\b/i, "Blue"],
   [/\b(green|sage|olive|emerald|kelly|hunter|forest|mint|moss|fern|celadon|clover|lime|pistachio|basil|seafoam|jade|avocado)\b/i, "Green"],
   [/\b(gray|grey|silver|pewter|charcoal|graphite|smoke|ash|platinum|steel)\b/i, "Gray"],
@@ -192,7 +218,12 @@ function nearestColorGroup(hex) {
 const COLOR_GROUP_OVERRIDES = {
   // "Splash" is a specialty print with no real sampled hex on file (falls
   // back to the neutral placeholder) — it's a multicolor pattern in the photo.
-  705: ["Multicolor"],
+  705: ["Multicolor"], 1011: ["Multicolor"], 1182: ["Multicolor"],
+  // "Raspberry Matte Lamour" — a red/magenta berry color, not brown (same
+  // class of fix as Classic Solid Raspberry and Jute Lipstick).
+  528: ["Red"], 851: ["Red"],
+  // "Mystic" — a navy-on-white damask print, not brown.
+  674: ["Blue", "White"], 972: ["Blue", "White"],
 };
 
 // Same idea, but for a whole colorway (every category/size variant shares the
@@ -202,6 +233,13 @@ const COLOR_GROUP_NAME_OVERRIDES = {
   // "Violet Green" is the supplier's fabric-line name, not a real color mix —
   // the crushed-velvet photo (and its hex #5A7A4A) is plain green.
   "Bichon Crush Violet Green (Limited)": ["Green"],
+  // The photo is a blush pink woven texture (filename even says "Blush"),
+  // not brown — the colorName just never said so.
+  Cambric: ["Pink/Blush"],
+  // White/silver-thread embroidered lace, not brown.
+  "Middleton Lace": ["Ivory"],
+  // White beaded/sequin lace, not brown.
+  Cinderella: ["White"],
   "Mirage Hazel": ["Blue"],
   "Mirage Tide": ["Blue"],
   Bandana: ["Red"],
@@ -218,7 +256,8 @@ const COLOR_GROUP_NAME_OVERRIDES = {
   // "Champagne Gold" is one blended color name, not champagne + gold — the
   // keyword matcher was splitting it into two groups.
   "Bichon Crush Champagne Gold (Limited)": ["Gold"],
-  "Velvet Champagne Gold": ["Gold"],
+  "Velvet Gold": ["Gold"], // renamed from "Velvet Champagne Gold" above
+  Eleanor: ["Ivory"], // renamed from "Eleanor - Bone" above; off-white damask
   "Verve Champagne Gold": ["Gold"],
 };
 
@@ -238,6 +277,39 @@ function colorGroupsFor(externalId, colorName, fabric, productName, hex) {
   // Fall back to the closest anchor color by hex.
   const nearest = nearestColorGroup(hex);
   return nearest ? [nearest] : [];
+}
+
+// Keyword rules for the 8 curated Collections (Glitzy/Lace/Pattern/Floral/
+// Themed Prints/Stripe/Texture/Velvet) — these were an established taxonomy
+// with zero products ever assigned to any of them (the admin-curation step
+// this was left for never happened), which made the site's Collection
+// filter return "no items" for every option. A product can land in more
+// than one collection (e.g. a sequined lace print is both Glitzy and Lace).
+// Deliberately conservative: plain solid-color fabrics (Classic Solid,
+// Serenity, Soiree, most Matte Lamour/Bengaline) get no collection at all
+// rather than a forced guess — these tags are for the curated specialty/
+// pattern lines, not a "no product should be untagged" pass.
+const COLLECTION_RULES = [
+  [/\blace\b/i, "Lace"],
+  [/sequin|sparkle|glitter|foil|metallic|amondine|midas|diamond|dazzle/i, "Glitzy"],
+  [/\bstripe\b/i, "Stripe"],
+  [/floral|\bbloom\b|\bgarden\b|botanical|water lily|juliette|peony|magnolia/i, "Floral"],
+  [/\bcheck\b|gingham|polka dot|\bdot\b|damask|chevron|houndstooth|\bhex\b|\bplaid\b|geometric|\bmatrix\b|mosaic|paisley/i, "Pattern"],
+  [/velvet/i, "Velvet"],
+  [/halas|bandana|tie.?dye|patchwork|americana|snow leopard|cheetah|\btiger\b|\bzebra\b|fairy dust|holiday|christmas|halloween|patriotic|safari|western/i, "Themed Prints"],
+];
+// Fabrics whose defining trait is a visible woven texture rather than a
+// printed pattern — these get the Texture collection by fabric alone.
+const TEXTURE_FABRICS = new Set(["Shantung", "Bengaline", "Jute", "Bichon Crush"]);
+
+function collectionsFor(colorName, fabric, productName) {
+  const hay = `${colorName} ${productName}`;
+  const collections = [];
+  for (const [re, name] of COLLECTION_RULES) {
+    if (re.test(hay) && !collections.includes(name)) collections.push(name);
+  }
+  if (TEXTURE_FABRICS.has(fabric) && !collections.includes("Texture")) collections.push("Texture");
+  return collections;
 }
 
 function slugify(s) {
@@ -312,7 +384,7 @@ const products = raw.map((r) => {
     imageFilename,
     keywords: "", // authored later via the admin panel
     sizes: sizesFor(r.category, r.fabric, r.name),
-    collections: [], // assigned later via the admin panel
+    collections: collectionsFor(r.color, r.fabric, r.name),
   };
 });
 

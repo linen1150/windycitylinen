@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-15T12:21:24.932Z",
+  "generatedAt": "2026-09-15T14:01:33.129Z",
   "categories": [
     "Tablecloths and Overlays",
     "Napkins",
@@ -291,7 +291,8 @@
       "colorName": "Burgundy",
       "colorHex": "#6B2737",
       "colorGroups": [
-        "Purple/Burgundy"
+        "Purple/Burgundy",
+        "Red"
       ],
       "limited": false,
       "reverseSide": false,
@@ -1530,7 +1531,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 44,
@@ -1542,6 +1545,7 @@
       "colorHex": "#6B2737",
       "colorGroups": [
         "Purple/Burgundy",
+        "Red",
         "Multicolor"
       ],
       "limited": true,
@@ -1559,7 +1563,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 45,
@@ -1588,7 +1594,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 46,
@@ -1617,7 +1625,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 47,
@@ -1646,7 +1656,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 48,
@@ -1675,7 +1687,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 49,
@@ -1704,7 +1718,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 50,
@@ -1733,7 +1749,9 @@
         "90\"x132\" Banquet",
         "90\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 51,
@@ -1762,7 +1780,9 @@
         "90\"x132\" Banquet",
         "90\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 52,
@@ -1791,7 +1811,9 @@
         "90\"x132\" Banquet",
         "90\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 53,
@@ -1820,7 +1842,9 @@
         "90\"x132\" Banquet",
         "90\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 54,
@@ -1849,7 +1873,9 @@
         "90\"x132\" Banquet",
         "90\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 55,
@@ -1877,7 +1903,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 56,
@@ -1905,7 +1933,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 57,
@@ -1933,7 +1963,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 58,
@@ -1961,7 +1993,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 59,
@@ -1972,7 +2006,8 @@
       "colorName": "Burgundy",
       "colorHex": "#6B2737",
       "colorGroups": [
-        "Purple/Burgundy"
+        "Purple/Burgundy",
+        "Red"
       ],
       "limited": false,
       "reverseSide": false,
@@ -1989,7 +2024,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 60,
@@ -2000,7 +2037,8 @@
       "colorName": "Burgundy",
       "colorHex": "#6B2737",
       "colorGroups": [
-        "Purple/Burgundy"
+        "Purple/Burgundy",
+        "Red"
       ],
       "limited": false,
       "reverseSide": true,
@@ -2017,7 +2055,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 61,
@@ -2045,7 +2085,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 62,
@@ -2073,7 +2115,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 63,
@@ -2101,7 +2145,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 64,
@@ -2129,7 +2175,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 65,
@@ -2157,7 +2205,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 66,
@@ -2185,7 +2235,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 67,
@@ -2213,7 +2265,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 68,
@@ -2241,7 +2295,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 69,
@@ -2269,7 +2325,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 70,
@@ -2297,7 +2355,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 71,
@@ -2325,7 +2385,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 72,
@@ -2353,7 +2415,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 73,
@@ -2381,7 +2445,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 74,
@@ -2409,7 +2475,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 75,
@@ -2437,7 +2505,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 76,
@@ -2465,7 +2535,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 77,
@@ -2493,7 +2565,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 78,
@@ -2521,7 +2595,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 79,
@@ -2549,7 +2625,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 80,
@@ -2577,7 +2655,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 81,
@@ -2605,7 +2685,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 82,
@@ -2633,7 +2715,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 83,
@@ -2661,7 +2745,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 84,
@@ -2689,7 +2775,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 85,
@@ -2717,7 +2805,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 86,
@@ -2745,7 +2835,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 87,
@@ -2773,7 +2865,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 88,
@@ -2801,7 +2895,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 89,
@@ -2829,7 +2925,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 90,
@@ -2857,7 +2955,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 91,
@@ -2885,7 +2985,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 92,
@@ -2913,7 +3015,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 93,
@@ -2941,7 +3045,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 94,
@@ -2969,7 +3075,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 95,
@@ -2997,7 +3105,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 96,
@@ -3025,7 +3135,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 97,
@@ -3053,7 +3165,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 98,
@@ -3081,7 +3195,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 99,
@@ -3109,7 +3225,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 100,
@@ -3137,7 +3255,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 101,
@@ -3165,7 +3285,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 102,
@@ -3193,7 +3315,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 103,
@@ -3221,7 +3345,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 104,
@@ -3249,7 +3375,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 105,
@@ -3277,7 +3405,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 106,
@@ -3305,7 +3435,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 107,
@@ -3333,7 +3465,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 108,
@@ -3361,7 +3495,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 109,
@@ -3389,7 +3525,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 110,
@@ -3417,7 +3555,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 111,
@@ -3512,7 +3652,8 @@
       "colorName": "Burgundy",
       "colorHex": "#6B2737",
       "colorGroups": [
-        "Purple/Burgundy"
+        "Purple/Burgundy",
+        "Red"
       ],
       "limited": false,
       "reverseSide": false,
@@ -4470,7 +4611,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 149,
@@ -4499,7 +4642,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 150,
@@ -4528,7 +4673,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 151,
@@ -4557,7 +4704,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 152,
@@ -4586,7 +4735,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 153,
@@ -4615,7 +4766,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 154,
@@ -4644,7 +4797,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 155,
@@ -4673,7 +4828,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 156,
@@ -4702,7 +4859,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 157,
@@ -4731,7 +4890,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 158,
@@ -4760,7 +4921,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 159,
@@ -4789,7 +4952,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 160,
@@ -4818,7 +4983,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 161,
@@ -4829,7 +4996,8 @@
       "colorName": "Ultra Burgundy",
       "colorHex": "#5C1F2E",
       "colorGroups": [
-        "Purple/Burgundy"
+        "Purple/Burgundy",
+        "Red"
       ],
       "limited": true,
       "reverseSide": false,
@@ -4847,7 +5015,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 162,
@@ -4876,7 +5046,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 163,
@@ -4905,7 +5077,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 164,
@@ -5192,7 +5366,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 175,
@@ -5203,7 +5379,8 @@
       "colorName": "Burgundy",
       "colorHex": "#6B2737",
       "colorGroups": [
-        "Purple/Burgundy"
+        "Purple/Burgundy",
+        "Red"
       ],
       "limited": true,
       "reverseSide": false,
@@ -5219,7 +5396,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 176,
@@ -5246,7 +5425,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 177,
@@ -5273,7 +5454,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 178,
@@ -5300,7 +5483,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 179,
@@ -5327,7 +5512,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 180,
@@ -5354,7 +5541,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 181,
@@ -5381,7 +5570,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 182,
@@ -5408,7 +5599,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 183,
@@ -5435,7 +5628,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 184,
@@ -5462,7 +5657,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 185,
@@ -5489,7 +5686,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 186,
@@ -5515,7 +5714,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 187,
@@ -5541,7 +5742,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 188,
@@ -5567,7 +5770,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 189,
@@ -5593,7 +5798,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 190,
@@ -5619,7 +5826,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 191,
@@ -5645,7 +5854,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 192,
@@ -5671,7 +5882,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 193,
@@ -5697,7 +5910,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 194,
@@ -5723,7 +5938,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 195,
@@ -5749,7 +5966,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 196,
@@ -5775,7 +5994,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 197,
@@ -5801,7 +6022,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 198,
@@ -5827,7 +6050,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 199,
@@ -5853,7 +6078,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 200,
@@ -5879,7 +6106,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 201,
@@ -5905,7 +6134,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 202,
@@ -5926,7 +6157,9 @@
         "90\" Square",
         "120\" Round"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 203,
@@ -5999,7 +6232,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 206,
@@ -6024,7 +6259,9 @@
         "90\"x132\" Banquet",
         "90\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Themed Prints"
+      ]
     },
     {
       "externalId": 207,
@@ -6045,7 +6282,9 @@
       "sizes": [
         "90\" Square"
       ],
-      "collections": []
+      "collections": [
+        "Glitzy"
+      ]
     },
     {
       "externalId": 208,
@@ -6066,7 +6305,9 @@
       "sizes": [
         "90\" Square"
       ],
-      "collections": []
+      "collections": [
+        "Glitzy"
+      ]
     },
     {
       "externalId": 209,
@@ -6089,7 +6330,9 @@
         "132\" Round",
         "90\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 210,
@@ -6115,7 +6358,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 211,
@@ -6184,7 +6429,9 @@
         "108\" Round",
         "132\" Round"
       ],
-      "collections": []
+      "collections": [
+        "Themed Prints"
+      ]
     },
     {
       "externalId": 214,
@@ -6412,7 +6659,9 @@
       "sizes": [
         "90\" Square"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 224,
@@ -6436,7 +6685,9 @@
         "132\" Round",
         "90\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 225,
@@ -6486,7 +6737,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 227,
@@ -6512,7 +6765,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 228,
@@ -6615,7 +6870,7 @@
       "colorName": "Cambric",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Pink/Blush"
       ],
       "limited": false,
       "reverseSide": false,
@@ -6651,7 +6906,9 @@
         "132\" Round",
         "90\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 234,
@@ -6673,7 +6930,9 @@
         "132\" Round",
         "90\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 235,
@@ -6695,7 +6954,9 @@
         "132\" Round",
         "90\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 236,
@@ -6706,7 +6967,7 @@
       "colorName": "Cinderella",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "White"
       ],
       "limited": false,
       "reverseSide": false,
@@ -7104,11 +7365,11 @@
     },
     {
       "externalId": 253,
-      "name": "Eleanor - Bone",
-      "slug": "eleanor-bone",
+      "name": "Eleanor",
+      "slug": "eleanor",
       "category": "Tablecloths and Overlays",
       "fabric": "Specialty",
-      "colorName": "Eleanor - Bone",
+      "colorName": "Eleanor",
       "colorHex": "#B6A899",
       "colorGroups": [
         "Ivory"
@@ -7118,11 +7379,20 @@
       "imageFilename": "eleanorspeciality.jpg",
       "keywords": "",
       "sizes": [
+        "54\" Square",
+        "90\" Square",
+        "90\" Round",
+        "96\" Round",
         "108\" Round",
+        "120\" Square",
         "120\" Round",
+        "132\" Square",
         "132\" Round",
+        "72\"x120\" Banquet",
+        "90\"x132\" Banquet",
         "90\"x156\" Banquet",
-        "108\"x156\" Banquet"
+        "108\"x156\" Banquet",
+        "114\"x180\" Banquet"
       ],
       "collections": []
     },
@@ -7144,7 +7414,9 @@
       "sizes": [
         "90\" Square"
       ],
-      "collections": []
+      "collections": [
+        "Themed Prints"
+      ]
     },
     {
       "externalId": 255,
@@ -7164,7 +7436,9 @@
       "sizes": [
         "90\" Square"
       ],
-      "collections": []
+      "collections": [
+        "Themed Prints"
+      ]
     },
     {
       "externalId": 256,
@@ -7261,7 +7535,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Floral"
+      ]
     },
     {
       "externalId": 260,
@@ -7336,7 +7612,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 263,
@@ -7360,7 +7638,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Themed Prints"
+      ]
     },
     {
       "externalId": 264,
@@ -7384,7 +7664,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Themed Prints"
+      ]
     },
     {
       "externalId": 265,
@@ -7408,7 +7690,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Floral"
+      ]
     },
     {
       "externalId": 266,
@@ -7432,7 +7716,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Floral"
+      ]
     },
     {
       "externalId": 267,
@@ -7456,7 +7742,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Floral"
+      ]
     },
     {
       "externalId": 268,
@@ -7480,7 +7768,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 269,
@@ -7504,7 +7794,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 270,
@@ -7528,7 +7820,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 271,
@@ -7552,7 +7846,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 272,
@@ -7756,7 +8052,9 @@
         "120\" Round",
         "132\" Round"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 280,
@@ -7777,7 +8075,10 @@
         "90\" Square",
         "132\" Round"
       ],
-      "collections": []
+      "collections": [
+        "Pattern",
+        "Themed Prints"
+      ]
     },
     {
       "externalId": 281,
@@ -7824,7 +8125,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Floral"
+      ]
     },
     {
       "externalId": 283,
@@ -7845,7 +8148,9 @@
         "90\" Square",
         "108\" Round"
       ],
-      "collections": []
+      "collections": [
+        "Lace"
+      ]
     },
     {
       "externalId": 284,
@@ -7878,7 +8183,9 @@
         "108\"x156\" Banquet",
         "114\"x180\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Floral"
+      ]
     },
     {
       "externalId": 285,
@@ -7966,7 +8273,9 @@
         "132\" Round",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Lace"
+      ]
     },
     {
       "externalId": 289,
@@ -7989,7 +8298,9 @@
         "132\" Round",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Lace"
+      ]
     },
     {
       "externalId": 290,
@@ -8039,7 +8350,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 292,
@@ -8193,7 +8506,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Glitzy"
+      ]
     },
     {
       "externalId": 298,
@@ -8217,7 +8532,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Glitzy"
+      ]
     },
     {
       "externalId": 299,
@@ -8228,7 +8545,7 @@
       "colorName": "Middleton Lace",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Ivory"
       ],
       "limited": false,
       "reverseSide": false,
@@ -8239,7 +8556,9 @@
         "108\" Round",
         "90\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Lace"
+      ]
     },
     {
       "externalId": 300,
@@ -8495,7 +8814,9 @@
         "108\"x156\" Banquet",
         "114\"x180\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 310,
@@ -8519,7 +8840,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Lace"
+      ]
     },
     {
       "externalId": 311,
@@ -8543,7 +8866,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Lace"
+      ]
     },
     {
       "externalId": 312,
@@ -8583,7 +8908,9 @@
       "sizes": [
         "90\" Square"
       ],
-      "collections": []
+      "collections": [
+        "Themed Prints"
+      ]
     },
     {
       "externalId": 314,
@@ -8667,7 +8994,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 317,
@@ -8692,7 +9021,9 @@
         "132\" Round",
         "90\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 318,
@@ -8717,7 +9048,9 @@
         "132\" Round",
         "90\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 319,
@@ -8742,7 +9075,9 @@
         "132\" Round",
         "90\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 320,
@@ -8767,7 +9102,9 @@
         "132\" Round",
         "90\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 321,
@@ -8789,7 +9126,9 @@
         "132\" Round",
         "90\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 322,
@@ -8816,7 +9155,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 323,
@@ -8956,52 +9297,6 @@
       "collections": []
     },
     {
-      "externalId": 329,
-      "name": "Savannah Vintage Blossom (Limited)",
-      "slug": "savannah-vintage-blossom-limited",
-      "category": "Tablecloths and Overlays",
-      "fabric": "Specialty",
-      "colorName": "Savannah Vintage Blossom",
-      "colorHex": "#B6A899",
-      "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
-      ],
-      "limited": true,
-      "reverseSide": false,
-      "imageFilename": "savannahblossom.jpg",
-      "keywords": "",
-      "sizes": [
-        "90\" Square",
-        "120\" Round",
-        "132\" Round",
-        "90\"x156\" Banquet"
-      ],
-      "collections": []
-    },
-    {
-      "externalId": 330,
-      "name": "Savannah Vintage Lilac - LIMITED",
-      "slug": "savannah-vintage-lilac-limited",
-      "category": "Tablecloths and Overlays",
-      "fabric": "Specialty",
-      "colorName": "Savannah Vintage Lilac",
-      "colorHex": "#B6A899",
-      "colorGroups": [
-        "Purple/Burgundy"
-      ],
-      "limited": true,
-      "reverseSide": false,
-      "imageFilename": "savannahlilac.jpg",
-      "keywords": "",
-      "sizes": [
-        "90\" Square",
-        "120\" Round",
-        "132\" Round",
-        "90\"x156\" Banquet"
-      ],
-      "collections": []
-    },
-    {
       "externalId": 331,
       "name": "Sequins Black",
       "slug": "sequins-black",
@@ -9023,7 +9318,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Glitzy"
+      ]
     },
     {
       "externalId": 332,
@@ -9047,7 +9344,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Glitzy"
+      ]
     },
     {
       "externalId": 333,
@@ -9071,7 +9370,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Glitzy"
+      ]
     },
     {
       "externalId": 334,
@@ -9092,7 +9393,10 @@
         "90\" Square",
         "90\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Lace",
+        "Glitzy"
+      ]
     },
     {
       "externalId": 335,
@@ -9117,7 +9421,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Glitzy"
+      ]
     },
     {
       "externalId": 336,
@@ -9141,7 +9447,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Glitzy"
+      ]
     },
     {
       "externalId": 337,
@@ -9165,7 +9473,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Glitzy"
+      ]
     },
     {
       "externalId": 338,
@@ -9303,7 +9613,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 344,
@@ -9328,7 +9640,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 345,
@@ -9353,7 +9667,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 346,
@@ -9378,7 +9694,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 347,
@@ -9404,7 +9722,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 348,
@@ -9430,7 +9750,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 349,
@@ -9450,7 +9772,9 @@
       "sizes": [
         "90\" Square"
       ],
-      "collections": []
+      "collections": [
+        "Glitzy"
+      ]
     },
     {
       "externalId": 350,
@@ -9470,7 +9794,9 @@
       "sizes": [
         "90\" Square"
       ],
-      "collections": []
+      "collections": [
+        "Glitzy"
+      ]
     },
     {
       "externalId": 351,
@@ -9490,7 +9816,9 @@
       "sizes": [
         "90\" Square"
       ],
-      "collections": []
+      "collections": [
+        "Glitzy"
+      ]
     },
     {
       "externalId": 352,
@@ -9510,7 +9838,9 @@
       "sizes": [
         "90\" Square"
       ],
-      "collections": []
+      "collections": [
+        "Glitzy"
+      ]
     },
     {
       "externalId": 353,
@@ -9530,7 +9860,9 @@
       "sizes": [
         "90\" Square"
       ],
-      "collections": []
+      "collections": [
+        "Glitzy"
+      ]
     },
     {
       "externalId": 354,
@@ -9550,7 +9882,9 @@
       "sizes": [
         "90\" Square"
       ],
-      "collections": []
+      "collections": [
+        "Glitzy"
+      ]
     },
     {
       "externalId": 355,
@@ -9601,7 +9935,9 @@
         "90\"x132\" Banquet",
         "90\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 357,
@@ -9629,7 +9965,9 @@
         "90\"x132\" Banquet",
         "90\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 358,
@@ -9657,7 +9995,9 @@
         "90\"x132\" Banquet",
         "90\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 359,
@@ -9690,7 +10030,9 @@
         "108\"x156\" Banquet",
         "114\"x180\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Themed Prints"
+      ]
     },
     {
       "externalId": 360,
@@ -9717,7 +10059,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 361,
@@ -9741,15 +10085,17 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 362,
-      "name": "Velvet Champagne Gold",
-      "slug": "velvet-champagne-gold",
+      "name": "Velvet Gold",
+      "slug": "velvet-gold",
       "category": "Tablecloths and Overlays",
       "fabric": "Specialty",
-      "colorName": "Velvet Champagne Gold",
+      "colorName": "Velvet Gold",
       "colorHex": "#B6A899",
       "colorGroups": [
         "Gold"
@@ -9759,13 +10105,24 @@
       "imageFilename": "velvetgold.jpg",
       "keywords": "",
       "sizes": [
+        "54\" Square",
+        "90\" Square",
+        "90\" Round",
+        "96\" Round",
         "108\" Round",
+        "120\" Square",
         "120\" Round",
+        "132\" Square",
         "132\" Round",
+        "72\"x120\" Banquet",
+        "90\"x132\" Banquet",
         "90\"x156\" Banquet",
-        "108\"x156\" Banquet"
+        "108\"x156\" Banquet",
+        "114\"x180\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 363,
@@ -9789,7 +10146,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 364,
@@ -9813,7 +10172,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 365,
@@ -9837,7 +10198,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 366,
@@ -9861,7 +10224,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 367,
@@ -9885,7 +10250,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 368,
@@ -9918,7 +10285,9 @@
         "108\"x156\" Banquet",
         "114\"x180\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 369,
@@ -9942,7 +10311,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 370,
@@ -9966,7 +10337,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 371,
@@ -9990,7 +10363,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 372,
@@ -10023,7 +10398,9 @@
         "108\"x156\" Banquet",
         "114\"x180\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 373,
@@ -10056,7 +10433,9 @@
         "108\"x156\" Banquet",
         "114\"x180\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 374,
@@ -10080,7 +10459,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 375,
@@ -10248,7 +10629,9 @@
         "90\"x156\" Banquet",
         "108\"x156\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Floral"
+      ]
     },
     {
       "externalId": 382,
@@ -10315,7 +10698,9 @@
         "108\"x156\" Banquet",
         "114\"x180\" Banquet"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 384,
@@ -10408,7 +10793,9 @@
       "sizes": [
         "90\" Square"
       ],
-      "collections": []
+      "collections": [
+        "Themed Prints"
+      ]
     },
     {
       "externalId": 388,
@@ -10519,7 +10906,8 @@
       "colorName": "Burgundy",
       "colorHex": "#6B2737",
       "colorGroups": [
-        "Purple/Burgundy"
+        "Purple/Burgundy",
+        "Red"
       ],
       "limited": false,
       "reverseSide": false,
@@ -11209,7 +11597,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 428,
@@ -11221,6 +11611,7 @@
       "colorHex": "#6B2737",
       "colorGroups": [
         "Purple/Burgundy",
+        "Red",
         "Multicolor"
       ],
       "limited": true,
@@ -11230,7 +11621,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 429,
@@ -11251,7 +11644,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 430,
@@ -11272,7 +11667,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 431,
@@ -11293,7 +11690,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 432,
@@ -11314,7 +11713,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 433,
@@ -11335,7 +11736,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 434,
@@ -11356,7 +11759,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 435,
@@ -11377,7 +11782,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 436,
@@ -11398,7 +11805,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 437,
@@ -11419,7 +11828,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 438,
@@ -11440,7 +11851,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 439,
@@ -11480,7 +11893,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 441,
@@ -11500,7 +11915,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 442,
@@ -11520,7 +11937,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 443,
@@ -11531,7 +11950,8 @@
       "colorName": "Burgundy",
       "colorHex": "#6B2737",
       "colorGroups": [
-        "Purple/Burgundy"
+        "Purple/Burgundy",
+        "Red"
       ],
       "limited": false,
       "reverseSide": false,
@@ -11540,7 +11960,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 444,
@@ -11551,7 +11973,8 @@
       "colorName": "Burgundy",
       "colorHex": "#6B2737",
       "colorGroups": [
-        "Purple/Burgundy"
+        "Purple/Burgundy",
+        "Red"
       ],
       "limited": false,
       "reverseSide": true,
@@ -11560,7 +11983,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 445,
@@ -11580,7 +12005,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 446,
@@ -11600,7 +12027,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 447,
@@ -11620,7 +12049,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 448,
@@ -11640,7 +12071,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 449,
@@ -11660,7 +12093,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 450,
@@ -11680,7 +12115,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 451,
@@ -11700,7 +12137,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 452,
@@ -11720,7 +12159,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 453,
@@ -11740,7 +12181,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 454,
@@ -11760,7 +12203,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 455,
@@ -11780,7 +12225,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 456,
@@ -11800,7 +12247,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 457,
@@ -11820,7 +12269,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 458,
@@ -11840,7 +12291,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 459,
@@ -11860,7 +12313,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 460,
@@ -11880,7 +12335,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 461,
@@ -11900,7 +12357,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 462,
@@ -11920,7 +12379,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 463,
@@ -11940,7 +12401,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 464,
@@ -11960,7 +12423,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 465,
@@ -11980,7 +12445,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 466,
@@ -12000,7 +12467,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 467,
@@ -12020,7 +12489,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 468,
@@ -12040,7 +12511,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 469,
@@ -12060,7 +12533,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 470,
@@ -12080,7 +12555,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 471,
@@ -12100,7 +12577,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 472,
@@ -12120,7 +12599,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 473,
@@ -12140,7 +12621,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 474,
@@ -12160,7 +12643,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 475,
@@ -12180,7 +12665,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 476,
@@ -12200,7 +12687,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 477,
@@ -12220,7 +12709,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 478,
@@ -12240,7 +12731,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 479,
@@ -12260,7 +12753,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 480,
@@ -12280,7 +12775,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 481,
@@ -12300,7 +12797,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 482,
@@ -12320,7 +12819,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 483,
@@ -12340,7 +12841,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 484,
@@ -12360,7 +12863,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 485,
@@ -12380,7 +12885,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 486,
@@ -12400,7 +12907,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 487,
@@ -12420,7 +12929,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 488,
@@ -12440,7 +12951,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 489,
@@ -12460,7 +12973,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 490,
@@ -12480,7 +12995,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 491,
@@ -12500,7 +13017,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 492,
@@ -12520,7 +13039,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 493,
@@ -12540,7 +13061,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 494,
@@ -12560,7 +13083,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 495,
@@ -12631,7 +13156,8 @@
       "colorName": "Burgundy",
       "colorHex": "#6B2737",
       "colorGroups": [
-        "Purple/Burgundy"
+        "Purple/Burgundy",
+        "Red"
       ],
       "limited": false,
       "reverseSide": false,
@@ -13231,7 +13757,7 @@
       "colorName": "Raspberry Matte Lamour",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Red"
       ],
       "limited": false,
       "reverseSide": false,
@@ -13340,7 +13866,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 534,
@@ -13360,7 +13888,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 535,
@@ -13380,7 +13910,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 536,
@@ -13400,7 +13932,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 537,
@@ -13420,7 +13954,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 538,
@@ -13440,7 +13976,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 539,
@@ -13461,7 +13999,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 540,
@@ -13481,7 +14021,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 541,
@@ -13501,7 +14043,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 542,
@@ -13521,7 +14065,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 543,
@@ -13541,7 +14087,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 544,
@@ -13561,7 +14109,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 545,
@@ -13581,7 +14131,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 546,
@@ -13592,7 +14144,8 @@
       "colorName": "Ultra Burgundy",
       "colorHex": "#5C1F2E",
       "colorGroups": [
-        "Purple/Burgundy"
+        "Purple/Burgundy",
+        "Red"
       ],
       "limited": true,
       "reverseSide": false,
@@ -13601,7 +14154,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 547,
@@ -13621,7 +14176,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 548,
@@ -13641,7 +14198,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 549,
@@ -13861,7 +14420,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 560,
@@ -13872,7 +14433,8 @@
       "colorName": "Burgundy",
       "colorHex": "#6B2737",
       "colorGroups": [
-        "Purple/Burgundy"
+        "Purple/Burgundy",
+        "Red"
       ],
       "limited": true,
       "reverseSide": false,
@@ -13881,7 +14443,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 561,
@@ -13901,7 +14465,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 562,
@@ -13921,7 +14487,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 563,
@@ -13941,7 +14509,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 564,
@@ -13961,7 +14531,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 565,
@@ -13981,7 +14553,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 566,
@@ -14001,7 +14575,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 567,
@@ -14021,7 +14597,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 568,
@@ -14041,7 +14619,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 569,
@@ -14061,7 +14641,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 570,
@@ -14081,7 +14663,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 571,
@@ -14101,7 +14685,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 572,
@@ -14121,7 +14707,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 573,
@@ -14141,7 +14729,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 574,
@@ -14161,7 +14751,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 575,
@@ -14181,7 +14773,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 576,
@@ -14201,7 +14795,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 577,
@@ -14221,7 +14817,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 578,
@@ -14241,7 +14839,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 579,
@@ -14261,7 +14861,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 580,
@@ -14281,7 +14883,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 581,
@@ -14301,7 +14905,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 582,
@@ -14321,7 +14927,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 583,
@@ -14341,7 +14949,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 584,
@@ -14361,7 +14971,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 585,
@@ -14381,7 +14993,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 586,
@@ -14401,7 +15015,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 587,
@@ -14421,7 +15037,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 588,
@@ -14481,7 +15099,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 591,
@@ -14501,7 +15121,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Themed Prints"
+      ]
     },
     {
       "externalId": 592,
@@ -14522,7 +15144,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Glitzy"
+      ]
     },
     {
       "externalId": 593,
@@ -14542,7 +15166,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 594,
@@ -14562,7 +15188,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 595,
@@ -14583,7 +15211,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 596,
@@ -14643,7 +15273,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Themed Prints"
+      ]
     },
     {
       "externalId": 599,
@@ -14744,7 +15376,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 604,
@@ -14785,27 +15419,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
-    },
-    {
-      "externalId": 606,
-      "name": "Brushstroke",
-      "slug": "brushstroke",
-      "category": "Napkins",
-      "fabric": "Specialty",
-      "colorName": "Brushstroke",
-      "colorHex": "#B6A899",
-      "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
-      ],
-      "limited": false,
-      "reverseSide": false,
-      "imageFilename": "NapkinsBrushstrokes3.jpg",
-      "keywords": "",
-      "sizes": [
-        "Napkins"
-      ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 607,
@@ -14826,7 +15442,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 608,
@@ -14847,7 +15465,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 609,
@@ -14898,7 +15518,7 @@
       "colorName": "Cambric",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Pink/Blush"
       ],
       "limited": false,
       "reverseSide": false,
@@ -14927,7 +15547,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Themed Prints"
+      ]
     },
     {
       "externalId": 613,
@@ -14947,7 +15569,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 614,
@@ -14967,7 +15591,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 615,
@@ -14987,7 +15613,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 616,
@@ -15167,7 +15795,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Floral"
+      ]
     },
     {
       "externalId": 625,
@@ -15207,7 +15837,10 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Glitzy",
+        "Pattern"
+      ]
     },
     {
       "externalId": 627,
@@ -15227,7 +15860,10 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Glitzy",
+        "Pattern"
+      ]
     },
     {
       "externalId": 628,
@@ -15268,7 +15904,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 630,
@@ -15288,7 +15926,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Floral"
+      ]
     },
     {
       "externalId": 631,
@@ -15308,7 +15948,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Floral"
+      ]
     },
     {
       "externalId": 632,
@@ -15328,7 +15970,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 633,
@@ -15348,7 +15992,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 634,
@@ -15368,7 +16014,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 635,
@@ -15688,7 +16336,10 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Pattern",
+        "Themed Prints"
+      ]
     },
     {
       "externalId": 651,
@@ -15728,7 +16379,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 653,
@@ -15788,7 +16441,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Floral"
+      ]
     },
     {
       "externalId": 656,
@@ -15889,7 +16544,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 661,
@@ -15933,11 +16590,11 @@
     },
     {
       "externalId": 663,
-      "name": "Matrix Burnt Orange",
-      "slug": "matrix-burnt-orange",
+      "name": "Burnt Orange Matrix",
+      "slug": "burnt-orange-matrix",
       "category": "Napkins",
       "fabric": "Specialty",
-      "colorName": "Matrix Burnt Orange",
+      "colorName": "Burnt Orange Matrix",
       "colorHex": "#B6A899",
       "colorGroups": [
         "Orange"
@@ -15949,7 +16606,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 664,
@@ -16009,7 +16668,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Glitzy"
+      ]
     },
     {
       "externalId": 667,
@@ -16160,7 +16821,8 @@
       "colorName": "Mystic",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Blue",
+        "White"
       ],
       "limited": false,
       "reverseSide": false,
@@ -16290,7 +16952,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 681,
@@ -16331,7 +16995,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 683,
@@ -16352,7 +17018,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 684,
@@ -16373,7 +17041,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 685,
@@ -16394,7 +17064,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 686,
@@ -16415,7 +17087,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 687,
@@ -16435,7 +17109,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 688,
@@ -16456,7 +17132,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 689,
@@ -16512,46 +17190,6 @@
       "limited": false,
       "reverseSide": false,
       "imageFilename": "SpecialtySantorini.jpg",
-      "keywords": "",
-      "sizes": [
-        "Napkins"
-      ],
-      "collections": []
-    },
-    {
-      "externalId": 692,
-      "name": "Savannah Vintage Blossom (Limited)",
-      "slug": "savannah-vintage-blossom-limited-692",
-      "category": "Napkins",
-      "fabric": "Specialty",
-      "colorName": "Savannah Vintage Blossom",
-      "colorHex": "#B6A899",
-      "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
-      ],
-      "limited": true,
-      "reverseSide": false,
-      "imageFilename": "SpecialtySavannahBlossom.jpg",
-      "keywords": "",
-      "sizes": [
-        "Napkins"
-      ],
-      "collections": []
-    },
-    {
-      "externalId": 693,
-      "name": "Savannah Vintage Lilac - LIMITED",
-      "slug": "savannah-vintage-lilac-limited-693",
-      "category": "Napkins",
-      "fabric": "Specialty",
-      "colorName": "Savannah Vintage Lilac",
-      "colorHex": "#B6A899",
-      "colorGroups": [
-        "Purple/Burgundy"
-      ],
-      "limited": true,
-      "reverseSide": false,
-      "imageFilename": "SpecialtySavannahLilac.jpg",
       "keywords": "",
       "sizes": [
         "Napkins"
@@ -16636,7 +17274,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Themed Prints"
+      ]
     },
     {
       "externalId": 698,
@@ -16656,7 +17296,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 699,
@@ -16676,7 +17318,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 700,
@@ -16696,7 +17340,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 701,
@@ -16716,7 +17362,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 702,
@@ -16737,7 +17385,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 703,
@@ -16758,7 +17408,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 704,
@@ -16820,7 +17472,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 707,
@@ -16842,7 +17496,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 708,
@@ -16864,7 +17520,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 709,
@@ -16884,7 +17542,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Themed Prints"
+      ]
     },
     {
       "externalId": 710,
@@ -16904,7 +17564,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Themed Prints"
+      ]
     },
     {
       "externalId": 711,
@@ -16925,7 +17587,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 712,
@@ -16945,15 +17609,17 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 713,
-      "name": "Velvet Champagne Gold",
-      "slug": "velvet-champagne-gold-713",
+      "name": "Velvet Gold",
+      "slug": "velvet-gold-713",
       "category": "Napkins",
       "fabric": "Specialty",
-      "colorName": "Velvet Champagne Gold",
+      "colorName": "Velvet Gold",
       "colorHex": "#B6A899",
       "colorGroups": [
         "Gold"
@@ -16965,7 +17631,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 714,
@@ -16985,7 +17653,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 715,
@@ -17005,7 +17675,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 716,
@@ -17025,7 +17697,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 717,
@@ -17045,7 +17719,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 718,
@@ -17065,7 +17741,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 719,
@@ -17085,7 +17763,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 720,
@@ -17105,7 +17785,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 721,
@@ -17125,7 +17807,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 722,
@@ -17145,7 +17829,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 723,
@@ -17165,7 +17851,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 724,
@@ -17185,7 +17873,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 725,
@@ -17325,7 +18015,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Floral"
+      ]
     },
     {
       "externalId": 732,
@@ -17428,7 +18120,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 737,
@@ -17488,7 +18182,9 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": []
+      "collections": [
+        "Themed Prints"
+      ]
     },
     {
       "externalId": 740,
@@ -17619,7 +18315,8 @@
       "colorName": "Burgundy",
       "colorHex": "#6B2737",
       "colorGroups": [
-        "Purple/Burgundy"
+        "Purple/Burgundy",
+        "Red"
       ],
       "limited": false,
       "reverseSide": false,
@@ -18389,7 +19086,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 785,
@@ -18410,7 +19109,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 786,
@@ -18431,7 +19132,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 787,
@@ -18452,7 +19155,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 788,
@@ -18473,7 +19178,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 789,
@@ -18493,7 +19200,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 790,
@@ -18513,7 +19222,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 791,
@@ -18533,7 +19244,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 792,
@@ -18544,7 +19257,8 @@
       "colorName": "Burgundy",
       "colorHex": "#6B2737",
       "colorGroups": [
-        "Purple/Burgundy"
+        "Purple/Burgundy",
+        "Red"
       ],
       "limited": false,
       "reverseSide": false,
@@ -18553,7 +19267,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 793,
@@ -18573,7 +19289,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 794,
@@ -18593,7 +19311,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 795,
@@ -18613,7 +19333,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 796,
@@ -18633,7 +19355,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 797,
@@ -18653,7 +19377,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 798,
@@ -18673,7 +19399,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 799,
@@ -18693,7 +19421,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 800,
@@ -18713,7 +19443,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 801,
@@ -18733,7 +19465,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 802,
@@ -18753,7 +19487,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 803,
@@ -18773,7 +19509,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 804,
@@ -18793,7 +19531,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 805,
@@ -18813,7 +19553,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 806,
@@ -18833,7 +19575,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 807,
@@ -18853,7 +19597,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 808,
@@ -18873,7 +19619,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 809,
@@ -18893,7 +19641,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 810,
@@ -18913,7 +19663,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 811,
@@ -18933,7 +19685,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 812,
@@ -18953,7 +19707,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 813,
@@ -18973,7 +19729,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 814,
@@ -18993,7 +19751,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 815,
@@ -19013,7 +19773,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 816,
@@ -19033,7 +19795,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 817,
@@ -19053,7 +19817,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 818,
@@ -19073,7 +19839,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 819,
@@ -19144,7 +19912,8 @@
       "colorName": "Burgundy",
       "colorHex": "#6B2737",
       "colorGroups": [
-        "Purple/Burgundy"
+        "Purple/Burgundy",
+        "Red"
       ],
       "limited": false,
       "reverseSide": false,
@@ -19724,7 +20493,7 @@
       "colorName": "Raspberry Matte Lamour",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Red"
       ],
       "limited": false,
       "reverseSide": false,
@@ -20033,7 +20802,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 867,
@@ -20053,7 +20824,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 868,
@@ -20073,7 +20846,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 869,
@@ -20093,7 +20868,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 870,
@@ -20113,7 +20890,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 871,
@@ -20133,7 +20912,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 872,
@@ -20153,7 +20934,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 873,
@@ -20173,7 +20956,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 874,
@@ -20193,7 +20978,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 875,
@@ -20213,7 +21000,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 876,
@@ -20233,7 +21022,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 877,
@@ -20253,7 +21044,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 878,
@@ -20273,7 +21066,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 879,
@@ -20293,7 +21088,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 880,
@@ -20313,7 +21110,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 881,
@@ -20333,7 +21132,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 882,
@@ -20353,7 +21154,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 883,
@@ -20373,7 +21176,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 884,
@@ -20397,14 +21202,14 @@
     },
     {
       "externalId": 885,
-      "name": "Amalfi Saphire",
-      "slug": "amalfi-saphire",
+      "name": "Amalfi Sapphire",
+      "slug": "amalfi-sapphire-885",
       "category": "Table Runners",
       "fabric": "Specialty",
-      "colorName": "Amalfi Saphire",
+      "colorName": "Amalfi Sapphire",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Blue"
       ],
       "limited": false,
       "reverseSide": false,
@@ -20433,7 +21238,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 887,
@@ -20453,7 +21260,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Themed Prints"
+      ]
     },
     {
       "externalId": 888,
@@ -20474,7 +21283,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Glitzy"
+      ]
     },
     {
       "externalId": 889,
@@ -20495,7 +21306,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Glitzy"
+      ]
     },
     {
       "externalId": 890,
@@ -20515,7 +21328,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 891,
@@ -20536,7 +21351,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 892,
@@ -20658,7 +21475,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 898,
@@ -20678,7 +21497,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 899,
@@ -20719,7 +21540,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 901,
@@ -20740,7 +21563,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 902,
@@ -20791,7 +21616,7 @@
       "colorName": "Cambric",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Pink/Blush"
       ],
       "limited": false,
       "reverseSide": false,
@@ -20820,7 +21645,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Themed Prints"
+      ]
     },
     {
       "externalId": 906,
@@ -20840,7 +21667,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 907,
@@ -20860,7 +21689,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 908,
@@ -20880,7 +21711,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 909,
@@ -21120,7 +21953,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Floral"
+      ]
     },
     {
       "externalId": 921,
@@ -21160,7 +21995,10 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Glitzy",
+        "Pattern"
+      ]
     },
     {
       "externalId": 923,
@@ -21180,7 +22018,10 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Glitzy",
+        "Pattern"
+      ]
     },
     {
       "externalId": 924,
@@ -21221,7 +22062,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 926,
@@ -21241,7 +22084,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Floral"
+      ]
     },
     {
       "externalId": 927,
@@ -21261,7 +22106,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Floral"
+      ]
     },
     {
       "externalId": 928,
@@ -21281,7 +22128,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 929,
@@ -21301,7 +22150,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 930,
@@ -21321,7 +22172,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 931,
@@ -21601,7 +22454,10 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Pattern",
+        "Themed Prints"
+      ]
     },
     {
       "externalId": 945,
@@ -21641,7 +22497,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 947,
@@ -21681,7 +22539,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Floral"
+      ]
     },
     {
       "externalId": 949,
@@ -21701,7 +22561,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Lace"
+      ]
     },
     {
       "externalId": 950,
@@ -21721,7 +22583,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Floral"
+      ]
     },
     {
       "externalId": 951,
@@ -21781,7 +22645,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Lace"
+      ]
     },
     {
       "externalId": 954,
@@ -21801,7 +22667,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Lace"
+      ]
     },
     {
       "externalId": 955,
@@ -21842,7 +22710,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 957,
@@ -21983,7 +22853,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Glitzy"
+      ]
     },
     {
       "externalId": 964,
@@ -21994,7 +22866,7 @@
       "colorName": "Middleton Lace",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Ivory"
       ],
       "limited": false,
       "reverseSide": false,
@@ -22003,7 +22875,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Lace"
+      ]
     },
     {
       "externalId": 965,
@@ -22154,7 +23028,8 @@
       "colorName": "Mystic",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Blue",
+        "White"
       ],
       "limited": false,
       "reverseSide": false,
@@ -22264,7 +23139,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 978,
@@ -22284,27 +23161,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
-    },
-    {
-      "externalId": 979,
-      "name": "Navy Sequins",
-      "slug": "navy-sequins",
-      "category": "Table Runners",
-      "fabric": "Specialty",
-      "colorName": "Navy Sequins",
-      "colorHex": "#B6A899",
-      "colorGroups": [
-        "Blue"
-      ],
-      "limited": false,
-      "reverseSide": false,
-      "imageFilename": "NavySequinsLaceRunner.jpg",
-      "keywords": "",
-      "sizes": [
-        "Runners"
-      ],
-      "collections": []
+      "collections": [
+        "Themed Prints"
+      ]
     },
     {
       "externalId": 980,
@@ -22324,7 +23183,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Themed Prints"
+      ]
     },
     {
       "externalId": 981,
@@ -22344,7 +23205,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Lace"
+      ]
     },
     {
       "externalId": 982,
@@ -22364,7 +23227,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Lace"
+      ]
     },
     {
       "externalId": 983,
@@ -22445,7 +23310,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 987,
@@ -22466,7 +23333,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 988,
@@ -22487,7 +23356,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 989,
@@ -22508,7 +23379,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 990,
@@ -22528,7 +23401,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 991,
@@ -22569,7 +23444,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 993,
@@ -22652,46 +23529,6 @@
       "collections": []
     },
     {
-      "externalId": 997,
-      "name": "Savannah Vintage Blossom (Limited)",
-      "slug": "savannah-vintage-blossom-limited-997",
-      "category": "Table Runners",
-      "fabric": "Specialty",
-      "colorName": "Savannah Vintage Blossom",
-      "colorHex": "#B6A899",
-      "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
-      ],
-      "limited": true,
-      "reverseSide": false,
-      "imageFilename": "SavannahBlossomRunner.jpg",
-      "keywords": "",
-      "sizes": [
-        "Runners"
-      ],
-      "collections": []
-    },
-    {
-      "externalId": 998,
-      "name": "Savannah Vintage Lilac - LIMITED",
-      "slug": "savannah-vintage-lilac-limited-998",
-      "category": "Table Runners",
-      "fabric": "Specialty",
-      "colorName": "Savannah Vintage Lilac",
-      "colorHex": "#B6A899",
-      "colorGroups": [
-        "Purple/Burgundy"
-      ],
-      "limited": true,
-      "reverseSide": false,
-      "imageFilename": "SavannahLilacrunner.jpg",
-      "keywords": "",
-      "sizes": [
-        "Runners"
-      ],
-      "collections": []
-    },
-    {
       "externalId": 999,
       "name": "Sequins Black",
       "slug": "sequins-black-999",
@@ -22709,7 +23546,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Glitzy"
+      ]
     },
     {
       "externalId": 1000,
@@ -22729,7 +23568,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Glitzy"
+      ]
     },
     {
       "externalId": 1001,
@@ -22749,7 +23590,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Glitzy"
+      ]
     },
     {
       "externalId": 1002,
@@ -22769,7 +23612,10 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Lace",
+        "Glitzy"
+      ]
     },
     {
       "externalId": 1003,
@@ -22790,7 +23636,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Glitzy"
+      ]
     },
     {
       "externalId": 1004,
@@ -22810,7 +23658,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Glitzy"
+      ]
     },
     {
       "externalId": 1005,
@@ -22830,7 +23680,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Glitzy"
+      ]
     },
     {
       "externalId": 1006,
@@ -22870,7 +23722,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Themed Prints"
+      ]
     },
     {
       "externalId": 1008,
@@ -22891,7 +23745,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 1009,
@@ -22912,7 +23768,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 1010,
@@ -22943,7 +23801,7 @@
       "colorName": "Splash",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Multicolor"
       ],
       "limited": false,
       "reverseSide": false,
@@ -22974,7 +23832,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 1013,
@@ -22996,7 +23856,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 1014,
@@ -23018,7 +23880,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 1015,
@@ -23038,7 +23902,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Themed Prints"
+      ]
     },
     {
       "externalId": 1016,
@@ -23058,7 +23924,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Themed Prints"
+      ]
     },
     {
       "externalId": 1017,
@@ -23079,7 +23947,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 1018,
@@ -23099,15 +23969,17 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 1019,
-      "name": "Velvet Champagne Gold",
-      "slug": "velvet-champagne-gold-1019",
+      "name": "Velvet Gold",
+      "slug": "velvet-gold-1019",
       "category": "Table Runners",
       "fabric": "Specialty",
-      "colorName": "Velvet Champagne Gold",
+      "colorName": "Velvet Gold",
       "colorHex": "#B6A899",
       "colorGroups": [
         "Gold"
@@ -23119,7 +23991,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 1020,
@@ -23139,7 +24013,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 1021,
@@ -23159,7 +24035,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 1022,
@@ -23179,7 +24057,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 1023,
@@ -23199,7 +24079,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 1024,
@@ -23219,7 +24101,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 1025,
@@ -23239,7 +24123,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 1026,
@@ -23259,7 +24145,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 1027,
@@ -23279,7 +24167,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 1028,
@@ -23299,7 +24189,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 1029,
@@ -23319,7 +24211,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 1030,
@@ -23339,7 +24233,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 1031,
@@ -23480,7 +24376,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Floral"
+      ]
     },
     {
       "externalId": 1038,
@@ -23520,7 +24418,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 1040,
@@ -23560,7 +24460,9 @@
       "sizes": [
         "Runners"
       ],
-      "collections": []
+      "collections": [
+        "Themed Prints"
+      ]
     },
     {
       "externalId": 1042,
@@ -23860,7 +24762,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 1057,
@@ -23880,7 +24784,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 1058,
@@ -23900,7 +24806,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 1059,
@@ -23920,7 +24828,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 1060,
@@ -23940,7 +24850,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 1061,
@@ -23960,7 +24872,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 1062,
@@ -23980,7 +24894,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 1063,
@@ -24000,7 +24916,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 1064,
@@ -24020,7 +24938,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 1065,
@@ -24040,7 +24960,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 1066,
@@ -24060,27 +24982,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
-    },
-    {
-      "externalId": 1067,
-      "name": "Jute Peach",
-      "slug": "jute-peach-1067",
-      "category": "Cuffs",
-      "fabric": "Jute",
-      "colorName": "Peach",
-      "colorHex": "#F0B08A",
-      "colorGroups": [
-        "Orange"
-      ],
-      "limited": false,
-      "reverseSide": false,
-      "imageFilename": "JutePeach.jpg",
-      "keywords": "",
-      "sizes": [
-        "Cuffs"
-      ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 1068,
@@ -24100,7 +25004,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 1069,
@@ -24120,7 +25026,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 1070,
@@ -24140,7 +25048,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 1071,
@@ -24160,7 +25070,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 1072,
@@ -24180,7 +25092,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Texture"
+      ]
     },
     {
       "externalId": 1073,
@@ -24200,7 +25114,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 1074,
@@ -24224,14 +25140,14 @@
     },
     {
       "externalId": 1075,
-      "name": "Amalfi Saphire",
-      "slug": "amalfi-saphire-1075",
+      "name": "Amalfi Sapphire",
+      "slug": "amalfi-sapphire-1075",
       "category": "Cuffs",
       "fabric": "Specialty",
-      "colorName": "Amalfi Saphire",
+      "colorName": "Amalfi Sapphire",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Blue"
       ],
       "limited": false,
       "reverseSide": false,
@@ -24260,7 +25176,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 1077,
@@ -24280,7 +25198,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Themed Prints"
+      ]
     },
     {
       "externalId": 1078,
@@ -24300,7 +25220,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 1079,
@@ -24320,7 +25242,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 1080,
@@ -24341,7 +25265,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 1081,
@@ -24421,7 +25347,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Themed Prints"
+      ]
     },
     {
       "externalId": 1085,
@@ -24522,7 +25450,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 1090,
@@ -24542,7 +25472,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 1091,
@@ -24583,7 +25515,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 1093,
@@ -24604,12 +25538,14 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 1094,
       "name": "Burnt Orange Matrix",
-      "slug": "burnt-orange-matrix",
+      "slug": "burnt-orange-matrix-1094",
       "category": "Cuffs",
       "fabric": "Specialty",
       "colorName": "Burnt Orange Matrix",
@@ -24624,7 +25560,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 1095,
@@ -24695,7 +25633,7 @@
       "colorName": "Cambric",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Pink/Blush"
       ],
       "limited": false,
       "reverseSide": false,
@@ -24724,7 +25662,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Themed Prints"
+      ]
     },
     {
       "externalId": 1100,
@@ -24904,7 +25844,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Floral"
+      ]
     },
     {
       "externalId": 1109,
@@ -24965,7 +25907,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 1112,
@@ -24985,7 +25929,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Floral"
+      ]
     },
     {
       "externalId": 1113,
@@ -25005,7 +25951,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Floral"
+      ]
     },
     {
       "externalId": 1114,
@@ -25025,7 +25973,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 1115,
@@ -25045,7 +25995,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 1116,
@@ -25065,7 +26017,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 1117,
@@ -25145,7 +26099,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 1121,
@@ -25165,7 +26121,10 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Pattern",
+        "Themed Prints"
+      ]
     },
     {
       "externalId": 1122,
@@ -25205,7 +26164,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Floral"
+      ]
     },
     {
       "externalId": 1124,
@@ -25225,7 +26186,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Floral"
+      ]
     },
     {
       "externalId": 1125,
@@ -25326,7 +26289,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 1130,
@@ -25366,7 +26331,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 1132,
@@ -25466,7 +26433,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Glitzy"
+      ]
     },
     {
       "externalId": 1137,
@@ -25686,7 +26655,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 1148,
@@ -25707,7 +26678,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 1149,
@@ -25749,7 +26722,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 1151,
@@ -25789,7 +26764,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Themed Prints"
+      ]
     },
     {
       "externalId": 1153,
@@ -25850,7 +26827,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 1156,
@@ -25871,7 +26850,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 1157,
@@ -25892,7 +26873,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 1158,
@@ -25913,7 +26896,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 1159,
@@ -25933,7 +26918,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 1160,
@@ -25954,7 +26941,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 1161,
@@ -25976,7 +26965,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 1162,
@@ -26079,46 +27070,6 @@
       "collections": []
     },
     {
-      "externalId": 1167,
-      "name": "Savannah Vintage Blossom (Limited)",
-      "slug": "savannah-vintage-blossom-limited-1167",
-      "category": "Cuffs",
-      "fabric": "Specialty",
-      "colorName": "Savannah Vintage Blossom",
-      "colorHex": "#B6A899",
-      "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
-      ],
-      "limited": true,
-      "reverseSide": false,
-      "imageFilename": "SpecialtySavannahBlossom.jpg",
-      "keywords": "",
-      "sizes": [
-        "Cuffs"
-      ],
-      "collections": []
-    },
-    {
-      "externalId": 1168,
-      "name": "Savannah Vintage Lilac - LIMITED",
-      "slug": "savannah-vintage-lilac-limited-1168",
-      "category": "Cuffs",
-      "fabric": "Specialty",
-      "colorName": "Savannah Vintage Lilac",
-      "colorHex": "#B6A899",
-      "colorGroups": [
-        "Purple/Burgundy"
-      ],
-      "limited": true,
-      "reverseSide": false,
-      "imageFilename": "SpecialtySavannahLilac.jpg",
-      "keywords": "",
-      "sizes": [
-        "Cuffs"
-      ],
-      "collections": []
-    },
-    {
       "externalId": 1169,
       "name": "Seamist Prism",
       "slug": "seamist-prism",
@@ -26156,7 +27107,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Glitzy"
+      ]
     },
     {
       "externalId": 1171,
@@ -26176,7 +27129,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Glitzy"
+      ]
     },
     {
       "externalId": 1172,
@@ -26196,7 +27151,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Glitzy"
+      ]
     },
     {
       "externalId": 1173,
@@ -26217,7 +27174,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Glitzy"
+      ]
     },
     {
       "externalId": 1174,
@@ -26237,7 +27196,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Glitzy"
+      ]
     },
     {
       "externalId": 1175,
@@ -26257,7 +27218,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Glitzy"
+      ]
     },
     {
       "externalId": 1176,
@@ -26297,7 +27260,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 1178,
@@ -26317,7 +27282,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Themed Prints"
+      ]
     },
     {
       "externalId": 1179,
@@ -26338,7 +27305,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 1180,
@@ -26359,7 +27328,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Stripe"
+      ]
     },
     {
       "externalId": 1181,
@@ -26390,7 +27361,7 @@
       "colorName": "Splash",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Multicolor"
       ],
       "limited": false,
       "reverseSide": false,
@@ -26419,7 +27390,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Themed Prints"
+      ]
     },
     {
       "externalId": 1184,
@@ -26440,7 +27413,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 1185,
@@ -26460,15 +27435,17 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 1186,
-      "name": "Velvet Champagne Gold",
-      "slug": "velvet-champagne-gold-1186",
+      "name": "Velvet Gold",
+      "slug": "velvet-gold-1186",
       "category": "Cuffs",
       "fabric": "Specialty",
-      "colorName": "Velvet Champagne Gold",
+      "colorName": "Velvet Gold",
       "colorHex": "#B6A899",
       "colorGroups": [
         "Gold"
@@ -26480,7 +27457,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 1187,
@@ -26500,7 +27479,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 1188,
@@ -26520,7 +27501,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 1189,
@@ -26540,7 +27523,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 1190,
@@ -26560,7 +27545,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 1191,
@@ -26580,7 +27567,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 1192,
@@ -26600,7 +27589,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 1193,
@@ -26620,7 +27611,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 1194,
@@ -26640,7 +27633,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 1195,
@@ -26660,7 +27655,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 1196,
@@ -26680,7 +27677,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 1197,
@@ -26700,7 +27699,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Velvet"
+      ]
     },
     {
       "externalId": 1198,
@@ -26820,7 +27821,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Floral"
+      ]
     },
     {
       "externalId": 1204,
@@ -26841,7 +27844,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 1205,
@@ -26861,7 +27866,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Pattern"
+      ]
     },
     {
       "externalId": 1206,
@@ -26941,7 +27948,9 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": []
+      "collections": [
+        "Themed Prints"
+      ]
     },
     {
       "externalId": 1210,

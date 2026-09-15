@@ -24,6 +24,7 @@ const EXCLUDE_IDS = new Set([
   979, // "Navy Sequins" runner — duplicate of "Sequins Lace Navy" (885/1019/etc.)
   606, // "Brushstroke" napkin (singular) — duplicate of "Brushstrokes" napkin
   329, 330, 692, 693, 997, 998, 1167, 1168, // Savannah Vintage Blossom/Lilac, all 4 categories — "should come off, be out of the books" per Tera
+  302, 670, 968, 1140, // "Mirage Sandstone" — "does not exist" per Tera (not a real item; distinct from the real "Sandstone" specialty print)
 ]);
 
 // Legacy-export rows whose name needs correcting (typo, word order, or a
@@ -33,6 +34,8 @@ const RENAME_BY_ID = {
   885: "Amalfi Sapphire", 1075: "Amalfi Sapphire", // was "Amalfi Saphire" (typo)
   663: "Burnt Orange Matrix", // was "Matrix Burnt Orange" (word order)
   253: "Eleanor", // was "Eleanor - Bone"
+  381: "Waterlily", 731: "Waterlily", 1037: "Waterlily", 1203: "Waterlily", // was "Water Lily" (should be one word)
+  528: "Matte Lamour Raspberry", 851: "Matte Lamour Raspberry", // was "Raspberry Matte Lamour" (word order) — merges with the fabric-first naming the real Tablecloth photo already uses
 };
 
 const raw = rawAll
@@ -141,8 +144,9 @@ const COLOR_RULES = [
   [/\b(burgundy|wine|merlot|maroon|bordeaux|claret|garnet|cranberry|sangria)\b/i, "Purple/Burgundy"],
   // Burgundy sits between red and purple — findable under both, per Tera.
   [/\bburgundy\b/i, "Red"],
-  [/\b(blue|navy|teal|aqua|turquoise|cerulean|cobalt|periwinkle|denim|indigo|sky|sapphire|marine|ocean|slate|caribbean)\b/i, "Blue"],
-  [/\b(green|sage|olive|emerald|kelly|hunter|forest|mint|moss|fern|celadon|clover|lime|pistachio|basil|seafoam|jade|avocado)\b/i, "Green"],
+  [/\b(blue|navy|aqua|turquoise|cerulean|cobalt|periwinkle|denim|indigo|sky|sapphire|marine|ocean|slate|caribbean)\b/i, "Blue"],
+  // "teal" sits with green (not blue) per Tera.
+  [/\b(green|sage|olive|emerald|kelly|hunter|forest|mint|moss|fern|celadon|clover|lime|pistachio|basil|seafoam|jade|avocado|teal)\b/i, "Green"],
   [/\b(gray|grey|silver|pewter|charcoal|graphite|smoke|ash|platinum|steel)\b/i, "Gray"],
   // "jute" deliberately excluded: in this catalog it only ever names the Jute
   // fabric line (baked into the product/color name, e.g. "Jute Black"), never
@@ -259,6 +263,86 @@ const COLOR_GROUP_NAME_OVERRIDES = {
   "Velvet Gold": ["Gold"], // renamed from "Velvet Champagne Gold" above
   Eleanor: ["Ivory"], // renamed from "Eleanor - Bone" above; off-white damask
   "Verve Champagne Gold": ["Gold"],
+
+  // --- Second corrections pass (Website Corrections.pdf, 2026-09) ----------
+  // A long run of "brown" mistags — these are the same class of bug as the
+  // items above (keyword matcher falling back to Brown/Beige with no real
+  // color signal in the name) but confirmed in bulk by Tera against the
+  // actual photos rather than one at a time.
+  "Jute Dove": ["Gray"],
+  "Mirage Vanilla": ["White"],
+  "Dolce Vanilla": ["White"],
+  "Soiree Champagne": ["Gold"],
+  "Mirage Cloud": ["Gray"],
+  "Serenity Driftwood": ["Ivory"],
+  "Abstract Geometric": ["Multicolor", "Black"],
+  Bauhaus: ["Multicolor"],
+  Cairns: ["Orange"],
+  "Cairns Reverse": ["Orange"],
+  "Echo Lumiere": ["Gray"],
+  "Echo Lumiere Reverse": ["Gray"],
+  "Hampton Botanical Apple": ["Green"],
+  "Helena Apple": ["Green"],
+  "Helena Apple Reverse": ["Green"],
+  Hex: ["Gray"],
+  Holly: ["Multicolor"],
+  "Josephine Lace": ["Pink/Blush"],
+  "Key West": ["Multicolor"],
+  "Kiwi Palazzo": ["Green"],
+  Kringle: ["Red"],
+  Laguna: ["Multicolor", "Green"],
+  Lorelei: ["Multicolor"],
+  Lucia: ["Multicolor", "Yellow"],
+  Meteorite: ["Gray"],
+  "Metropolitan Concrete": ["Gray"],
+  "Midas Travertine": ["Gold"],
+  "Midas Travertine Reverse": ["Gold"],
+  Nadia: ["Purple/Burgundy"],
+  Nantucket: ["Blue"],
+  "Pamela Palm": ["Green"],
+  "Pamela Palms": ["Green"], // Cuffs/Table Runners rows use the plural form of the name
+  Patchwork: ["Multicolor"],
+  Phoebe: ["Multicolor", "Blue"],
+  Phoenix: ["Red"],
+  Regency: ["Gray"],
+  "Retro Vintage": ["Multicolor"],
+  Romeo: ["Multicolor"],
+  Santorini: ["Blue"],
+  "Santorini Reverse": ["Blue"],
+  Silhouette: ["Black"],
+  "Sparkle Sheer Royal": ["Blue"],
+  Spiro: ["Black", "White"],
+  "Velvet Loden": ["Green"],
+  "Velvet Spice": ["Orange"],
+  "Verve Pearl": ["White"],
+  Waterlily: ["Multicolor", "Pink/Blush"], // renamed from "Water Lily" above
+  Woodland: ["Gray"],
+  "Woodland Reverse": ["White"],
+  "Woodland Reversed": ["White"],
+  "Wren Coastal": ["Blue"],
+  Zebra: ["Black", "White"],
+  // Supersedes the earlier "brown -> red" fix from the first punch list —
+  // Tera's follow-up correction says pink, not red.
+  "Jute Lipstick": ["Pink/Blush"],
+
+  // Imperial Stripe: each colorway is genuinely one color, not a print — drop
+  // the "Multicolor" the keyword matcher added for the word "stripe".
+  "Imperial Stripe Black (Limited)": ["Black"],
+  "Imperial Stripe Burgundy (Limited)": ["Purple/Burgundy", "Red"],
+  "Imperial Stripe Forest Green (Limited)": ["Green"],
+  "Imperial Stripe Ivory (Limited)": ["Ivory"],
+  "Imperial Stripe Navy (Limited)": ["Blue"],
+  "Imperial Stripe Red (Limited)": ["Red"],
+  "Imperial Stripe White (Limited)": ["White"],
+
+  // These are genuinely two-tone prints (a color + the base pattern) — add
+  // the second color alongside the existing Multicolor tag.
+  "Hampton Stripe Dune": ["Multicolor", "Brown/Beige/Cafe/Tan"],
+  "Hampton Stripe Coastal": ["Multicolor", "Blue"],
+  "Hampton Stripe Apple": ["Multicolor", "Green"],
+  "Apple Cabana Stripe": ["Multicolor", "Green"],
+  "Apple Gingham Mini Check": ["Multicolor", "Green"],
+  "Willow Gingham Mini Check": ["Multicolor", "Green"],
 };
 
 function colorGroupsFor(externalId, colorName, fabric, productName, hex) {

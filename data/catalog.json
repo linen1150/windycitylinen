@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-15T14:01:33.129Z",
+  "generatedAt": "2026-09-15T17:20:33.364Z",
   "categories": [
     "Tablecloths and Overlays",
     "Napkins",
@@ -1381,7 +1381,7 @@
       "colorName": "Teal",
       "colorHex": "#1B7B7A",
       "colorGroups": [
-        "Blue"
+        "Green"
       ],
       "limited": false,
       "reverseSide": false,
@@ -1513,8 +1513,7 @@
       "colorName": "Black",
       "colorHex": "#20232A",
       "colorGroups": [
-        "Black",
-        "Multicolor"
+        "Black"
       ],
       "limited": true,
       "reverseSide": false,
@@ -1545,8 +1544,7 @@
       "colorHex": "#6B2737",
       "colorGroups": [
         "Purple/Burgundy",
-        "Red",
-        "Multicolor"
+        "Red"
       ],
       "limited": true,
       "reverseSide": false,
@@ -1576,8 +1574,7 @@
       "colorName": "Forest Green",
       "colorHex": "#2E5339",
       "colorGroups": [
-        "Green",
-        "Multicolor"
+        "Green"
       ],
       "limited": true,
       "reverseSide": false,
@@ -1607,8 +1604,7 @@
       "colorName": "Ivory",
       "colorHex": "#F1EEE3",
       "colorGroups": [
-        "Ivory",
-        "Multicolor"
+        "Ivory"
       ],
       "limited": true,
       "reverseSide": false,
@@ -1638,8 +1634,7 @@
       "colorName": "Navy",
       "colorHex": "#1F2E4A",
       "colorGroups": [
-        "Blue",
-        "Multicolor"
+        "Blue"
       ],
       "limited": true,
       "reverseSide": false,
@@ -1669,8 +1664,7 @@
       "colorName": "Red",
       "colorHex": "#B12A2A",
       "colorGroups": [
-        "Red",
-        "Multicolor"
+        "Red"
       ],
       "limited": true,
       "reverseSide": false,
@@ -1700,8 +1694,7 @@
       "colorName": "White",
       "colorHex": "#FAFAFA",
       "colorGroups": [
-        "White",
-        "Multicolor"
+        "White"
       ],
       "limited": true,
       "reverseSide": false,
@@ -3208,7 +3201,7 @@
       "colorName": "Teal",
       "colorHex": "#1B7B7A",
       "colorGroups": [
-        "Blue"
+        "Green"
       ],
       "limited": false,
       "reverseSide": false,
@@ -3238,7 +3231,7 @@
       "colorName": "Teal",
       "colorHex": "#1B7B7A",
       "colorGroups": [
-        "Blue"
+        "Green"
       ],
       "limited": false,
       "reverseSide": true,
@@ -4381,7 +4374,7 @@
       "colorName": "Teal",
       "colorHex": "#1B7B7A",
       "colorGroups": [
-        "Blue"
+        "Green"
       ],
       "limited": false,
       "reverseSide": false,
@@ -4543,7 +4536,7 @@
       "colorName": "Driftwood",
       "colorHex": "#B8A585",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Ivory"
       ],
       "limited": false,
       "reverseSide": false,
@@ -5168,7 +5161,7 @@
       "colorName": "Champagne",
       "colorHex": "#E9D9B0",
       "colorGroups": [
-        "Ivory"
+        "Gold"
       ],
       "limited": false,
       "reverseSide": false,
@@ -5867,7 +5860,7 @@
       "colorName": "Dove",
       "colorHex": "#C9C6C0",
       "colorGroups": [
-        "Ivory"
+        "Gray"
       ],
       "limited": false,
       "reverseSide": false,
@@ -5979,7 +5972,7 @@
       "colorName": "Lipstick",
       "colorHex": "#B8244F",
       "colorGroups": [
-        "Red"
+        "Pink/Blush"
       ],
       "limited": false,
       "reverseSide": false,
@@ -6147,7 +6140,8 @@
       "colorName": "Abstract Geometric",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Multicolor",
+        "Black"
       ],
       "limited": false,
       "reverseSide": false,
@@ -6318,7 +6312,8 @@
       "colorName": "Apple Cabana Stripe",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Multicolor"
+        "Multicolor",
+        "Green"
       ],
       "limited": false,
       "reverseSide": false,
@@ -6343,7 +6338,8 @@
       "colorName": "Apple Gingham Mini Check",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Multicolor"
+        "Multicolor",
+        "Green"
       ],
       "limited": false,
       "reverseSide": false,
@@ -6798,7 +6794,7 @@
       "colorName": "Cairns",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Orange"
       ],
       "limited": false,
       "reverseSide": false,
@@ -6822,7 +6818,7 @@
       "colorName": "Cairns",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Orange"
       ],
       "limited": false,
       "reverseSide": true,
@@ -7147,7 +7143,7 @@
       "colorName": "Dolce Vanilla",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Ivory"
+        "White"
       ],
       "limited": false,
       "reverseSide": false,
@@ -7228,7 +7224,7 @@
       "colorName": "Echo Lumiere",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Gray"
       ],
       "limited": false,
       "reverseSide": false,
@@ -7252,7 +7248,7 @@
       "colorName": "Echo Lumiere",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Gray"
       ],
       "limited": false,
       "reverseSide": true,
@@ -7677,7 +7673,7 @@
       "colorName": "Hampton Botanical Apple",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Green"
       ],
       "limited": false,
       "reverseSide": false,
@@ -7755,7 +7751,8 @@
       "colorName": "Hampton Stripe Apple",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Multicolor"
+        "Multicolor",
+        "Green"
       ],
       "limited": false,
       "reverseSide": false,
@@ -7781,7 +7778,8 @@
       "colorName": "Hampton Stripe Coastal",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Multicolor"
+        "Multicolor",
+        "Blue"
       ],
       "limited": false,
       "reverseSide": false,
@@ -7807,7 +7805,8 @@
       "colorName": "Hampton Stripe Dune",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Multicolor"
+        "Multicolor",
+        "Brown/Beige/Cafe/Tan"
       ],
       "limited": false,
       "reverseSide": false,
@@ -7859,7 +7858,7 @@
       "colorName": "Helena Apple",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Green"
       ],
       "limited": false,
       "reverseSide": false,
@@ -7884,7 +7883,7 @@
       "colorName": "Helena Apple",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Green"
       ],
       "limited": false,
       "reverseSide": true,
@@ -8042,7 +8041,7 @@
       "colorName": "Hex",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Gray"
       ],
       "limited": false,
       "reverseSide": false,
@@ -8089,7 +8088,7 @@
       "colorName": "Holly",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Multicolor"
       ],
       "limited": false,
       "reverseSide": false,
@@ -8138,7 +8137,7 @@
       "colorName": "Josephine Lace",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Pink/Blush"
       ],
       "limited": false,
       "reverseSide": false,
@@ -8196,7 +8195,7 @@
       "colorName": "Key West",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Multicolor"
       ],
       "limited": false,
       "reverseSide": false,
@@ -8216,7 +8215,7 @@
       "colorName": "Kiwi Palazzo",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Green"
       ],
       "limited": false,
       "reverseSide": false,
@@ -8238,7 +8237,7 @@
       "colorName": "Kringle",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Red"
       ],
       "limited": false,
       "reverseSide": false,
@@ -8311,7 +8310,8 @@
       "colorName": "Laguna",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Multicolor",
+        "Green"
       ],
       "limited": false,
       "reverseSide": false,
@@ -8363,7 +8363,7 @@
       "colorName": "Lorelei",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Multicolor"
       ],
       "limited": false,
       "reverseSide": false,
@@ -8387,7 +8387,8 @@
       "colorName": "Lucia",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Multicolor",
+        "Yellow"
       ],
       "limited": false,
       "reverseSide": false,
@@ -8412,7 +8413,7 @@
       "colorName": "Meteorite",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Gray"
       ],
       "limited": false,
       "reverseSide": false,
@@ -8445,7 +8446,7 @@
       "colorName": "Metropolitan Concrete",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Gray"
       ],
       "limited": false,
       "reverseSide": false,
@@ -8493,7 +8494,7 @@
       "colorName": "Midas Travertine",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Gold"
       ],
       "limited": false,
       "reverseSide": false,
@@ -8519,7 +8520,7 @@
       "colorName": "Midas Travertine",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Gold"
       ],
       "limited": false,
       "reverseSide": true,
@@ -8611,31 +8612,6 @@
       "collections": []
     },
     {
-      "externalId": 302,
-      "name": "Mirage Sandstone",
-      "slug": "mirage-sandstone",
-      "category": "Tablecloths and Overlays",
-      "fabric": "Mirage",
-      "colorName": "Mirage Sandstone",
-      "colorHex": "#B6A899",
-      "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
-      ],
-      "limited": false,
-      "reverseSide": false,
-      "imageFilename": "sandstone2.jpg",
-      "keywords": "",
-      "sizes": [
-        "96\" Round",
-        "108\" Round",
-        "120\" Round",
-        "132\" Round",
-        "90\"x156\" Banquet",
-        "108\"x156\" Banquet"
-      ],
-      "collections": []
-    },
-    {
       "externalId": 303,
       "name": "Mirage Tide",
       "slug": "mirage-tide",
@@ -8669,7 +8645,7 @@
       "colorName": "Mirage Vanilla",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Ivory"
+        "White"
       ],
       "limited": false,
       "reverseSide": false,
@@ -8694,7 +8670,7 @@
       "colorName": "Nadia",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Purple/Burgundy"
       ],
       "limited": false,
       "reverseSide": false,
@@ -8717,7 +8693,7 @@
       "colorName": "Nantucket",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Blue"
       ],
       "limited": false,
       "reverseSide": false,
@@ -8879,7 +8855,7 @@
       "colorName": "Pamela Palm",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Green"
       ],
       "limited": false,
       "reverseSide": false,
@@ -8899,7 +8875,7 @@
       "colorName": "Patchwork",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Multicolor"
       ],
       "limited": false,
       "reverseSide": false,
@@ -8921,7 +8897,8 @@
       "colorName": "Phoebe",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Multicolor",
+        "Blue"
       ],
       "limited": false,
       "reverseSide": false,
@@ -8945,7 +8922,7 @@
       "colorName": "Phoenix",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Red"
       ],
       "limited": false,
       "reverseSide": false,
@@ -9189,7 +9166,7 @@
       "colorName": "Regency",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Gray"
       ],
       "limited": false,
       "reverseSide": false,
@@ -9212,7 +9189,7 @@
       "colorName": "Retro Vintage",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Multicolor"
       ],
       "limited": false,
       "reverseSide": false,
@@ -9234,7 +9211,7 @@
       "colorName": "Romeo",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Multicolor"
       ],
       "limited": false,
       "reverseSide": false,
@@ -9257,7 +9234,7 @@
       "colorName": "Santorini",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Blue"
       ],
       "limited": false,
       "reverseSide": false,
@@ -9281,7 +9258,7 @@
       "colorName": "Santorini",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Blue"
       ],
       "limited": false,
       "reverseSide": true,
@@ -9546,7 +9523,7 @@
       "colorName": "Silhouette",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Black"
       ],
       "limited": false,
       "reverseSide": false,
@@ -9851,7 +9828,7 @@
       "colorName": "Sparkle Sheer Royal",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Blue"
       ],
       "limited": false,
       "reverseSide": false,
@@ -9895,7 +9872,8 @@
       "colorName": "Spiro",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Black",
+        "White"
       ],
       "limited": false,
       "reverseSide": false,
@@ -10298,7 +10276,7 @@
       "colorName": "Velvet Loden",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Green"
       ],
       "limited": false,
       "reverseSide": false,
@@ -10411,7 +10389,7 @@
       "colorName": "Velvet Spice",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Orange"
       ],
       "limited": false,
       "reverseSide": false,
@@ -10592,7 +10570,7 @@
       "colorName": "Verve Pearl",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "White"
       ],
       "limited": false,
       "reverseSide": false,
@@ -10609,29 +10587,37 @@
     },
     {
       "externalId": 381,
-      "name": "Water Lily",
-      "slug": "water-lily",
+      "name": "Waterlily",
+      "slug": "waterlily",
       "category": "Tablecloths and Overlays",
       "fabric": "Specialty",
-      "colorName": "Water Lily",
+      "colorName": "Waterlily",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Multicolor",
+        "Pink/Blush"
       ],
       "limited": false,
       "reverseSide": false,
       "imageFilename": "waterlilly.jpg",
       "keywords": "",
       "sizes": [
+        "54\" Square",
+        "90\" Square",
+        "90\" Round",
+        "96\" Round",
         "108\" Round",
+        "120\" Square",
         "120\" Round",
+        "132\" Square",
         "132\" Round",
+        "72\"x120\" Banquet",
+        "90\"x132\" Banquet",
         "90\"x156\" Banquet",
-        "108\"x156\" Banquet"
+        "108\"x156\" Banquet",
+        "114\"x180\" Banquet"
       ],
-      "collections": [
-        "Floral"
-      ]
+      "collections": []
     },
     {
       "externalId": 382,
@@ -10676,7 +10662,8 @@
       "colorName": "Willow Gingham Mini Check",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Multicolor"
+        "Multicolor",
+        "Green"
       ],
       "limited": false,
       "reverseSide": false,
@@ -10711,7 +10698,7 @@
       "colorName": "Woodland",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Gray"
       ],
       "limited": false,
       "reverseSide": false,
@@ -10735,7 +10722,7 @@
       "colorName": "Woodland",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "White"
       ],
       "limited": false,
       "reverseSide": true,
@@ -10759,7 +10746,7 @@
       "colorName": "Wren Coastal",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Blue"
       ],
       "limited": false,
       "reverseSide": false,
@@ -10784,7 +10771,8 @@
       "colorName": "Zebra",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Black",
+        "White"
       ],
       "limited": false,
       "reverseSide": false,
@@ -11507,7 +11495,7 @@
       "colorName": "Teal",
       "colorHex": "#1B7B7A",
       "colorGroups": [
-        "Blue"
+        "Green"
       ],
       "limited": false,
       "reverseSide": false,
@@ -11587,8 +11575,7 @@
       "colorName": "Black",
       "colorHex": "#20232A",
       "colorGroups": [
-        "Black",
-        "Multicolor"
+        "Black"
       ],
       "limited": true,
       "reverseSide": false,
@@ -11611,8 +11598,7 @@
       "colorHex": "#6B2737",
       "colorGroups": [
         "Purple/Burgundy",
-        "Red",
-        "Multicolor"
+        "Red"
       ],
       "limited": true,
       "reverseSide": false,
@@ -11634,8 +11620,7 @@
       "colorName": "Forest Green",
       "colorHex": "#2E5339",
       "colorGroups": [
-        "Green",
-        "Multicolor"
+        "Green"
       ],
       "limited": true,
       "reverseSide": false,
@@ -11657,8 +11642,7 @@
       "colorName": "Ivory",
       "colorHex": "#F1EEE3",
       "colorGroups": [
-        "Ivory",
-        "Multicolor"
+        "Ivory"
       ],
       "limited": true,
       "reverseSide": false,
@@ -11680,8 +11664,7 @@
       "colorName": "Navy",
       "colorHex": "#1F2E4A",
       "colorGroups": [
-        "Blue",
-        "Multicolor"
+        "Blue"
       ],
       "limited": true,
       "reverseSide": false,
@@ -11703,8 +11686,7 @@
       "colorName": "Red",
       "colorHex": "#B12A2A",
       "colorGroups": [
-        "Red",
-        "Multicolor"
+        "Red"
       ],
       "limited": true,
       "reverseSide": false,
@@ -11726,8 +11708,7 @@
       "colorName": "White",
       "colorHex": "#FAFAFA",
       "colorGroups": [
-        "White",
-        "Multicolor"
+        "White"
       ],
       "limited": true,
       "reverseSide": false,
@@ -12832,7 +12813,7 @@
       "colorName": "Teal",
       "colorHex": "#1B7B7A",
       "colorGroups": [
-        "Blue"
+        "Green"
       ],
       "limited": false,
       "reverseSide": false,
@@ -12854,7 +12835,7 @@
       "colorName": "Teal",
       "colorHex": "#1B7B7A",
       "colorGroups": [
-        "Blue"
+        "Green"
       ],
       "limited": false,
       "reverseSide": true,
@@ -13677,7 +13658,7 @@
       "colorName": "Teal",
       "colorHex": "#1B7B7A",
       "colorGroups": [
-        "Blue"
+        "Green"
       ],
       "limited": false,
       "reverseSide": false,
@@ -13750,11 +13731,11 @@
     },
     {
       "externalId": 528,
-      "name": "Raspberry Matte Lamour",
-      "slug": "raspberry-matte-lamour",
+      "name": "Matte Lamour Raspberry",
+      "slug": "matte-lamour-raspberry",
       "category": "Napkins",
       "fabric": "Matte Lamour",
-      "colorName": "Raspberry Matte Lamour",
+      "colorName": "Matte Lamour Raspberry",
       "colorHex": "#B6A899",
       "colorGroups": [
         "Red"
@@ -13817,7 +13798,7 @@
       "colorName": "Driftwood",
       "colorHex": "#B8A585",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Ivory"
       ],
       "limited": false,
       "reverseSide": false,
@@ -14271,7 +14252,7 @@
       "colorName": "Champagne",
       "colorHex": "#E9D9B0",
       "colorGroups": [
-        "Ivory"
+        "Gold"
       ],
       "limited": false,
       "reverseSide": false,
@@ -14808,7 +14789,7 @@
       "colorName": "Dove",
       "colorHex": "#C9C6C0",
       "colorGroups": [
-        "Ivory"
+        "Gray"
       ],
       "limited": false,
       "reverseSide": false,
@@ -14896,7 +14877,7 @@
       "colorName": "Lipstick",
       "colorHex": "#B8244F",
       "colorGroups": [
-        "Red"
+        "Pink/Blush"
       ],
       "limited": false,
       "reverseSide": false,
@@ -15028,7 +15009,8 @@
       "colorName": "Abstract Geometric",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Multicolor",
+        "Black"
       ],
       "limited": false,
       "reverseSide": false,
@@ -15157,7 +15139,8 @@
       "colorName": "Apple Cabana Stripe",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Multicolor"
+        "Multicolor",
+        "Green"
       ],
       "limited": false,
       "reverseSide": false,
@@ -15179,7 +15162,8 @@
       "colorName": "Apple Gingham Mini Check",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Multicolor"
+        "Multicolor",
+        "Green"
       ],
       "limited": false,
       "reverseSide": false,
@@ -15346,7 +15330,7 @@
       "colorName": "Bauhaus",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Multicolor"
       ],
       "limited": false,
       "reverseSide": false,
@@ -15478,7 +15462,7 @@
       "colorName": "Cairns",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Orange"
       ],
       "limited": false,
       "reverseSide": false,
@@ -15917,7 +15901,7 @@
       "colorName": "Hampton Botanical Apple",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Green"
       ],
       "limited": false,
       "reverseSide": false,
@@ -15961,7 +15945,8 @@
       "colorName": "Hampton Stripe Apple",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Multicolor"
+        "Multicolor",
+        "Green"
       ],
       "limited": false,
       "reverseSide": false,
@@ -15983,7 +15968,8 @@
       "colorName": "Hampton Stripe Coastal",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Multicolor"
+        "Multicolor",
+        "Blue"
       ],
       "limited": false,
       "reverseSide": false,
@@ -16187,7 +16173,7 @@
       "colorName": "Helena Apple",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Green"
       ],
       "limited": false,
       "reverseSide": false,
@@ -16350,7 +16336,7 @@
       "colorName": "Holly",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Multicolor"
       ],
       "limited": false,
       "reverseSide": false,
@@ -16454,7 +16440,7 @@
       "colorName": "Key West",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Multicolor"
       ],
       "limited": false,
       "reverseSide": false,
@@ -16474,7 +16460,7 @@
       "colorName": "Kiwi Palazzo",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Green"
       ],
       "limited": false,
       "reverseSide": false,
@@ -16494,7 +16480,7 @@
       "colorName": "Kringle",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Red"
       ],
       "limited": false,
       "reverseSide": false,
@@ -16514,7 +16500,8 @@
       "colorName": "Laguna",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Multicolor",
+        "Green"
       ],
       "limited": false,
       "reverseSide": false,
@@ -16557,7 +16544,7 @@
       "colorName": "Lorelei",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Multicolor"
       ],
       "limited": false,
       "reverseSide": false,
@@ -16577,7 +16564,8 @@
       "colorName": "Lucia",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Multicolor",
+        "Yellow"
       ],
       "limited": false,
       "reverseSide": false,
@@ -16619,7 +16607,7 @@
       "colorName": "Metropolitan Concrete",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Gray"
       ],
       "limited": false,
       "reverseSide": false,
@@ -16659,7 +16647,7 @@
       "colorName": "Midas Travertine",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Gold"
       ],
       "limited": false,
       "reverseSide": false,
@@ -16681,7 +16669,7 @@
       "colorName": "Mirage Cloud",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Gray"
       ],
       "limited": false,
       "reverseSide": false,
@@ -16733,26 +16721,6 @@
       "collections": []
     },
     {
-      "externalId": 670,
-      "name": "Mirage Sandstone",
-      "slug": "mirage-sandstone-670",
-      "category": "Napkins",
-      "fabric": "Mirage",
-      "colorName": "Mirage Sandstone",
-      "colorHex": "#B6A899",
-      "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
-      ],
-      "limited": false,
-      "reverseSide": false,
-      "imageFilename": "Napkin_sandstone_r.jpg",
-      "keywords": "",
-      "sizes": [
-        "Napkins"
-      ],
-      "collections": []
-    },
-    {
       "externalId": 671,
       "name": "Mirage Tide",
       "slug": "mirage-tide-671",
@@ -16781,7 +16749,7 @@
       "colorName": "Mirage Vanilla",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Ivory"
+        "White"
       ],
       "limited": false,
       "reverseSide": false,
@@ -16842,7 +16810,7 @@
       "colorName": "Nadia",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Purple/Burgundy"
       ],
       "limited": false,
       "reverseSide": false,
@@ -16862,7 +16830,7 @@
       "colorName": "Nantucket",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Blue"
       ],
       "limited": false,
       "reverseSide": false,
@@ -16965,7 +16933,8 @@
       "colorName": "Phoebe",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Multicolor",
+        "Blue"
       ],
       "limited": false,
       "reverseSide": false,
@@ -17145,7 +17114,7 @@
       "colorName": "Retro Vintage",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Multicolor"
       ],
       "limited": false,
       "reverseSide": false,
@@ -17165,7 +17134,7 @@
       "colorName": "Romeo",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Multicolor"
       ],
       "limited": false,
       "reverseSide": false,
@@ -17185,7 +17154,7 @@
       "colorName": "Santorini",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Blue"
       ],
       "limited": false,
       "reverseSide": false,
@@ -17245,7 +17214,7 @@
       "colorName": "Silhouette",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Black"
       ],
       "limited": false,
       "reverseSide": false,
@@ -17421,7 +17390,8 @@
       "colorName": "Spiro",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Black",
+        "White"
       ],
       "limited": false,
       "reverseSide": false,
@@ -17776,7 +17746,7 @@
       "colorName": "Velvet Loden",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Green"
       ],
       "limited": false,
       "reverseSide": false,
@@ -17864,7 +17834,7 @@
       "colorName": "Velvet Spice",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Orange"
       ],
       "limited": false,
       "reverseSide": false,
@@ -17986,7 +17956,7 @@
       "colorName": "Verve Pearl",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "White"
       ],
       "limited": false,
       "reverseSide": false,
@@ -17999,14 +17969,15 @@
     },
     {
       "externalId": 731,
-      "name": "Water Lily",
-      "slug": "water-lily-731",
+      "name": "Waterlily",
+      "slug": "waterlily-731",
       "category": "Napkins",
       "fabric": "Specialty",
-      "colorName": "Water Lily",
+      "colorName": "Waterlily",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Multicolor",
+        "Pink/Blush"
       ],
       "limited": false,
       "reverseSide": false,
@@ -18015,9 +17986,7 @@
       "sizes": [
         "Napkins"
       ],
-      "collections": [
-        "Floral"
-      ]
+      "collections": []
     },
     {
       "externalId": 732,
@@ -18111,7 +18080,8 @@
       "colorName": "Willow Gingham Mini Check",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Multicolor"
+        "Multicolor",
+        "Green"
       ],
       "limited": false,
       "reverseSide": false,
@@ -18133,7 +18103,7 @@
       "colorName": "Woodland",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Gray"
       ],
       "limited": false,
       "reverseSide": false,
@@ -18153,7 +18123,7 @@
       "colorName": "Wren Coastal",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Blue"
       ],
       "limited": false,
       "reverseSide": false,
@@ -18173,7 +18143,8 @@
       "colorName": "Zebra",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Black",
+        "White"
       ],
       "limited": false,
       "reverseSide": false,
@@ -18916,7 +18887,7 @@
       "colorName": "Teal",
       "colorHex": "#1B7B7A",
       "colorGroups": [
-        "Blue"
+        "Green"
       ],
       "limited": false,
       "reverseSide": false,
@@ -19698,7 +19669,7 @@
       "colorName": "Teal",
       "colorHex": "#1B7B7A",
       "colorGroups": [
-        "Blue"
+        "Green"
       ],
       "limited": false,
       "reverseSide": false,
@@ -20486,11 +20457,11 @@
     },
     {
       "externalId": 851,
-      "name": "Raspberry Matte Lamour",
-      "slug": "raspberry-matte-lamour-851",
+      "name": "Matte Lamour Raspberry",
+      "slug": "matte-lamour-raspberry-851",
       "category": "Table Runners",
       "fabric": "Matte Lamour",
-      "colorName": "Raspberry Matte Lamour",
+      "colorName": "Matte Lamour Raspberry",
       "colorHex": "#B6A899",
       "colorGroups": [
         "Red"
@@ -20553,7 +20524,7 @@
       "colorName": "Driftwood",
       "colorHex": "#B8A585",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Ivory"
       ],
       "limited": false,
       "reverseSide": false,
@@ -20653,7 +20624,7 @@
       "colorName": "Champagne",
       "colorHex": "#E9D9B0",
       "colorGroups": [
-        "Ivory"
+        "Gold"
       ],
       "limited": false,
       "reverseSide": false,
@@ -20925,7 +20896,7 @@
       "colorName": "Dove",
       "colorHex": "#C9C6C0",
       "colorGroups": [
-        "Ivory"
+        "Gray"
       ],
       "limited": false,
       "reverseSide": false,
@@ -20991,7 +20962,7 @@
       "colorName": "Lipstick",
       "colorHex": "#B8244F",
       "colorGroups": [
-        "Red"
+        "Pink/Blush"
       ],
       "limited": false,
       "reverseSide": false,
@@ -21145,7 +21116,8 @@
       "colorName": "Apple Cabana Stripe",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Multicolor"
+        "Multicolor",
+        "Green"
       ],
       "limited": false,
       "reverseSide": false,
@@ -21167,7 +21139,8 @@
       "colorName": "Abstract Geometric",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Multicolor",
+        "Black"
       ],
       "limited": false,
       "reverseSide": false,
@@ -21319,7 +21292,8 @@
       "colorName": "Apple Gingham Mini Check",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Multicolor"
+        "Multicolor",
+        "Green"
       ],
       "limited": false,
       "reverseSide": false,
@@ -21424,7 +21398,7 @@
       "colorName": "Bauhaus",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Multicolor"
       ],
       "limited": false,
       "reverseSide": false,
@@ -21576,7 +21550,7 @@
       "colorName": "Cairns",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Orange"
       ],
       "limited": false,
       "reverseSide": false,
@@ -21844,7 +21818,7 @@
       "colorName": "Echo Lumiere",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Gray"
       ],
       "limited": false,
       "reverseSide": false,
@@ -22075,7 +22049,7 @@
       "colorName": "Hampton Botanical Apple",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Green"
       ],
       "limited": false,
       "reverseSide": false,
@@ -22119,7 +22093,8 @@
       "colorName": "Hampton Stripe Apple",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Multicolor"
+        "Multicolor",
+        "Green"
       ],
       "limited": false,
       "reverseSide": false,
@@ -22141,7 +22116,8 @@
       "colorName": "Hampton Stripe Coastal",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Multicolor"
+        "Multicolor",
+        "Blue"
       ],
       "limited": false,
       "reverseSide": false,
@@ -22365,7 +22341,7 @@
       "colorName": "Helena Apple",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Green"
       ],
       "limited": false,
       "reverseSide": false,
@@ -22468,7 +22444,7 @@
       "colorName": "Holly",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Multicolor"
       ],
       "limited": false,
       "reverseSide": false,
@@ -22552,7 +22528,7 @@
       "colorName": "Josephine Lace",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Pink/Blush"
       ],
       "limited": false,
       "reverseSide": false,
@@ -22596,7 +22572,7 @@
       "colorName": "Kiwi Palazzo",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Green"
       ],
       "limited": false,
       "reverseSide": false,
@@ -22616,7 +22592,7 @@
       "colorName": "Kringle",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Red"
       ],
       "limited": false,
       "reverseSide": false,
@@ -22680,7 +22656,8 @@
       "colorName": "Laguna",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Multicolor",
+        "Green"
       ],
       "limited": false,
       "reverseSide": false,
@@ -22744,7 +22721,7 @@
       "colorName": "Lorelei",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Multicolor"
       ],
       "limited": false,
       "reverseSide": false,
@@ -22764,7 +22741,8 @@
       "colorName": "Lucia",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Multicolor",
+        "Yellow"
       ],
       "limited": false,
       "reverseSide": false,
@@ -22784,7 +22762,7 @@
       "colorName": "Meteorite",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Gray"
       ],
       "limited": false,
       "reverseSide": false,
@@ -22804,7 +22782,7 @@
       "colorName": "Metropolitan Concrete",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Gray"
       ],
       "limited": false,
       "reverseSide": false,
@@ -22888,7 +22866,7 @@
       "colorName": "Mirage Cloud",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Gray"
       ],
       "limited": false,
       "reverseSide": false,
@@ -22940,26 +22918,6 @@
       "collections": []
     },
     {
-      "externalId": 968,
-      "name": "Mirage Sandstone",
-      "slug": "mirage-sandstone-968",
-      "category": "Table Runners",
-      "fabric": "Mirage",
-      "colorName": "Mirage Sandstone",
-      "colorHex": "#B6A899",
-      "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
-      ],
-      "limited": false,
-      "reverseSide": false,
-      "imageFilename": "Runner_sandstone_r.jpg",
-      "keywords": "",
-      "sizes": [
-        "Runners"
-      ],
-      "collections": []
-    },
-    {
       "externalId": 969,
       "name": "Mirage Tide",
       "slug": "mirage-tide-969",
@@ -22988,7 +22946,7 @@
       "colorName": "Mirage Vanilla",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Ivory"
+        "White"
       ],
       "limited": false,
       "reverseSide": false,
@@ -23049,7 +23007,7 @@
       "colorName": "Nadia",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Purple/Burgundy"
       ],
       "limited": false,
       "reverseSide": false,
@@ -23069,7 +23027,7 @@
       "colorName": "Nantucket",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Blue"
       ],
       "limited": false,
       "reverseSide": false,
@@ -23240,7 +23198,7 @@
       "colorName": "Pamela Palms",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Green"
       ],
       "limited": false,
       "reverseSide": false,
@@ -23260,7 +23218,8 @@
       "colorName": "Phoebe",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Multicolor",
+        "Blue"
       ],
       "limited": false,
       "reverseSide": false,
@@ -23280,7 +23239,7 @@
       "colorName": "Phoenix",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Red"
       ],
       "limited": false,
       "reverseSide": false,
@@ -23457,7 +23416,7 @@
       "colorName": "Regency",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Gray"
       ],
       "limited": false,
       "reverseSide": false,
@@ -23477,7 +23436,7 @@
       "colorName": "Retro Vintage",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Multicolor"
       ],
       "limited": false,
       "reverseSide": false,
@@ -23497,7 +23456,7 @@
       "colorName": "Romeo",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Multicolor"
       ],
       "limited": false,
       "reverseSide": false,
@@ -23517,7 +23476,7 @@
       "colorName": "Santorini",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Blue"
       ],
       "limited": false,
       "reverseSide": false,
@@ -23693,7 +23652,7 @@
       "colorName": "Silhouette",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Black"
       ],
       "limited": false,
       "reverseSide": false,
@@ -23781,7 +23740,8 @@
       "colorName": "Spiro",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Black",
+        "White"
       ],
       "limited": false,
       "reverseSide": false,
@@ -24136,7 +24096,7 @@
       "colorName": "Velvet Loden",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Green"
       ],
       "limited": false,
       "reverseSide": false,
@@ -24224,7 +24184,7 @@
       "colorName": "Velvet Spice",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Orange"
       ],
       "limited": false,
       "reverseSide": false,
@@ -24347,7 +24307,7 @@
       "colorName": "Verve Pearl",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "White"
       ],
       "limited": false,
       "reverseSide": false,
@@ -24360,14 +24320,15 @@
     },
     {
       "externalId": 1037,
-      "name": "Water Lily",
-      "slug": "water-lily-1037",
+      "name": "Waterlily",
+      "slug": "waterlily-1037",
       "category": "Table Runners",
       "fabric": "Specialty",
-      "colorName": "Water Lily",
+      "colorName": "Waterlily",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Multicolor",
+        "Pink/Blush"
       ],
       "limited": false,
       "reverseSide": false,
@@ -24376,9 +24337,7 @@
       "sizes": [
         "Runners"
       ],
-      "collections": [
-        "Floral"
-      ]
+      "collections": []
     },
     {
       "externalId": 1038,
@@ -24409,7 +24368,8 @@
       "colorName": "Willow Gingham Mini Check",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Multicolor"
+        "Multicolor",
+        "Green"
       ],
       "limited": false,
       "reverseSide": false,
@@ -24431,7 +24391,7 @@
       "colorName": "Wren Coastal",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Blue"
       ],
       "limited": false,
       "reverseSide": false,
@@ -24451,7 +24411,8 @@
       "colorName": "Zebra",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Black",
+        "White"
       ],
       "limited": false,
       "reverseSide": false,
@@ -24513,7 +24474,7 @@
       "colorName": "Driftwood",
       "colorHex": "#B8A585",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Ivory"
       ],
       "limited": false,
       "reverseSide": false,
@@ -24613,7 +24574,7 @@
       "colorName": "Champagne",
       "colorHex": "#E9D9B0",
       "colorGroups": [
-        "Ivory"
+        "Gold"
       ],
       "limited": false,
       "reverseSide": false,
@@ -24885,7 +24846,7 @@
       "colorName": "Dove",
       "colorHex": "#C9C6C0",
       "colorGroups": [
-        "Ivory"
+        "Gray"
       ],
       "limited": false,
       "reverseSide": false,
@@ -24973,7 +24934,7 @@
       "colorName": "Lipstick",
       "colorHex": "#B8244F",
       "colorGroups": [
-        "Red"
+        "Pink/Blush"
       ],
       "limited": false,
       "reverseSide": false,
@@ -25105,7 +25066,8 @@
       "colorName": "Abstract Geometric",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Multicolor",
+        "Black"
       ],
       "limited": false,
       "reverseSide": false,
@@ -25211,7 +25173,8 @@
       "colorName": "Apple Cabana Stripe",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Multicolor"
+        "Multicolor",
+        "Green"
       ],
       "limited": false,
       "reverseSide": false,
@@ -25233,7 +25196,8 @@
       "colorName": "Apple Gingham Mini Check",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Multicolor"
+        "Multicolor",
+        "Green"
       ],
       "limited": false,
       "reverseSide": false,
@@ -25420,7 +25384,7 @@
       "colorName": "Bauhaus",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Multicolor"
       ],
       "limited": false,
       "reverseSide": false,
@@ -25573,7 +25537,7 @@
       "colorName": "Cairns",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Orange"
       ],
       "limited": false,
       "reverseSide": false,
@@ -25593,7 +25557,7 @@
       "colorName": "Cairns",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Orange"
       ],
       "limited": false,
       "reverseSide": true,
@@ -25920,7 +25884,7 @@
       "colorName": "Hampton Botanical Apple",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Green"
       ],
       "limited": false,
       "reverseSide": false,
@@ -25964,7 +25928,8 @@
       "colorName": "Hampton Stripe Apple",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Multicolor"
+        "Multicolor",
+        "Green"
       ],
       "limited": false,
       "reverseSide": false,
@@ -25986,7 +25951,8 @@
       "colorName": "Hampton Stripe Coastal",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Multicolor"
+        "Multicolor",
+        "Blue"
       ],
       "limited": false,
       "reverseSide": false,
@@ -26030,7 +25996,7 @@
       "colorName": "Helena Apple",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Green"
       ],
       "limited": false,
       "reverseSide": false,
@@ -26090,7 +26056,7 @@
       "colorName": "Hex",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Gray"
       ],
       "limited": false,
       "reverseSide": false,
@@ -26135,7 +26101,7 @@
       "colorName": "Holly",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Multicolor"
       ],
       "limited": false,
       "reverseSide": false,
@@ -26199,7 +26165,7 @@
       "colorName": "Key West",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Multicolor"
       ],
       "limited": false,
       "reverseSide": false,
@@ -26219,7 +26185,7 @@
       "colorName": "Kiwi Palazzo",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Green"
       ],
       "limited": false,
       "reverseSide": false,
@@ -26239,7 +26205,7 @@
       "colorName": "Kringle",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Red"
       ],
       "limited": false,
       "reverseSide": false,
@@ -26259,7 +26225,8 @@
       "colorName": "Laguna",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Multicolor",
+        "Green"
       ],
       "limited": false,
       "reverseSide": false,
@@ -26344,7 +26311,7 @@
       "colorName": "Lorelei",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Multicolor"
       ],
       "limited": false,
       "reverseSide": false,
@@ -26364,7 +26331,8 @@
       "colorName": "Lucia",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Multicolor",
+        "Yellow"
       ],
       "limited": false,
       "reverseSide": false,
@@ -26384,7 +26352,7 @@
       "colorName": "Metropolitan Concrete",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Gray"
       ],
       "limited": false,
       "reverseSide": false,
@@ -26424,7 +26392,7 @@
       "colorName": "Midas Travertine",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Gold"
       ],
       "limited": false,
       "reverseSide": false,
@@ -26446,7 +26414,7 @@
       "colorName": "Mirage Cloud",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Gray"
       ],
       "limited": false,
       "reverseSide": false,
@@ -26498,26 +26466,6 @@
       "collections": []
     },
     {
-      "externalId": 1140,
-      "name": "Mirage Sandstone",
-      "slug": "mirage-sandstone-1140",
-      "category": "Cuffs",
-      "fabric": "Mirage",
-      "colorName": "Mirage Sandstone",
-      "colorHex": "#B6A899",
-      "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
-      ],
-      "limited": false,
-      "reverseSide": false,
-      "imageFilename": "Cuff_sandstone_r.jpg",
-      "keywords": "",
-      "sizes": [
-        "Cuffs"
-      ],
-      "collections": []
-    },
-    {
       "externalId": 1141,
       "name": "Mirage Tide",
       "slug": "mirage-tide-1141",
@@ -26546,7 +26494,7 @@
       "colorName": "Mirage Vanilla",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Ivory"
+        "White"
       ],
       "limited": false,
       "reverseSide": false,
@@ -26566,7 +26514,7 @@
       "colorName": "Nadia",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Purple/Burgundy"
       ],
       "limited": false,
       "reverseSide": false,
@@ -26586,7 +26534,7 @@
       "colorName": "Nantucket",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Blue"
       ],
       "limited": false,
       "reverseSide": false,
@@ -26735,7 +26683,7 @@
       "colorName": "Pamela Palms",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Green"
       ],
       "limited": false,
       "reverseSide": false,
@@ -26755,7 +26703,7 @@
       "colorName": "Patchwork",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Multicolor"
       ],
       "limited": false,
       "reverseSide": false,
@@ -26777,7 +26725,8 @@
       "colorName": "Phoebe",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Multicolor",
+        "Blue"
       ],
       "limited": false,
       "reverseSide": false,
@@ -26797,7 +26746,7 @@
       "colorName": "Phoenix",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Red"
       ],
       "limited": false,
       "reverseSide": false,
@@ -26978,7 +26927,7 @@
       "colorName": "Regency",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Gray"
       ],
       "limited": false,
       "reverseSide": false,
@@ -26998,7 +26947,7 @@
       "colorName": "Retro Vintage",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Multicolor"
       ],
       "limited": false,
       "reverseSide": false,
@@ -27018,7 +26967,7 @@
       "colorName": "Romeo",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Multicolor"
       ],
       "limited": false,
       "reverseSide": false,
@@ -27038,7 +26987,7 @@
       "colorName": "Santorini",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Blue"
       ],
       "limited": false,
       "reverseSide": false,
@@ -27058,7 +27007,7 @@
       "colorName": "Santorini",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Blue"
       ],
       "limited": false,
       "reverseSide": true,
@@ -27231,7 +27180,7 @@
       "colorName": "Silhouette",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Black"
       ],
       "limited": false,
       "reverseSide": false,
@@ -27341,7 +27290,8 @@
       "colorName": "Spiro",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Black",
+        "White"
       ],
       "limited": false,
       "reverseSide": false,
@@ -27602,7 +27552,7 @@
       "colorName": "Velvet Loden",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Green"
       ],
       "limited": false,
       "reverseSide": false,
@@ -27690,7 +27640,7 @@
       "colorName": "Velvet Spice",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Orange"
       ],
       "limited": false,
       "reverseSide": false,
@@ -27792,7 +27742,7 @@
       "colorName": "Verve Pearl",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "White"
       ],
       "limited": false,
       "reverseSide": false,
@@ -27805,14 +27755,15 @@
     },
     {
       "externalId": 1203,
-      "name": "Water Lily",
-      "slug": "water-lily-1203",
+      "name": "Waterlily",
+      "slug": "waterlily-1203",
       "category": "Cuffs",
       "fabric": "Specialty",
-      "colorName": "Water Lily",
+      "colorName": "Waterlily",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Multicolor",
+        "Pink/Blush"
       ],
       "limited": false,
       "reverseSide": false,
@@ -27821,9 +27772,7 @@
       "sizes": [
         "Cuffs"
       ],
-      "collections": [
-        "Floral"
-      ]
+      "collections": []
     },
     {
       "externalId": 1204,
@@ -27857,7 +27806,8 @@
       "colorName": "Willow Gingham Mini Check",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Multicolor"
+        "Multicolor",
+        "Green"
       ],
       "limited": false,
       "reverseSide": false,
@@ -27879,7 +27829,7 @@
       "colorName": "Woodland",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Gray"
       ],
       "limited": false,
       "reverseSide": false,
@@ -27899,7 +27849,7 @@
       "colorName": "Woodland",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "White"
       ],
       "limited": false,
       "reverseSide": true,
@@ -27919,7 +27869,7 @@
       "colorName": "Wren Coastal",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Blue"
       ],
       "limited": false,
       "reverseSide": false,
@@ -27939,7 +27889,8 @@
       "colorName": "Zebra",
       "colorHex": "#B6A899",
       "colorGroups": [
-        "Brown/Beige/Cafe/Tan"
+        "Black",
+        "White"
       ],
       "limited": false,
       "reverseSide": false,
